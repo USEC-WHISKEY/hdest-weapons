@@ -541,12 +541,13 @@ class BHDWeapon : HDWeapon {
 					);
 					sb.drawImage(bFrontSightImage, (bFrontOffsetX, bFrontOffsetY) + bob * 3, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.9 - dotoff * 0.04);
 					sb.SetClipRect(cx,cy,cw,ch);
-
+					sb.drawImage(getFrontSightImage(), getFrontSightOffsets() + bob * 3, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.9 - dotoff * 0.04);
 				}
 			}
 
-
-			sb.drawImage(getFrontSightImage(), getFrontSightOffsets() + bob * 3, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.9 - dotoff * 0.04);
+			if (B_Front_Sight_Mode == 2) {
+				sb.drawImage(getFrontSightImage(), getFrontSightOffsets() + bob * 3, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.9 - dotoff * 0.04);
+			}
 
 		}
 		sb.drawimage(getBackSightImage(), getBackSightOffsets() + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER);

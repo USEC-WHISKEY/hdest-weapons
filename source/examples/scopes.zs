@@ -92,7 +92,8 @@ class BaseHoloSight : BaseFullDotSight {
 
 class B_M4_RearSight : BaseSightAttachment {
 	default {
-		BaseSightAttachment.FrontImage "";
+		BaseSightAttachment.FrontImage "m16iron";
+		BaseSightAttachment.FrontOffY 22;
 		BaseSightAttachment.UseWeaponIron true;
 		BaseSightAttachment.BackImage "mrsig1";
 		HDPickup.Bulk 1;
@@ -128,7 +129,8 @@ class B_M4_RearSight : BaseSightAttachment {
 
 class B_M4_CarrySight : BaseSightAttachment {
 	default {
-		BaseSightAttachment.FrontImage "";
+		BaseSightAttachment.FrontImage "m16iron";
+		BaseSightAttachment.FrontOffY 22;
 		BaseSightAttachment.UseWeaponIron true;
 		BaseSightAttachment.BackImage "mrsig2";
 		HDPickup.Bulk 1;
