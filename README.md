@@ -44,6 +44,7 @@ Sound Effects: [Duncoo Soo](https://www.duncansoo.com/)
 
 Player Sprites: Ultra64
 
+Play testing: a1337spy, Shredder
 
 ## Permissions
 

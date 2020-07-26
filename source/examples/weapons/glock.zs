@@ -194,7 +194,7 @@ class b_Glock : BasePistol {
 	}
 
 	override string, double GetPickupSprite() {
-		if(magazineHasAmmo()) {
+		if(magazineGetAmmo() > 0) {
 			if (barrelClass && miscClass) {
 				return "GLKUG0", 1.;
 			}

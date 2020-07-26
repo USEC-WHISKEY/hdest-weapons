@@ -381,7 +381,7 @@ class B_MP5 : BHDWeapon {
 	}	
 
 	override string, double GetPickupSprite() {
-		if(magazineHasAmmo()) {
+		if(magazineGetAmmo() > -1) {
 			if (scopeClass) {
 				if (scopeClass is "BaseAcog" || scopeClass is "BaseFullDotSight") {
 					if (barrelClass && miscClass) {
@@ -1004,7 +1004,7 @@ class B_MP5_M203 : BaseGLRifle {
 	}	
 
 	override string, double GetPickupSprite() {
-		if(magazineHasAmmo()) {
+		if(magazineGetAmmo() > -1) {
 			if (scopeClass) {
 				if (scopeClass is "BaseAcog" || scopeClass is "BaseFullDotSight") {
 					if (barrelClass && miscClass) {

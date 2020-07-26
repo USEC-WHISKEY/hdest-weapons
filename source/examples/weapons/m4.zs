@@ -339,8 +339,7 @@ class B_M4 : BaseStandardRifle {
 	}
 
 	override string, double GetPickupSprite() {
-		if(magazineHasAmmo()) {
-
+		if(magazineGetAmmo() > -1) {
 			if (scopeClass) {
 				if (scopeClass is "B_M4_CarrySight") {
 					if (barrelClass && miscClass) {
@@ -791,7 +790,7 @@ class B_M4_M203 : BaseGLRifle {
 			Goto LayerGun;
 	}
 	override string, double GetPickupSprite() {
-		if(magazineHasAmmo()) {
+		if(magazineGetAmmo() > -1) {
 			if (scopeClass) {
 				if (scopeClass is "B_M4_CarrySight") {
 					if (barrelClass && miscClass) {
@@ -899,124 +898,3 @@ class B_M4_M203 : BaseGLRifle {
 
 
 
-
-
-
-
-
-
-
-
-/*
-class B_M4_M203 : BaseGLRifle {
-
-	default {
-		+hdweapon.fitsinbackpack
-		weapon.selectionorder        20;
-		weapon.slotnumber            4;
-		weapon.slotpriority          10;
-		inventory.pickupsound        "misc/w_pkup";
-		inventory.pickupmessage      "You got the M4 M203.";
-		scale                        0.7;
-		weapon.bobrangex             0.27;
-		weapon.bobrangey             0.96;
-		obituary                     "%o was assaulted by %k.";
-		tag                          "M4 M203";
-		inventory.icon               "M4RPC0";
-		BHDWeapon.BFlashSprite       "FLSHA0";
-		BHDWeapon.BHeatDrain         12;
-		BHDWeapon.BBulletClass       "HDB_556";
-		BHDWeapon.BAmmoClass         "B556Ammo";
-		BHDWeapon.BMagazineClass     "B556Mag";
-		BHDWeapon.BGunMass           7.5;
-		BHDWeapon.BCookOff           30;
-		BHDWeapon.BHeatLimit         255;
-		BHDWeapon.BSpriteWithMag     "M4RPC0";
-		BHDWeapon.BSpriteWithFrame    2;
-		BHDWeapon.BSpriteWithoutFrame 3;
-		BHDWeapon.BSpriteWithoutMag  "M4RPD0";
-		BHDWeapon.BMagazineSprite    "M16CA0";
-		BHDWeapon.BWeaponBulk        100;
-		BHDWeapon.BMagazineBulk      19;
-		BHDWeapon.BBulletBulk        1;
-		BHDWeapon.BMagazineCapacity  30;
-		BHDWeapon.BarrelLength       25;
-		BHDWeapon.BarrelWidth        1;
-		BHDWeapon.BarrelDepth        3;
-		BHDWeapon.BFireSound         "weapons/m4/fire";
-		BHDWeapon.BSFireSound        "weapons/m4/silentfire";
-		BHDWeapon.BChamberSound      "weapons/m4/chamber";
-		BHDWeapon.BBoltForwardSound  "weapons/m4/boltback";
-		BHDWeapon.BBoltBackwardSound "weapons/m4/boltforward";
-		BHDWeapon.BClickSound        "weapons/m4/click";
-		BHDWeapon.BLoadSound         "weapons/m4/clipinsert";
-		BHDWeapon.BUnloadSound       "weapons/m4/clipeject";
-
-		BHDWeapon.BROF               0.5;
-		BHDWeapon.BBackOffsetX       -7;
-		BHDWeapon.BBackOffsetY       40;
-		BHDWeapon.BFrontSightImage   "m16iron";
-		BHDWeapon.BFrontOffsetX      0;
-		BHDWeapon.BFrontOffsetY      22;
-		BHDWeapon.BSilentOffsetX     0;
-		BHDWeapon.BSilentOffsetY     0;
-
-		BHDWeapon.bBarrelMount       "556_NATO_BARREL";
-		BHDWeapon.bScopeMount        "NATO_RAILS";
-		BHDWeapon.bMiscMount         "NATO_RAILS";
-		BaseAltRifle.bAltMagClass    "HDRocketAmmo";
-		BaseAltRifle.BAltMagPicture  "ROQPA0";
-		BHDWeapon.EjectShellClass    "B556Spent";
-		hdweapon.refid               B_M4M203_REFID;
-
-	}
-
-	states {
-		Spawn:
-			M4RP C -1 GetMagState();
-			Stop; 
-			
-		LayerGun:
-			M4RG A 1;
-			Loop;
-
-		LayerGunFire:
-			M4RG B 1;
-			Goto LayerGun;
-
-		LayerGunBolt:
-			M4RG E 3;
-			Goto LayerGun;
-
-		LayerReloadHands:
-			M4RH A 0;
-			Goto Super::LayerReloadHands;
-
-		LayerDefaultSight:
-			TNT1 A 1;
-			Loop;
-
-		UnloadChamber:
-			#### A 0 {
-				A_Overlay(invoker.bLayerRHand, "PullBolt");
-			}
-			Goto Super::UnloadChamber;
-
-		PullBolt:
-			M4RH A 2;
-			M4RH B 2;
-			TNT1 A 0 {
-				A_Overlay(invoker.bLayerGun, "GunPullBolt");
-			}
-			M4RH C 2 A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);
-			M4RH B 2 A_StartSound(invoker.bBoltForwardSound, CHAN_WEAPON);
-			M4RH A 2;
-			Stop;
-
-		GunPullBolt:
-			M4RG E 3;
-			Goto LayerGun;
-
-	}
-}
-*/

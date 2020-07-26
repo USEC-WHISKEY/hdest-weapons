@@ -344,7 +344,7 @@ class b_m14 : basestandardrifle {
 	}
 
 	override string, double GetPickupSprite() {
-		if(magazineHasAmmo()) {
+		if(magazineGetAmmo() > -1) {
 			if (scopeClass) {
 				if (scopeClass is "BaseAcog" || scopeClass is "BaseFullDotSight") {
 					if (barrelClass && miscClass) {

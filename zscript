@@ -34,3 +34,14 @@ version "4.4"
 #include "source/examples/miscs.zs"
 #include "source/examples/scopes.zs"
 #include "source/examples/pickups.zs"
+
+class BryanOperator : HDSkin {
+	states {
+		spawn: 
+			MOSA A 0;
+			stop;
+		crouch:
+			MOSB A 0;
+			stop;
+	}
+}
