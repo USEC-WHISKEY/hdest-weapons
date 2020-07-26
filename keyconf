@@ -1,0 +1,7 @@
+AddKeySection "Bryan HD Keys" BKeybinds
+
+AddMenuKey "Open attachment manager" openAttachmentManager
+AddMenuKey "Use misc. weapon attachment" useMiscAttachment
+
+alias openAttachmentManager "openmenu \"AttachmentMenu\""
+alias useMiscAttachment "use MiscAttachmentInput"

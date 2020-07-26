@@ -1,0 +1,15 @@
+
+sprite RPGPA0, 144, 28 {
+	XScale 3
+	YScale 3
+	Offset 72, 28
+	Patch "graphics/gunimages/rpg/base.png", 0, 0
+}
+
+sprite RPGPB0, 110, 28 {
+	XScale 3
+	YScale 3
+	Offset 55, 28
+	Patch "graphics/gunimages/rpg/empty.png", 0, 0
+}
+

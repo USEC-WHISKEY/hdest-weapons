@@ -1,0 +1,222 @@
+sprite FOSPA0, 120, 58 {
+	XScale 3
+	YScale 3
+	Offset 60, 58
+	Patch "sprites/fostech/pfospickup.png", 0, 0
+}
+
+
+sprite FOSPB0, 120, 40 {
+	XScale 3
+	YScale 3
+	Offset 60, 40
+	Patch "sprites/fostech/pfospickupnm.png", 0, 0
+}
+
+
+sprite FOSCA0, 23, 34 {
+	XScale 3
+	YScale 3
+	Offset 7, 26
+	Patch "sprites/fostech/pfosmag.png", 0, 0
+}
+
+sprite FOSCB0, 23, 34 {
+	XScale 3
+	YScale 3
+	Offset 7, 26
+	Patch "sprites/fostech/pfosmagnb.png", 0, 0
+}
+
+// Begin Images
+
+
+sprite FOSUA0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/none/base.png", 0, 0
+}
+
+sprite FOSUB0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/none/empty.png", 0, 0
+}
+
+// Base Flashlight
+
+sprite FOSUC0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/none/flashlight.png", 0, 0
+}
+
+sprite FOSUD0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/none/flashlight_empty.png", 0, 0
+}
+
+// Base Silecner
+
+sprite FOSUE0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/none/silencer.png", 0, 0
+}
+
+sprite FOSUF0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/none/silencer_empty.png", 0, 0
+}
+
+// Base Flashlight & Silencer
+
+sprite FOSUG0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/none/flashlight_silencer.png", 0, 0
+}
+
+sprite FOSUH0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/none/flashlight_silencer.png", 0, 0
+}
+
+// Low Sight Base
+
+sprite FOSUI0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/low/base.png", 0, 0
+}
+
+sprite FOSUJ0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/low/empty.png", 0, 0
+}
+
+// Low Sight Flashlight
+
+sprite FOSUK0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/low/flashlight.png", 0, 0
+}
+
+sprite FOSUL0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/low/flashlight_empty.png", 0, 0
+}
+
+// Low Sight Silencer
+
+sprite FOSUM0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/low/silencer.png", 0, 0
+}
+
+sprite FOSUN0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/low/silencer_empty.png", 0, 0
+}
+
+// Low Sight Flashlight & Silencer
+
+sprite FOSUO0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/low/flashlight_silencer.png", 0, 0
+}
+
+sprite FOSUP0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/low/flashlight_silencer_empty.png", 0, 0
+}
+
+// High Sight
+
+sprite FOSUQ0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/high/base.png", 0, 0
+}
+
+sprite FOSUR0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/high/empty.png", 0, 0
+}
+
+// High Sight Flashlight
+
+sprite FOSUS0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/high/flashlight.png", 0, 0
+}
+
+sprite FOSUT0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/high/flashlight_empty.png", 0, 0
+}
+
+// High Sight Silencer
+
+sprite FOSUU0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/high/flashlight.png", 0, 0
+}
+
+sprite FOSUV0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/high/flashlight_empty.png", 0, 0
+}
+
+// High Sight Flashlight & Silencer
+
+sprite FOSUW0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/high/flashlight_silencer.png", 0, 0
+}
+
+sprite FOSUX0, 150, 63 {
+	XScale 3
+	YScale 3
+	Offset 75, 63
+	Patch "graphics/gunimages/fostech/high/flashlight_silencer_empty.png", 0, 0
+}

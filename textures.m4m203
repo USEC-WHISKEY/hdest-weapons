@@ -1,0 +1,256 @@
+
+// Start Images
+
+sprite M4PCA0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/none/base.png", 0, 0
+}
+
+sprite M4PCB0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/none/empty.png", 0, 0
+}
+
+// Base Flash light
+
+sprite M4PCC0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/none/flashlight.png", 0, 0
+}
+
+sprite M4PCD0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/none/flashlight_empty.png", 0, 0
+}
+
+// Base Silencer
+
+sprite M4PCE0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/none/silencer.png", 0, 0
+}
+
+sprite M4PCF0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/none/silencer_empty.png", 0, 0
+}
+
+// Base flashlight & silencer
+
+sprite M4PCG0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/none/flashlight_silencer.png", 0, 0
+}
+
+sprite M4PCH0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/none/flashlight_silencer_empty.png", 0, 0
+}
+
+// Carryhandle Base
+
+sprite M4PCI0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/carryhandle/base.png", 0, 0
+}
+
+sprite M4PCJ0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/carryhandle/empty.png", 0, 0
+}
+
+// Carryhandle FlashLight
+
+sprite M4PCK0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/carryhandle/flashlight.png", 0, 0
+}
+
+sprite M4PCL0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/carryhandle/flashlight_empty.png", 0, 0
+}
+
+// Carryhandle Silencer
+
+sprite M4PCM0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/carryhandle/silencer.png", 0, 0
+}
+
+sprite M4PCN0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/carryhandle/silencer_empty.png", 0, 0
+}
+
+// Carryhandle Flashlight & Silencer
+
+sprite M4PCO0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/carryhandle/flashlight_silencer.png", 0, 0
+}
+
+sprite M4PCP0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/carryhandle/flashlight_silencer_empty.png", 0, 0
+}
+
+// Low sight
+
+sprite M4PCQ0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/lowsight/base.png", 0, 0
+}
+
+sprite M4PCR0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/lowsight/empty.png", 0, 0
+}
+
+// Low Sight flashlight
+
+sprite M4PCS0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/lowsight/flashlight.png", 0, 0
+}
+
+sprite M4PCT0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/lowsight/flashlight_empty.png", 0, 0
+}
+
+// Low Sight silencer
+
+sprite M4PCU0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/lowsight/silencer.png", 0, 0
+}
+
+sprite M4PCV0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/lowsight/silencer_empty.png", 0, 0
+}
+
+// Low Sight silencer flashlight
+
+sprite M4PCW0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/lowsight/flashlight_silencer.png", 0, 0
+}
+
+sprite M4PCX0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/lowsight/flashlight_silencer_empty.png", 0, 0
+}
+
+// Other
+
+sprite M4PCY0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/other/base.png", 0, 0
+}
+
+sprite M4PCZ0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/other/empty.png", 0, 0
+}
+
+// Other Flashlight
+
+sprite M4PDA0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/other/flashlight.png", 0, 0
+}
+
+sprite M4PDB0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/other/flashlight_empty.png", 0, 0
+}
+
+// other Silencer
+
+sprite M4PDC0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/other/silencer.png", 0, 0
+}
+
+sprite M4PDD0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/other/silencer_empty.png", 0, 0
+}
+
+// Other flashlight & silencer
+
+sprite M4PDE0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/other/flashlight_silencer.png", 0, 0
+}
+
+sprite M4PDF0, 162, 66 {
+	XScale 3
+	YScale 3
+	Offset 81, 66
+	Patch "graphics/gunimages/m4m203/other/flashlight_silencer_empty.png", 0, 0
+}

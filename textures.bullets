@@ -1,0 +1,73 @@
+
+sprite BB76A1, 7, 7 {
+	XScale 8
+	YScale 8
+	Offset 3, 7
+	Patch "graphics/bulletimages/brass_762_1.png", 0, 0
+}
+
+sprite BB76A2A8, 22, 7 {
+	XScale 8
+	YScale 8
+	Offset 11, 7
+	Patch "graphics/bulletimages/brass_762_8.png", 0, 0
+}
+
+sprite BB76A3A7, 29, 7 {
+	XScale 8
+	YScale 8
+	Offset 14, 7
+	Patch "graphics/bulletimages/brass_762_7.png", 0, 0
+}
+
+sprite BB76A4A6, 23, 7 {
+	XScale 8
+	YScale 8
+	Offset 14, 7
+	Patch "graphics/bulletimages/brass_762_6.png", 0, 0
+}
+
+sprite BB76A5, 7, 7 {
+	XScale 8
+	YScale 8
+	Offset 3, 7
+	Patch "graphics/bulletimages/brass_762_5.png", 0, 0
+}
+
+
+
+
+sprite BF76A1, 7, 7 {
+	XScale 8
+	YScale 8
+	Offset 3, 7
+	Patch "graphics/bulletimages/bullet_762_1.png", 0, 0
+}
+
+sprite BF76A2A8, 30, 7 {
+	XScale 8
+	YScale 8
+	Offset 15, 7
+	Patch "graphics/bulletimages/bullet_762_8.png", 0, 0
+}
+
+sprite BF76A3A7, 40, 7 {
+	XScale 8
+	YScale 8
+	Offset 20, 7
+	Patch "graphics/bulletimages/bullet_762_7.png", 0, 0
+}
+
+sprite BF76A4A6, 30, 7 {
+	XScale 8
+	YScale 8
+	Offset 15, 7
+	Patch "graphics/bulletimages/bullet_762_6.png", 0, 0
+}
+
+sprite BF76A5, 7, 7 {
+	XScale 8
+	YScale 8
+	Offset 3, 7
+	Patch "graphics/bulletimages/brass_762_5.png", 0, 0
+}

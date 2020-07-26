@@ -1,0 +1,52 @@
+
+GameInfo {
+	AddEventHandlers = "PlayerEvents", "AttachmentManager", "FlashLightManager"
+}
+
+episode maphub {
+	name = "Bryan's Hub"
+}
+
+map maphub "Bryan's Hub" {
+	music = ""
+	sky1 = "rsky1"
+	resetinventory
+	nointermission
+	noautosavehint
+	allowrespawn
+	next="map01"
+	pixelratio = 1.0
+}
+
+DoomEdNums {
+	19000 = M4_Random_Giver
+	19001 = MP5_Random_Giver
+	19002 = Glock_Random_Giver
+	19003 = Fauxtech_Random_Giver
+	19004 = M14_Random_Giver
+	19005 = M249_Random_Giver
+	19006 = Rpg_Random_Giver
+
+
+	20001 = B556Mag
+	20004 = B9mm_MP5K_Mag
+	20005 = BFauxDrum
+	20006 = GlockMagazine
+	20007 = b762_m14_mag
+	20008 = BM249Mag
+	20009 = BRpgRocket
+
+	30000 = B_M16_Silencer
+	30001 = B_M16_Extender
+	30002 = GlockSilencer
+	30003 = B_M14_Silencer
+
+	18001 = B_ACOG_Red
+	18003 = B_M16_Flashlight
+	18008 = B_Sight_CRdot
+	18009 = B_Sight_Holo_Red
+	18010 = B_M4_RearSight
+	18011 = B_M4_CarrySight
+	18012 = B_Faux_Sight
+	18013 = B_Reflex_Red
+}

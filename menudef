@@ -1,0 +1,34 @@
+
+OptionValue "B_Replace_Types" {
+	1, "None"
+	2, "Mixed"
+	5, "Replace"
+}
+
+OptionValue "B_Front_Sight_Options" {
+	1, "Show"
+	2, "Hide"
+}
+
+AddOptionMenu "OptionsMenu" {
+	StaticText ""
+	Submenu "Bryan's Weapons Options", "B_Options"
+}
+
+OptionMenu "B_Options" {
+	title "Bryan's Weapons"
+	option "Replace mode", "B_Replace_Type", "B_Replace_Types"
+	statictext "None:    Weapons will not spawn. Gear can only be      "
+	statictext "         obtained via backpacks and loadouts.          "
+	statictext "Mixed:   Both HDest & Bryan's Weapons will appear.     "
+	statictext "Replace: HDest weapons will be replaced if matching    "
+	statictext "         weapon available.                             "
+	statictext ""
+
+	option "Front Sights", "B_Front_Sight_Mode", "B_Front_Sight_Options"
+	statictext "Show: When using a non-magnified sight, draw the front "
+	statictext "      iron-sight from the weapon as well as sight dot. "
+	statictext "Hide: Front iron-sight is hidden when using any sight. "
+
+
+}

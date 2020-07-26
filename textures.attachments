@@ -1,0 +1,78 @@
+sprite SCPPA0, 93, 80 {
+	XScale 6
+	YScale 6
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/acog.png", 0, 0
+}
+
+sprite SCPPB0, 93, 80 {
+	XScale 6
+	YScale 6
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/reddot.png", 0, 0
+}
+
+sprite SCPPC0, 93, 80 {
+	XScale 6
+	YScale 6
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/holo.png", 0, 0
+}
+
+
+
+sprite MISPA0, 93, 80 {
+	XScale 9
+	YScale 9
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/sideflashlight.png", 0, 0
+}
+
+sprite M4CHA0, 101, 56 {
+	XScale 9
+	YScale 9
+	Offset 50, 56
+	Patch "sprites/accessory/fullsize/m4carryhandle.png", 0, 0
+}
+
+sprite M4RSA0, 55, 71 {
+	XScale 9
+	YScale 9
+	Offset 55, 71
+	Patch "sprites/accessory/fullsize/m4rearsight.png", 0, 0
+}
+
+sprite NMMSA0, 93, 80 {
+	XScale 6
+	YScale 6
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/9mmsil.png", 0, 0
+}
+
+sprite FTRSA0, 93, 80 {
+	XScale 6
+	YScale 6
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/fostechrear.png", 0, 0
+}
+
+sprite FFSLA0, 93, 80 {
+	XScale 6
+	YScale 6
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/556silencer.png", 0, 0
+}
+
+sprite FFFLA0, 93, 80 {
+	XScale 6
+	YScale 6
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/556flash.png", 0, 0
+}
+
+sprite FFSLB0, 93, 80 {
+	XScale 6
+	YScale 6
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/762silencer.png", 0, 0
+}

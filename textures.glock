@@ -1,0 +1,88 @@
+
+sprite GLKPA0, 58, 36 {
+	XScale 3
+	YScale 3
+	Offset 29, 36
+	Patch "sprites/glock/bglockpickup.png", 0, 0
+}
+
+sprite GLKPB0, 58, 36 {
+	XScale 3
+	YScale 3
+	Offset 29, 36
+	Patch "sprites/glock/bglockpickupnm.png", 0, 0
+}
+
+
+
+sprite GLKCA0, 16, 31 {
+	XScale 3
+	YScale 3
+	Offset 8, 31
+	Patch "sprites/glock/bglockmag.png", 0, 0
+}
+
+sprite GLKCB0, 16, 31 {
+	XScale 3
+	YScale 3
+	Offset 8, 31
+	Patch "sprites/glock/bglockmagnb.png", 0, 0
+}
+
+
+
+sprite GLKUA0, 58, 36 {
+	XScale 3
+	YScale 3
+	Offset 29, 36
+	Patch "graphics/gunimages/glock/glock_pickup_base.png", 0, 0
+}
+
+sprite GLKUB0, 66, 36 {
+	XScale 3
+	YScale 3
+	Offset 33, 36
+	Patch "graphics/gunimages/glock/glock_pickup_empty_base.png", 0, 0
+}
+
+sprite GLKUC0, 58, 36 {
+	XScale 3
+	YScale 3
+	Offset 29, 36
+	Patch "graphics/gunimages/glock/glock_pickup_flashlight.png", 0, 0
+}
+
+sprite GLKUD0, 66, 36 {
+	XScale 3
+	YScale 3
+	Offset 33, 36
+	Patch "graphics/gunimages/glock/glock_pickup_flashlight_empty.png", 0, 0
+}
+
+sprite GLKUE0, 80, 36 {
+	XScale 3
+	YScale 3
+	Offset 40, 36
+	Patch "graphics/gunimages/glock/glock_pickup_silencer.png", 0, 0
+}
+
+sprite GLKUF0, 88, 36 {
+	XScale 3
+	YScale 3
+	Offset 44, 36
+	Patch "graphics/gunimages/glock/glock_pickup_silencer_empty.png", 0, 0
+}
+
+sprite GLKUG0, 80, 36 {
+	XScale 3
+	YScale 3
+	Offset 40, 36
+	Patch "graphics/gunimages/glock/glock_pickup_silencer_flash.png", 0, 0
+}
+
+sprite GLKUH0, 88, 36 {
+	XScale 3
+	YScale 3
+	Offset 44, 36
+	Patch "graphics/gunimages/glock/glock_pickup_silencer_flash_empty.png", 0, 0
+}

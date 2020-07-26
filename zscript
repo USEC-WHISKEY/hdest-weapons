@@ -1,0 +1,36 @@
+version "4.4"
+
+#include "source/constants.zs"
+#include "source/player.zs"
+#include "source/drops.zs"
+#include "source/temp.zs"
+
+#include "source/input/miscattachment.zs"
+#include "source/input/removers.zs"
+
+#include "source/attachment/base.zs"
+#include "source/attachment/manager.zs"
+#include "source/attachment/menus.zs"
+
+#include "source/weapons/base.zs"
+#include "source/weapons/baseRifle.zs"
+#include "source/weapons/baseShotgun.zs"
+#include "source/weapons/basePistol.zs"
+#include "source/weapons/baseRpg.zs"
+#include "source/weapons/baseAmmo.zs"
+
+#include "source/examples/weapons/glock.zs"
+#include "source/examples/weapons/m4.zs"
+#include "source/examples/weapons/m14.zs"
+#include "source/examples/weapons/mp5.zs"
+#include "source/examples/weapons/fostech.zs"
+#include "source/examples/weapons/mf249.zs"
+#include "source/examples/weapons/rpg.zs"
+
+#include "source/examples/ammos.zs"
+#include "source/examples/bullets.zs"
+#include "source/examples/magazines.zs"
+#include "source/examples/barrels.zs"
+#include "source/examples/miscs.zs"
+#include "source/examples/scopes.zs"
+#include "source/examples/pickups.zs"

@@ -1,0 +1,220 @@
+
+sprite M24PA0, 156, 52 {
+	XScale 3
+	YScale 3
+	OFfset 77, 52
+	Patch "sprites/mf240/bm240pickup.png", 0, 0
+}
+
+sprite M24PB0, 156, 52 {
+	XScale 3
+	YScale 3
+	Offset 77, 52
+	Patch "sprites/mf240/bm240pickupnm.png", 0, 0
+}
+
+sprite M24CA0, 13, 18 {
+	XScale 3
+	YScale 3
+	Offset 7, 18
+	Patch "sprites/mf240/bm249clip.png", 0, 0
+}
+
+sprite M24CB0, 13, 18 {
+	XScale 3
+	YScale 3
+	Offset 7, 18
+	Patch "sprites/mf240/bm249clipnb.png", 0, 0
+}
+
+// Begin Images
+
+sprite M29UA0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/none/base.png", 0, 0
+}
+
+sprite M29UB0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/none/empty.png", 0, 0
+}
+
+// Base Flashlight
+
+sprite M29UC0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/none/flashlight.png", 0, 0
+}
+
+sprite M29UD0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/none/flashlight_empty.png", 0, 0
+}
+
+// Base Silecner
+
+sprite M29UE0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/none/silencer.png", 0, 0
+}
+
+sprite M29UF0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/none/silencer_empty.png", 0, 0
+}
+
+// Base Flashlight & Silencer
+
+sprite M29UG0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/none/flashlight_silencer.png", 0, 0
+}
+
+sprite M29UH0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/none/flashlight_silencer_empty.png", 0, 0
+}
+
+// Low Sight Base
+
+sprite M29UI0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/low/base.png", 0, 0
+}
+
+sprite M29UJ0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/low/empty.png", 0, 0
+}
+
+// Low Sight Flashlight
+
+sprite M29UK0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/low/flashlight.png", 0, 0
+}
+
+sprite M29UL0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/low/flashlight_empty.png", 0, 0
+}
+
+// Low Sight Silencer
+
+sprite M29UM0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/low/silencer.png", 0, 0
+}
+
+sprite M29UN0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/low/silencer_empty.png", 0, 0
+}
+
+// Low Sight Flashlight & Silencer
+
+sprite M29UO0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/low/flashlight_silencer.png", 0, 0
+}
+
+sprite M29UP0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/low/flashlight_silencer_empty.png", 0, 0
+}
+
+// High Sight
+
+sprite M29UQ0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/high/base.png", 0, 0
+}
+
+sprite M29UR0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/high/empty.png", 0, 0
+}
+
+// High Sight Flashlight
+
+sprite M29US0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/high/flashlight.png", 0, 0
+}
+
+sprite M29UT0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/high/flashlight_empty.png", 0, 0
+}
+
+// High Sight Silencer
+
+sprite M29UU0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/high/silencer.png", 0, 0
+}
+
+sprite M29UV0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/high/silencer_empty.png", 0, 0
+}
+
+// High Sight Flashlight & Silencer
+
+sprite M29UW0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/high/flashlight_silencer.png", 0, 0
+}
+
+sprite M29UX0, 186, 72 {
+	XScale 3
+	YScale 3
+	Offset 93, 72
+	Patch "graphics/gunimages/m249/high/flashlight_silencer_empty.png", 0, 0
+}
