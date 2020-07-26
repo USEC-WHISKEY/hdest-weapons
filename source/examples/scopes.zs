@@ -3,8 +3,8 @@ class BaseAcog : BaseScopeAttachment {
 	default {
 		//BaseSightAttachment.FrontImage "acogcr";
 		//BaseSightAttachment.BackImage "acogsg2";
-		BaseSightAttachment.FrontOffY 8;
-		BaseSightAttachment.BackOffY 9;
+		BaseSightAttachment.FrontOffY 4;
+		BaseSightAttachment.BackOffY 0;
 		BaseScopeAttachment.XScaleCam        0.32;
 		BaseScopeAttachment.YScaleCam        0.35;
 		BaseScopeAttachment.XPosCam          0;
@@ -205,7 +205,7 @@ class B_ACOG_Red : BaseAcog {
 		BaseAttachment.SerialId B_ACOG_RED_ID;
 		BaseAttachment.BaseSprite "SCOP";
 		BaseAttachment.BaseFrame 0;
-		Tag "Red M4 ACOG (iron Sight).";
+		Tag "Red ACOG (iron Sight).";
 		Inventory.Icon "SCPPA0";
 		Inventory.PickupMessage "Picked up a red M4 ACOG (iron Sight).";
 	}

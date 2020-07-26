@@ -616,7 +616,7 @@ class BHDWeapon : HDWeapon {
 
 			sb.drawImage(
 				ScopeSightImageName, 
-				scopeImage + bob * 3, 
+				scopeImage + bob, 
 				sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, 
 				scale: scopeImageScale
 			);
