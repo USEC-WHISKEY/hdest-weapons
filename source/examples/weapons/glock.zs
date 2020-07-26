@@ -97,6 +97,9 @@ class b_Glock : BasePistol {
 			GLKU C -1;
 			goto HDWeapon::Spawn;
 
+		Firemode:
+			goto nope;
+
 		SpawnNoMag:
 			GLKU B 0 {
 				if (invoker.barrelClass && invoker.miscClass) {
