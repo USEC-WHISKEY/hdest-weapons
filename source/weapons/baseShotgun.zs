@@ -30,7 +30,7 @@ class BaseShotgun : BaseStandardRifle {
 				//A_FireHDShotgun(0, 0, invoker.barrelLength, true);
 
 				HDBulletActor.FireBullet(self, "HDB_wad");
-				let p = HDBulletActor.FireBullet(self, invoker.bBulletClass, spread: 50.0 + random(-10, 20), speedfactor: 1.0, amount: 15);
+				let p = HDBulletActor.FireBullet(self, invoker.bBulletClass, spread: random(-10, 20), speedfactor: 1.0, amount: 15);
 				A_MuzzleClimb(
 					-frandom(0.1,0.1), -frandom(0,0.1),
 					-0.2,              -frandom(0.3,0.4),
