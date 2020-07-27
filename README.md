@@ -211,4 +211,4 @@ Note: The M4 and Fauxtech origin by default have no rear sight. You have to pick
 
 ## Sight Options
 
-An option is available that will draw the weapon front sight any non-magnified sight. 
+If the full-size sprites are too obtrusive and distracting, there are smaller alternative images available. The options `Full` and `Minimal` are available to pick from.

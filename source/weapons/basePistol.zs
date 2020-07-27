@@ -21,13 +21,13 @@ class BasePistol : BaseStandardRifle {
 		int cx,cy,cw,ch;
 		[cx,cy,cw,ch]=screen.GetClipRect();
 
-		if(hpl.player.getpsprite(PSP_WEAPON).frame>=2){
+		if(hpl.player.getpsprite(PSP_WEAPON).frame == 1){
 			//sb.SetClipRect(-40 + bob.x, -5 + bob.y, 20, 14, sb.DI_SCREEN_CENTER );
-			scc=(0.7,0.8);
+			scc=(0.8,0.9);
 			bobb.y=clamp(bobb.y*1.1-3,-10,10);
 		}else{
 			//sb.SetClipRect(-8 + bob.x, -4 + bob.y, 16, 10, sb.DI_SCREEN_CENTER);
-			scc=(0.8,0.8);
+			scc=(0.7,0.7);
 			bobb.y=clamp(bobb.y,-8,8);
 		}
 
@@ -69,7 +69,7 @@ class BasePistol : BaseStandardRifle {
 				}
 
 			}
-			#### A 1;
+			#### B 1;
 			#### B 0 {
 				return ResolveState("Chamber");
 			}
