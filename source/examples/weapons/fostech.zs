@@ -71,9 +71,6 @@ class b_FauxtechOrigin : BaseShotgun {
 			FOSU A 0 GetMagState();
 			Goto Super::Spawn;
 
-		FireMode:
-			Goto Nope;
-
 		SpawnMag:
 			TNT1 A 0 {
 				if (invoker.scopeClass) {

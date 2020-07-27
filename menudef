@@ -3,6 +3,8 @@ OptionValue "B_Replace_Types" {
 	1, "None"
 	2, "Mixed"
 	5, "Replace"
+	6, "Map start"
+	7, "Map mixed"
 }
 
 OptionValue "B_Althud_Options" {
@@ -18,11 +20,15 @@ AddOptionMenu "OptionsMenu" {
 OptionMenu "B_Options" {
 	title "Bryan's Weapons"
 	option "Replace mode", "B_Replace_Type", "B_Replace_Types"
-	statictext "None:    Weapons will not spawn. Gear can only be      "
-	statictext "         obtained via backpacks and loadouts.          "
-	statictext "Mixed:   Both HDest & Bryan's Weapons will appear.     "
-	statictext "Replace: HDest weapons will be replaced if matching    "
-	statictext "         weapon available.                             "
+	statictext "None:       Weapons will not spawn. Gear can only be   "
+	statictext "            obtained via backpacks and loadouts.       "
+	statictext "Mixed:      Both HDest & Bryan's Weapons will appear.  "
+	statictext "Replace:    HDest weapons will be replaced if matching "
+	statictext "            weapon available.                          "
+	statictext "Map start:  Weapons are replaced only at the start of  "
+	statictext "            the level.                                 "
+	statictext "Map mixed:  Weapons are sometimes replaced at the start"
+	statictext "            of the level                               "
 	statictext ""
 
 	option "HUD Sights", "b_althud_mode", "B_Althud_options"

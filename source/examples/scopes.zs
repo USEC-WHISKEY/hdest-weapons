@@ -170,7 +170,7 @@ class B_M4_CarrySight : BaseSightAttachment {
 
 class B_Faux_Sight : BaseSightAttachment {
 	default {
-		BaseSightAttachment.FrontImage "";
+		BaseSightAttachment.FrontImage "altfaf";
 		BaseSightAttachment.UseWeaponIron true;
 		BaseSightAttachment.BackImage "fauxbk";
 		HDPickup.Bulk 1;

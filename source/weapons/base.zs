@@ -1326,9 +1326,9 @@ class BHDWeapon : HDWeapon {
 			#### A 1 Offset(-3, 34);
 			#### A 1 Offset(-8, 37);
 			#### A 2 Offset(-11, 39) {
-				console.printf("unload mag %i", invoker.magazineGetAmmo());
+				//console.printf("unload mag %i", invoker.magazineGetAmmo());
 				if (invoker.magazineGetAmmo() < 0) {
-					console.printf("mag out %i", invoker.magazineGetAmmo());
+					//console.printf("mag out %i", invoker.magazineGetAmmo());
 					return ResolveState("MagOut");
 				}
 				if (invoker.brokenChamber()) {
