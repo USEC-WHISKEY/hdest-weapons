@@ -139,6 +139,11 @@ class BHDWeapon : HDWeapon {
 	property BFrontSightImage : bFrontSightImage;
 	string bFrontSightImage;
 
+	property BAltFrontSightImage: BAltFrontSightImage;
+	property BAltBackSightImage : BAltBackSightImage;
+	string BAltFrontSightImage;
+	string BAltBackSightImage;
+
 	property BFrontOffsetX : bFrontOffsetX;
 	property BFrontOffsetY : bFrontOffsetY;
 	int bFrontOffsetX;
@@ -472,18 +477,42 @@ class BHDWeapon : HDWeapon {
 		//sb.DrawNum(ammoBarAmt, -16, -22, sb.DI_SCREEN_CENTER_BOTTOM | sb.DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
 	}
 
-	String getFrontSightImage() const {
-		if (scopeClass) {
+	String getFrontSightImage(HDPlayerPawn hpl) const {
+		let b_althud_mode = Cvar.GetCVar("b_althud_mode", players[hpl.playernumber()]).GetInt();
+		//console.printf("%i", b_althud_mode);
+		if (scopeClass && b_althud_mode == 1) {
 			let img = GetDefaultByType((Class<BaseSightAttachment>)(scopeClass)).FrontImage;
 			return img;
+		}
+		else if (scopeClass && b_althud_mode == 2) {
+			let altimg = GetDefaultByType((Class<BaseSightAttachment>)(scopeClass)).bfrontAltImage;
+			if (altimg == "") {
+				altimg = GetDefaultByType((Class<BaseSightAttachment>)(scopeClass)).FrontImage;
+			}
+			return altimg;
+		}
+		else if (b_althud_mode == 2) {
+			return BAltFrontSightImage;
 		}
 		return bFrontSightImage;
 	}
 
-	String getBackSightImage() const {
-		if (scopeClass) {
+	String getBackSightImage(HDPlayerPawn hpl) const {
+		let b_althud_mode = Cvar.GetCVar("b_althud_mode", players[hpl.playernumber()]).GetInt();
+		//console.printf("%i", b_althud_mode);
+		if (scopeClass && b_althud_mode == 1) {
 			let img = GetDefaultByType((Class<BaseSightAttachment>)(scopeClass)).BackImage;
 			return img;
+		}
+		else if (scopeClass && b_althud_mode == 2) {
+			let altimg = GetDefaultByType((Class<BaseSightAttachment>)(scopeClass)).bbackAltImage;
+			if (altimg == "") {
+				altimg = GetDefaultByType((Class<BaseSightAttachment>)(scopeClass)).BackImage;
+			}
+			return altimg;
+		}
+		else if (b_althud_mode == 2) {
+			return BAltBackSightImage;
 		}
 		return bBackSightImage;
 	}
@@ -525,32 +554,9 @@ class BHDWeapon : HDWeapon {
 		}
 
 		if (dotoff < dotLimit){
-			if (basicWep.scopeClass) {
-				//let useWepIron = GetDefaultByType((Class<BaseSightAttachment>)(basicWep.scopeClass)).useWeaponIron;
-				if (B_Front_Sight_Mode == 1) {
-					
-					// Todo he?
-					int cx,cy,cw,ch;
-					[cx,cy,cw,ch]=screen.GetClipRect();
-					sb.SetClipRect(
-						-300, 
-						-30, 
-						400, 
-						70,
-						sb.DI_SCREEN_CENTER
-					);
-					sb.drawImage(bFrontSightImage, (bFrontOffsetX, bFrontOffsetY) + bob * 3, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.9 - dotoff * 0.04);
-					sb.SetClipRect(cx,cy,cw,ch);
-					sb.drawImage(getFrontSightImage(), getFrontSightOffsets() + bob * 3, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.9 - dotoff * 0.04);
-				}
-			}
-
-			if (B_Front_Sight_Mode == 2) {
-				sb.drawImage(getFrontSightImage(), getFrontSightOffsets() + bob * 3, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.9 - dotoff * 0.04);
-			}
-
+			sb.drawImage(getFrontSightImage(hpl), getFrontSightOffsets() + bob * 3, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.9 - dotoff * 0.04);
 		}
-		sb.drawimage(getBackSightImage(), getBackSightOffsets() + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER);
+		sb.drawimage(getBackSightImage(hpl), getBackSightOffsets() + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER);
 
 		if (basicWep.scopeClass is "BaseScopeAttachment" && scopeview) {
 			let def = GetDefaultByType((Class<BaseScopeAttachment>)(basicWep.scopeClass));

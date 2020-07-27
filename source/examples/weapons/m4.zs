@@ -58,6 +58,9 @@ class B_M4 : BaseStandardRifle {
 		BHDWeapon.EjectShellClass    "B556Spent";
 		hdweapon.refid               B_M4_REFID;
 
+		BHDWeapon.BAltFrontSightImage "am4";
+		BHDWeapon.BAltBackSightImage "";
+
 		BHDWeapon.BLayerSight  104;
 		BHDWeapon.bLayerRHand  105;
 		BHDWeapon.bLayerGunBack -99;
@@ -509,6 +512,9 @@ class B_M4_M203 : BaseGLRifle {
 
 		BaseAltRifle.bAltMagClass    "HDRocketAmmo";
 		BaseAltRifle.BAltMagPicture  "ROQPA0";
+
+		BHDWeapon.BAltFrontSightImage "am4";
+		BHDWeapon.BAltBackSightImage "";
 
 		BHDWeapon.BLayerSight  104;
 		BHDWeapon.bLayerRHand  105;

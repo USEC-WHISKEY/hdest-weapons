@@ -39,7 +39,7 @@ class b_m14 : basestandardrifle {
 		BHDWeapon.BBoltForwardSound  "weapons/m14/boltback";
 		BHDWeapon.BBoltBackwardSound "weapons/m14/boltforward";
 		BHDWeapon.BClickSound        "weapons/m14/click";
-		BHDWeapon.BLoadSound         "";
+		BHDWeapon.BLoadSound         "weapons/m14/clipinsert";
 		BHDWeapon.BUnloadSound       "weapons/m14/clipeject";
 
 		BHDWeapon.BROF               0;
@@ -56,6 +56,9 @@ class b_m14 : basestandardrifle {
 		BHDWeapon.bMiscMount         "NATO_RAILS";
 		BHDWeapon.EjectShellClass    "B762x51Spent";
 		hdweapon.refid               B_M14_REFID;
+
+		BHDWeapon.BAltFrontSightImage "bm14ir";
+		BHDWeapon.BAltBackSightImage "bm14sig";
 
 		BHDWeapon.BLayerSight   104;
 		BHDWeapon.bLayerRHand   107;

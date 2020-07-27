@@ -156,6 +156,11 @@ class BaseSightAttachment : BaseAttachment {
 	property DotThreshold: dotThreshold;
 	meta int dotThreshold;
 
+	property bFrontAltImage: bfrontAltImage;
+	property bBackAltImage: bbackAltImage;
+	string bfrontAltImage;
+	string bbackAltImage;
+
 	property ScopeShaderTexture: scopeShaderTexture;
 	property ScopeShaderX: scopeShaderX;
 	property ScopeShaderY: scopeShaderY;
@@ -165,6 +170,8 @@ class BaseSightAttachment : BaseAttachment {
 
 	default {
 		BaseSightAttachment.DotThreshold 6;
+		BaseSightAttachment.bfrontAltImage "";
+		BaseSightAttachment.bbackAltImage "";
 	}
 
 	override void ClearAttachment(BHDWeapon weapon, PlayerPawn player) {

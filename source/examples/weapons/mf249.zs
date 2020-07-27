@@ -58,6 +58,9 @@ class b_M249 : BHDWeapon {
 		BHDWeapon.EjectShellClass    "B556Spent";
 		hdweapon.refid               B_MF249_REFID;
 
+		BHDWeapon.BAltFrontSightImage "m24fr";
+		BHDWeapon.BAltBackSightImage "m24rsig";
+
 		BHDWeapon.BLayerSight  106;
 		BHDWeapon.bLayerRHand  130;
 		BHDWeapon.bLayerEHand   105;

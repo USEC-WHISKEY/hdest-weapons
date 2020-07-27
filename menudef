@@ -5,9 +5,9 @@ OptionValue "B_Replace_Types" {
 	5, "Replace"
 }
 
-OptionValue "B_Front_Sight_Options" {
-	1, "Show"
-	2, "Hide"
+OptionValue "B_Althud_Options" {
+	1, "Full"
+	2, "Minimal"
 }
 
 AddOptionMenu "OptionsMenu" {
@@ -25,10 +25,10 @@ OptionMenu "B_Options" {
 	statictext "         weapon available.                             "
 	statictext ""
 
-	option "Front Sights", "B_Front_Sight_Mode", "B_Front_Sight_Options"
-	statictext "Show: When using a non-magnified sight, draw the front "
-	statictext "      iron-sight from the weapon as well as sight dot. "
-	statictext "Hide: Front iron-sight is hidden when using any sight. "
+	option "HUD Sights", "b_althud_mode", "B_Althud_options"
+	statictext "Full:    Sights are drawn in full, taking up a good    "
+	statictext "         part the available screen space.              "
+	statictext "Minimal: Only the vital parts of sights are shown.     "
 
 
 }

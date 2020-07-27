@@ -1,2 +1,2 @@
 server int b_replace_type = 5;
-server int B_Front_Sight_Mode = 1;
+user int b_althud_mode = 1;

@@ -46,16 +46,20 @@ class b_Glock : BasePistol {
 		BHDWeapon.BROF               0;
 		BHDWeapon.BBackSightImage    "glckbk";
 		BHDWeapon.BBackOffsetX       0;
-		BHDWeapon.BBackOffsetY       23;
+		BHDWeapon.BBackOffsetY       17;
 		BHDWeapon.BFrontSightImage   "glckfr";
 		BHDWeapon.BFrontOffsetX      0;
-		BHDWeapon.BFrontOffsetY      23;
+		BHDWeapon.BFrontOffsetY      17;
 		BHDWeapon.BSilentOffsetX     0;
 		BHDWeapon.BSilentOffsetY     0;
 		BHDWeapon.bBarrelMount       "9MM_GLOCK";
 		BHDWeapon.bMiscMount         "NATO_RAILS";
 		BHDWeapon.EjectShellClass    "HDSpent9mm";
 		hdweapon.refid               B_GLOCK_REFID;
+		BHDWeapon.bIronThreshold 	5;
+
+		BHDWeapon.BAltFrontSightImage "alt_glf";
+		BHDWeapon.BAltBackSightImage "alt_glb";
 
 		BHDWeapon.BLayerSight  104;
 		BHDWeapon.bLayerRHand  105;
@@ -64,11 +68,9 @@ class b_Glock : BasePistol {
 
 	states {
 		Spawn:
-			GLKP A 0;
-			Goto Super::Spawn; 
+			GLKP A 0 GetMagStatePistol();
+			//Goto Super::Spawn; 
 		
-		// FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCK
-		// Sloopy shit
 		SpawnMag:
 			GLKU A 0 {
 				if (invoker.barrelClass && invoker.miscClass) {

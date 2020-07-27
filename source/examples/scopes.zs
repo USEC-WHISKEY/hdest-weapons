@@ -106,6 +106,8 @@ class B_M4_RearSight : BaseSightAttachment {
 		Inventory.Icon "M4RSA0";
 		Inventory.PickupMessage "Picked up a M4 iron sight.";
 		tag "M4 rear iron sight";
+		BaseSightAttachment.bfrontAltImage "am4";
+		BaseSightAttachment.bbackAltImage "alt_m4i";
 	}
 
 	States {
@@ -143,6 +145,8 @@ class B_M4_CarrySight : BaseSightAttachment {
 		Inventory.Icon "M4CHA0";
 		Inventory.PickupMessage "Picked up a M4 carryhandle.";
 		tag "M4 carryhandle";
+		BaseSightAttachment.bfrontAltImage "am4";
+		BaseSightAttachment.bbackAltImage "alt_carr";
 	}
 
 	states {
@@ -174,11 +178,14 @@ class B_Faux_Sight : BaseSightAttachment {
 		BaseAttachment.SerialId B_FAUX_SIGHT_ID;
 		BaseAttachment.BaseSprite "FOSI";
 		BaseAttachment.BaseFrame 0;
-		BaseSightAttachment.BackOffX -0.75;
+		BaseSightAttachment.BackOffX 0;
 		BaseSightAttachment.BackOffY 47;
+		BaseSightAttachment.FrontOffY 46;
 		Inventory.Icon "FTRSA0";
 		Inventory.PickupMessage "Picked up a diamond rear sight.";
 		tag "Diamond rear sight";
+		BaseSightAttachment.bfrontAltImage "altfaf";
+		BaseSightAttachment.bbackAltImage "altfab";
 	}
 
 	states {
@@ -276,6 +283,8 @@ class B_Reflex_Red : BaseCompactDotSight {
 		Inventory.ICON "RFLIA0";
 		BaseSightAttachment.BackOffY 25;
 		Inventory.PickupMessage "Picked up a reflex red-dot sight.";
+		//BaseSightAttachment.bfrontAltImage "rflahd";
+		BaseSightAttachment.bbackAltImage "rflahd";
 	}
 	States {
 		Spawn:

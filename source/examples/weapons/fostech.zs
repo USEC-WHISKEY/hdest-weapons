@@ -58,6 +58,9 @@ class b_FauxtechOrigin : BaseShotgun {
 		BHDWeapon.EjectShellClass    "HDSpentShell";
 		hdweapon.refid               B_FAUX_REFID;
 
+		BHDWeapon.BAltFrontSightImage "altfaf";
+		BHDWeapon.BAltBackSightImage "";
+
 		BHDWeapon.BLayerSight  106;
 		BHDWeapon.bLayerRHand  105;
 		BHDWeapon.bLayerGunBack -99;
