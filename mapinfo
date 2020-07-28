@@ -36,6 +36,8 @@ DoomEdNums {
 	20008 = BM249Mag
 	20009 = BRpgRocket
 
+	21000 = B_556_Box
+
 	30000 = B_M16_Silencer
 	30001 = B_M16_Extender
 	30002 = GlockSilencer
@@ -49,4 +51,6 @@ DoomEdNums {
 	18011 = B_M4_CarrySight
 	18012 = B_Faux_Sight
 	18013 = B_Reflex_Red
+
+	26000 = B_M249_reloader
 }

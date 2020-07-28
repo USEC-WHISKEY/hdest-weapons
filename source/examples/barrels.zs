@@ -6,7 +6,7 @@ class B_M16_Silencer : BaseSilencerAttachment {
 		BaseAttachment.BaseSprite "SL56";
 		BaseAttachment.BaseFrame 0;
 		HDPickup.Bulk 1;
-		HDPickup.RefId "BM16SIL";
+		HDPickup.RefId "sl5";
 		Tag "5.56m barrel silencer";
 		Inventory.Icon "FFSLA0";
 		Inventory.PickupMessage "Picked up 5.56m barrel silencer.";
@@ -31,7 +31,7 @@ class B_M14_Silencer : BaseSilencerAttachment {
 		BaseAttachment.BaseSprite "GLSL";
 		BaseAttachment.BaseFrame 1;
 		HDPickup.Bulk 1;
-		HDPickup.RefId "BMSIL";
+		HDPickup.RefId "sl7";
 		Tag "7.62m barrel silencer";
 		Inventory.Icon "FFSLB0";
 		Inventory.PickupMessage "Picked up 7.62m barrel silencer.";
@@ -80,7 +80,7 @@ class GlockSilencer : BaseSilencerAttachment {
 		BaseAttachment.BaseSprite "GLSL";
 		BaseAttachment.BaseFrame 0;
 		HDPickup.Bulk 1;
-		HDPickup.RefId "gls";
+		HDPickup.RefId "sl9";
 		Tag "9mm silencer";
 		Inventory.Icon "NMMSA0";
 		Inventory.PickupMessage "Picked up 9mm silencer.";

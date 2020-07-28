@@ -209,6 +209,28 @@ Note: The M4 and Fauxtech origin by default have no rear sight. You have to pick
 
 - `bm1`: Flashlight attachment
 
+### Attachment Loadout IDs
+
+These are for adding attachments as loose items in your inventory if you plan to switch between multiple sights.
+
+- `m4i`: M4 default rear sight
+- `m4c`: M4 carryhandle
+- `dia`: Fauxtech diamond sight
+- `acg`: ACOG
+- `rdt`: Red-dot Sight
+- `hrd`: Holo sight
+- `rfr`: Reflex sight
+
+- `sl5`: 5.56 silencer
+- `sl7`: 7.62 silencer
+- `sl9`: 9mm silencer
+
+- `gfl`: Misc flashlight attachment
+
+### Misc Loadout IDs
+
+- `r04`: M249 pouch reloader
+
 ## Sight Options
 
 If the full-size sprites are too obtrusive and distracting, there are smaller alternative images available. The options `Full` and `Minimal` are available to pick from.

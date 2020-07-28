@@ -9,7 +9,7 @@ class B_M16_Flashlight : BaseMiscAttachment {
 		BaseMiscAttachment.OnFrame 1;
 		BaseMiscAttachment.EventClass "B_Flashlight_Event";
 		HDPickup.Bulk 1;
-		HDPickup.RefId "M16FLS";
+		HDPickup.RefId "gfl";
 		Tag "Flashlight";
 		Inventory.Icon "MISPA0";
 		Inventory.PickupMessage "Picked up a flashlight mount";

@@ -97,6 +97,7 @@ class B_M4_RearSight : BaseSightAttachment {
 		BaseSightAttachment.UseWeaponIron true;
 		BaseSightAttachment.BackImage "mrsig1";
 		HDPickup.Bulk 1;
+		HDPickup.RefID "m4i";
 		BaseAttachment.MountId "NATO_RAILS";
 		BaseAttachment.SerialId B_M4_REARSIGHT_ID;
 		BaseAttachment.BaseSprite "M4IR";
@@ -136,6 +137,7 @@ class B_M4_CarrySight : BaseSightAttachment {
 		BaseSightAttachment.UseWeaponIron true;
 		BaseSightAttachment.BackImage "mrsig2";
 		HDPickup.Bulk 1;
+		HDPickup.RefID "m4c";
 		BaseAttachment.MountId "NATO_RAILS";
 		BaseAttachment.SerialId B_M4_CARRYHANDLE_ID;
 		BaseAttachment.BaseSprite "M4IR";
@@ -184,6 +186,7 @@ class B_Faux_Sight : BaseSightAttachment {
 		Inventory.Icon "FTRSA0";
 		Inventory.PickupMessage "Picked up a diamond rear sight.";
 		tag "Diamond rear sight";
+		HDPickup.RefID "dia";
 		BaseSightAttachment.bfrontAltImage "altfaf";
 		BaseSightAttachment.bbackAltImage "altfab";
 	}
@@ -212,6 +215,7 @@ class B_ACOG_Red : BaseAcog {
 		BaseAttachment.SerialId B_ACOG_RED_ID;
 		BaseAttachment.BaseSprite "SCOP";
 		BaseAttachment.BaseFrame 0;
+		HDPickup.RefID "acg";
 		Tag "Red ACOG (iron Sight).";
 		Inventory.Icon "SCPPA0";
 		Inventory.PickupMessage "Picked up a red M4 ACOG (iron Sight).";
@@ -235,6 +239,7 @@ class B_Sight_CRdot : BaseFullDotSight {
 		BaseAttachment.BaseFrame 1;
 		BaseSightAttachment.useWeaponIron true;
 		Tag "Red-dot full sight";
+		HDPickup.RefID "rdt";
 		Inventory.Icon "SCPPB0";
 		Inventory.PickupMessage "Picked up a red-dot full sight.";
 	}
@@ -257,6 +262,7 @@ class B_Sight_Holo_Red : BaseHoloSight {
 		BaseAttachment.BaseFrame 0;
 		Tag "EOTech Holographic Sight";
 		Inventory.Icon "SCPPC0";
+		HDPickup.RefID "hrd";
 		BaseSightAttachment.BackOffX 0;
 		//BaseSightAttachment.BackOffY 47;
 		Inventory.PickupMessage "Picked up a red-dot round sight.";
@@ -285,6 +291,7 @@ class B_Reflex_Red : BaseCompactDotSight {
 		Inventory.PickupMessage "Picked up a reflex red-dot sight.";
 		//BaseSightAttachment.bfrontAltImage "rflahd";
 		BaseSightAttachment.bbackAltImage "rflahd";
+		HDPickup.RefID "rfr";
 	}
 	States {
 		Spawn:

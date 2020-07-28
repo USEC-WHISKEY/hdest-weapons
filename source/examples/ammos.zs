@@ -27,6 +27,35 @@ class B556Spent : BRoundSpent {
 	}
 }
 
+class B_556_Box : HDUPK {
+	default{
+		//$Category "Ammo/Hideous Destructor/"
+		//$Title "Box of 9mm"
+		//$Sprite "9BOXA0"
+
+		scale 0.4;
+		hdupk.amount 100;
+		hdupk.pickupsound "weapons/pocket";
+		hdupk.pickupmessage "Picked up some 5.56x45mm ammo.";
+		hdupk.pickuptype "B556Ammo";
+	}
+	states{
+	spawn:
+		5BOX A -1;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 class BRPGRocketAmmo : BRoundAmmo {
 	default {
 		tag "RPG Rocket Ammo";
