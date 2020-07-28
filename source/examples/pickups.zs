@@ -249,3 +249,44 @@ class MP5_Random_Giver : BWeaponGiver {
 class mp5_random_noammo_giver : mp5_random_giver {
 	override void SpawnMagazines() {}
 }
+
+class RandomBryanPickup : HDInvRandomSpawner {
+	default {
+		dropitem "RandomMagPickup", 256, 1;
+		dropitem "RandomAmmoPickup", 256, 1;
+		dropitem "RandomWeaponPickup", 256, 1;
+	}
+}
+
+
+class RandomMagPickup : HDInvRandomSpawner {
+	default {
+		dropitem "B556Mag",256,1;
+		dropitem "GlockMagazine",256,1;
+		dropitem "B9mm_MP5K_MAG",256,1;
+		dropitem "BFauxDrum",256,1;
+		dropitem "b762_m14_mag",256,1;
+		dropitem "BM249Mag",256,1;
+	}
+}
+
+class RandomAmmoPickup : HDInvRandomSpawner {
+	default {
+		dropitem "B_556_Box",256,1;
+		dropitem "B_762_Box",256,1;
+		dropitem "HD9mBoxPickup",256,1;
+		dropitem "ShellBoxPickup",256,1;
+	}
+}
+
+class RandomAttachmentPickup : HDInvRandomSpawner {
+	default {
+		dropitem "B_M4_RearSight", 256, 1;
+		dropitem "B_M4_CarrySight", 256, 1;
+		dropitem "B_Faux_Sight", 256, 1;
+		dropitem "B_ACOG_Red", 256, 1;
+		dropitem "B_Sight_CRdot", 256, 1;
+		dropitem "B_Sight_Holo_Red", 256, 1;
+		dropitem "B_Reflex_Red", 256, 1;
+	}
+}

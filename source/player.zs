@@ -15,7 +15,7 @@ class PlayerEvents : EventHandler {
 
 	bool rollCheck() {
 		int rnggo = random(0, 100);
-		return rnggo > 50;
+		return rnggo >= 50;
 	}
 
 	void replaceHalf(ReplaceEvent e) {
@@ -82,17 +82,26 @@ class PlayerEvents : EventHandler {
 				e.Replacement = "BAmBox";
 			}
 		}
+		else if (e.Replacee is "ClipMagPickup" || e.Replacee is "ClipBoxPickup") {
+			if (rollCheck())
+				e.Replacement = "RandomBryanPickup";
+		}
 	}
 
 	void replaceAll(ReplaceEvent e) {
 		if (e.Replacee is "ZM66Random") {
 			e.Replacement = "M4_Random_Giver";
 		}
-		else if (e.Replacee is "ZM66AssaultRifle" || e.Replacee is "ZM66Regular" || e.Replacee is "ZM66Semi") {
+		else if (e.Replacee is "ZM66AssaultRifle" || e.Replacee is "ZM66Regular" || e.Replacee is "ZM66Semi" || e.Replacee is "ZM66Irregular") {
+			
 			e.Replacement = "M4_Random_Noammo_Giver";
 		}
-		else if (e.Replacee is "HD4mMag") {
+		else if (e.Replacee is "HD4mMag" || e.Replacee is "HDDirtyMagazine") {
+			
 			e.Replacement = "B556Mag";
+		}
+		else if (e.Replacee is "HD4mmMagEmpty") {
+			e.Replacement = "B556MagEmpty";	
 		}
 		// Pistol
 		else if (e.Replacee is "HDPistol" || e.Replacee is "HDAutoPistol") {
@@ -134,7 +143,12 @@ class PlayerEvents : EventHandler {
 				e.Replacement = "BAmBox";
 			}
 		}
+		else if (e.Replacee is "ClipMagPickup" || e.Replacee is "ClipBoxPickup") {
+			e.Replacement = "RandomBryanPickup";
+		}
 	}
+
+	int ticks;
 
 	override void WorldLoaded(WorldEvent e) {
 		// I'm assuming CheckReplacement is called before the world is fully loaded?
@@ -211,6 +225,7 @@ class PlayerEvents : EventHandler {
 
 	override void WorldTick() {
 		super.WorldTick();
+
 		checkPlayer(0);
 	}
 

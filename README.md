@@ -52,6 +52,27 @@ The source code for this project is licensed under GNU v3. You are free to fork 
 
 Permission to reuse any game assets, sounds, or graphics are not granted unless you are using them in a project for either Hideous Destructor or creating a weapon that derives from `BHDWeapon`, the base class of the weapons for this mod. Reusing the player sprite is permitted if using the sprite within Hideous Destructor.
 
+## Game Options
+
+Options for this mod can be found in at the bottom of the default GZdoom options menu.
+
+### Replace Mode
+
+- None: Weapons from this mod will not spawn in levels. Gear can only be obtained via the loadout manager.
+- Replace: Hideous Destructor weapon spawns will be replaced with weapons from this mod.
+- Map start: Weapons are only replaced at the start of the level.
+- Map mixed: Weapons are only replaced at the start of the level. There is a 50% chance weapons from this pack will appear.
+
+### Sight Mode
+
+- Full: The entire back of the sight is shown. Uses the most screen space.
+- Minimal: Only the parts vital to being able to aim are shown.
+
+### Attachment Spawn Mode
+
+- None: Weapons when they spawn will not have any attachments other than default sights.
+- Random: Weapons will spawn with random attachments. 
+
 ## Weapons
 
 ### Glock
@@ -126,6 +147,12 @@ Permission to reuse any game assets, sounds, or graphics are not granted unless 
 
 Each weapon has its own magazine/drum/pouch. The Glock and MP5 are chambered in the the default Hideous Destructor 9mm bullet. The Fauxtech Origin also reuses thd default Hideous Destructor shotgun shells. Ammo for the M203 uses the default rocket grenade ammo as well. 
 
+<p>
+	<img src="sprites/ammo/5BOXA0.png">
+	<img src="sprites/ammo/7BBXA0.png">
+	<img src="sprites/ammo/BBOXA0.png">
+</p>
+
 - Glock Magazine (9mm): 15 rounds
 - MP5 Magazine (9mm): 30 rounds
 - M4 Magazine (5.56mm): 30 rounds
@@ -133,28 +160,13 @@ Each weapon has its own magazine/drum/pouch. The Glock and MP5 are chambered in 
 - Fauxtech Drum: 20 shells
 - M249 Pouch: (5.56mm): 200 rounds
 
+For the M249 pouch, a reloading tool is available. It is similar to the 7mm reloader. It needs an empty M249 magazine and 200 5.56 rounds.
+
 ## Using Attachments
 
 Attachments will either be found in backpacks or already equipped on weapons dropped by enemies or find in the level. An attachment must be compatible with the weapon to be able to attach it. To swap an attachment, simply use an attachment item. It will remove the attachment already occupying the slot, place it back in your inventory, and attach the item just used. 
 
 There is a keybind available in the options for opening an attachment manager.
-
-## Replacement Options
-
-There are three modes available for changing the way the weapons appear in the game.
-
-- *None*: Weapons from this mod won't spawn in the level. Players can only use the weapons if they create a loadout configuration to start with them.
-- *Mixed*: Weapons from this mod will sometimes replace their Hideous Destructor counter-part. Both weapons will appear.
-- *Replace*: All weapons from Hideous Destructor are replaced with an equivalent from this weapon pack, if available.
-
-The counter-parts are:
-
-- Pistol -> Glock
-- SMG -> MP5/MP5 M203
-- Shotgun/SSG -> Enemies drop shotgun or ssg, but map spawns are replaced with Fauxtech Origin.
-- ZM66 -> M4/M4 M203
-- Liberator -> M14
-- Chaingun -> M249
 
 ## Loadout Manager
 
@@ -168,12 +180,28 @@ Weapons are configured based on the follow syntax: `w## ba# bs# bm#`. The values
 Magazines for weapons correspond to their weapon number, except for the M203 weapon variants. 
 
 - `m01`: Glock magazine
+
+<p><img src="sprites/glock/bglockmag.png"></p>
+
 - `m02`: MP5 magazine
+
+<p><img src="sprites/mp5/mp5clip.png"></p>
+
 - `m03`: M4 magazine
+
+<p><img src="sprites/m4/m4clip.png"></p>
+
 - `m04`: M14 Magazine
+
+<p><img src="sprites/m14/bm14clip.png"></p>
+
 - `m05`: Fauxtech Origin Drum
+
+<p><img src="sprites/fostech/pfosmag.png"></p>
+
 - `m06`: M249 Pouch
-- `m07`: RPG Rocket
+
+<p><img src="sprites/mf240/bm249clip.png"></p>
 
 Note: The M4 and Fauxtech origin by default have no rear sight. You have to pick one yourself or you will only see the front sight image.
 
@@ -198,12 +226,32 @@ Note: The M4 and Fauxtech origin by default have no rear sight. You have to pick
 ### Sight IDs
 
 - `bs1`: M4 Rear ironsight
+
+<p><img src="sprites/accessory/fullsize/m4rearsight.png"></p>
+
 - `bs2`: M4 Carryhandle
+
+<p><img src="sprites/accessory/fullsize/m4carryhandle.png"></p>
+
 - `bs3`: Fauxtech Origin Diamond Sight
+
+<p><img src="sprites/accessory/fullsize/fostechrear.png"></p>
+
 - `bs4`: ACOG
+
+<p><img src="sprites/accessory/fullsize/acog.png"></p>
+
 - `bs5`: Red dot
+
+<p><img src="sprites/accessory/fullsize/reddot.png"></p>
+
 - `bs6`: Holo sight
+
+<p><img src="sprites/accessory/fullsize/holo.png"></p>
+
 - `bs7`: Reflex sight
+
+<p><img src="sprites/accessory/fullsize/rreflex.png"></p>
 
 ### Misc IDs
 
@@ -230,7 +278,3 @@ These are for adding attachments as loose items in your inventory if you plan to
 ### Misc Loadout IDs
 
 - `r04`: M249 pouch reloader
-
-## Sight Options
-
-If the full-size sprites are too obtrusive and distracting, there are smaller alternative images available. The options `Full` and `Minimal` are available to pick from.

@@ -11,11 +11,11 @@ class B556Mag : HDMagAmmo{
 		scale 0.8;
 	}
 
-	override string,string,name,double getmagsprite(int thismagamt){
+	override string,string,name,double getmagsprite(int thismagamt) {
 		return "M4RCA0", "M4RC", "B556Ammo", 1.7;
 	}
 
-	override void GetItemsThatUseThis(){
+	override void GetItemsThatUseThis() {
 	}
 
 	states{
@@ -29,6 +29,14 @@ class B556Mag : HDMagAmmo{
 				roll = randompick(0, 0, 0, 0, 2, 2, 2, 2, 1, 3) * 90;
 			}
 			stop;
+	}
+}
+
+class B556MagEmpty:IdleDummy{
+	override void postbeginplay(){
+		super.postbeginplay();
+		HDMagAmmo.SpawnMag(self,"B556Mag",0);
+		destroy();
 	}
 }
 
