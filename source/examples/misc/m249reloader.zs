@@ -18,10 +18,25 @@ class B_M249_Reloader : AutoReloadingThingy{
 		return 20*amount;
 	}
 	override string,double getpickupsprite(){return "BRLAA0",1.;}
+
+	ui int emptyCount(HDPlayerPawn hpl) {
+		HDMagAmmo mag = HDMagAmmo(hpl.FindInventory("Bm249Mag"));
+		if (!mag) {
+			return 0;
+		}
+		int cnt = 0;
+		for (int i = 0; i < mag.amount; i++) {
+			if (mag.mags[i] == 0) {
+				cnt++;
+			}
+		}
+		return cnt;
+	}
+
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl){
 		vector2 bob=hpl.hudbob*0.3;
 
-		int brass=hpl.countinv("B556Mag");
+		int brass = emptyCount(hpl);
 		int fourm=hpl.countinv("B556Ammo");
 
 		double lph=(brass && fourm>=4) ? 1. : 0.6;
@@ -34,7 +49,7 @@ class B_M249_Reloader : AutoReloadingThingy{
 			sb.DI_SCREEN_CENTER_BOTTOM|sb.DI_ITEM_CENTER|sb.DI_ITEM_RIGHT,
 			alpha:lph,scale:(2.5,2.5)
 		);
-		sb.drawimage("RCLSA3A7",(30,-64)+bob,
+		sb.drawimage("BB56A7A3",(30,-64)+bob,
 			sb.DI_SCREEN_CENTER_BOTTOM|sb.DI_ITEM_CENTER|sb.DI_ITEM_LEFT,
 			alpha:lph,scale:(1.9,4.7)
 		);
@@ -69,7 +84,7 @@ class B_M249_Reloader : AutoReloadingThingy{
 		TNT1 A 1 A_WeaponReady(WRF_ALLOWUSER3|WRF_ALLOWUSER4);
 		goto readyend;
 	fire:
-		TNT1 A 0 A_CheckChug();
+		TNT1 A 0 A_CheckItems(true);
 		goto ready;
 	hold:
 		TNT1 A 1;
@@ -86,14 +101,62 @@ class B_M249_Reloader : AutoReloadingThingy{
 		goto ready;
 	user4:
 	unload:
-		TNT1 A 1 A_CheckChug(pressinguse());
+		TNT1 A 1 A_CheckItems(pressinguse());
 		goto ready;
 	spawn:
 		BRLA A -1 nodelay A_JumpIf(
 			invoker.makinground
 			&&invoker.brass>0
-			&&invoker.powders>=3,
+			&&invoker.powders>=0,
 		"chug");
 		stop;
+	chug:
+		---- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 3{
+			invoker.A_Chug();
+		}
+		---- A 10{
+			let pouch = BM249Mag(Actor.Spawn("BM249Mag", invoker.pos));
+			pouch.vel + (
+				random(-5, 5),
+				random(-5, 5),
+				random(5, 10)
+			);
+			invoker.brass = 0;
+			invoker.powders = 0;
+		}
+		---- A 0 A_Jump(256,"spawn");
 	}
+
+
+	action void A_CheckItems(bool anyotherconditions){
+		HDMagAmmo mag = HDMagAmmo(invoker.FindInventory("Bm249Mag"));
+		if (!mag) {
+			return;
+		}
+
+		int deleteIndex = -1;
+		for (int i = 0; i < mag.amount; i++) {
+
+			if (mag.mags[i] == 0) {
+				deleteIndex = i;
+				break;
+			}
+		}
+
+		if (deleteIndex == -1) {
+			return;
+		}
+
+		if (invoker.CountInv("B556Ammo") >= 200) {
+			A_TakeInventory("B556Ammo", 200);
+			mag.mags.delete(deleteIndex);
+			invoker.makinground = true;
+			invoker.brass = 30;
+			invoker.powders = 30;
+			dropinventory(invoker);
+
+		}
+
+	}
+
 }

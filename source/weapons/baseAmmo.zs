@@ -23,10 +23,6 @@ class BRoundAmmo : HDRoundAmmo {
 			destroy();
 			return;
 		}
-		//scale.y = getdefaultbytype(getclass()).scale.y * max(1., amount*0.3);
-		//if(amount > 1) {
-		//	frame = 1;
-		//}
 	}
 
 	states(actor) {

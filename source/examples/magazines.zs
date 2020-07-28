@@ -65,6 +65,14 @@ class BM249Mag : HDMagAmmo {
 	}
 }
 
+class BM249MagEmpty:IdleDummy{
+	override void postbeginplay(){
+		super.postbeginplay();
+		HDMagAmmo.SpawnMag(self,"BM249Mag",0);
+		destroy();
+	}
+}
+
 class B9mm_MP5K_MAG : HDMagAmmo {
 	default{
 		hdmagammo.maxperunit 30;

@@ -37,6 +37,7 @@ DoomEdNums {
 	20009 = BRpgRocket
 
 	21000 = B_556_Box
+	21001 = BAmBox
 
 	30000 = B_M16_Silencer
 	30001 = B_M16_Extender
