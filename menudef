@@ -12,6 +12,11 @@ OptionValue "B_Althud_Options" {
 	2, "Minimal"
 }
 
+OptionValue "B_Attach_Spawn_Options" {
+	1, "None"
+	2, "Random"
+}
+
 AddOptionMenu "OptionsMenu" {
 	StaticText ""
 	Submenu "Bryan's Weapons Options", "B_Options"
@@ -35,6 +40,11 @@ OptionMenu "B_Options" {
 	statictext "Full:    Sights are drawn in full, taking up a good    "
 	statictext "         part the available screen space.              "
 	statictext "Minimal: Only the vital parts of sights are shown.     "
+	statictext ""
 
+	option "Attachment Spawn Mode", "b_attach_spawn_mode", "B_Attach_Spawn_Options"
+	statictext "None:    Weapons will not spawn with attachments,      "
+	statictext "         just their default sights.                    "
+	statictext "Random:  Weapons can spawn with random attachments.    "
 
 }

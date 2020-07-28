@@ -76,6 +76,12 @@ class PlayerEvents : EventHandler {
 			if (rollCheck())
 				e.Replacement = "BFauxDrum";
 		}
+		//
+		else if (e.Replacee is "HDAmBox") {
+			if (rollcheck()) {
+				e.Replacement = "BAmBox";
+			}
+		}
 	}
 
 	void replaceAll(ReplaceEvent e) {
@@ -122,6 +128,11 @@ class PlayerEvents : EventHandler {
 		}
 		else if (e.Replacee is "ShellBoxPickup") {
 			e.Replacement = "BFauxDrum";
+		}
+		else if (e.Replacee is "HDAmBox") {
+			if (rollcheck()) {
+				e.Replacement = "BAmBox";
+			}
 		}
 	}
 

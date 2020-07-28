@@ -370,13 +370,13 @@ class B_M4 : BaseStandardRifle {
 				}
 				else {
 					if (barrelClass && miscClass) {
-						return "M4PCE0", 1.;
+						return "M4PBE0", 1.;
 					}
 					else if (barrelClass) {
-						return "M4PCC0", 1.;
+						return "M4PBC0", 1.;
 					}
 					else if (miscClass) {
-						return "M4PCA0", 1.;
+						return "M4PBA0", 1.;
 					}
 					return "M4PAY0", 1.;
 				}	

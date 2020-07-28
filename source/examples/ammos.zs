@@ -234,6 +234,10 @@ class BAmBox : HDUPK {
 
 	static const string bullets[] = {
 		"B_556_Box",
+		"B_556_Box",
+		"B_762_Box",
+		"B_556_Box",
+		"B_556_Box",
 		"B_762_Box"
 	};
 
@@ -248,24 +252,12 @@ class BAmBox : HDUPK {
 			}
 			---- A 10;
 			---- A 0 {
-				// Choice, spawn magazines or bullets?
-				int rng_choice = random(0, 100);
-				int rng_count = random(3, 10);
-				if (rng_choice > 50) {
-					for (int i = 0; i < rng_count; i++) {
-						string clsname = magazines[random(0, 5)];
-						let mag = Actor.Spawn(clsname, invoker.pos);
-						mag.vel += (random(-2, 2), random(-2, 2), random(4, 8));
-					}
+				int rng_count = 5;
+				for (int i = 0; i < rng_count; i++) {
+					string clsname = bullets[random(0, 5)];
+					let mag = Actor.Spawn(clsname, invoker.pos);
+					mag.vel += (random(-2, 2), random(-2, 2), random(4, 8));
 				}
-				else {
-					for (int i = 0; i < rng_count; i++) {
-						string clsname = bullets[random(0, 1)];
-						let mag = Actor.Spawn(clsname, invoker.pos);
-						mag.vel += (random(-2, 2), random(-2, 2), random(4, 8));
-					}
-				}
-
 
 			}
 			stop;

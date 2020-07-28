@@ -17,6 +17,9 @@ class Glock_Random_Giver : BWeaponGiver {
 		return "B_Glock";
 	}
 	override String getConfigLine() {
+		if (b_attach_spawn_mode == 1) {
+			return "";
+		}
 		String config_args = "";
 		bool hasSilencer = (random(0, 100)) > 50;
 		if (hasSilencer) {
@@ -43,6 +46,10 @@ class Fauxtech_Random_Giver : BWeaponGiver {
 		return "B_FauxtechOrigin";
 	}
 	override String getConfigLine() {
+		if (b_attach_spawn_mode == 1) {
+			return "bs3";
+		}
+
 		bool hasSilencer = (random(0, 100)) > 50;
 		bool hasLight = (random(0, 100)) > 50;
 		let config_args = string.format("bs%i", sight_ids[random(0, 4)]);
@@ -83,6 +90,10 @@ class M4_Random_Giver : BWeaponGiver {
 	}
 
 	override String getConfigLine() {
+		if (b_attach_spawn_mode == 1) {
+			return string.format("bs%i", sight_ids[random(0, 1)]);
+		}
+
 		bool hasSilencer = (random(0, 100)) > 50;
 		bool hasLight = (random(0, 100)) > 50;
 		let config_args = string.format("bs%i", sight_ids[random(0, 5)]);
@@ -122,6 +133,9 @@ class M14_Random_Giver : BWeaponGiver {
 		return "B_M14";
 	}
 	override String getConfigLine() {
+		if (b_attach_spawn_mode == 1) {
+			return "";
+		}
 		bool hasSilencer = (random(0, 100)) > 50;
 		bool hasLight = (random(0, 100)) > 50;
 		int sight_id = sight_ids[random(0, 4)];
@@ -157,6 +171,9 @@ class M249_Random_Giver : BWeaponGiver {
 		return "B_M249";
 	}
 	override String getConfigLine() {
+		if (b_attach_spawn_mode == 1) {
+			return "";
+		}
 		bool hasSilencer = (random(0, 100)) > 50;
 		bool hasLight = (random(0, 100)) > 50;
 		int sight_id = sight_ids[random(0, 4)];
@@ -194,6 +211,9 @@ class MP5_Random_Giver : BWeaponGiver {
 		return "B_MP5";
 	}
 	override String getConfigLine() {
+		if (b_attach_spawn_mode == 1) {
+			return "";
+		}
 		bool hasSilencer = (random(0, 100)) > 50;
 		bool hasLight = (random(0, 100)) > 50;
 		int sight_id = sight_ids[random(0, 4)];
