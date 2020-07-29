@@ -27,6 +27,15 @@ DoomEdNums {
 	19005 = M249_Random_Giver
 	19006 = Rpg_Random_Giver
 
+	19100 = Glock_Random_Noammo_Noatta_Giver
+	19101 = mp5_noammo_noatta_giver
+	19102 = M4_noammo_atta_giver
+	19103 = m14_noammo_noatta_giver
+	19104 = Fauxtech_noammo_noatta_giver
+	19105 = B_M249_Reloader
+	19106 = BM249MagEmpty
+	19107 = M249_noammo_noatta_giver
+
 
 	20001 = B556Mag
 	20004 = B9mm_MP5K_Mag
@@ -38,6 +47,7 @@ DoomEdNums {
 
 	21000 = B_556_Box
 	21001 = BAmBox
+	21002 = B_762_Box
 
 	30000 = B_M16_Silencer
 	30001 = B_M16_Extender
@@ -52,6 +62,10 @@ DoomEdNums {
 	18011 = B_M4_CarrySight
 	18012 = B_Faux_Sight
 	18013 = B_Reflex_Red
+	18014 = B_Scope_10x
 
 	26000 = B_M249_reloader
+
+	29292 = Level1Warrior
+	29293 = Level1Target
 }

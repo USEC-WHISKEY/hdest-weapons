@@ -40,6 +40,12 @@ class Glock_Random_Noammo_Giver : Glock_Random_Giver {
 	override void SpawnMagazines() {}
 }
 
+class Glock_Random_Noammo_Noatta_Giver : Glock_Random_Noammo_Giver {
+	override string getConfigLine() {
+		return "";
+	}
+}
+
 class Fauxtech_Random_Giver : BWeaponGiver {
 	static const int sight_ids[] = { 3, 4, 5, 6, 7 };
 	override String getWeaponClass() {
@@ -75,6 +81,10 @@ class fauxtech_random_noammo_giver : Fauxtech_Random_Giver {
 	override void SpawnMagazines() {
 		
 	}
+}
+
+class Fauxtech_noammo_noatta_giver : fauxtech_random_noammo_giver {
+	override string getConfigLine() { return "bs3"; }	
 }
 
 class M4_Random_Giver : BWeaponGiver {
@@ -127,6 +137,12 @@ class M4_Random_Noammo_Giver : M4_Random_Giver {
 	override void SpawnMagazines() {}
 }
 
+class M4_noammo_atta_giver : M4_Random_Noammo_Giver {
+	override string getconfigline() { 
+		return (random(0, 100) >= 50) ? "bs2" : "bs1";
+	}
+}
+
 class M14_Random_Giver : BWeaponGiver {
 	static const int sight_ids[] = { 0, 4, 5, 6, 7 };
 	override String getWeaponClass() {
@@ -165,6 +181,10 @@ class M14_random_noammo_giver : M14_Random_Giver {
 	override void SpawnMagazines() {}
 }
 
+class m14_noammo_noatta_giver : M14_random_noammo_giver {
+	override string getConfigLine() { return ""; }
+}
+
 class M249_Random_Giver : BWeaponGiver {
 	static const int sight_ids[] = { 0, 4, 5, 6, 7 };
 	override String getWeaponClass() {
@@ -197,6 +217,16 @@ class M249_Random_Giver : BWeaponGiver {
 			Spawn("BM249Mag", randomPos);
 		}
 	}
+}
+
+class M249_random_noammo_giver : M249_Random_Giver {
+	override void SpawnMagazines() {}
+
+}
+
+class M249_noammo_noatta_giver : M249_Random_Giver {
+	override void SpawnMagazines() {}
+	override String getConfigLine() { return ""; }
 }
 
 
@@ -248,6 +278,12 @@ class MP5_Random_Giver : BWeaponGiver {
 
 class mp5_random_noammo_giver : mp5_random_giver {
 	override void SpawnMagazines() {}
+}
+
+class mp5_noammo_noatta_giver : mp5_random_noammo_giver {
+	override String getConfigLine() {
+		return "";
+	}
 }
 
 class RandomBryanPickup : HDInvRandomSpawner {

@@ -1134,10 +1134,10 @@ class BHDWeapon : HDWeapon {
 			}
 			
 			#### # 1 Bright {
-				//if (!(invoker.barrelClass is "BaseFlashAttachment") && !(invoker.barrelClass is "BaseSilencerAttachment")) {
+				if (!(invoker.barrelClass is "BaseFlashAttachment") && !(invoker.barrelClass is "BaseSilencerAttachment")) {
 					A_Light1();
 					HDFlashAlpha(-16);
-				//}
+				}
 
 				bool silenced = invoker.barrelClass is "BaseSilencerAttachment";
 				string sound = silenced ? invoker.bSFireSound : invoker.bFireSound;
@@ -1149,7 +1149,7 @@ class BHDWeapon : HDWeapon {
 				A_MuzzleClimb(
 					-frandom(0.1,0.1), -frandom(0,0.1),
 					-0.2,              -frandom(0.3,0.4),
-					-frandom(0.4,1.4), -frandom(1.3,2.6)
+					frandom(-1.4,1.4), -frandom(1.3,2.6)
 				);
 				//invoker.addHeat(random(3, 5));
 				invoker.unchamber();

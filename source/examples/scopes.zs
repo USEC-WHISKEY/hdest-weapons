@@ -29,22 +29,6 @@ class BaseAcog : BaseScopeAttachment {
 	}
 }
 
-class BaseAcogType2 : BaseAcog {
-	default {
-		BaseSightAttachment.FrontImage "rdot";
-		BaseScopeAttachment.SightImage "acog1";
-		BaseSightAttachment.BackImage "rdotcog";
-		BaseSightAttachment.FrontOffY 1;
-		BaseSightAttachment.BackOffY 0;
-	}
-}
-
-class BaseAcogType3 : BaseAcog {
-	default {
-
-	}
-}
-
 class BaseCompactDotSight : BaseSightAttachment {
 	default {
 		BaseAttachment.MountId "NATO_RAILS";
@@ -304,5 +288,28 @@ class B_Reflex_Red : BaseCompactDotSight {
 	}
 }
 
+class B_Scope_10x : BaseAcog {
+	default {
+		BaseAttachment.SerialId B_ACOG_RED_ID;
+		BaseAttachment.BaseSprite "SCOP";
+		BaseAttachment.BaseFrame 2;
+		HDPickup.RefID "s10";
+		Tag "10x scope";
+		Inventory.Icon "SCPPA0";
+		Inventory.PickupMessage "Picked up a 10x scope.";
+		BaseScopeAttachment.zoomFactor 2;
+		BaseScopeAttachment.SightImage "sight10z";
+		BaseScopeAttachment.ScopeImage "bscope1";
+	}
 
+	States {
+		Spawn:
+			SCPP A -1;
+			Stop;
+
+		OverlayImage:
+			SCOP C -1;
+			Stop;
+	}
+}
 

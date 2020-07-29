@@ -40,11 +40,15 @@ Programming: Me
 
 Weapon Sprites: [Clay](https://www.artstation.com/donor_clay)
 
-Sound Effects: [Duncoo Soo](https://www.duncansoo.com/)
+Sound Effects: [Duncan Soo](https://www.duncansoo.com/)
 
 Player Sprites: Ultra64
 
 Play testing: a1337spy, Shredder
+
+Textures used in hub map taken from Kingpin texture pack on Realm667
+
+https://realm667.com/
 
 ## Permissions
 
@@ -215,7 +219,6 @@ Note: The M4 and Fauxtech origin by default have no rear sight. You have to pick
 - `w06`: M249
 - `w07`: M4 M203
 - `w08`: MP5 M203
-- `w09`: RPG Launcher
 
 ### Muzzle IDs
 
@@ -253,6 +256,8 @@ Note: The M4 and Fauxtech origin by default have no rear sight. You have to pick
 
 <p><img src="sprites/accessory/fullsize/rreflex.png"></p>
 
+- `bs8`: 10x Scope
+
 ### Misc IDs
 
 - `bm1`: Flashlight attachment
@@ -268,6 +273,7 @@ These are for adding attachments as loose items in your inventory if you plan to
 - `rdt`: Red-dot Sight
 - `hrd`: Holo sight
 - `rfr`: Reflex sight
+- `s10`: 10x Sight
 
 - `sl5`: 5.56 silencer
 - `sl7`: 7.62 silencer

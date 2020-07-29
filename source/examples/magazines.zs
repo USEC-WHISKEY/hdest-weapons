@@ -12,7 +12,7 @@ class B556Mag : HDMagAmmo{
 	}
 
 	override string,string,name,double getmagsprite(int thismagamt) {
-		return "M4RCA0", "M4RC", "B556Ammo", 1.7;
+		return "M4RCA0", "BB56A7A3", "B556Ammo", 1.7;
 	}
 
 	override void GetItemsThatUseThis() {
@@ -53,7 +53,7 @@ class BM249Mag : HDMagAmmo {
 	}
 
 	override string,string,name,double getmagsprite(int thismagamt){
-		return "M24CA0", "M24C", "B556Ammo", 1.7;
+		return "M24CA0", "BB56A7A3", "B556Ammo", 1.7;
 	}
 
 	override void GetItemsThatUseThis(){
@@ -94,7 +94,7 @@ class B9mm_MP5K_MAG : HDMagAmmo {
 	}
 
 	override string,string,name,double getmagsprite(int thismagamt){
-		return "MP5CA0", "MP5C", "HDPistolAmmo", 1.7;
+		return "MP5CA0", "PBRSA0", "HDPistolAmmo", 1.7;
 	}
 
 	override void GetItemsThatUseThis(){
@@ -127,7 +127,7 @@ class BFauxDrum : HDMagAmmo {
 	}
 
 	override string,string,name,double getmagsprite(int thismagamt){
-		return "FOSCA0", "FOSC", "HDShellAmmo", 1.7;
+		return "FOSCA0", "SHL1A0", "HDShellAmmo", 1.7;
 	}
 
 	override void GetItemsThatUseThis(){
@@ -162,7 +162,7 @@ class b762_m14_mag : HDMagAmmo {
 	}
 
 	override string,string,name,double getmagsprite(int thismagamt){
-		return "M14CA0", "M14C", "SevenMilAmmo", 1.7;
+		return "M14CA0", "BF76A7A3", "SevenMilAmmo", 1.7;
 	}
 
 	override void GetItemsThatUseThis(){
@@ -195,7 +195,7 @@ class GlockMagazine : HDMagAmmo {
 	}
 
 	override string,string,name,double getmagsprite(int thismagamt){
-		return "GLKCA0", "GLKC", "HDPistolAmmo", 1.7;
+		return "GLKCA0", "PBRSA0", "HDPistolAmmo", 1.7;
 	}
 
 	override void GetItemsThatUseThis(){
