@@ -74,6 +74,43 @@ class BasePistol : BaseStandardRifle {
 				return ResolveState("Chamber");
 			}
 
+
+		UnloadChamber:
+			#### A 1 Offset(-3, 34);
+			#### A 1 Offset(-9, 39);
+			#### A 3 Offset(-19, 44) ;//A_MuzzleClimb(frandom(-.4, .4), frandom(-.4, .4));
+			#### B 2 Offset(-16, 42) {
+				//A_MuzzleClimb(frandom(-.4, .4), frandom(-.4, .4));
+				if (invoker.chambered() && !invoker.brokenChamber()) {
+					A_StartSound(invoker.BboltBackwardSound, CHAN_WEAPON, CHANF_OVERLAP);
+					A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
+					invoker.WeaponStatus[I_FLAGS] &= ~F_CHAMBER;
+					//A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
+				}
+				else if (!random(0, 4)) {
+					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER_BROKE;
+					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER;
+					//A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
+					for (int i = 0; i < 3; i++) {
+						A_SpawnItemEx("TinyWallChunk", 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
+					}
+					if (!random(0, 5)) {
+						A_SpawnItemEx("HDSmokeChunk", 12, 0, height - 12, 4, frandom(-2, 2), frandom(2, 4));
+					}
+				}
+				else if (invoker.brokenChamber()) {
+					A_StartSound("weapons/smack", CHAN_WEAPON, CHANF_OVERLAP);
+				}
+				return ResolveState("ReloadEnd");
+			}
+
+
+
+
+
+
+
+
 		UnloadMag:
 			#### A 1 Offset(0, 33);
 			#### A 1 Offset(0, 34);
@@ -87,7 +124,8 @@ class BasePistol : BaseStandardRifle {
 				}
 				//A_SetPitch(pitch - 0.3, SPF_INTERPOLATE);
 				//A_SetAngle(angle - 0.3, SPF_INTERPOLATE);
-				A_StartSound(invoker.bClickSound, CHAN_WEAPON);
+				//A_StartSound(invoker.bClickSound, CHAN_WEAPON);
+				A_StartSound(invoker.bUnloadSound, CHAN_WEAPON);
 				return ResolveState(NULL);
 			}
 			#### A 4 Offset(0, 40) {
@@ -96,7 +134,7 @@ class BasePistol : BaseStandardRifle {
 				
 			}
 			#### A 20 offset(0, 44) {
-				A_StartSound(invoker.bUnloadSound, CHAN_WEAPON);
+				
 				int inMag = invoker.magazineGetAmmo();
 				if (inMag > (invoker.bMagazineCapacity + 1)) {
 					inMag %= invoker.bMagazineCapacity;
@@ -126,14 +164,51 @@ class BasePistol : BaseStandardRifle {
 				return ResolveState(NULL);
 			}
 			#### A 8 Offset(0, 45);
+			#### A 2 Offset(0, 44);
+			#### A 2 Offset(0, 43);
+			#### A 8 Offset(0, 35) A_StartSound(invoker.bLoadSound, CHAN_WEAPON);
+			#### A 2 Offset(0, 43);
 			#### A 1 Offset(0, 44) {
 				let magRef = HDMagAmmo(FindInventory(invoker.bMagazineClass));
 				if (magRef) {
 					invoker.weaponStatus[I_MAG] = magRef.TakeMag(true);
-					A_StartSound(invoker.bLoadSound, CHAN_WEAPON);
 				}
 				return ResolveState("ReloadEnd");
 			}
+
+		Chamber_Manual:
+			#### C 0 { 
+				if (invoker.chambered() || invoker.magazineGetAmmo() <= -1) {
+					return ResolveState("Nope");
+				}
+				return ResolveState(NULL);
+			}
+			#### C 3 Offset(-1, 36) A_WeaponBusy();
+			#### D 3 Offset(-1, 40) {
+				int ammo = invoker.magazineGetAmmo();
+				if (!invoker.chambered() && ammo % 999 > 0) {
+					if (ammo > invoker.bMagazineCapacity) {
+						invoker.weaponStatus[I_MAG] = invoker.bMagazineCapacity - 1;
+					}
+					else {
+						invoker.magazineAddAmmo(-1);
+					}
+					invoker.setChamber();
+					return ResolveState(NULL);
+				}
+				//console.printf("noping");
+				return ResolveState("Nope");
+			}
+			#### E 3 offset(-1, 46) {
+				A_Overlay(invoker.bLayerGun, "LayerGunBolt");
+			}
+			#### D 3 offset(0, 36) {
+				A_StartSound(invoker.bBoltForwardSound, CHAN_WEAPON, CHANF_OVERLAP);
+			}
+			#### A 0 offset(0, 34) {
+				return ResolveState("Nope");
+			}
+
 
 		ReloadEnd:
 			#### A 2 Offset(0, 39);

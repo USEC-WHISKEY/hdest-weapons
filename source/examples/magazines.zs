@@ -152,7 +152,7 @@ class BFauxDrum : HDMagAmmo {
 class b762_m14_mag : HDMagAmmo {
 	default {
 		HDMagAmmo.MaxPerUnit 20;
-		HDMagAmmo.RoundType "SevenMilAmmo";
+		HDMagAmmo.RoundType "B762x51Ammo";
 		HDMagAmmo.RoundBulk ENC_776_LOADED;
 		HDMagAmmo.MagBulk ENC_776MAG_EMPTY;
 		tag "7.62x51mm NATO magazine";
@@ -162,7 +162,7 @@ class b762_m14_mag : HDMagAmmo {
 	}
 
 	override string,string,name,double getmagsprite(int thismagamt){
-		return "M14CA0", "BF76A7A3", "SevenMilAmmo", 1.7;
+		return "M14CA0", "BF76A3A7", "B762x51Ammo", 1.7;
 	}
 
 	override void GetItemsThatUseThis(){

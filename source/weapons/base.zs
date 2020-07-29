@@ -1209,7 +1209,7 @@ class BHDWeapon : HDWeapon {
 				}
 				else {
 					invoker.weaponStatus[I_MAG] = min(invoker.magazineGetAmmo(), 0);
-					A_StartSound(invoker.bChamberSound, CHAN_WEAPON, CHANF_OVERLAP);
+					//A_StartSound(invoker.bChamberSound, CHAN_WEAPON, CHANF_OVERLAP);
 				}
 
 				//if (BrokenRound()) {
@@ -1251,7 +1251,7 @@ class BHDWeapon : HDWeapon {
 						invoker.magazineAddAmmo(-1);
 					}
 
-					A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);
+					//A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);
 					invoker.setChamber();
 					//BrokenRound();
 					return ResolveState(NULL);
@@ -1263,7 +1263,7 @@ class BHDWeapon : HDWeapon {
 				A_Overlay(invoker.bLayerGun, "LayerGunBolt");
 			}
 			#### D 3 offset(0, 36) {
-				A_StartSound(invoker.bBoltForwardSound, CHAN_WEAPON);
+				//A_StartSound(invoker.bBoltForwardSound, CHAN_WEAPON);
 			}
 			#### A 0 offset(0, 34) {
 				return ResolveState("Nope");
@@ -1336,14 +1336,15 @@ class BHDWeapon : HDWeapon {
 				}
 				//A_SetPitch(pitch - 0.3, SPF_INTERPOLATE);
 				//A_SetAngle(angle - 0.3, SPF_INTERPOLATE);
-				A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
+				//A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
+				A_StartSound(invoker.bUnloadSound, CHAN_WEAPON, CHANF_OVERLAP);
 				return ResolveState(NULL);
 			}
 			#### A 4 Offset(-12, 40) {
 				//A_SetPitch(pitch - 0.3, SPF_INTERPOLATE);
 				//A_SetAngle(angle - 0.3, SPF_INTERPOLATE);
 			}
-			#### A 20 offset(-14, 44) {
+			#### A 120 offset(-14, 44) {
 
 				int inMag = invoker.magazineGetAmmo();
 				if (inMag > (invoker.bMagazineCapacity + 1)) {
@@ -1369,26 +1370,13 @@ class BHDWeapon : HDWeapon {
 			#### B 2 Offset(-16, 42) {
 				//A_MuzzleClimb(frandom(-.4, .4), frandom(-.4, .4));
 				if (invoker.chambered() && !invoker.brokenChamber()) {
-					
-					
-				if (!PressingUnload()) {
-					//HDMagAmmo.SpawnMag(self, invoker.bMagazineClass, inMag);
 					A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
-					A_SetTics(1);
-				}
-				else {
-					//HDMagAmmo.GiveMag(self, invoker.bMagazineClass, inMag);
-					A_StartSound("weapons/pocket", CHAN_WEAPON, CHANF_OVERLAP);
-				}
-
-
 					invoker.WeaponStatus[I_FLAGS] &= ~F_CHAMBER;
-					//A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
 				}
 				else if (!random(0, 4)) {
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER_BROKE;
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER;
-					A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
+					//A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
 					for (int i = 0; i < 3; i++) {
 						A_SpawnItemEx("TinyWallChunk", 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
 					}
@@ -1403,13 +1391,14 @@ class BHDWeapon : HDWeapon {
 			}
 
 		MagOut:
-			#### A 0 {
-				A_StartSound(invoker.bUnloadSound, CHAN_WEAPON, CHANF_OVERLAP);
+			#### A 4;
+			#### A 8 {
 				if (invoker.weaponStatus[I_FLAGS] & F_UNLOAD_ONLY || !CountInv(invoker.bMagazineClass)) {
 					return ResolveState("ReloadEnd");
 				}
 				return ResolveState("LoadMag");
 			}
+			
 
 		LoadMag:
 			#### A 12 {
@@ -1417,18 +1406,22 @@ class BHDWeapon : HDWeapon {
 				if (!magRef) {
 					return ResolveState("ReloadEnd");
 				}
-
 				A_StartSound("weapons/pocket", CHAN_WEAPON, CHANF_OVERLAP);
 				A_SetTics(10);
 				return ResolveState(NULL);
 			}
-			#### A 8 Offset(-15, 45) A_StartSound(invoker.bLoadSound, CHAN_WEAPON, CHANF_OVERLAP);
+			#### A 8 Offset(-15, 45);
+			#### A 1 Offset(-15, 46);
+			#### A 1 Offset(-15, 47) A_StartSound(invoker.bLoadSound, CHAN_WEAPON, CHANF_OVERLAP);
+			#### A 10 Offset(-15, 42);
+			#### A 1 Offset(-14, 47);
+			#### A 1 Offset(-14, 45);
 			#### A 1 Offset(-14, 44) {
-				A_StartSound(invoker.bLoadSound, CHAN_WEAPON, CHANF_OVERLAP);
+				//A_StartSound(invoker.bLoadSound, CHAN_WEAPON, CHANF_OVERLAP);
 				let magRef = HDMagAmmo(FindInventory(invoker.bMagazineClass));
 				if (magRef) {
 					invoker.weaponStatus[I_MAG] = magRef.TakeMag(true);
-					A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
+					//A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
 				}
 				return ResolveState("ReloadEnd");
 			}

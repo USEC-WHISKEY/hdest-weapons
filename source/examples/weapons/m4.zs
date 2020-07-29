@@ -308,7 +308,7 @@ class B_M4 : BaseStandardRifle {
 			Goto LayerGun;
 
 		LayerGunBolt:
-			M4RG E 3;
+			M4RG E 3 A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);
 			Goto LayerGun;
 
 		LayerReloadHands:
@@ -331,13 +331,13 @@ class B_M4 : BaseStandardRifle {
 			TNT1 A 0 {
 				A_Overlay(invoker.bLayerGun, "GunPullBolt");
 			}
-			M4RH C 2 A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);
-			M4RH B 2 A_StartSound(invoker.bBoltForwardSound, CHAN_WEAPON);
-			M4RH A 2;
+			M4RH C 3; //A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);
+			M4RH B 3; //A_StartSound(invoker.bBoltForwardSound, CHAN_WEAPON);
+			M4RH A 3;
 			Stop;
 
 		GunPullBolt:
-			M4RG E 3;
+			M4RG E 3 A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);
 			Goto LayerGun;
 	}
 

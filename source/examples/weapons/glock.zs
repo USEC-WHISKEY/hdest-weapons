@@ -37,8 +37,8 @@ class b_Glock : BasePistol {
 		BHDWeapon.BFireSound         "weapons/glock/fire";
 		BHDWeapon.BSFireSound        "weapons/glock/silentfire";
 		BHDWeapon.BChamberSound      "weapons/glock/chamber";
-		BHDWeapon.BBoltForwardSound  "weapons/glock/boltback";
-		BHDWeapon.BBoltBackwardSound "weapons/glock/boltforward";
+		BHDWeapon.BBoltBackwardSound  "weapons/glock/boltback";
+		BHDWeapon.BBoltForwardSound "weapons/glock/boltforward";
 		BHDWeapon.BClickSound        "weapons/glock/click";
 		BHDWeapon.BLoadSound         "weapons/glock/clipinsert";
 		BHDWeapon.BUnloadSound       "weapons/glock/clipeject";
