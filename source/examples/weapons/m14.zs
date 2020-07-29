@@ -470,3 +470,12 @@ class M14ReflexRedOffset : ScopeOffset {
 		Offset.OffX -1;
 	}
 }
+
+class M14ScopeOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "B_M14";
+		Offset.WeaponOverlay "B_Scope_10x";
+		Offset.OffY -7;
+		Offset.OffX -2;
+	}
+}

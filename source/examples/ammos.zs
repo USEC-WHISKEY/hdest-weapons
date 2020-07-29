@@ -25,7 +25,7 @@ class B556Brass : BRoundShell {
 	}
 	states {
 		spawn:
-			BB56 A -1;
+			BF56 A -1;
 			Stop;
 	}	
 }

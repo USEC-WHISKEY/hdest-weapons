@@ -29,6 +29,12 @@ class BaseAcog : BaseScopeAttachment {
 	}
 }
 
+class Base10xScope : BaseAcog {
+	default {
+
+	}
+}
+
 class BaseCompactDotSight : BaseSightAttachment {
 	default {
 		BaseAttachment.MountId "NATO_RAILS";
@@ -290,7 +296,7 @@ class B_Reflex_Red : BaseCompactDotSight {
 
 class B_Scope_10x : BaseAcog {
 	default {
-		BaseAttachment.SerialId B_ACOG_RED_ID;
+		BaseAttachment.SerialId B_SCOPE_10X_ID;
 		BaseAttachment.BaseSprite "SCOP";
 		BaseAttachment.BaseFrame 2;
 		HDPickup.RefID "s10";
@@ -300,6 +306,27 @@ class B_Scope_10x : BaseAcog {
 		BaseScopeAttachment.zoomFactor 2;
 		BaseScopeAttachment.SightImage "sight10z";
 		BaseScopeAttachment.ScopeImage "bscope1";
+
+
+		BaseScopeAttachment.ScopeBackY -9;
+		BaseScopeAttachment.ScopeBackX -3;
+
+		BaseScopeAttachment.XClipCam         -46;
+		BaseScopeAttachment.YClipCam         -49;
+		BaseScopeAttachment.ScaledWidth      95;
+
+		BaseScopeAttachment.XPosCam          0;
+		BaseScopeAttachment.YPosCam          1;
+
+		BaseScopeAttachment.ScopeScaleX      1.6;
+		BaseScopeAttachment.ScopeScaleY      1.6;
+
+		BaseScopeAttachment.ScopeHoleX       0;
+		BaseScopeAttachment.ScopeHoleY       0;		
+
+		BaseScopeAttachment.XScaleCam        0.55;
+		BaseScopeAttachment.YScaleCam        0.55;
+
 	}
 
 	States {

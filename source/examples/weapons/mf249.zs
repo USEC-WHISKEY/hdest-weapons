@@ -750,3 +750,12 @@ class M249FullOffset : ScopeOffset {
 		Offset.OffY -10;
 	}
 }
+
+class M24910xScopeOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "B_M249";
+		Offset.WeaponOverlay "B_Scope_10x";
+		Offset.OffY -21;
+		Offset.OffX -1;
+	}
+}

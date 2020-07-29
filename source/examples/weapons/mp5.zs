@@ -494,7 +494,14 @@ class Mp5ReflexRedOffset : ScopeOffset {
 	}
 }
 
-
+class Mp510xScopeOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "B_MP5";
+		Offset.WeaponOverlay "B_Scope_10x";
+		Offset.OffY -2;
+		Offset.OffX -1;
+	}
+}
 
 
 
@@ -1091,7 +1098,14 @@ class B_MP5_M203 : BaseGLRifle {
 
 }
 
-
+class Mp5M20310xScopeOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "B_MP5_M203";
+		Offset.WeaponOverlay "B_Scope_10x";
+		Offset.OffY -2;
+		Offset.OffX -1;
+	}
+}
 
 class Mp5M203FlashLightOffset : MiscOffset {
 	default {
