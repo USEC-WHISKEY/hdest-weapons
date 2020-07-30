@@ -35,7 +35,7 @@ weapons/m14/firefar    		"sounds/m14/firefar.wav"
 weapons/m15/click           "sounds/m14/click.wav"
 
 weapons/fauxtech/fire       	"sounds/fauxtech/fire.wav"
-weapons/fauxtech/silentfir      "sounds/fauxtech/silentfire.wav"
+weapons/fauxtech/silentfire     "sounds/fauxtech/silentfire.wav"
 weapons/fauxtech/boltback   	"sounds/fauxtech/boltback.wav"
 weapons/fauxtech/boltforward	"sounds/fauxtech/boltforward.wav"
 weapons/fauxtech/drumeject 		"sounds/fauxtech/drumeject.wav"

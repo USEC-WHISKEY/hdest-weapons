@@ -55,6 +55,7 @@ DoomEdNums {
 	30001 = B_M16_Extender
 	30002 = GlockSilencer
 	30003 = B_M14_Silencer
+	30004 = FosSilencer
 
 	18001 = B_ACOG_Red
 	18003 = B_M16_Flashlight

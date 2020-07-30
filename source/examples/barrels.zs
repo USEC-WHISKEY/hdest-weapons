@@ -96,3 +96,28 @@ class GlockSilencer : BaseSilencerAttachment {
 
 	}
 }
+
+class FosSilencer : BaseSilencerAttachment {
+	default {
+		BaseBarrelAttachment.Length 2;
+		BaseAttachment.MountId "FOSTECH";
+		BaseAttachment.SerialId B_FOS_SILENCER_ID;
+		BaseAttachment.BaseSprite "GLSL";
+		BaseAttachment.BaseFrame 0;
+		HDPickup.Bulk 1;
+		HDPickup.RefId "sl9";
+		Tag " Fauxtech Origin 12 silencer";
+		Inventory.Icon "FFSLC0";
+		Inventory.PickupMessage "Picked up a Fauxtech Origin 12 silencer.";
+	}
+
+	States {
+		Spawn:
+			UIOZ A -1;
+			Stop;
+		OverlayImage:
+			GLSL A -1;
+			Stop;
+
+	}
+}

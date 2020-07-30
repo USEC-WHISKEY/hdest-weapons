@@ -37,7 +37,7 @@ class b_FauxtechOrigin : BaseShotgun {
 		BHDWeapon.BFireSound         "weapons/fauxtech/fire";
 		BHDWeapon.BSFireSound        "weapons/fauxtech/silentfire";
 		BHDWeapon.BChamberSound      "weapons/fauxtech/chamber";
-		BHDWeapon.BBoltForwardSound  "weapons/fauxtech/boltback";
+		BHDWeapon.BBoltForwardSound  "weapons/m4/boltforward";
 		BHDWeapon.BBoltBackwardSound "weapons/m4/boltback";
 		BHDWeapon.BClickSound        "weapons/m4/click";
 		BHDWeapon.BLoadSound         "weapons/m4/clipinsert";
@@ -52,7 +52,7 @@ class b_FauxtechOrigin : BaseShotgun {
 		BHDWeapon.BFrontOffsetY      46;
 		BHDWeapon.BSilentOffsetX     0;
 		BHDWeapon.BSilentOffsetY     0;
-		//BHDWeapon.bBarrelMount       "556_NATO_BARREL";
+		BHDWeapon.bBarrelMount       "FOSTECH";
 		BHDWeapon.bScopeMount        "NATO_RAILS";
 		BHDWeapon.bMiscMount         "NATO_RAILS";
 		BHDWeapon.EjectShellClass    "HDSpentShell";
@@ -286,7 +286,8 @@ class b_FauxtechOrigin : BaseShotgun {
 			Goto LayerGun;
 
 		LayerGunBolt:
-			FOSG E 3;
+			FOSG E 3 A_StartSound(invoker.BBoltBackwardSound, CHAN_WEAPON);
+			FOSG E 0 A_StartSound(invoker.BBoltForwardSound, CHAN_WEAPON);
 			Goto LayerGun;
 
 		LayerReloadHands:

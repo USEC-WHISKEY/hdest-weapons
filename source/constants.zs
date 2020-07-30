@@ -81,3 +81,4 @@ const B_556_SILENCER_ID   = 1;
 const B_556_FLASH_ID      = 2;
 const B_9MM_SILENCER_ID   = 3;
 const B_762_SILENCER_ID   = 4;
+const B_FOS_SILENCER_ID   = 5;
