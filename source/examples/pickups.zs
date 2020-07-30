@@ -60,7 +60,7 @@ class Fauxtech_Random_Giver : BWeaponGiver {
 		bool hasLight = (random(0, 100)) > 50;
 		let config_args = string.format("bs%i", sight_ids[random(0, 4)]);
 		if (hasSilencer) {
-			config_args = string.format("%s ba1", B_FOS_SILENCER_ID);
+			config_args = string.format("%s ba1", config_args);
 		}
 		if (hasLight) {
 			config_args = string.format("%s bm1", config_args);

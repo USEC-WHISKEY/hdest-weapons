@@ -14,7 +14,7 @@ map maphub "Bryan's Hub" {
 	nointermission
 	noautosavehint
 	allowrespawn
-	next="map01"
+	next = "map01"
 	pixelratio = 1.0
 }
 

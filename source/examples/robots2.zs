@@ -397,7 +397,7 @@ class TDERPUsable:HDWeapon{
 
 		vector2 bob=hpl.hudbob*0.2;
 		bob.y+=ofs;
-		sb.drawimage("DERPA8A2",(0,22)+bob,
+		sb.drawimage("TDRPA8A2",(0,22)+bob,
 			sb.DI_SCREEN_CENTER|sb.DI_ITEM_CENTER|sb.DI_TRANSLATABLE,
 			alpha:!!pmags?1.:0.6,scale:(2,2)
 		);

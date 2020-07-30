@@ -103,10 +103,10 @@ class FosSilencer : BaseSilencerAttachment {
 		BaseAttachment.MountId "FOSTECH";
 		BaseAttachment.SerialId B_FOS_SILENCER_ID;
 		BaseAttachment.BaseSprite "GLSL";
-		BaseAttachment.BaseFrame 0;
+		BaseAttachment.BaseFrame 2;
 		HDPickup.Bulk 1;
 		HDPickup.RefId "sl9";
-		Tag " Fauxtech Origin 12 silencer";
+		Tag "Fauxtech Origin 12 silencer";
 		Inventory.Icon "FFSLC0";
 		Inventory.PickupMessage "Picked up a Fauxtech Origin 12 silencer.";
 	}
@@ -116,7 +116,7 @@ class FosSilencer : BaseSilencerAttachment {
 			UIOZ A -1;
 			Stop;
 		OverlayImage:
-			GLSL A -1;
+			GLSL C -1;
 			Stop;
 
 	}

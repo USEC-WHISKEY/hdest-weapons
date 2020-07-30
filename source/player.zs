@@ -212,6 +212,19 @@ class PlayerEvents : EventHandler {
 		alreadyReplaced = true;
 	}
 
+	override void WorldThingSpawned(WorldEvent e) {
+		if (e.thing is "HDRocketAmmo") {
+			HDRocketAmmo rkt = HDRocketAmmo(e.thing);
+			rkt.itemsthatusethis.push("B_M4_M203");
+			rkt.itemsthatusethis.push("B_MP5_M203");
+		}
+		else if (e.thing is "HDBattery") {
+			HDBattery bat = HDBattery(e.thing);
+			bat.itemsthatusethis.push("THERPUsable");
+			bat.itemsthatusethis.push("TDERPUsable");
+		}
+	}
+
 	override void CheckReplacement(ReplaceEvent e) {
 		if (B_Replace_Type == 2) {
 			replaceHalf(e);
