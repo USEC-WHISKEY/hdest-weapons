@@ -26,7 +26,7 @@ class TDERPBot:HDUPK{
 		hdupk.pickupsound "derp/crawl";
 		hdupk.pickupmessage ""; //let the pickup do this
 		obituary "%o went derp.";
-		tag "T.D.E.R.P. robot";
+		tag "F.H. robot";
 	}
 	override bool cancollidewith(actor other,bool passive){return other.bmissile||HDPickerUpper(other)||TDERPBot(other);}
 	bool DerpTargetCheck(bool face=false){
@@ -53,7 +53,7 @@ class TDERPBot:HDUPK{
 		return(dlt.hitactor==target);
 	}
 	void DerpAlert(string msg="Derpy derp!"){
-		if(master)master.A_Log(string.format("\cd[DERP]  %s",msg),true);
+		if(master)master.A_Log(string.format("\cd[FH]  %s",msg),true);
 	}
 	void DerpShot(){
 		A_StartSound("weapons/mp5/fire",CHAN_AUTO, CHANF_OVERLAP);
@@ -203,14 +203,14 @@ class TDERPBot:HDUPK{
 	}
 	states{
 	stuck:
-		DERP A 1 A_DerpStuck();
+		TDRP A 1 A_DerpStuck();
 		wait;
 	unstuck:
-		DERP A 2 A_JumpIf(!stuckline,"unstucknow");
-		DERP A 4 A_StartSound("derp/crawl",16);
+		TDRP A 2 A_JumpIf(!stuckline,"unstucknow");
+		TDRP A 4 A_StartSound("derp/crawl",16);
 	unstucknow:
-		DERP A 2 A_StartSound("misc/fragknock",15);
-		DERP A 10{
+		TDRP A 2 A_StartSound("misc/fragknock",15);
+		TDRP A 10{
 			if(stuckline){
 				bool exiting=
 					stuckline.special==Exit_Normal
@@ -232,7 +232,7 @@ class TDERPBot:HDUPK{
 			A_StartSound("weapons/bigcrack",14);
 		}goto spawn2;
 	give:
-		DERP A 0{
+		TDRP A 0{
 			stuckline=null;bnogravity=false;
 			oldcmd=cmd;
 			if(cmd!=DERP_AMBUSH){
@@ -253,33 +253,33 @@ class TDERPBot:HDUPK{
 			return;
 		}goto spawn;
 	spawn:
-		DERP A 0 nodelay A_JumpIf(!!stuckline,"stuck");
+		TDRP A 0 nodelay A_JumpIf(!!stuckline,"stuck");
 	spawn2:
-		DERP A 0 A_ClearTarget();
-		DERP A 0 A_DerpLook();
-		DERP A 3 A_DerpCrawl();
+		TDRP A 0 A_ClearTarget();
+		TDRP A 0 A_DerpLook();
+		TDRP A 3 A_DerpCrawl();
 		loop;
 	see:
-		DERP A 0 A_ClearTarget();
-		DERP A 0 A_JumpIf(ammo<1&&movestamina<1&&goalangle==-999,"noammo");
+		TDRP A 0 A_ClearTarget();
+		TDRP A 0 A_JumpIf(ammo<1&&movestamina<1&&goalangle==-999,"noammo");
 	see2:
-		DERP A 2 A_DerpCrawl();
-		DERP A 0 A_DerpLook(LOF_NOJUMP);
-		DERP A 2 A_DerpCrawl();
-		DERP A 0 A_DerpLook(LOF_NOJUMP);
-		DERP A 2 A_DerpCrawl();
-		DERP A 0 A_DerpLook(LOF_NOJUMP);
-		DERP A 2 A_DerpCrawl();
-		DERP A 0 A_DerpLook(LOF_NOJUMP);
+		TDRP A 2 A_DerpCrawl();
+		TDRP A 0 A_DerpLook(LOF_NOJUMP);
+		TDRP A 2 A_DerpCrawl();
+		TDRP A 0 A_DerpLook(LOF_NOJUMP);
+		TDRP A 2 A_DerpCrawl();
+		TDRP A 0 A_DerpLook(LOF_NOJUMP);
+		TDRP A 2 A_DerpCrawl();
+		TDRP A 0 A_DerpLook(LOF_NOJUMP);
 		---- A 0 setstatelabel("see");
 	turn:
-		DERP A 1 A_DerpTurn();
+		TDRP A 1 A_DerpTurn();
 		wait;
 	noshot:
-		DERP AAAAAAAA 2 A_DerpCrawl();
+		TDRP AAAAAAAA 2 A_DerpCrawl();
 		---- A 0 setstatelabel("see2");
 	pain:
-		DERP A 20{
+		TDRP A 20{
 			A_StartSound("derp/crawl",CHAN_BODY);
 			angle+=randompick(1,-1)*random(2,8)*10;
 			pitch-=random(10,20);
@@ -287,52 +287,52 @@ class TDERPBot:HDUPK{
 		}
 	missile:
 	ready:
-		DERP A 0 A_StartSound("derp/crawl",CHAN_BODY,volume:0.6);
-		DERP AAA 1 A_FaceTarget(20,20,0,0,FAF_TOP,-4);
-		DERP A 0 A_JumpIf(cmd==DERP_AMBUSH,"spawn");
-		DERP A 0 A_JumpIfTargetInLOS(1,1);
+		TDRP A 0 A_StartSound("derp/crawl",CHAN_BODY,volume:0.6);
+		TDRP AAA 1 A_FaceTarget(20,20,0,0,FAF_TOP,-4);
+		TDRP A 0 A_JumpIf(cmd==DERP_AMBUSH,"spawn");
+		TDRP A 0 A_JumpIfTargetInLOS(1,1);
 		loop;
 	aim:
-		DERP A 2 A_JumpIf(!DerpTargetCheck(),"noshot");
-		DERP A 0 DerpAlert("\cjEngaging hostile.");
+		TDRP A 2 A_JumpIf(!DerpTargetCheck(),"noshot");
+		TDRP A 0 DerpAlert("\cjEngaging target.");
 	fire:
-		DERP A 0 A_JumpIfHealthLower(1,"dead");
-		DERP A 0 A_JumpIf(ammo>0,"noreallyfire");
+		TDRP A 0 A_JumpIfHealthLower(1,"dead");
+		TDRP A 0 A_JumpIf(ammo>0,"noreallyfire");
 		goto noammo;
 	noreallyfire:
-		DERP C 1 bright light("SHOT") DerpShot();
-		DERP D 1 A_SpawnItemEx("HDSpent9mm", -3,1,-1, random(-1,-3),random(-1,1),random(-3,-4), 0,SXF_NOCHECKPOSITION|SXF_SETTARGET);
-		DERP A 4{
+		TDRP C 1 bright light("SHOT") DerpShot();
+		TDRP D 1 A_SpawnItemEx("HDSpent9mm", -3,1,-1, random(-1,-3),random(-1,1),random(-3,-4), 0,SXF_NOCHECKPOSITION|SXF_SETTARGET);
+		TDRP A 4{
 			if(getzat(0)<pos.z) A_ChangeVelocity(cos(pitch)*-2,0,sin(pitch)*2,CVF_RELATIVE);
 			else A_ChangeVelocity(cos(pitch)*-0.4,0,sin(pitch)*0.4,CVF_RELATIVE);
 			ammo--;
 		}
-		DERP A 1{
+		TDRP A 1{
 			A_FaceTarget(10,10,0,0,FAF_TOP,-4);
 			if(target&&target.health<1){  
-				DerpAlert("\cf  Hostile eliminated.");
+				DerpAlert("\cf  Target eliminated.");
 			}
 		}
 	yourefired:
-		DERP A 0 A_JumpIfHealthLower(1,"see",AAPTR_TARGET);
-		DERP A 0 A_JumpIfTargetInLOS("fire",2,JLOSF_DEADNOJUMP,DERP_RANGE,0);
-		DERP A 0 A_JumpIfTargetInLOS("aim",360,JLOSF_DEADNOJUMP,DERP_RANGE,0);
+		TDRP A 0 A_JumpIfHealthLower(1,"see",AAPTR_TARGET);
+		TDRP A 0 A_JumpIfTargetInLOS("fire",2,JLOSF_DEADNOJUMP,DERP_RANGE,0);
+		TDRP A 0 A_JumpIfTargetInLOS("aim",360,JLOSF_DEADNOJUMP,DERP_RANGE,0);
 		goto noshot;
-		DERP A 0 A_CheckLOF("noshot",CLOFF_SKIPTARGET|CLOFF_JUMPNONHOSTILE|CLOFF_JUMPOBJECT, 0,0, 0,0, 7,0);
+		TDRP A 0 A_CheckLOF("noshot",CLOFF_SKIPTARGET|CLOFF_JUMPNONHOSTILE|CLOFF_JUMPOBJECT, 0,0, 0,0, 7,0);
 		goto fire;
 	death:
-		DERP A 0{
-			DerpAlert("\cg  Operational fault.\cj Standby for repairs.");
+		TDRP A 0{
+			DerpAlert("\cg  Operational fault.\cj What should I do?");
 			A_StartSound("weapons/bigcrack",CHAN_VOICE);
 			A_SpawnItemEx("HDSmoke",0,0,1, vel.x,vel.y,vel.z+1, 0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM);
 			A_SpawnChunks("BigWallChunk",12);
 		}
 	dead:
-		DERP A -1;
+		TDRP A -1;
 	noammo:
-		DERP A 10{
+		TDRP A 10{
 			A_ClearTarget();
-			DerpAlert("\cjOut of ammo. Await retrieval.");
+			DerpAlert("\cjOut of ammo. I'm useless.");
 		}goto spawn;
 	}
 }
@@ -355,11 +355,11 @@ class TDERPUsable:HDWeapon{
 
 		scale 0.6;
 		inventory.icon "DERPEX";
-		inventory.pickupmessage "Picked up a Tactical Defence, Engagement, Reconnaissance and Patrol robot.";
+		inventory.pickupmessage "Picked up a Functionally Handicapped robot.";
 		inventory.pickupsound "derp/crawl";
 		translation 0;
-		tag "T.D.E.R.P. robot";
-		hdweapon.refid "tdp";
+		tag "F.H. robot";
+		hdweapon.refid "fhr";
 	}
 	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}
 	override hdweapon GetSpareWeapon(actor newowner,bool reverse,bool doselect){return GetSpareWeaponRegular(newowner,reverse,doselect);}
@@ -560,7 +560,7 @@ class TDERPUsable:HDWeapon{
 	}
 	states{
 	spawn:
-		DERP A -1;
+		TDRP A -1;
 		stop;
 	select:
 		TNT1 A 0 A_AddOffset(100);

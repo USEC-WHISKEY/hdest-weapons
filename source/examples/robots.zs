@@ -75,9 +75,9 @@ class THERPBot:HDUPK{
 		startpitch=pitch;
 		scanright=false;
 		if(!master){
-			ammo[0]=51;
-			ammo[1]=51;
-			ammo[2]=51;
+			ammo[0]=30;
+			ammo[1]=30;
+			ammo[2]=30;
 			battery=20;
 		}
 		bool gbg;actor lll;
@@ -211,21 +211,21 @@ class THERPBot:HDUPK{
 
 	states{
 	spawn:
-		HERP A 0;
+		THRP A 0;
 	spawn2:
-		HERP A 0 A_JumpIfHealthLower(1,"dead");
-		HERP A 10 A_ClearTarget();
+		THRP A 0 A_JumpIfHealthLower(1,"dead");
+		THRP A 10 A_ClearTarget();
 	idle:
-		HERP A 2 scanturn();
+		THRP A 2 scanturn();
 		wait;
 	postbeep:
-		HERP A 6 herpbeep("herp/beep");
+		THRP A 6 herpbeep("herp/beep");
 		goto idle;
 
 
 	inputwaiting:
-		HERP A 4;
-		HERP A 0{
+		THRP A 4;
+		THRP A 0{
 			if(!master){
 				setstatelabel("spawn");
 				return;
@@ -234,7 +234,7 @@ class THERPBot:HDUPK{
 			message("Establishing connection...");
 			A_SetTics(random(10,min(350,int(0.3*distance3d(master)))));
 		}
-		HERP A 20{
+		THRP A 20{
 			if(master){
 				bmissileevenmore=true;
 				herpbeep("herp/beepready");
@@ -245,26 +245,26 @@ class THERPBot:HDUPK{
 			}
 		}
 	inputready:
-		HERP A 1 A_JumpIf(
+		THRP A 1 A_JumpIf(
 			!master
 			||!master.player
 			||!(master.player.readyweapon is "HERPController")
 		,"inputabort");
 		wait;
 	inputabort:
-		HERP A 4{bmissileevenmore=false;}
-		HERP A 2 herpbeep("herp/beepready");
-		HERP A 20 message("Disconnected.");
+		THRP A 4{bmissileevenmore=false;}
+		THRP A 2 herpbeep("herp/beepready");
+		THRP A 20 message("Disconnected.");
 		goto spawn;
 
 
 	ready:
-		HERP A 7 A_StartSound("weapons/vulcanup",CHAN_BODY,CHANF_OVERLAP);
-		HERP AAA 1 herpbeep("herp/beepready");
+		THRP A 7 A_StartSound("weapons/vulcanup",CHAN_BODY,CHANF_OVERLAP);
+		THRP AAA 1 herpbeep("herp/beepready");
 	aim:
-		HERP A 2 A_FaceTarget(2.,2.,0,0,FAF_TOP,-4);
+		THRP A 2 A_FaceTarget(2.,2.,0,0,FAF_TOP,-4);
 	shoot:
-		HERP B 2 bright light("SHOT"){
+		THRP B 2 bright light("SHOT"){
 			int currammo=ammo[0];
 			if(
 				(
@@ -296,13 +296,13 @@ class THERPBot:HDUPK{
 			A_StartSound("weapons/m4/fire",CHAN_WEAPON,CHANF_OVERLAP);
 			HDBulletActor.FireBullet(self,"HDB_556", zofs:6, spread:1, distantsound: "world/herpfar");
 		}
-		HERP C 1{
+		THRP C 1{
 			angle-=frandom(0.4,1.);
 			pitch-=frandom(0.8,1.3);
 			if(bfriendly)A_AlertMonsters(0,AMF_TARGETEMITTER);
 			else A_AlertMonsters();
 		}
-		HERP A 0{
+		THRP A 0{
 			if(ammo[0]<1){
 				setstatelabel("swapmag");
 			}else if(target && target.health>random(-30,30)){
@@ -319,7 +319,7 @@ class THERPBot:HDUPK{
 			}
 		}goto idle;
 	swapmag:
-		HERP A 3{
+		THRP A 3{
 			int nextmag=ammo[1];
 			if(
 				nextmag<1
@@ -343,9 +343,9 @@ class THERPBot:HDUPK{
 			}
 		}goto idle;
 	nopower:
-		HERP A -1;
+		THRP A -1;
 	off:
-		HERP A 10{
+		THRP A 10{
 			if(health>0){
 				double turn=clamp(deltaangle(angle,startangle),-24,24);
 				if(turn){
@@ -355,7 +355,7 @@ class THERPBot:HDUPK{
 				}
 			}
 		}
-		HERP A 0{
+		THRP A 0{
 			if(
 				!bmissilemore
 				||absangle(angle,startangle)>12
@@ -377,7 +377,7 @@ class THERPBot:HDUPK{
 			if(ctr)ctr.UpdateHerps(false);
 		}stop;
 	death:
-		HERP A 0{
+		THRP A 0{
 			if(ammo[0]>=0)ammo[0]=random(0,ammo[0]+randompick(0,0,0,100));
 			if(ammo[1]>=0)ammo[1]=random(0,ammo[1]+randompick(0,0,0,100));
 			if(ammo[2]>=0)ammo[2]=random(0,ammo[2]+randompick(0,0,0,100));
@@ -391,11 +391,11 @@ class THERPBot:HDUPK{
 			A_NoBlocking();
 			A_StartSound("world/shotgunfar",CHAN_BODY,CHANF_OVERLAP,0.4);
 		}
-		HERP A 1 A_StartSound("weapons/bigcrack",15);
-		HERP A 1 A_StartSound("weapons/bigcrack",16);
-		HERP A 1 A_StartSound("weapons/bigcrack",17);
-		HERP AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("HugeWallChunk",random(-6,6),random(-6,6),random(0,6), vel.x+random(-6,6),vel.y+random(-6,6),vel.z+random(1,8),0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM);
-		HERP A 0{
+		THRP A 1 A_StartSound("weapons/bigcrack",15);
+		THRP A 1 A_StartSound("weapons/bigcrack",16);
+		THRP A 1 A_StartSound("weapons/bigcrack",17);
+		THRP AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("HugeWallChunk",random(-6,6),random(-6,6),random(0,6), vel.x+random(-6,6),vel.y+random(-6,6),vel.z+random(1,8),0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM);
+		THRP A 0{
 			A_StartSound("weapons/vulcandown",CHAN_WEAPON,CHANF_OVERLAP);
 			string yay="";
 			switch(random(0,8)){
@@ -421,11 +421,11 @@ class THERPBot:HDUPK{
 			if(!random(0,3))yay="\cg"..yay;
 			message(yay);
 		}
-		HERP AAA 1 A_SpawnItemEx("HDSmoke",random(-2,2),random(-2,2),random(-2,2), vel.x+random(-2,2),vel.y+random(-2,2),vel.z+random(1,4),0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM);
-		HERP AAA 3 A_SpawnItemEx("HDSmoke",random(-2,2),random(-2,2),random(-2,2), vel.x+random(-2,2),vel.y+random(-2,2),vel.z+random(1,4),0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM);
-		HERP AAA 9 A_SpawnItemEx("HDSmoke",random(-2,2),random(-2,2),random(-2,2), vel.x+random(-2,2),vel.y+random(-2,2),vel.z+random(1,4),0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM);
+		THRP AAA 1 A_SpawnItemEx("HDSmoke",random(-2,2),random(-2,2),random(-2,2), vel.x+random(-2,2),vel.y+random(-2,2),vel.z+random(1,4),0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM);
+		THRP AAA 3 A_SpawnItemEx("HDSmoke",random(-2,2),random(-2,2),random(-2,2), vel.x+random(-2,2),vel.y+random(-2,2),vel.z+random(1,4),0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM);
+		THRP AAA 9 A_SpawnItemEx("HDSmoke",random(-2,2),random(-2,2),random(-2,2), vel.x+random(-2,2),vel.y+random(-2,2),vel.z+random(1,4),0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM);
 	dead:
-		HERP A -1 A_SpawnPickup();
+		THRP A -1 A_SpawnPickup();
 		stop;
 	}
 }
@@ -454,10 +454,10 @@ class BrokenTHERP:THERPBot{
 	}
 	states{
 	spawn:
-		HERP A -1;
+		THRP A -1;
 		stop;
 	death.spawndead:
-		HERP A -1{
+		THRP A -1{
 			ammo[0]=random(0,ammo[0]+randompick(0,0,0,100));
 			ammo[1]=random(0,ammo[1]+randompick(0,0,0,100));
 			ammo[2]=random(0,ammo[2]+randompick(0,0,0,100));
@@ -515,9 +515,9 @@ class THERPUsable:HDWeapon{
 	override int getsbarnum(int flags){return weaponstatus[HERP_BOTID];}
 	override void InitializeWepStats(bool idfa){
 		weaponstatus[HERP_BATTERY]=20;
-		weaponstatus[1]=51;
-		weaponstatus[2]=51;
-		weaponstatus[3]=51;
+		weaponstatus[1]=30;
+		weaponstatus[2]=30;
+		weaponstatus[3]=30;
 	}
 	action void A_ResetBarrelSize(){
 		invoker.weaponstatus[HERP_YOFS]=100;
@@ -587,7 +587,7 @@ class THERPUsable:HDWeapon{
 		TNT1 A 6;
 		goto ready;
 	spawn:
-		HERP A -1;
+		THRP A -1;
 		stop;
 
 	//for manual carry-firing
@@ -607,7 +607,7 @@ class THERPUsable:HDWeapon{
 				setweaponstate("lowerfromfire");
 			}
 		}
-		HERG A 0 A_ReadyEnd();
+		THRP A 0 A_ReadyEnd();
 		loop;
 	directfire:
 		HERG A 2{
@@ -638,7 +638,7 @@ class THERPUsable:HDWeapon{
 				int curmag=invoker.weaponstatus[1];
 				if(
 					curmag>0
-					&&curmag<51
+					&&curmag<31
 					&&!random(0,15)
 				)invoker.weaponstatus[1]+=100;
 
@@ -646,8 +646,9 @@ class THERPUsable:HDWeapon{
 			}
 
 			//deplete ammo and fire
-			if(invoker.weaponstatus[1]==51)invoker.weaponstatus[1]=49;
-			else invoker.weaponstatus[1]--;				
+			//if(invoker.weaponstatus[1]==51)invoker.weaponstatus[1]=49;
+			else 
+			invoker.weaponstatus[1]--;				
 			A_Overlay(PSP_FLASH,"directflash");
 		}
 		HERG B 2;
@@ -672,15 +673,15 @@ class THERPUsable:HDWeapon{
 			);
 		}stop;
 	directfail:
-		HERG # 1 A_WeaponReady(WRF_NONE);
-		HERG # 0 A_JumpIf(pressingfire(),"directfail");
+		THRP # 1 A_WeaponReady(WRF_NONE);
+		THRP # 0 A_JumpIf(pressingfire(),"directfail");
 		goto readytofire;
 	lowerfromfire:
-		HERG A 1 offset(0,34) A_ClearRefire();
-		HERG A 1 offset(0,40) A_StartSound("herp/beepready",8);
-		HERG A 1 offset(0,50);
-		HERG A 1 offset(0,60);
-		HERG A 1 offset(0,80)A_ResetBarrelSize();
+		THRP A 1 offset(0,34) A_ClearRefire();
+		THRP A 1 offset(0,40) A_StartSound("herp/beepready",8);
+		THRP A 1 offset(0,50);
+		THRP A 1 offset(0,60);
+		THRP A 1 offset(0,80)A_ResetBarrelSize();
 		TNT1 A 1 A_StartSound("herp/crawl",8);
 		TNT1 A 1 A_JumpIf(pressingfire()||pressingaltfire(),"nope");
 		goto select;
@@ -807,7 +808,7 @@ class THERPUsable:HDWeapon{
 		hhhh.battery=invoker.weaponstatus[4];
 		hhhh.botid=invoker.weaponstatus[HERP_BOTID];
 		hhhh.bmissilemore=invoker.weaponstatus[0]&HERPF_STARTOFF?false:true;
-		A_Log(string.format("\cd[HERP] \cjDeployed with tag ID \cy%i",invoker.weaponstatus[HERP_BOTID]),true);
+		A_Log(string.format("\cd[THERP] \cjDeployed with tag ID \cy%i",invoker.weaponstatus[HERP_BOTID]),true);
 		A_GiveInventory("HERPController");
 		HERPController(findinventory("HERPController")).UpdateHerps(false);
 		dropinventory(invoker);
@@ -821,7 +822,7 @@ class THERPUsable:HDWeapon{
 		for(int i=2;i<4;i++){
 			if(hdw.weaponstatus[i]>=0)sb.drawrect(-11-i*4,-15,3,2);
 		}
-		sb.drawwepnum(hdw.weaponstatus[1]%100,50,posy:-10);
+		sb.drawwepnum(hdw.weaponstatus[1] % 100, 30, posy:-10);
 		sb.drawwepcounter(hdw.weaponstatus[0]&HERPF_STARTOFF,
 			-28,-16,"STBURAUT","blank"
 		);
@@ -838,7 +839,7 @@ class THERPUsable:HDWeapon{
 		if(yofs<70){
 			vector2 bob=hpl.hudbob*0.2;
 			bob.y+=yofs;
-			sb.drawimage("HERPA7A3",(10,14)+bob,
+			sb.drawimage("THRPA7A3",(10,14)+bob,
 				sb.DI_SCREEN_CENTER|sb.DI_ITEM_CENTER|sb.DI_TRANSLATABLE,
 				scale:(2,2)
 			);

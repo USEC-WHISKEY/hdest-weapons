@@ -1,0 +1,68 @@
+graphic TDRPEX,20,14{
+	offset -8,-10
+	patch TDRPBOT,-67,-17{}
+	patch PBRSB0H0,13,0{}
+	patch PBRSA0,19,3{}
+}
+sprite TDRPA1,13,14{
+	offset 7,13
+	patch TDRPBOT,-89,0{}
+}
+sprite TDRPA5,13,14{
+	offset 7,13
+	patch TDRPBOT,0,0{}
+}
+sprite TDRPA8A2,15,14{
+	offset 6,13
+	patch TDRPBOT,-67,0{}
+}
+sprite TDRPA7A3,20,14{
+	offset 9,13
+	patch TDRPBOT,-37,0{}
+}
+sprite TDRPA6A4,16,14{
+	offset 6,13
+	patch TDRPBOT,-16,0{}
+}
+
+sprite TDRPC1,13,14{
+	offset 7,13
+	patch TDRPBOT,-89,-17{}
+}
+sprite TDRPC5,13,14{
+	offset 7,13
+	patch TDRPBOT,0,-17{}
+}
+sprite TDRPC8C2,20,14{
+	offset 6,13
+	patch TDRPBOT,-67,-17{}
+}
+sprite TDRPC7C3,29,14{
+	offset 9,13
+	patch TDRPBOT,-37,-17{}
+}
+sprite TDRPC6C4,19,14{
+	offset 6,13
+	patch TDRPBOT,-16,-17{}
+}
+
+sprite TDRPD1,13,14{
+	offset 7,13
+	patch TDRPBOT,-89,-33{}
+}
+sprite TDRPD5,13,14{
+	offset 7,13
+	patch TDRPBOT,0,-33{}
+}
+sprite TDRPD8D2,15,13{
+	offset 6,13
+	patch TDRPBOT,-67,-33{}
+}
+sprite TDRPD7D3,20,14{
+	offset 9,13
+	patch TDRPBOT,-37,-33{}
+}
+sprite TDRPD6D4,16,13{
+	offset 6,13
+	patch TDRPBOT,-16,-33{}
+}

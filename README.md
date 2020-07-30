@@ -67,6 +67,16 @@ Options for this mod can be found in at the bottom of the default GZdoom options
 - Map start: Weapons are only replaced at the start of the level.
 - Map mixed: Weapons are only replaced at the start of the level. There is a 50% chance weapons from this pack will appear.
 
+WARNING: Vanilla loadouts and certain vanilla weapons will not if using replace mode. This is intended to replace the default weapons entirely. It is still possible to spawn vanilla items via the loadout manager, but they will not function properly. If you want to use both weapons, play using map start or map mixed. The following items are replaced:
+
+- Pistol with the Glock
+- SMG with the MP5
+- ZM66 with the M4
+- Liberator with the M14
+- Chaingun with the M249
+- D.E.R.P. robot with the F.H. robot
+- T.H.E.R.P. robot
+
 ### Sight Mode
 
 - Full: The entire back of the sight is shown. Uses the most screen space.
@@ -284,3 +294,5 @@ These are for adding attachments as loose items in your inventory if you plan to
 ### Misc Loadout IDs
 
 - `r04`: M249 pouch reloader
+- `fhr`: F.H. robot
+- `thp`: Tactical H.E.R.P.

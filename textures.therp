@@ -1,0 +1,83 @@
+
+// T.H.E.R.P.
+sprite THRPA1,9,15{
+	offset 5,15
+	patch THRPBOT,0,0{}
+}
+sprite THRPB1,9,15{
+	offset 5,15
+	xscale 1.05
+	yscale 1.05
+	patch THRPBOT,0,-61{}
+}
+sprite THRPC1,9,15{
+	offset 5,15
+	patch THRPBOT,0,-15{}
+}
+
+sprite THRPA5,9,15{
+	offset 5,15
+	patch THRPBOT,-36,0{}
+}
+sprite THRPB5,9,15{
+	offset 5,15
+	xscale 0.95
+	yscale 0.95
+	patch THRPBOT,-36,-15{}
+}
+sprite THRPC5,9,15{
+	offset 5,15
+	patch THRPBOT,-36,0{}
+}
+
+sprite THRPA8A2,19,15{
+	offset 8,15
+	patch THRPBOT,0,-31{}
+}
+sprite THRPB8B2,25,15{
+	offset 8,15
+	patch THRPBOT,0,-76{}
+}
+sprite THRPC8C2,19,15{
+	offset 8,15
+	xscale 0.98
+	yscale 0.98
+	patch THRPBOT,-19,-31{}
+}
+
+sprite THRPA6A4,19,15{
+	offset 8,15
+	patch THRPBOT,0,-46{}
+}
+sprite THRPB6B4,24,15{
+	offset 8,15
+	patch THRPBOT,-25,-76{}
+}
+sprite THRPC6C4,19,15{
+	offset 8,15
+	xscale 1.02
+	yscale 1.02
+	patch THRPBOT,-19,-46{}
+}
+
+sprite THRPA7A3,27,15{
+	offset 12,15
+	patch THRPBOT,-9,0{}
+}
+sprite THRPB7B3,36,15{
+	offset 13,15
+	patch THRPBOT,-9,-61{}
+}
+sprite THRPC7C3,27,15{
+	offset 12,15
+	patch THRPBOT,-9,-15{}
+}
+
+sprite HLEGA0,6,14{
+	offset 3,14
+	patch THRPBOT,-38,-31{}
+}
+graphic THRPEX,25,15{
+	offset -8,-10
+	patch THRPB8B2,0,0{}
+}
