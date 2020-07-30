@@ -39,6 +39,8 @@ version "4.4"
 
 #include "source/monsters/lvl1warrior.zs"
 #include "source/monsters/moperator.zs"
+#include "source/examples/robots.zs"
+#include "source/examples/robots2.zs"
 
 class BryanOperator : HDSkin {
 	states {

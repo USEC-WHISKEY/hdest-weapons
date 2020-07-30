@@ -86,6 +86,39 @@ class PlayerEvents : EventHandler {
 			if (rollCheck())
 				e.Replacement = "RandomBryanPickup";
 		}
+		else if (e.Replacee is "DERPBot") {
+			if (rollCheck())
+			e.Replacement = "TDerpBot";
+		}
+		else if (e.Replacee is "DERPUsable") {
+			if (rollCheck())
+			e.Replacement = "TDERPUsable";
+		}
+		else if (e.Replacee is "EnemyDERP") {
+			if (rollCheck())
+			e.Replacement = "EnemyTDERP";
+		}
+		else if (e.Replacee is "DERPDead") {
+			if (rollCheck())
+			e.Replacement = "TDERPDead";
+		}
+
+		else if (e.Replacee is "HERPBot") {
+			if (rollCheck())
+			e.Replacement = "THerpBot";
+		}
+		else if (e.Replacee is "HERPUsable") {
+			if (rollCheck())
+			e.Replacement = "THERPUsable";
+		}
+		else if (e.Replacee is "EnemyHERP") {
+			if (rollCheck())
+			e.Replacement = "EnemyTHERP";
+		}
+		else if (e.Replacee is "BrokenHERP") {
+			if (rollCheck())
+			e.Replacement = "BrokenTHERP";
+		}
 	}
 
 	void replaceAll(ReplaceEvent e) {
@@ -145,6 +178,30 @@ class PlayerEvents : EventHandler {
 		}
 		else if (e.Replacee is "ClipMagPickup" || e.Replacee is "ClipBoxPickup") {
 			e.Replacement = "RandomBryanPickup";
+		}
+		else if (e.Replacee is "DERPBot") {
+			e.Replacement = "TDerpBot";
+		}
+		else if (e.Replacee is "DERPUsable") {
+			e.Replacement = "TDERPUsable";
+		}
+		else if (e.Replacee is "EnemyDERP") {
+			e.Replacement = "EnemyTDERP";
+		}
+		else if (e.Replacee is "DERPDead") {
+			e.Replacement = "TDERPDead";
+		}
+		else if (e.Replacee is "HERPBot") {
+			e.Replacement = "THerpBot";
+		}
+		else if (e.Replacee is "HERPUsable") {
+			e.Replacement = "THERPUsable";
+		}
+		else if (e.Replacee is "EnemyHERP") {
+			e.Replacement = "EnemyTHERP";
+		}
+		else if (e.Replacee is "BrokenHERP") {
+			e.Replacement = "BrokenTHERP";
 		}
 	}
 
