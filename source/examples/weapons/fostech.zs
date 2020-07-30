@@ -38,10 +38,10 @@ class b_FauxtechOrigin : BaseShotgun {
 		BHDWeapon.BSFireSound        "weapons/fauxtech/silentfire";
 		BHDWeapon.BChamberSound      "weapons/fauxtech/chamber";
 		BHDWeapon.BBoltForwardSound  "weapons/fauxtech/boltback";
-		BHDWeapon.BBoltBackwardSound "weapons/fauxtech/boltforward";
-		BHDWeapon.BClickSound        "weapons/fauxtech/click";
-		BHDWeapon.BLoadSound         "weapons/fauxtech/clipinsert";
-		BHDWeapon.BUnloadSound       "weapons/fauxtech/clipeject";
+		BHDWeapon.BBoltBackwardSound "weapons/m4/boltback";
+		BHDWeapon.BClickSound        "weapons/m4/click";
+		BHDWeapon.BLoadSound         "weapons/m4/clipinsert";
+		BHDWeapon.BUnloadSound       "weapons/m4/clipeject";
 
 		BHDWeapon.BROF               2;
 		//BHDWeapon.BBackSightImage    "fauxbk";

@@ -14,6 +14,7 @@ class b_Glock : BasePistol {
 		obituary                     "%o was assaulted by %k.";
 		tag                          "Glock";
 		inventory.icon               "GLKCA0";
+		BHDWeapon.BFlashSprite       "GLFLA0";
 		BHDWeapon.BHeatDrain         12;
 		BHDWeapon.BBulletClass       "HDB_9";
 		BHDWeapon.BAmmoClass         "HDPistolAmmo";
@@ -190,6 +191,13 @@ class b_Glock : BasePistol {
 			GLKU F -1;
 			GLKU G -1;
 			GLKU H -1;
+			Stop;
+
+		FlashDummy:
+			GLFL A -1;
+			GLFL B -1;
+			GLFL C -1;
+			GLFL D -1;
 			Stop;
 
 

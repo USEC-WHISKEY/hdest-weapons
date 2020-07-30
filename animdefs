@@ -1,0 +1,4 @@
+texture "textures/btxtvframe1.png"
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2

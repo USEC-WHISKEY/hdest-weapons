@@ -16,6 +16,8 @@ class B556Mag : HDMagAmmo{
 	}
 
 	override void GetItemsThatUseThis() {
+		itemsthatusethis.push("B_M4");
+		itemsthatusethis.push("B_M4_M203");
 	}
 
 	states{
@@ -56,7 +58,8 @@ class BM249Mag : HDMagAmmo {
 		return "M24CA0", "BB56A7A3", "B556Ammo", 1.7;
 	}
 
-	override void GetItemsThatUseThis(){
+	override void GetItemsThatUseThis() {
+		itemsthatusethis.push("B_M249");
 	}
 
 	states{
@@ -97,7 +100,9 @@ class B9mm_MP5K_MAG : HDMagAmmo {
 		return "MP5CA0", "PBRSA0", "HDPistolAmmo", 1.7;
 	}
 
-	override void GetItemsThatUseThis(){
+	override void GetItemsThatUseThis() {
+		itemsthatusethis.push("B_MP5");
+		itemsthatusethis.push("B_MP5_M203");
 	}
 
 	states{
@@ -130,7 +135,8 @@ class BFauxDrum : HDMagAmmo {
 		return "FOSCA0", "SHL1A0", "HDShellAmmo", 1.7;
 	}
 
-	override void GetItemsThatUseThis(){
+	override void GetItemsThatUseThis() {
+		itemsthatusethis.push("b_FauxtechOrigin");
 	}
 
 	states{
@@ -165,7 +171,8 @@ class b762_m14_mag : HDMagAmmo {
 		return "M14CA0", "BF76A3A7", "B762x51Ammo", 1.7;
 	}
 
-	override void GetItemsThatUseThis(){
+	override void GetItemsThatUseThis() {
+		itemsthatusethis.push("b_m14");
 	}
 
 	states{
@@ -198,7 +205,8 @@ class GlockMagazine : HDMagAmmo {
 		return "GLKCA0", "PBRSA0", "HDPistolAmmo", 1.7;
 	}
 
-	override void GetItemsThatUseThis(){
+	override void GetItemsThatUseThis() {
+		itemsthatusethis.push("b_Glock");
 	}
 
 	states{

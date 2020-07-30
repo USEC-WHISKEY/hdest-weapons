@@ -32,6 +32,7 @@ class b_m14 : basestandardrifle {
 		BHDWeapon.BarrelLength       25;
 		BHDWeapon.BarrelWidth        1;
 		BHDWeapon.BarrelDepth        3;
+		BHDWeapon.BFlashSprite       "FLSHA0";
 
 		BHDWeapon.BFireSound         "weapons/m14/fire";
 		BHDWeapon.BSFireSound        "weapons/m14/silentfire";

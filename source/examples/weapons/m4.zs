@@ -763,7 +763,7 @@ class B_M4_M203 : BaseGLRifle {
 			Goto LayerGun;
 
 		LayerGunBolt:
-			M4RG E 3;
+			M4RG E 3 A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);
 			Goto LayerGun;
 
 		LayerReloadHands:
@@ -786,15 +786,16 @@ class B_M4_M203 : BaseGLRifle {
 			TNT1 A 0 {
 				A_Overlay(invoker.bLayerGun, "GunPullBolt");
 			}
-			M4RH C 2 A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);
-			M4RH B 2 A_StartSound(invoker.bBoltForwardSound, CHAN_WEAPON);
+			M4RH C 2; //A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);
+			M4RH B 2; //A_StartSound(invoker.bBoltForwardSound, CHAN_WEAPON);
 			M4RH A 2;
 			Stop;
 
 		GunPullBolt:
-			M4RG E 3;
+			M4RG E 3 A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);
 			Goto LayerGun;
 	}
+	
 	override string, double GetPickupSprite() {
 		if(magazineGetAmmo() > -1) {
 			if (scopeClass) {

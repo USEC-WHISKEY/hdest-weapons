@@ -1,3 +1,17 @@
+
+brightmap texture "textures/btxtvframe1.png" {
+	map "textures/btxtvbm.png"
+}
+
+brightmap texture "textures/btxtvframe2.png" {
+	map "textures/btxtvbm.png"
+}
+
+brightmap texture "textures/btxtvframe3.png" {
+	map "textures/btxtvbm.png"
+}
+
+
 /*
 HardwareShader Sprite FLSHA0 {
 	Shader "shaders/test.fp" 330
