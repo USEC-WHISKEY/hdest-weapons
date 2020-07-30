@@ -569,12 +569,15 @@ class B_MP5_M203 : BaseGLRifle {
 		BHDWeapon.BUnloadSound       "weapons/mp5/clipeject";
 
 		BHDWeapon.BROF               0;
+	
 		BHDWeapon.BBackSightImage    "mp5sight";
 		BHDWeapon.BBackOffsetX       0;
-		BHDWeapon.BBackOffsetY       28;
+		BHDWeapon.BBackOffsetY       20;
 		BHDWeapon.BFrontSightImage   "mp5iron";
 		BHDWeapon.BFrontOffsetX      -6;
 		BHDWeapon.BFrontOffsetY      14;
+
+	
 		BHDWeapon.BSilentOffsetX     0;
 		BHDWeapon.BSilentOffsetY     0;
 		BHDWeapon.bBarrelMount       "9MM_GLOCK";
@@ -582,6 +585,11 @@ class B_MP5_M203 : BaseGLRifle {
 		BHDWeapon.bMiscMount         "NATO_RAILS";
 		BHDWeapon.EjectShellClass    "HDSpent9mm";
 		hdweapon.refid               B_MP5M203_REFID;
+
+		BHDWeapon.BAltFrontSightImage "altm5i";
+		BHDWeapon.BAltBackSightImage "altm5s";
+
+		BHDWeapon.BIronThreshold 10;
 
 		BaseAltRifle.bAltMagClass    "HDRocketAmmo";
 		BaseAltRifle.BAltMagPicture  "ROQPA0";
