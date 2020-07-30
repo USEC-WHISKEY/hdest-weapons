@@ -2,3 +2,392 @@ texture "textures/btxtvframe1.png"
 	pic "textures/btxtvframe1.png" tics 2
 	pic "textures/btxtvframe2.png" tics 2
 	pic "textures/btxtvframe3.png" tics 2
+
+
+texture "textures/tvanims/btv_00.png"
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	// My Guns
+
+	pic "textures/tvanims/btv_00.png" tics 2
+	pic "textures/tvanims/btv_01.png" tics 2
+	pic "textures/tvanims/btv_02.png" tics 2
+
+	pic "textures/tvanims/btv_00.png" tics 2
+	pic "textures/tvanims/btv_01.png" tics 2
+	pic "textures/tvanims/btv_02.png" tics 2
+
+	pic "textures/tvanims/btv_00.png" tics 2
+	pic "textures/tvanims/btv_01.png" tics 2
+	pic "textures/tvanims/btv_02.png" tics 2
+
+	pic "textures/tvanims/btv_00.png" tics 2
+	pic "textures/tvanims/btv_01.png" tics 2
+	pic "textures/tvanims/btv_02.png" tics 2
+
+	pic "textures/tvanims/btv_00.png" tics 2
+	pic "textures/tvanims/btv_01.png" tics 2
+	pic "textures/tvanims/btv_02.png" tics 2
+
+	pic "textures/tvanims/btv_00.png" tics 2
+	pic "textures/tvanims/btv_01.png" tics 2
+	pic "textures/tvanims/btv_02.png" tics 2
+
+	pic "textures/tvanims/btv_00.png" tics 2
+	pic "textures/tvanims/btv_01.png" tics 2
+	pic "textures/tvanims/btv_02.png" tics 2
+
+	pic "textures/tvanims/btv_00.png" tics 2
+	pic "textures/tvanims/btv_01.png" tics 2
+	pic "textures/tvanims/btv_02.png" tics 2
+
+	pic "textures/tvanims/btv_00.png" tics 2
+	pic "textures/tvanims/btv_01.png" tics 2
+	pic "textures/tvanims/btv_02.png" tics 2
+
+	pic "textures/tvanims/btv_00.png" tics 2
+	pic "textures/tvanims/btv_01.png" tics 2
+	pic "textures/tvanims/btv_02.png" tics 2
+
+	pic "textures/tvanims/btv_00.png" tics 2
+	pic "textures/tvanims/btv_01.png" tics 2
+	pic "textures/tvanims/btv_02.png" tics 2
+
+	pic "textures/tvanims/btv_00.png" tics 2
+	pic "textures/tvanims/btv_01.png" tics 2
+	pic "textures/tvanims/btv_02.png" tics 2
+
+	// By _Bry
+
+	pic "textures/tvanims/btv_03.png" tics 2
+	pic "textures/tvanims/btv_04.png" tics 2
+	pic "textures/tvanims/btv_05.png" tics 2
+
+	pic "textures/tvanims/btv_03.png" tics 2
+	pic "textures/tvanims/btv_04.png" tics 2
+	pic "textures/tvanims/btv_05.png" tics 2
+
+	pic "textures/tvanims/btv_03.png" tics 2
+	pic "textures/tvanims/btv_04.png" tics 2
+	pic "textures/tvanims/btv_05.png" tics 2
+
+	pic "textures/tvanims/btv_03.png" tics 2
+	pic "textures/tvanims/btv_04.png" tics 2
+	pic "textures/tvanims/btv_05.png" tics 2
+
+	pic "textures/tvanims/btv_03.png" tics 2
+	pic "textures/tvanims/btv_04.png" tics 2
+	pic "textures/tvanims/btv_05.png" tics 2
+
+	pic "textures/tvanims/btv_03.png" tics 2
+	pic "textures/tvanims/btv_04.png" tics 2
+	pic "textures/tvanims/btv_05.png" tics 2
+
+	pic "textures/tvanims/btv_03.png" tics 2
+	pic "textures/tvanims/btv_04.png" tics 2
+	pic "textures/tvanims/btv_05.png" tics 2
+
+	pic "textures/tvanims/btv_03.png" tics 2
+	pic "textures/tvanims/btv_04.png" tics 2
+	pic "textures/tvanims/btv_05.png" tics 2
+
+	pic "textures/tvanims/btv_03.png" tics 2
+	pic "textures/tvanims/btv_04.png" tics 2
+	pic "textures/tvanims/btv_05.png" tics 2
+
+	pic "textures/tvanims/btv_03.png" tics 2
+	pic "textures/tvanims/btv_04.png" tics 2
+	pic "textures/tvanims/btv_05.png" tics 2
+
+	pic "textures/tvanims/btv_03.png" tics 2
+	pic "textures/tvanims/btv_04.png" tics 2
+	pic "textures/tvanims/btv_05.png" tics 2
+
+	pic "textures/tvanims/btv_03.png" tics 2
+	pic "textures/tvanims/btv_04.png" tics 2
+	pic "textures/tvanims/btv_05.png" tics 2
+
+	// Transition
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+
+	// Art By Clay
+	pic "textures/tvanims/btv_06.png" tics 2
+	pic "textures/tvanims/btv_07.png" tics 2
+	pic "textures/tvanims/btv_08.png" tics 2
+
+	pic "textures/tvanims/btv_06.png" tics 2
+	pic "textures/tvanims/btv_07.png" tics 2
+	pic "textures/tvanims/btv_08.png" tics 2
+
+	pic "textures/tvanims/btv_06.png" tics 2
+	pic "textures/tvanims/btv_07.png" tics 2
+	pic "textures/tvanims/btv_08.png" tics 2
+
+	pic "textures/tvanims/btv_06.png" tics 2
+	pic "textures/tvanims/btv_07.png" tics 2
+	pic "textures/tvanims/btv_08.png" tics 2
+
+	pic "textures/tvanims/btv_06.png" tics 2
+	pic "textures/tvanims/btv_07.png" tics 2
+	pic "textures/tvanims/btv_08.png" tics 2
+
+	pic "textures/tvanims/btv_06.png" tics 2
+	pic "textures/tvanims/btv_07.png" tics 2
+	pic "textures/tvanims/btv_08.png" tics 2
+
+	pic "textures/tvanims/btv_06.png" tics 2
+	pic "textures/tvanims/btv_07.png" tics 2
+	pic "textures/tvanims/btv_08.png" tics 2
+
+	pic "textures/tvanims/btv_06.png" tics 2
+	pic "textures/tvanims/btv_07.png" tics 2
+	pic "textures/tvanims/btv_08.png" tics 2
+
+	pic "textures/tvanims/btv_06.png" tics 2
+	pic "textures/tvanims/btv_07.png" tics 2
+	pic "textures/tvanims/btv_08.png" tics 2
+
+	pic "textures/tvanims/btv_06.png" tics 2
+	pic "textures/tvanims/btv_07.png" tics 2
+	pic "textures/tvanims/btv_08.png" tics 2
+
+	pic "textures/tvanims/btv_06.png" tics 2
+	pic "textures/tvanims/btv_07.png" tics 2
+	pic "textures/tvanims/btv_08.png" tics 2
+
+	pic "textures/tvanims/btv_06.png" tics 2
+	pic "textures/tvanims/btv_07.png" tics 2
+	pic "textures/tvanims/btv_08.png" tics 2
+
+	// Transition
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	// Sfx By Duncan
+	pic "textures/tvanims/btv_09.png" tics 2
+	pic "textures/tvanims/btv_10.png" tics 2
+	pic "textures/tvanims/btv_11.png" tics 2
+
+	pic "textures/tvanims/btv_09.png" tics 2
+	pic "textures/tvanims/btv_10.png" tics 2
+	pic "textures/tvanims/btv_11.png" tics 2
+
+	pic "textures/tvanims/btv_09.png" tics 2
+	pic "textures/tvanims/btv_10.png" tics 2
+	pic "textures/tvanims/btv_11.png" tics 2
+
+	pic "textures/tvanims/btv_09.png" tics 2
+	pic "textures/tvanims/btv_10.png" tics 2
+	pic "textures/tvanims/btv_11.png" tics 2
+
+	pic "textures/tvanims/btv_09.png" tics 2
+	pic "textures/tvanims/btv_10.png" tics 2
+	pic "textures/tvanims/btv_11.png" tics 2
+
+	pic "textures/tvanims/btv_09.png" tics 2
+	pic "textures/tvanims/btv_10.png" tics 2
+	pic "textures/tvanims/btv_11.png" tics 2
+
+	pic "textures/tvanims/btv_09.png" tics 2
+	pic "textures/tvanims/btv_10.png" tics 2
+	pic "textures/tvanims/btv_11.png" tics 2
+
+	pic "textures/tvanims/btv_09.png" tics 2
+	pic "textures/tvanims/btv_10.png" tics 2
+	pic "textures/tvanims/btv_11.png" tics 2
+
+	pic "textures/tvanims/btv_09.png" tics 2
+	pic "textures/tvanims/btv_10.png" tics 2
+	pic "textures/tvanims/btv_11.png" tics 2
+	
+	pic "textures/tvanims/btv_09.png" tics 2
+	pic "textures/tvanims/btv_10.png" tics 2
+	pic "textures/tvanims/btv_11.png" tics 2
+
+	pic "textures/tvanims/btv_09.png" tics 2
+	pic "textures/tvanims/btv_10.png" tics 2
+	pic "textures/tvanims/btv_11.png" tics 2
+
+	pic "textures/tvanims/btv_09.png" tics 2
+	pic "textures/tvanims/btv_10.png" tics 2
+	pic "textures/tvanims/btv_11.png" tics 2
+
+	// Transition
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	// Ultra
+
+	pic "textures/tvanims/btv_12.png" tics 2
+	pic "textures/tvanims/btv_13.png" tics 2
+	pic "textures/tvanims/btv_14.png" tics 2
+
+	pic "textures/tvanims/btv_12.png" tics 2
+	pic "textures/tvanims/btv_13.png" tics 2
+	pic "textures/tvanims/btv_14.png" tics 2
+
+	pic "textures/tvanims/btv_12.png" tics 2
+	pic "textures/tvanims/btv_13.png" tics 2
+	pic "textures/tvanims/btv_14.png" tics 2
+
+	pic "textures/tvanims/btv_12.png" tics 2
+	pic "textures/tvanims/btv_13.png" tics 2
+	pic "textures/tvanims/btv_14.png" tics 2
+
+	pic "textures/tvanims/btv_12.png" tics 2
+	pic "textures/tvanims/btv_13.png" tics 2
+	pic "textures/tvanims/btv_14.png" tics 2
+
+	pic "textures/tvanims/btv_12.png" tics 2
+	pic "textures/tvanims/btv_13.png" tics 2
+	pic "textures/tvanims/btv_14.png" tics 2
+
+	pic "textures/tvanims/btv_12.png" tics 2
+	pic "textures/tvanims/btv_13.png" tics 2
+	pic "textures/tvanims/btv_14.png" tics 2
+
+	pic "textures/tvanims/btv_12.png" tics 2
+	pic "textures/tvanims/btv_13.png" tics 2
+	pic "textures/tvanims/btv_14.png" tics 2
+
+	pic "textures/tvanims/btv_12.png" tics 2
+	pic "textures/tvanims/btv_13.png" tics 2
+	pic "textures/tvanims/btv_14.png" tics 2
+
+	pic "textures/tvanims/btv_12.png" tics 2
+	pic "textures/tvanims/btv_13.png" tics 2
+	pic "textures/tvanims/btv_14.png" tics 2
+
+	pic "textures/tvanims/btv_12.png" tics 2
+	pic "textures/tvanims/btv_13.png" tics 2
+	pic "textures/tvanims/btv_14.png" tics 2
+
+	pic "textures/tvanims/btv_12.png" tics 2
+	pic "textures/tvanims/btv_13.png" tics 2
+	pic "textures/tvanims/btv_14.png" tics 2
+
+	// Transition
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/btxtvframe1.png" tics 2
+	pic "textures/btxtvframe2.png" tics 2
+	pic "textures/btxtvframe3.png" tics 2
+
+	pic "textures/tvanims/btv_15.png" tics 2
+	//pic "textures/tvanims/btv_16.png" tics 2
+	//pic "textures/tvanims/btv_17.png" tics 2
+	pic "textures/tvanims/btv_18.png" tics 2
+	//pic "textures/tvanims/btv_19.png" tics 2
+	//pic "textures/tvanims/btv_20.png" tics 2
+	pic "textures/tvanims/btv_21.png" tics 2
+	//pic "textures/tvanims/btv_22.png" tics 2
+	//pic "textures/tvanims/btv_23.png" tics 2
+	pic "textures/tvanims/btv_24.png" tics 2
+	//pic "textures/tvanims/btv_25.png" tics 2
+	//pic "textures/tvanims/btv_26.png" tics 2

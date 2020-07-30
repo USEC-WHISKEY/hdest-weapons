@@ -325,3 +325,12 @@ class RandomAttachmentPickup : HDInvRandomSpawner {
 		dropitem "B_Reflex_Red", 256, 1;
 	}
 }
+
+class RandomWeaponPickup : HDInvRandomSpawner {
+	default {
+		dropitem "M4_Random_Giver", 256, 1;
+		dropitem "M14_Random_Giver", 256, 1;
+		dropitem "MP5_Random_Giver", 256, 1;
+		dropitem "Glock_Random_Giver", 256, 1;
+	}
+}
