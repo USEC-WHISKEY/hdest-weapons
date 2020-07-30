@@ -288,6 +288,7 @@ These are for adding attachments as loose items in your inventory if you plan to
 - `sl5`: 5.56 silencer
 - `sl7`: 7.62 silencer
 - `sl9`: 9mm silencer
+- `slf`: Fostech Silencer
 
 - `gfl`: Misc flashlight attachment
 

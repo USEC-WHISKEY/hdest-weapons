@@ -9,7 +9,7 @@ class B_M16_Silencer : BaseSilencerAttachment {
 		HDPickup.RefId "sl5";
 		Tag "5.56m barrel silencer";
 		Inventory.Icon "FFSLA0";
-		Inventory.PickupMessage "Picked up 5.56m barrel silencer.";
+		Inventory.PickupMessage "Picked up 5.56mm silencer.";
 	}
 
 	States {
@@ -34,7 +34,7 @@ class B_M14_Silencer : BaseSilencerAttachment {
 		HDPickup.RefId "sl7";
 		Tag "7.62m barrel silencer";
 		Inventory.Icon "FFSLB0";
-		Inventory.PickupMessage "Picked up 7.62m barrel silencer.";
+		Inventory.PickupMessage "Picked up 7.62mm silencer.";
 	}
 
 	States {
@@ -105,7 +105,7 @@ class FosSilencer : BaseSilencerAttachment {
 		BaseAttachment.BaseSprite "GLSL";
 		BaseAttachment.BaseFrame 2;
 		HDPickup.Bulk 1;
-		HDPickup.RefId "sl9";
+		HDPickup.RefId "slf";
 		Tag "Fauxtech Origin 12 silencer";
 		Inventory.Icon "FFSLC0";
 		Inventory.PickupMessage "Picked up a Fauxtech Origin 12 silencer.";

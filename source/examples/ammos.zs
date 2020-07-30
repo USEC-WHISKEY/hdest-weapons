@@ -14,12 +14,18 @@ class B556Ammo : BRoundAmmo {
 			BB56 A -1;
 			stop;
 	}
+	override void GetItemsThatUseThis() {
+		itemsthatusethis.push("B_M4");
+		itemsthatusethis.push("B_M4_M203");
+		itemsthatusethis.push("B_M249");
+		itemsthatusethis.push("B556Mag");
+	}
 }
 
 class B556Brass : BRoundShell {
 	default {
 		tag "5.56 brass";
-		HDPickUp.RefId "B556Brass";
+		HDPickUp.RefId "b5b";
 		HdPickup.Bulk 1;
 		Inventory.PickupMessage "Picked up some 5.56x45mm brass.";
 	}
@@ -120,6 +126,10 @@ class B762x51Ammo : BRoundAmmo {
 	}
 	override string pickupmessage(){
 		return "Picked up a stray 7.62x51mm round.";
+	}
+	override void GetItemsThatUseThis() {
+		itemsthatusethis.push("B_M14");
+		itemsthatusethis.push("b762_m14_mag");
 	}
 	states {
 		spawn:

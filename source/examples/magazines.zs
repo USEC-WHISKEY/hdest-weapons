@@ -6,7 +6,7 @@ class B556Mag : HDMagAmmo{
 		hdmagammo.roundbulk ENC_556_LOADED;
 		hdmagammo.magbulk ENC_556MAG_EMPTY;
 		hdpickup.refid B_556_MAG_REFID;
-		tag "5.56x45mm NATO STANAG magazine";
+		tag "5.56x45mm magazine";
 		inventory.pickupmessage "Picked up a 5.56x45mm NATO STANAG magazine.";
 		scale 0.8;
 	}
@@ -49,7 +49,7 @@ class BM249Mag : HDMagAmmo {
 		hdmagammo.roundbulk ENC_556_LOADED;
 		hdmagammo.magbulk ENC_556MAG_EMPTY;
 		hdpickup.refid B_MF249_MAG_REFID;
-		tag "5.56x45mm 200 round NATO STANAG pouch magazine";
+		tag "5.56x45mm 200 round pouch";
 		inventory.pickupmessage "Picked up a 5.56x45mm 200 Round NATO STANAG magazine.";
 		scale 0.8;
 	}
@@ -161,7 +161,7 @@ class b762_m14_mag : HDMagAmmo {
 		HDMagAmmo.RoundType "B762x51Ammo";
 		HDMagAmmo.RoundBulk ENC_776_LOADED;
 		HDMagAmmo.MagBulk ENC_776MAG_EMPTY;
-		tag "7.62x51mm NATO magazine";
+		tag "7.62x51mm magazine";
 		hdpickup.refid B_M14_MAG_REFID;
 		inventory.pickupmessage "Picked up a 7.62x51mm NATO magazine.";
 		scale 0.8;
