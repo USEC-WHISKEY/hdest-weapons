@@ -129,7 +129,7 @@ class B_M249_Reloader : AutoReloadingThingy{
 
 
 	action void A_CheckItems(bool anyotherconditions){
-		HDMagAmmo mag = HDMagAmmo(invoker.FindInventory("Bm249Mag"));
+		HDMagAmmo mag = HDMagAmmo(invoker.owner.FindInventory("BM249Mag"));
 		if (!mag) {
 			return;
 		}
@@ -146,15 +146,15 @@ class B_M249_Reloader : AutoReloadingThingy{
 		if (deleteIndex == -1) {
 			return;
 		}
+		console.printf("here 2");
 
-		if (invoker.CountInv("B556Ammo") >= 200) {
+		if (invoker.owner.CountInv("B556Ammo") >= 200) {
 			A_TakeInventory("B556Ammo", 200);
 			mag.mags.delete(deleteIndex);
 			invoker.makinground = true;
 			invoker.brass = 30;
 			invoker.powders = 30;
 			dropinventory(invoker);
-
 		}
 
 	}

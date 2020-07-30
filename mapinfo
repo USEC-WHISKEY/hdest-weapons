@@ -35,8 +35,8 @@ DoomEdNums {
 	19105 = B_M249_Reloader
 	19106 = BM249MagEmpty
 	19107 = M249_noammo_noatta_giver
-	19108 = THERPBot
-	19109 = TDERPBot
+	19108 = THERPUsable
+	19109 = TDERPUsable
 
 
 	20001 = B556Mag
