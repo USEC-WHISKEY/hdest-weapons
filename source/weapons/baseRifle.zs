@@ -33,6 +33,28 @@ class BaseAltRifle : BHDWeapon {
 		sb.drawNum(hpl.CountInv(basicWep.bAltMagClass), -56, -8, sb.DI_SCREEN_CENTER_BOTTOM);
 	}
 
+	override string gethelptext(){
+
+		return
+		WEPHELP_FIRE.."  Shoot\n"
+		..WEPHELP_RELOAD.."  Reload mag\n"
+		..WEPHELP_UNLOAD.."  Release mag \\ Unchamber\n"
+		..WEPHELP_ALTRELOAD.."  Reload alt\n"
+		..WEPHELP_ALTFIRE..("  Rifle mode\n")
+		..WEPHELP_MAGMANAGER;
+
+		/*
+		   (gl?(WEPHELP_ALTRELOAD.."  Reload GL\n"):"")
+		..(glmode?(WEPHELP_FIREMODE.."+"..WEPHELP_UPDOWN.."  Airburst\n")
+			:(
+			((weaponstatus[0]& I_AUTO)?"":WEPHELP_FIREMODE.."  Semi/Auto/Burst\n")
+			..WEPHELP_ZOOM.."+"..WEPHELP_FIREMODE.."+"..WEPHELP_UPDOWN.."  Zoom\n"))
+		..WEPHELP_MAGMANAGER
+		..WEPHELP_UNLOAD.."  Unload "..(glmode?"GL":"magazine")
+		;
+		*/
+	}
+
 	States {
 
 		AltFire:

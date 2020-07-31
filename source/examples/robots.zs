@@ -259,7 +259,7 @@ class THERPBot:HDUPK{
 
 
 	ready:
-		THRP A 7 A_StartSound("weapons/vulcanup",CHAN_BODY,CHANF_OVERLAP);
+		THRP A 7 A_StartSound("bots/therp/warning", CHAN_BODY, CHANF_OVERLAP);
 		THRP AAA 1 herpbeep("herp/beepready");
 	aim:
 		THRP A 2 A_FaceTarget(2.,2.,0,0,FAF_TOP,-4);
@@ -294,7 +294,20 @@ class THERPBot:HDUPK{
 			}else ammo[0]--;
 
 			A_StartSound("weapons/m4/fire",CHAN_WEAPON,CHANF_OVERLAP);
+			double cosp = cos(pitch);
+
+			A_SPawnItemEx(
+					"B556Spent",
+					cosp * 2, 
+					0, 
+					height - 12 - sin(pitch) * 6,
+					cosp * -2,
+					1,
+					2 - sin(pitch),
+					0,
+					SXF_NOCHECKPOSITION | SXF_TRANSFERPITCH);
 			HDBulletActor.FireBullet(self,"HDB_556", zofs:6, spread:1, distantsound: "world/herpfar");
+
 		}
 		THRP C 1{
 			angle-=frandom(0.4,1.);
@@ -327,7 +340,7 @@ class THERPBot:HDUPK{
 				||(nextmag>100&&!random(0,3))
 			){
 				message("Operational fault. Please check your manual for proper maintenance. (ERR-42392-41A) Cartridge empty. Shutting down...");
-				A_StartSound("weapons/vulcandown",8,CHANF_OVERLAP);
+				A_StartSound("bots/therp/downed",8,CHANF_OVERLAP);
 				setstatelabel("off");
 			}else{
 				int currammo=ammo[0];
@@ -396,7 +409,7 @@ class THERPBot:HDUPK{
 		THRP A 1 A_StartSound("weapons/bigcrack",17);
 		THRP AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("HugeWallChunk",random(-6,6),random(-6,6),random(0,6), vel.x+random(-6,6),vel.y+random(-6,6),vel.z+random(1,8),0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM);
 		THRP A 0{
-			A_StartSound("weapons/vulcandown",CHAN_WEAPON,CHANF_OVERLAP);
+			A_StartSound("bots/therp/downed",CHAN_WEAPON,CHANF_OVERLAP);
 			string yay="";
 			switch(random(0,8)){
 			case 0:

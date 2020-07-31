@@ -1646,9 +1646,7 @@ class BHDWeapon : HDWeapon {
 		return
 		WEPHELP_FIRE.."  Shoot\n"
 		..WEPHELP_RELOAD.."  Reload mag\n"
-		..WEPHELP_UNLOAD.."  Release mag\Unchamber"
-		
-
+		..WEPHELP_UNLOAD.."  Release mag \\ Unchamber\n"
 		..WEPHELP_MAGMANAGER;
 		
 		//..WEPHELP_ALTRELOAD.."  Reload alt\n";

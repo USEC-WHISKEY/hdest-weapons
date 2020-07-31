@@ -420,13 +420,13 @@ class B_M4 : BaseStandardRifle {
 				}
 				else {
 					if (barrelClass && miscClass) {
-						return "M4PCF0", 1.;
+						return "M4PBF0", 1.;
 					}
 					else if (barrelClass) {
-						return "M4PCD0", 1.;
+						return "M4PBD0", 1.;
 					}
 					else if (miscClass) {
-						return "M4PCB0", 1.;
+						return "M4PBB0", 1.;
 					}
 					return "M4PAZ0", 1.;
 				}	
@@ -444,11 +444,6 @@ class B_M4 : BaseStandardRifle {
 		}
 	}
 }
-
-
-
-
-
 
 
 class B_M4_M203 : BaseGLRifle {
