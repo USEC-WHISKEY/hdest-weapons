@@ -305,3 +305,9 @@ These are for adding attachments as loose items in your inventory if you plan to
 - `r04`: M249 pouch reloader
 - `fhr`: F.H. robot
 - `thp`: Tactical H.E.R.P.
+
+### Crafting IDs
+
+- `bcr`: Ball crafter
+- `ccr`: Case crafter
+- `asm`: Bullet Assembler

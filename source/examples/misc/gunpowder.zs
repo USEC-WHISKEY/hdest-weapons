@@ -14,7 +14,7 @@ class B_GunPowder : BRoundAmmo {
 			stop;
 	}
 	override void GetItemsThatUseThis() {
-
+		itemsthatusethis.push("B_BulletAssembler");
 	}
 }
 
@@ -48,7 +48,7 @@ class B_556Ball : BRoundAmmo {
 			stop;
 	}
 	override void GetItemsThatUseThis() {
-
+		itemsthatusethis.push("B_BulletAssembler");
 	}
 }
 
@@ -67,7 +67,7 @@ class B_762Ball : BRoundAmmo {
 			stop;
 	}
 	override void GetItemsThatUseThis() {
-		
+		itemsthatusethis.push("B_BulletAssembler");
 	}
 }
 
@@ -86,6 +86,9 @@ class B_Lead : BRoundAmmo {
 		spawn:
 			BBBG C -1;
 			Stop;
+	}
+	override void GetItemsThatUseThis() {
+		itemsthatusethis.push("B_BallCrafter");
 	}
 }
 
@@ -117,6 +120,10 @@ class B_Brass : BRoundAmmo {
 		spawn:
 			BBBG E -1;
 			Stop;
+	}
+	override void GetItemsThatUseThis() {
+		itemsthatusethis.push("B_BallCrafter");
+		itemsthatusethis.push("B_CaseCrafter");
 	}
 }
 

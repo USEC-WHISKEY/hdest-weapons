@@ -1,3 +1,4 @@
+
 class B_M249_Reloader : AutoReloadingThingy{
 	default{
 		//$Category "Weapons/Hideous Destructor"
