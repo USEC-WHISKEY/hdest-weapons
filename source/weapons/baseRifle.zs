@@ -172,6 +172,29 @@ class BaseAltRifle : BHDWeapon {
 			---- A 0 {
 				return ResolveState("Nope");
 			}
+
+		user4:
+		Unload:
+			#### A 0 {
+				invoker.weaponStatus[I_FLAGS] |= F_UNLOAD_ONLY;
+				if (invoker.weaponstatus[I_FLAGS] & F_GL_MODE && invoker.weaponStatus[I_FLAGS] & I_GRENADE) {
+					return ResolveState("UnloadAlt");
+				}
+				else if (invoker.weaponstatus[I_FLAGS] & F_GL_MODE) {
+					return ResolveState("Nope");
+				}	
+
+				if (invoker.magazineGetAmmo() >= 0) {
+					return ResolveState("UnloadMag");
+				}
+				else if (invoker.chambered() || invoker.brokenChamber()) {
+					return ResolveState("UnloadChamber");
+				}
+				else {
+					return ResolveState("Nope");
+				}
+			}
+
 	}
 }
 

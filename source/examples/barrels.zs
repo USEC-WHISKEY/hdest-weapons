@@ -107,7 +107,7 @@ class FosSilencer : BaseSilencerAttachment {
 		HDPickup.Bulk 1;
 		HDPickup.RefId "slf";
 		Tag "Fauxtech Origin 12 silencer";
-		Inventory.Icon "FFSLC0";
+		Inventory.Icon "UIOZA0";
 		Inventory.PickupMessage "Picked up a Fauxtech Origin 12 silencer.";
 	}
 

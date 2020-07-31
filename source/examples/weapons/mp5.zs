@@ -800,6 +800,13 @@ class B_MP5_M203 : BaseGLRifle {
 		Unload:
 			#### A 0 {
 				invoker.weaponStatus[I_FLAGS] |= F_UNLOAD_ONLY;
+				if (invoker.weaponstatus[I_FLAGS] & F_GL_MODE && invoker.weaponStatus[I_FLAGS] & I_GRENADE) {
+					return ResolveState("UnloadAlt");
+				}
+				else if (invoker.weaponstatus[I_FLAGS] & F_GL_MODE) {
+					return ResolveState("Nope");
+				}	
+				
 				if (invoker.magazineGetAmmo() >= 0) {
 					invoker.boltIsBack = true;
 					return ResolveState("UnloadMag");
@@ -812,6 +819,8 @@ class B_MP5_M203 : BaseGLRifle {
 		Reload:
 			#### A 0 {
 				invoker.weaponStatus[I_FLAGS] &= ~F_UNLOAD_ONLY;
+
+
 				if (!invoker.brokenChamber() && invoker.magazineGetAmmo() % 30 >= invoker.bMagazineCapacity && !(invoker.weaponstatus[I_FLAGS] & F_UNLOAD_ONLY)) {
 					return ResolveState("Nope");
 				}
