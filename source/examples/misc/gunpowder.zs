@@ -75,16 +75,60 @@ class B_762Ball : BRoundAmmo {
 
 class B_Lead : BRoundAmmo {
 	default {
-		tag "Raw lead";
+		tag "Lead";
 		hdpickup.bulk 1;
 		Inventory.Icon "BBBGC0";
 	}
 	override string pickupmessage() {
-		return "Picked up raw lead.";
+		return "Picked up lead.";
 	}
 	states {
 		spawn:
 			BBBG C -1;
 			Stop;
+	}
+}
+
+class B_LeadRock : HDUPK {
+	default {
+		hdupk.amount 50;
+		hdupk.pickupsound "weapons/pocket";
+		hdupk.pickupmessage "Picked up a bunch of lead?";
+		hdupk.pickuptype "B_Lead";
+	}
+	states{
+	spawn:
+		BBBG D -1;
+	}
+}
+
+
+
+class B_Brass : BRoundAmmo {
+	default {
+		tag "Brass";
+		hdpickup.bulk 1;
+		Inventory.Icon "BBBGD0";
+	}
+	override string pickupmessage() {
+		return "Picked up brass sheet.";
+	}
+	states {
+		spawn:
+			BBBG E -1;
+			Stop;
+	}
+}
+
+class B_BrassSheets : HDUPK {
+	default {
+		hdupk.amount 50;
+		hdupk.pickupsound "weapons/pocket";
+		hdupk.pickupmessage "Picked up a bunch of brass sheets?";
+		hdupk.pickuptype "B_brass";
+	}
+	states{
+	spawn:
+		BBBG F -1;
 	}
 }

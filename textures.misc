@@ -14,11 +14,33 @@ sprite BBBGB0, 100, 66 {
 }
 
 sprite BBBGC0, 100, 100 {
-	XScale 10
-	YScale 10
+	XScale 20
+	YScale 20
 	Offset 50, 100
 	Patch "graphics/fullspr/lead.png", 0, 0
 }
+
+sprite BBBGD0, 100, 100 {
+	XScale 10
+	YScale 10
+	Offset 50, 100
+	Patch "graphics/fullspr/leads.png", 0, 0
+}
+
+sprite BBBGE0, 100, 100 {
+	XScale 10
+	YScale 10
+	Offset 50, 100
+	Patch "graphics/fullspr/bras.png", 0, 0
+}
+
+sprite BBBGF0, 100, 100 {
+	XScale 10
+	YScale 10
+	Offset 50, 100
+	Patch "graphics/fullspr/brass.png", 0, 0
+}
+
 
 sprite B56TA0, 51, 22 {
 	XScale 16

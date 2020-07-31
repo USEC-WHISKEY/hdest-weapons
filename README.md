@@ -54,7 +54,7 @@ https://realm667.com/
 
 The source code for this project is licensed under GNU v3. You are free to fork this code and make your own adjustments.
 
-Permission to reuse any game assets, sounds, or graphics are not granted unless you are using them in a project for either Hideous Destructor or creating a weapon that derives from `BHDWeapon`, the base class of the weapons for this mod. Reusing the player sprite is permitted if using the sprite within Hideous Destructor.
+The gun art assets, sounds, and player sprite are not allowed to be reused in other projects. Permission is only granted if you plan on forking this repository to create your own modifications. Permission for other Doom mods, or other games, is not granted. 
 
 ## Game Options
 
@@ -64,8 +64,7 @@ Options for this mod can be found in at the bottom of the default GZdoom options
 
 - None: Weapons from this mod will not spawn in levels. Gear can only be obtained via the loadout manager.
 - Replace: Hideous Destructor weapon spawns will be replaced with weapons from this mod.
-- Map start: Weapons are only replaced at the start of the level.
-- Map mixed: Weapons are only replaced at the start of the level. There is a 50% chance weapons from this pack will appear.
+- Map: Weapons are only replaced at the start of the level.
 
 WARNING: Vanilla loadouts and certain vanilla weapons will not if using replace mode. This is intended to replace the default weapons entirely. It is still possible to spawn vanilla items via the loadout manager, but they will not function properly. If you want to use both weapons, play using map start or map mixed. The following items are replaced:
 
@@ -76,6 +75,8 @@ WARNING: Vanilla loadouts and certain vanilla weapons will not if using replace 
 - Chaingun with the M249
 - D.E.R.P. robot with the F.H. robot
 - T.H.E.R.P. robot
+
+Also note that other mods that spawn or replace actors if using "Replace" mode may continue to spawn even though they should be replaced. You'll be able to pick up these items and use them, but dropping them will trigger a replacement. 
 
 ### Sight Mode
 
@@ -157,6 +158,12 @@ WARNING: Vanilla loadouts and certain vanilla weapons will not if using replace 
 <img src="graphics/gunimages/m249/none/flashlight_silencer.png">
 </p>
 
+### RPG
+
+<p align="center">
+<img src="graphics/gunimages/rpg/base.png">
+</p>
+
 ## Ammo
 
 Each weapon has its own magazine/drum/pouch. The Glock and MP5 are chambered in the the default Hideous Destructor 9mm bullet. The Fauxtech Origin also reuses thd default Hideous Destructor shotgun shells. Ammo for the M203 uses the default rocket grenade ammo as well. 
@@ -229,6 +236,7 @@ Note: The M4 and Fauxtech origin by default have no rear sight. You have to pick
 - `w06`: M249
 - `w07`: M4 M203
 - `w08`: MP5 M203
+- `w09`: RPG
 
 ### Muzzle IDs
 

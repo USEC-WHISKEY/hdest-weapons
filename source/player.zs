@@ -239,17 +239,11 @@ class PlayerEvents : EventHandler {
 	}
 
 	override void CheckReplacement(ReplaceEvent e) {
-		if (B_Replace_Type == 2) {
-			replaceHalf(e);
-		}
-		else if (B_Replace_Type == 5) {
+		if (B_Replace_Type == 5) {
 			replaceAll(e);
 		}
 		else if (B_Replace_Type == 6 && alreadyReplaced == false) {
 			replaceAll(e);
-		}
-		else if (B_Replace_Type == 7 && alreadyReplaced == false) {
-			replaceHalf(e);
 		}
 	}
 

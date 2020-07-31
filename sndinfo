@@ -53,3 +53,6 @@ bots/therp/warning "sounds/bots/warning.wav"
 bots/therp/downed "sounds/bots/downed.wav"
 
 random/tv "sounds/range/tvnoise.wav"
+
+crafting/motor "sounds/crafting/motor.wav"
+crafting/motor/ready "sounds/crafting/ready.wav"

@@ -1,4 +1,4 @@
-server int b_replace_type = 5;
+server int b_replace_type = 1;
 server int b_attach_spawn_mode = 1;
 
 user int b_althud_mode = 2;
