@@ -253,7 +253,7 @@ class BRpgRocket : HDMagAmmo {
 	}
 
 	override void GetItemsThatUseThis() {
-		
+		itemsthatusethis.push("B_RPGLauncher");
 	}
 
 	states{

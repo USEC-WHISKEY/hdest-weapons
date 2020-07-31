@@ -223,6 +223,19 @@ class PlayerEvents : EventHandler {
 			bat.itemsthatusethis.push("THERPUsable");
 			bat.itemsthatusethis.push("TDERPUsable");
 		}
+		else if (e.thing is "HDPistolAmmo") {
+			HDPistolAmmo b9m = HDPistolAmmo(e.thing);
+			b9m.itemsthatusethis.push("B_GLock");
+			b9m.itemsthatusethis.push("B_MP5");
+		}
+		else if (e.thing is "HDShellAmmo") {
+			HDShellAmmo shl = HDShellAmmo(e.thing);
+			shl.itemsthatusethis.push("b_FauxtechOrigin");
+		}
+		else if (e.thing is "HEATAmmo") {
+			HEATAmmo het = HEATAmmo(e.thing);
+			het.itemsthatusethis.push("B_RPGLauncher");
+		}
 	}
 
 	override void CheckReplacement(ReplaceEvent e) {
