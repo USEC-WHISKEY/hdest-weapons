@@ -357,7 +357,7 @@ class BHDWeapon : HDWeapon {
 				owner.A_DropInventory(bAmmoClass, amt * bMagazineCapacity);
 			}
 			else {
-				owner.A_DropInventory(bAmmoClass, amt);
+				owner.A_DropInventory(BMagazineClass, amt);
 			}
 		}
 	}

@@ -18,7 +18,7 @@ class B_RPGLauncher : BaseRPG {
 		BHDWeapon.BFlashSprite       "TNT1A0";
 		BHDWeapon.BHeatDrain         12;
 		BHDWeapon.BBulletClass       "";
-		BHDWeapon.BAmmoClass         "BRpgRocketAmmo";
+		BHDWeapon.BAmmoClass         "HEATAmmo";
 		BHDWeapon.BMagazineClass     "BRpgRocket";
 		BHDWeapon.BGunMass           3.0;
 		BHDWeapon.BCookOff           30;
