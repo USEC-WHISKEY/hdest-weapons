@@ -34,6 +34,13 @@ class B_M249_Reloader : AutoReloadingThingy{
 		return cnt;
 	}
 
+	void A_Churg(){
+		A_StartSound("crafting/motor/ready",8);
+		A_StartSound("crafting/motor",9);
+		vel.z+=randompick(-2,2);
+		//vel.xy+=(frandom(-0.3,0.3),frandom(-0.3,0.3));
+	}
+
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl){
 		vector2 bob=hpl.hudbob*0.3;
 
@@ -113,14 +120,16 @@ class B_M249_Reloader : AutoReloadingThingy{
 		stop;
 	chug:
 		---- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 3{
-			invoker.A_Chug();
+			invoker.A_Churg();
 		}
 		---- A 10{
 			let pouch = BM249Mag(Actor.Spawn("BM249Mag", invoker.pos));
-			pouch.vel + (
-				random(-5, 5),
-				random(-5, 5),
-				random(5, 10)
+			pouch.SyncAmount();
+			pouch.mags[0] = invoker.brass;
+			pouch.vel += (
+				random(-1, 1),
+				random(-1, 1),
+				random(1, 3)
 			);
 			invoker.brass = 0;
 			invoker.powders = 0;
@@ -147,14 +156,13 @@ class B_M249_Reloader : AutoReloadingThingy{
 		if (deleteIndex == -1) {
 			return;
 		}
-		console.printf("here 2");
 
-		if (invoker.owner.CountInv("B556Ammo") >= 200) {
-			A_TakeInventory("B556Ammo", 200);
+		if (invoker.owner.CountInv("B556Ammo") >= 1) {
 			mag.mags.delete(deleteIndex);
 			invoker.makinground = true;
-			invoker.brass = 30;
+			invoker.brass = invoker.owner.CountInv("B556Ammo");
 			invoker.powders = 30;
+			A_TakeInventory("B556Ammo", 200);
 			dropinventory(invoker);
 		}
 

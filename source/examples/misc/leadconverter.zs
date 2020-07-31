@@ -298,10 +298,10 @@ class B_BulletAssembler : HDWeapon {
 			caseSprite = "BB76A3A7";
 			ballClass = "B_762Ball";
 			ballSprite = "B76TA0";
-			sb.drawString(sb.psmallfont, "Mode: 5.56x45mm", (0, 0) + bob, sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_GREEN);
+			sb.drawString(sb.psmallfont, "Mode: 7.62x51mm", (0, 0) + bob, sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_GREEN);
 		}
 		else {
-			sb.drawString(sb.psmallfont, "Mode: 7.62x45mm", (0, 0) + bob, sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_RED);
+			sb.drawString(sb.psmallfont, "Mode: 5.56x45mm", (0, 0) + bob, sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_RED);
 		}
 
 		sb.drawString(sb.psmallfont, "1", (-30, 25) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, Font.CR_LIGHTBLUE);

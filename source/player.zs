@@ -31,6 +31,9 @@ class PlayerEvents : EventHandler {
 			if (rollCheck())
 				e.Replacement = "B556Mag";
 		}
+		else if (e.Replacee is "HDRL") {
+			e.Replacement = "B_RPGLauncher";
+		}
 		// Pistol
 		else if (e.Replacee is "HDPistol" || e.Replacee is "HDAutoPistol") {
 			if (rollCheck())
@@ -79,7 +82,12 @@ class PlayerEvents : EventHandler {
 		//
 		else if (e.Replacee is "HDAmBox") {
 			if (rollcheck()) {
-				e.Replacement = "BAmBox";
+				if (rollcheck()) {
+					e.Replacement = "BAmBox";
+				}
+				else {
+					e.Replacement = "BResourceBox";
+				}
 			}
 		}
 		else if (e.Replacee is "ClipMagPickup" || e.Replacee is "ClipBoxPickup") {
@@ -136,6 +144,9 @@ class PlayerEvents : EventHandler {
 		else if (e.Replacee is "HD4mmMagEmpty") {
 			e.Replacement = "B556MagEmpty";	
 		}
+		else if (e.Replacee is "HDRL") {
+			e.Replacement = "B_RPGLauncher";
+		}
 		// Pistol
 		else if (e.Replacee is "HDPistol" || e.Replacee is "HDAutoPistol") {
 			e.Replacement = "Glock_Random_Noammo_Giver";
@@ -173,7 +184,12 @@ class PlayerEvents : EventHandler {
 		}
 		else if (e.Replacee is "HDAmBox") {
 			if (rollcheck()) {
-				e.Replacement = "BAmBox";
+				if (rollcheck()) {
+					e.Replacement = "BAmBox";
+				}
+				else {
+					e.Replacement = "BResourceBox";
+				}
 			}
 		}
 		else if (e.Replacee is "ClipMagPickup" || e.Replacee is "ClipBoxPickup") {

@@ -297,7 +297,6 @@ class RandomBryanPickup : HDInvRandomSpawner {
 	}
 }
 
-
 class RandomMagPickup : HDInvRandomSpawner {
 	default {
 		dropitem "B556Mag",256,1;
@@ -336,5 +335,8 @@ class RandomWeaponPickup : HDInvRandomSpawner {
 		dropitem "M14_Random_Giver", 256, 1;
 		dropitem "MP5_Random_Giver", 256, 1;
 		dropitem "Glock_Random_Giver", 256, 1;
+		dropItem "M249_Random_Giver", 256, 1;
+		dropItem "Rpg_Random_Giver", 256, 1;
 	}
 }
+
