@@ -28,6 +28,13 @@ DoomEdNums {
 	19006 = Rpg_Random_Giver
 	19007 = RandomWeaponPickup
 	19008 = Rpg_Noammo_Giver
+	19009 = B_GunPowder
+	19010 = B_GunPowderBag
+	19011 = B_556Ball
+	19012 = B_762Ball
+	19013 = B_Lead
+	19014 = B556Brass
+	19015 = B762x51Brass
 
 	19100 = Glock_Random_Noammo_Noatta_Giver
 	19101 = mp5_noammo_noatta_giver

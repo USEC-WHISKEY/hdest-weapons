@@ -36,6 +36,7 @@ version "4.4"
 #include "source/examples/pickups.zs"
 
 #include "source/examples/misc/m249reloader.zs"
+#include "source/examples/misc/gunpowder.zs"
 
 #include "source/monsters/lvl1warrior.zs"
 #include "source/monsters/moperator.zs"

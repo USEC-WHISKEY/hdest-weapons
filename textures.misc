@@ -1,0 +1,35 @@
+
+sprite BBBGA0, 100, 66 {
+	XScale 8
+	YScale 8
+	Offset 50, 66
+	Patch "graphics/fullspr/blackpowder.png", 0, 0
+}
+
+sprite BBBGB0, 100, 66 {
+	XScale 6
+	YScale 6
+	Offset 50, 66
+	Patch "graphics/fullspr/powderbag.png", 0, 0
+}
+
+sprite BBBGC0, 100, 100 {
+	XScale 10
+	YScale 10
+	Offset 50, 100
+	Patch "graphics/fullspr/lead.png", 0, 0
+}
+
+sprite B56TA0, 51, 22 {
+	XScale 16
+	YScale 16
+	Offset 25, 22
+	Patch "graphics/fullspr/556tip.png", 0, 0
+} 
+
+sprite B76TA0, 51, 22 {
+	XScale 16
+	YScale 16
+	Offset 25, 22
+	Patch "graphics/fullspr/762tip.png", 0, 0
+} 

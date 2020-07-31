@@ -97,10 +97,11 @@ class BaseRPG : BHDWeapon {
 						invoker.barrellength-HDCONST_SHOULDERTORADIUS
 					)
 				),ALLOW_REPLACE));
-				A_ChangeVelocity(cos(pitch),0,sin(pitch),CVF_RELATIVE);
-				rkt.angle=angle;
-				rkt.target=self;
-				rkt.master=self;
+				A_ChangeVelocity(cos(pitch), 0, sin(pitch), CVF_RELATIVE);
+				rkt.angle = angle;
+				rkt.target = self;
+				rkt.master = self;
+				rkt.pitch = pitch;
 				rkt.primed=false;
 				rkt.isrocket=true;
 
