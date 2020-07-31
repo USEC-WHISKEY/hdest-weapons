@@ -27,6 +27,7 @@ DoomEdNums {
 	19005 = M249_Random_Giver
 	19006 = Rpg_Random_Giver
 	19007 = RandomWeaponPickup
+	19008 = Rpg_Noammo_Giver
 
 	19100 = Glock_Random_Noammo_Noatta_Giver
 	19101 = mp5_noammo_noatta_giver

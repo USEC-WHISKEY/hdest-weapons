@@ -1,7 +1,30 @@
 
 class BaseRPG : BHDWeapon {
 
+	override void DrawHUDStuff(HDStatusBar sb,HDWeapon hdw,HDPlayerPawn hpl){
+		BHDWeapon basicWep = BHDWeapon(hdw);
+		if (sb.hudLevel == 1) {
+			int nextMag = sb.GetNextLoadMag(HDMagAmmo(hpl.findInventory(basicWep.bMagazineClass)));
+			sb.DrawImage(basicWep.bMagazineSprite, (-46, -3), sb.DI_SCREEN_CENTER_BOTTOM, scale: (basicWep.BAmmoHudScale, basicWep.BAmmoHudScale));
+			sb.DrawNum(hpl.CountInv(basicWep.bMagazineClass), -43, -8, sb.DI_SCREEN_CENTER_BOTTOM);
+		}
+		if (basicWep.chambered()) {
+			sb.DrawWepDot(-16, -10, (3, 1));
+			//ammoBarAmt++;
+		}
+		//sb.DrawNum(ammoBarAmt, -16, -22, sb.DI_SCREEN_CENTER_BOTTOM | sb.DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
+	}
+
 	states {
+
+		MagOut:
+			#### A 4;
+			#### A 8 {
+				if (invoker.weaponStatus[I_FLAGS] & F_UNLOAD_ONLY || !CountInv(invoker.bMagazineClass)) {
+					return ResolveState("ReloadEnd");
+				}
+				return ResolveState("LoadMag");
+			}
 
 		UnloadMag:
 			#### A 1 Offset(0, 33);
@@ -54,6 +77,7 @@ class BaseRPG : BHDWeapon {
 		user4:
 		Unload:
 			#### A 0 {
+				invoker.weaponStatus[I_FLAGS] |= F_UNLOAD_ONLY;
 				if (invoker.chambered()) {
 					return ResolveState("UnloadMag");
 				}
@@ -65,12 +89,30 @@ class BaseRPG : BHDWeapon {
 		Flash:
 			TNT1 A 0;
 			#### # 1 { 
-				A_FireHDGL();
+
+				let rkt=gyrogrenade(spawn("HDHEAT",(
+					pos.xy,
+					pos.z+HDWeapon.GetShootOffset(
+						self,invoker.barrellength,
+						invoker.barrellength-HDCONST_SHOULDERTORADIUS
+					)
+				),ALLOW_REPLACE));
+				A_ChangeVelocity(cos(pitch),0,sin(pitch),CVF_RELATIVE);
+				rkt.angle=angle;
+				rkt.target=self;
+				rkt.master=self;
+				rkt.primed=false;
+				rkt.isrocket=true;
+
+				//A_StartSound("weapons/rpg/fire",CHAN_AUTO);
+				//A_StartSound("weapons/rockboom",CHAN_AUTO);
+
+				A_StartSound(invoker.BFireSound, CHAN_AUTO, CHANF_OVERLAP);
+				//A_StartSound("weapons/rpg/whoosh",CHAN_AUTO, CHANF_OVERLAP);
+
+
 				A_ChangeVelocity(cos(pitch), 0, sin(pitch), CVF_RELATIVE);
-				invoker.weaponstatus[RLS_SMOKE] += 50;
 				invoker.unchamber();
-				A_StartSound("weapons/rockignite",CHAN_AUTO);
-				A_StartSound("weapons/rockboom",CHAN_AUTO);
 				return ResolveState("LightDone");
 			}
 
@@ -79,6 +121,10 @@ class BaseRPG : BHDWeapon {
 			#### A 12 {
 				let magRef = HDMagAmmo(FindInventory(invoker.bMagazineClass));
 				if (!magRef) {
+					return ResolveState("ReloadEnd");
+				}
+
+				if (magRef.mags[0] == 0) {
 					return ResolveState("ReloadEnd");
 				}
 

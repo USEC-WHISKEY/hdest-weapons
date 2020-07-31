@@ -239,7 +239,7 @@ class BryanHeat : GyroGrenade {
 class BRpgRocket : HDMagAmmo {
 	default{
 		hdmagammo.maxperunit 1;
-		hdmagammo.roundtype "HDRocketAmmo";
+		hdmagammo.roundtype "HEATAmmo";
 		hdmagammo.roundbulk ENC_762_LOADED;
 		hdmagammo.magbulk ENC_762MAG_EMPTY;
 		hdpickup.refid B_RPG_ROCKET_REFID;
@@ -249,10 +249,11 @@ class BRpgRocket : HDMagAmmo {
 	}
 
 	override string,string,name,double getmagsprite(int thismagamt){
-		return "RPGRA6A4", "RPGR", "HDRocketAmmo", 0.8;
+		return "RPGRA6A4", "ROCKA0", "HEATAmmo", 0.8;
 	}
 
-	override void GetItemsThatUseThis(){
+	override void GetItemsThatUseThis() {
+		
 	}
 
 	states{

@@ -12,6 +12,10 @@ class Rpg_Random_Giver : BWeaponGiver {
 	}
 }
 
+class Rpg_Noammo_Giver : Rpg_Random_Giver {
+	override void SpawnMagazines() {}
+}
+
 class Glock_Random_Giver : BWeaponGiver {
 	override String getWeaponClass() {
 		return "B_Glock";

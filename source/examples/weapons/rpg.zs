@@ -1,4 +1,5 @@
 
+
 class B_RPGLauncher : BaseRPG {
 
 	default {
@@ -35,7 +36,7 @@ class B_RPGLauncher : BaseRPG {
 		BHDWeapon.BarrelWidth        1;
 		BHDWeapon.BarrelDepth        3;
 		
-		BHDWeapon.BFireSound         "weapons/m4/fire";
+		BHDWeapon.BFireSound         "weapons/rpg/fire";
 		BHDWeapon.BSFireSound        "weapons/m4/silentfire";
 		BHDWeapon.BChamberSound      "weapons/m4/chamber";
 		BHDWeapon.BBoltForwardSound  "weapons/m4/boltback";
@@ -47,7 +48,8 @@ class B_RPGLauncher : BaseRPG {
 		BHDWeapon.BROF               0.5;
 		BHDWeapon.BBackOffsetX       -7;
 		BHDWeapon.BBackOffsetY       40;
-		BHDWeapon.BFrontSightImage   "m16iron";
+		BHDWeapon.BFrontSightImage   "rpgft";
+		BHDWeapon.BBackSightImage    "rpgbk";
 		BHDWeapon.BFrontOffsetX      0;
 		BHDWeapon.BFrontOffsetY      22;
 		BHDWeapon.BSilentOffsetX     0;
@@ -57,6 +59,15 @@ class B_RPGLauncher : BaseRPG {
 		BHDWeapon.bMiscMount         "NATO_RAILS";
 		BHDWeapon.EjectShellClass    "B556Spent";
 		hdweapon.refid               B_RPGL_REFID;
+
+		BHDWeapon.BAltFrontSightImage "arpgft";
+		BHDWeapon.BAltBackSightImage "arpgbk";
+
+		BHDWeapon.BFrontOffsetX      0;
+		BHDWeapon.BFrontOffsetY      20;
+
+		BHDWeapon.BBackOffsetX 0;
+		BHDWeapon.BBackOffsetY 28;
 
 		BHDWeapon.BLayerSight   104;
 		BHDWeapon.bLayerRHand   105;
