@@ -241,7 +241,7 @@ class BRpgRocket : HDMagAmmo {
 		hdmagammo.maxperunit 1;
 		hdmagammo.roundtype "HEATAmmo";
 		hdmagammo.roundbulk ENC_762_LOADED;
-		hdmagammo.magbulk ENC_762MAG_EMPTY;
+		hdmagammo.magbulk 10;
 		hdpickup.refid B_RPG_ROCKET_REFID;
 		tag "RPG Rocket";
 		inventory.pickupmessage "Picked up a RPG rocket.";
