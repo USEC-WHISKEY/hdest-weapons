@@ -34,6 +34,9 @@ class PlayerEvents : EventHandler {
 		else if (e.Replacee is "HDRL") {
 			e.Replacement = "B_RPGLauncher";
 		}
+		else if (e.Replacee is "HEATAmmo") {
+			e.Replacement = "BRpgRocket";
+		}
 		// Pistol
 		else if (e.Replacee is "HDPistol" || e.Replacee is "HDAutoPistol") {
 			if (rollCheck())
@@ -146,6 +149,9 @@ class PlayerEvents : EventHandler {
 		}
 		else if (e.Replacee is "HDRL") {
 			e.Replacement = "B_RPGLauncher";
+		}
+		else if (e.Replacee is "HEATAmmo") {
+			e.Replacement = "BRpgRocket";
 		}
 		// Pistol
 		else if (e.Replacee is "HDPistol" || e.Replacee is "HDAutoPistol") {
