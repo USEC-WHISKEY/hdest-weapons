@@ -41,6 +41,7 @@ DoomEdNums {
 	19019 = B_BulletAssembler
 	19020 = B_LeadRock
 	19021 = B_BrassSheets
+	19022 = B_RocketAssembler
 
 	19100 = Glock_Random_Noammo_Noatta_Giver
 	19101 = mp5_noammo_noatta_giver
