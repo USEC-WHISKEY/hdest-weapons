@@ -269,14 +269,13 @@ class B_Sight_Holo_Red : BaseHoloSight {
 	}
 }
 
-
 class B_Reflex_Red : BaseCompactDotSight {
 	default {
 		BaseAttachment.SerialID B_REFLEX_RED_ID;
 		BaseAttachment.BaseSprite "RFLX";
 		BaseAttachment.BaseFrame 0;
 		Tag "Reflex red-dot sight";
-		Inventory.ICON "RFLIA0";
+		Inventory.ICON "ZUXKA0";
 		BaseSightAttachment.BackOffY 25;
 		Inventory.PickupMessage "Picked up a reflex red-dot sight.";
 		//BaseSightAttachment.bfrontAltImage "rflahd";
@@ -285,7 +284,7 @@ class B_Reflex_Red : BaseCompactDotSight {
 	}
 	States {
 		Spawn:
-			SCPP C -1;
+			ZUXK A -1;
 			Stop;
 
 		OverlayImage:

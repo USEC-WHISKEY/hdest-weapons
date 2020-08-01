@@ -44,7 +44,9 @@ Sound Effects: [Duncan Soo](https://www.duncansoo.com/)
 
 Player Sprites: Ultra64
 
-Play testing: a1337spy, Shredder
+Play testing: Shredder, a1337spy
+
+Special thanks to Shredder for being the Hideous Destructor consultant. 
 
 Textures used in hub map taken from Kingpin texture pack on Realm667
 
@@ -55,6 +57,16 @@ https://realm667.com/
 The source code for this project is licensed under GNU v3. You are free to fork this code and make your own adjustments.
 
 The gun art assets, sounds, and player sprite are not allowed to be reused in other projects. Permission is only granted if you plan on forking this repository to create your own modifications. Permission for other Doom mods, or other games, is not granted. 
+
+## Multiplayer
+
+Multiplayer compatibility has not been extensively tested. 
+
+## Player Skin
+
+This pack includes a tactical operator player skin. 
+
+<p><img src="static/operator.png"></p>
 
 ## Game Options
 
@@ -311,3 +323,4 @@ These are for adding attachments as loose items in your inventory if you plan to
 - `bcr`: Ball crafter
 - `ccr`: Case crafter
 - `asm`: Bullet Assembler
+- `rsm`: Rocket Aseembler

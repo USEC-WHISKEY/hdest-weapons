@@ -91,7 +91,7 @@ class B_BallCrafter : HDWeapon {
 				int brassCount = invoker.owner.CountInv("B_Brass");
 				if (leadCount >= leadNeeded && brassCount >= brassNeeded) {
 					A_StartSound("crafting/motor", CHAN_WEAPON, CHANF_OVERLAP);
-					A_SpawnItemEx(ballClass, 10, 0, height - 12, 0, 0, 0);
+					invoker.owner.GiveInventory(ballClass, 1);
 					invoker.owner.TakeInventory("B_Lead", leadNeeded);
 					invoker.owner.TakeInventory("B_Brass", brassNeeded);
 					if (invoker.mode == 1) {
@@ -215,7 +215,7 @@ class B_CaseCrafter : HDWeapon {
 				int brassCount = invoker.owner.CountInv("B_Brass");
 				if (brassCount >= brassNeeded) {
 					A_StartSound("crafting/motor", CHAN_WEAPON, CHANF_OVERLAP);
-					A_SpawnItemEx(caseClass, 10, 0, height - 12, 0, 0, 0);
+					invoker.owner.GiveInventory(caseClass, 1);
 					invoker.owner.TakeInventory("B_Brass", brassNeeded);
 					if (invoker.mode == 1) {
 						A_SetTics(10);
@@ -373,7 +373,7 @@ class B_BulletAssembler : HDWeapon {
 
 				if (caseCount >= 1 && ballCount >= 1 && powderCount >= powderRequired) {
 					A_StartSound("crafting/motor", CHAN_WEAPON, CHANF_OVERLAP);
-					A_SpawnItemEx(bulletClass, 10, 0, height - 12, 0, 0, 0);
+					invoker.owner.GiveInventory(bulletClass, 1);
 					invoker.owner.TakeInventory(caseClass, 1);
 					invoker.owner.TakeInventory(ballClass, 1);
 					invoker.owner.TakeInventory("B_GunPowder", powderRequired);
@@ -523,7 +523,7 @@ class B_RocketAssembler : HDWeapon {
 				}
 			}
 			TNT1 A 20 {
-				A_SpawnItemEx("BRpgRocket", 10, 0, height - 12, 0, 0, 0);
+				invoker.owner.GiveInventory("BRpgRocket", 1);
 			}
 			TNT1 A 1 {
 				A_StartSound("crafting/motor/ready", CHAN_WEAPON, CHANF_OVERLAP);
@@ -550,7 +550,7 @@ class B_RocketAssembler : HDWeapon {
 				}
 			}
 			TNT1 A 5 {
-				A_SpawnItemEx("HDRocketAmmo", 10, 0, height - 12, 0, 0, 0);
+				invoker.owner.GiveInventory("HDRocketAmmo", 1);
 			}
 			TNT1 A 1 {
 				A_StartSound("crafting/motor/ready", CHAN_WEAPON, CHANF_OVERLAP);

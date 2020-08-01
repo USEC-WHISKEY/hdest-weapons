@@ -33,8 +33,6 @@ class Level1Warrior : Actor {
 		Raise:
 			LV1W A -1;
 			Stop;
-
-
 	}
 }
 
@@ -78,3 +76,4 @@ class Level1Target : Actor {
 	}
 
 }
+

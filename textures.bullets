@@ -144,5 +144,5 @@ sprite BF56A5, 5, 5 {
 	XScale 8
 	YScale 8
 	Offset 3, 5
-	Patch "graphics/bulletimages/556/case_A5.png", 0, 0
+	Patch "graphics/bulletimages/556/full_A5.png", 0, 0
 }

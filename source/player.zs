@@ -161,8 +161,103 @@ class PlayerEvents : EventHandler {
 	int ticks;
 
 	override void WorldLoaded(WorldEvent e) {
-		// I'm assuming CheckReplacement is called before the world is fully loaded?
 		alreadyReplaced = true;
+
+		if (b_spawn_raw_resources != 1) {
+			return;
+		}
+
+		ThinkerIterator allActors = ThinkerIterator.create("Actor");
+		Array<Actor> decorations;
+		Actor next;
+
+		while (next = Actor(allActors.next())) {
+			if (next is "HDTorchTree" || 
+				next is "HDTechPillar" || 
+				next is "HDTallRedColumn" || 
+				next is "HDTallGreenColumn" || 
+				next is "HDStalagtite" || 
+				next is "HDStalagmite" || 
+				next is "HDSkullColumn" || 
+				next is "HDShortRedColumn" || 
+				next is "HDShortGreenColumn" || 
+				next is "HDHeartColumn" || 
+				next is "HDFloatingSkull" || 
+				next is "HDEvilEye" || 
+				next is "HDBigTree" || 
+				next is "HDDeadStick" || 
+				next is "HDHeadCandles" || 
+				next is "HDHeadsStick" || 
+				next is "HDHTLkUp" || 
+				next is "HDHTNoGuts" || 
+				next is "HDHTSkull" || 
+				next is "HDMt3NS" || 
+				next is "HDMt4NS" || 
+				next is "HDMt5" || 
+				next is "HDMt5NS" || 
+				next is "HDTwitchHang" || 
+				next is "SmallBloodPool" || 
+				next is "Gibs" || 
+				next is "ColonGibs" || 
+				next is "BrainStem" || 
+				next is "ReallyDeadRifleman" || 
+				next is "ReallyDeadRiflemanCrouched" ||
+				next is "DeadTrilobite" ||
+				next is "DeadRifleman" ||
+				next is "DeadImpSpawner" ||
+				next is "DeadHideousShotgunGuy" ||
+				next is "DeadDemonSpawner" ||
+				next is "DeadZombieStormtrooper" ||
+				next is "Candlestick" ||
+				next is "HDBlueTorch" ||
+				next is "HDCandelabra" ||
+				next is "HDColumn" ||
+				next is "HDGreenTorch" ||
+				next is "HDRedTorch" ||
+				next is "HDShortBlueTorch" ||
+				next is "HDShortGreenTorch" ||
+				next is "HDShortRedTorch" ||
+				next is "HDTechLamp" ||
+				next is "HDTechLamp2" ||
+				next is "HDBarrel") {
+				decorations.push(next);
+			}
+		} 
+
+		// No decorations, no spawns 
+		if (decorations.size() < 2) {
+			return;
+		}
+
+		Actor rngLoc1 = decorations[random(0, decorations.size() - 1)];
+		Actor rngLoc2 = decorations[random(0, decorations.size() - 1)];
+		while (rngLoc1 == rngLoc2) {
+			rngLoc2 = decorations[random(0, decorations.size() - 1)];
+		}
+
+		let bench1 = Actor.Spawn("RandomCraftingBench", rngLoc1.pos);
+		let bench2 = Actor.Spawn("RandomCraftingBench", rngLoc2.pos);
+		bench1.vel += (random(-8, 8), random(-8, 8), random(8, 16));
+		bench2.vel += (random(-8, 8), random(-8, 8), random(8, 16));
+
+		// Now the resources
+		int pings = random(0, decorations.size());
+		for (int i = 0; i < pings; i++) {
+			Actor nextDeco = decorations[random(0, decorations.size() - 1)];
+
+			bool bigOrSmall = random(0, 100) >= 50;
+			Actor thingy;
+			if (bigOrSmall) {
+				thingy = Actor.Spawn("RandomResourcePickup", nextDeco.pos);
+			}
+			else {
+				thingy = Actor.SPawn("RandomSmallResourcePickup", nextDeco.pos);
+			}
+			if (thingy) {
+				thingy.vel += (random(-8, 8), random(-8, 8), random(8, 16));
+			}
+
+		}
 	}
 
 	override void WorldThingSpawned(WorldEvent e) {
@@ -188,52 +283,6 @@ class PlayerEvents : EventHandler {
 		else if (e.thing is "HEATAmmo") {
 			HEATAmmo het = HEATAmmo(e.thing);
 			het.itemsthatusethis.push("B_RPGLauncher");
-		}
-
-		// Barrels spawn raw resources if resource mode on
-		if (b_spawn_raw_resources == 1) {
-			//console.printf("spawn thing %s", e.thing.getClassName());
-
-			if (e.thing is "HDBarrel") {
-
-				HDBarrel bar = HDBarrel(e.thing);
-				int moreRng = random(0, 100) > 50;
-
-				if (moreRng) {
-					int rng = random(1, 30);
-					for (int i = 0; i < rng; i++) {
-						let pickup = RandomSmallResourcePickup.Spawn("RandomSmallResourcePickup", e.thing.pos);
-						pickup.vel += (
-							random(-5, 5),
-							random(-5, 5),
-							random(2, 20)
-						);
-					}
-				}
-				else {
-					int benchRng = random(0, 100);
-					if (benchRng < 25) {
-						let bench = Actor.Spawn("RandomCraftingBench", e.thing.pos);
-						bench.vel += (
-							random(-2, 2),
-							random(-2, 2),
-							random(2, 4)
-						);
-					}
-					else {
-						int rng = random(1, 2);
-						for (int i = 0; i < rng; i++) {
-							let pickup = RandomSmallResourcePickup.Spawn("RandomResourcePickup", e.thing.pos);
-							pickup.vel += (
-								random(-2, 2),
-								random(-2, 2),
-								random(2, 4)
-							);
-						}
-					}
-				}
-
-			}
 		}
 	}
 

@@ -8,7 +8,7 @@ class b_FauxtechOrigin : BaseShotgun {
 		weapon.slotpriority          1;
 		inventory.pickupsound        "misc/w_pkup";
 		inventory.pickupmessage      "You got the Fauxtech Origin 12.";
-		scale                        0.7;
+		scale                        0.6;
 		weapon.bobrangex             0.22;
 		weapon.bobrangey             0.9;
 		obituary                     "%o was assaulted by %k.";
@@ -429,5 +429,29 @@ class FauxTechLightOffset : MiscOffset {
 		Offset.WeaponClass "b_FauxtechOrigin";
 		Offset.WeaponOverlay "B_M16_Flashlight";
 		Offset.OffX -2;
+	}
+}
+
+class FauxTech10xOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "b_FauxtechOrigin";
+		Offset.WeaponOverlay "B_Scope_10x";
+		Offset.OffY 10;
+	}
+}
+
+class FauxTechReflexOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "b_FauxtechOrigin";
+		Offset.WeaponOverlay "B_Reflex_Red";
+		Offset.OffY 10;
+	}
+}
+
+class FauxTechHoloOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "b_FauxtechOrigin";
+		Offset.WeaponOverlay "B_Sight_Holo_Red";
+		Offset.OffY 10;
 	}
 }
