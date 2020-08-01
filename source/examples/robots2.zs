@@ -354,7 +354,7 @@ class TDERPUsable:HDWeapon{
 		weapon.selectionorder 1014;
 
 		scale 0.6;
-		inventory.icon "DERPEX";
+		inventory.icon "TDRPA8A2";
 		inventory.pickupmessage "Picked up a Functionally Handicapped robot.";
 		inventory.pickupsound "derp/crawl";
 		translation 0;

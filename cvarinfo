@@ -2,7 +2,7 @@ server int b_replace_type = 1;
 server int b_attach_spawn_mode = 1;
 
 server int b_spawn_raw_resources = 1;
-server int b_spawn_empty_mags = 1;
-server int b_spawn_no_ammo = 1;
+server int b_spawn_empty_mags = 0;
+server int b_spawn_no_ammo = 0;
 
 user int b_althud_mode = 2;

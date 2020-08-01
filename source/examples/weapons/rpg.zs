@@ -75,6 +75,15 @@ class B_RPGLauncher : BaseRPG {
 		BHDWeapon.BAmmoHudScale 0.8;
 	}
 
+	override string, double GetPickupSprite() {
+		if(chambered()) {
+			return bSpriteWithMag, 1.;
+		}
+		else {
+			return bSpriteWithoutMag, 1.;
+		}
+	}
+
 	states {
 		Spawn:
 			RPGP A 0 {

@@ -34,7 +34,6 @@ class BaseAltRifle : BHDWeapon {
 	}
 
 	override string gethelptext(){
-
 		return
 		WEPHELP_FIRE.."  Shoot\n"
 		..WEPHELP_RELOAD.."  Reload mag\n"
@@ -42,17 +41,6 @@ class BaseAltRifle : BHDWeapon {
 		..WEPHELP_ALTRELOAD.."  Reload alt\n"
 		..WEPHELP_ALTFIRE..("  Rifle mode\n")
 		..WEPHELP_MAGMANAGER;
-
-		/*
-		   (gl?(WEPHELP_ALTRELOAD.."  Reload GL\n"):"")
-		..(glmode?(WEPHELP_FIREMODE.."+"..WEPHELP_UPDOWN.."  Airburst\n")
-			:(
-			((weaponstatus[0]& I_AUTO)?"":WEPHELP_FIREMODE.."  Semi/Auto/Burst\n")
-			..WEPHELP_ZOOM.."+"..WEPHELP_FIREMODE.."+"..WEPHELP_UPDOWN.."  Zoom\n"))
-		..WEPHELP_MAGMANAGER
-		..WEPHELP_UNLOAD.."  Unload "..(glmode?"GL":"magazine")
-		;
-		*/
 	}
 
 	override void DropOneAmmo(int amt){

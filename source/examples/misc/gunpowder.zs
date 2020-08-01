@@ -111,7 +111,7 @@ class B_Brass : BRoundAmmo {
 	default {
 		tag "Brass";
 		hdpickup.bulk 1;
-		Inventory.Icon "BBBGD0";
+		Inventory.Icon "BBBGE0";
 	}
 	override string pickupmessage() {
 		return "Picked up brass sheet.";

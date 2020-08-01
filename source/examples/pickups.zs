@@ -468,7 +468,7 @@ class B_RPG_Empty : EmptySpawner {
 					return;
 				}
 				if (gun is "BaseAltRifle") {
-					console.printf("Remove Grenade");
+					//console.printf("Remove Grenade");
 				}
 				gun.spawnEmpty = true;
 				gun.weaponStatus[I_MAG] = invoker.magLim();
