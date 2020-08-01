@@ -64,7 +64,7 @@ Multiplayer compatibility has not been extensively tested.
 
 ## Player Skin
 
-This pack includes a tactical operator player skin. 
+This pack includes a tactical operator player skin. To use run the command `hd_skin BryanOperator`. 
 
 <p><img src="static/operator.png"></p>
 
