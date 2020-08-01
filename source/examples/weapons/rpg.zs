@@ -61,7 +61,7 @@ class B_RPGLauncher : BaseRPG {
 		hdweapon.refid               B_RPGL_REFID;
 
 		BHDWeapon.BAltFrontSightImage "arpgft";
-		BHDWeapon.BAltBackSightImage "arpgbk";
+		BHDWeapon.BAltBackSightImage  "arpgbk";
 
 		BHDWeapon.BFrontOffsetX      0;
 		BHDWeapon.BFrontOffsetY      20;
@@ -77,12 +77,13 @@ class B_RPGLauncher : BaseRPG {
 
 	states {
 		Spawn:
-			RPGP A -1 {
+			RPGP A 0 {
 				if (!invoker.chambered()) {
 					return ResolveState("SpawnNoRocket");
 				}
 				return ResolveState(NULL);
 			}
+			RPGP A -1;
 			Stop;
 
 		SpawnNoRocket:

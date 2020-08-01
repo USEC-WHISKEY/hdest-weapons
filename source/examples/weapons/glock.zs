@@ -70,7 +70,7 @@ class b_Glock : BasePistol {
 	states {
 		Spawn:
 			GLKP A 0 GetMagStatePistol();
-			//Goto Super::Spawn; 
+			Goto Super::Spawn; 
 		
 		SpawnMag:
 			GLKU A 0 {

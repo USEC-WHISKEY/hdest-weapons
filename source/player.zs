@@ -18,183 +18,114 @@ class PlayerEvents : EventHandler {
 		return rnggo >= 50;
 	}
 
-	void replaceHalf(ReplaceEvent e) {
-		if (e.Replacee is "ZM66Random") {
-			if (rollCheck())
-				e.Replacement = "M4_Random_Giver";
-		}
-		else if (e.Replacee is "ZM66AssaultRifle" || e.Replacee is "ZM66Regular" || e.Replacee is "ZM66Semi") {
-			if (rollCheck())
-				e.Replacement = "M4_Random_Noammo_Giver";
-		}
-		else if (e.Replacee is "HD4mMag") {
-			if (rollCheck())
-				e.Replacement = "B556Mag";
-		}
-		else if (e.Replacee is "HDRL") {
-			e.Replacement = "B_RPGLauncher";
-		}
-		else if (e.Replacee is "HEATAmmo") {
-			e.Replacement = "BRpgRocket";
-		}
-		// Pistol
-		else if (e.Replacee is "HDPistol" || e.Replacee is "HDAutoPistol") {
-			if (rollCheck())
-				e.Replacement = "Glock_Random_Noammo_Giver";
-		}
-		else if (e.Replacee is "HD9mMag30") {
-			if (rollCheck())
-				e.Replacement = "B9mm_MP5K_MAG";
-		}
-		else if (e.Replacee is "HD9mMag15") {
-			if (rollCheck())
-				e.Replacement = "GlockMagazine";
-		}
-		// Mp5
-		else if (e.Replacee is "HDSMG") {
-			if (rollCheck())
-				e.Replacement = "mp5_random_noammo_giver";
-		}
-		// Liberator
-		else if (e.Replacee is "LiberatorRifle" || e.Replacee is "LiberatorNoBullpupNoGL" || e.Replacee is "LiberatorNoBullpup" || e.Replacee is "LiberatorNoGL") {
-			if (rollCheck())
-				e.Replacement = "M14_random_noammo_giver";
-		}
-		else if (e.Replacee is "LiberatorRandom") {
-			if (rollCheck())
-				e.Replacement = "M14_random_giver";
-		}
-		else if (e.Replacee is "HD7mMag") {
-			if (rollCheck())
-				e.Replacement = "b762_m14_mag";
-		}
-		// Chaingun
-		else if (e.Replacee is "ChaingunReplaces") {
-			if (rollCheck())
-				e.Replacement = "M249_Random_Giver";
-		}
-		// Shotgun
-		else if (e.Replacee is "ShotgunReplaces" || e.Replacee is "SSGReplaces") {
-			if (rollCheck())
-				e.Replacement = "fauxtech_random_noammo_giver";
-		}
-		else if (e.Replacee is "ShellBoxPickup") {
-			if (rollCheck())
-				e.Replacement = "BFauxDrum";
-		}
-		//
-		else if (e.Replacee is "HDAmBox") {
-			if (rollcheck()) {
-				if (rollcheck()) {
-					e.Replacement = "BAmBox";
-				}
-				else {
-					e.Replacement = "BResourceBox";
-				}
-			}
-		}
-		else if (e.Replacee is "ClipMagPickup" || e.Replacee is "ClipBoxPickup") {
-			if (rollCheck())
-				e.Replacement = "RandomBryanPickup";
-		}
-		else if (e.Replacee is "DERPBot") {
-			if (rollCheck())
-			e.Replacement = "TDerpBot";
-		}
-		else if (e.Replacee is "DERPUsable") {
-			if (rollCheck())
-			e.Replacement = "TDERPUsable";
-		}
-		else if (e.Replacee is "EnemyDERP") {
-			if (rollCheck())
-			e.Replacement = "EnemyTDERP";
-		}
-		else if (e.Replacee is "DERPDead") {
-			if (rollCheck())
-			e.Replacement = "TDERPDead";
-		}
-
-		else if (e.Replacee is "HERPBot") {
-			if (rollCheck())
-			e.Replacement = "THerpBot";
-		}
-		else if (e.Replacee is "HERPUsable") {
-			if (rollCheck())
-			e.Replacement = "THERPUsable";
-		}
-		else if (e.Replacee is "EnemyHERP") {
-			if (rollCheck())
-			e.Replacement = "EnemyTHERP";
-		}
-		else if (e.Replacee is "BrokenHERP") {
-			if (rollCheck())
-			e.Replacement = "BrokenTHERP";
-		}
-	}
-
 	void replaceAll(ReplaceEvent e) {
 		if (e.Replacee is "ZM66Random") {
-			e.Replacement = "M4_Random_Giver";
+			if (b_spawn_empty_mags == 1)
+				e.Replacement = "B_M4_Empty";
+			else
+				e.Replacement = "M4_Random_Giver";
 		}
 		else if (e.Replacee is "ZM66AssaultRifle" || e.Replacee is "ZM66Regular" || e.Replacee is "ZM66Semi" || e.Replacee is "ZM66Irregular") {
-			
-			e.Replacement = "M4_Random_Noammo_Giver";
+			if (b_spawn_empty_mags == 1) 
+				e.Replacement = "B_M4_Empty";
+			else
+				e.Replacement = "M4_Random_Noammo_Giver";
 		}
 		else if (e.Replacee is "HD4mMag" || e.Replacee is "HDDirtyMagazine") {
-			
-			e.Replacement = "B556Mag";
+			if (b_spawn_empty_mags == 1)
+				e.Replacement = "B556MagEmpty2";	
+			else
+				e.Replacement = "B556Mag";
 		}
 		else if (e.Replacee is "HD4mmMagEmpty") {
 			e.Replacement = "B556MagEmpty";	
 		}
 		else if (e.Replacee is "HDRL") {
-			e.Replacement = "B_RPGLauncher";
+			if (b_spawn_empty_mags == 1)
+				e.Replacement = "B_RPG_Empty";
+			else
+				e.Replacement = "B_RPGLauncher";
 		}
 		else if (e.Replacee is "HEATAmmo") {
 			e.Replacement = "BRpgRocket";
 		}
 		// Pistol
 		else if (e.Replacee is "HDPistol" || e.Replacee is "HDAutoPistol") {
-			e.Replacement = "Glock_Random_Noammo_Giver";
+			if (b_spawn_empty_mags == 1)
+				e.Replacement = "B_GLock_Empty";
+			else
+				e.Replacement = "Glock_Random_Noammo_Giver";
 		}
 		else if (e.Replacee is "HD9mMag30") {
-			e.Replacement = "B9mm_MP5K_MAG";
+			if (b_spawn_empty_mags == 1)
+				e.Replacement = "BMp5MagEmpty2";
+			else
+				e.Replacement = "B9mm_MP5K_MAG";
 		}
 		else if (e.Replacee is "HD9mMag15") {
-			e.Replacement = "GlockMagazine";
+			if (b_spawn_empty_mags == 1)
+				e.Replacement = "BGlockMagEmpty2";
+			else
+				e.Replacement = "GlockMagazine";
 		}
 		// Mp5
 		else if (e.Replacee is "HDSMG") {
-			e.Replacement = "mp5_random_noammo_giver";
+			if (b_spawn_empty_mags == 1)
+				e.Replacement = "b_mp5_empty";
+			else
+				e.Replacement = "mp5_random_noammo_giver";
 		}
 		// Liberator
 		else if (e.Replacee is "LiberatorRifle" || e.Replacee is "LiberatorNoBullpupNoGL" || e.Replacee is "LiberatorNoBullpup" || e.Replacee is "LiberatorNoGL") {
-			e.Replacement = "M14_random_noammo_giver";
+			if (b_spawn_empty_mags == 1) 
+				e.Replacement = "B_M14_Empty";
+			else
+				e.Replacement = "M14_random_noammo_giver";
 		}
 		else if (e.Replacee is "LiberatorRandom") {
-			e.Replacement = "M14_random_giver";
+			if (b_spawn_empty_mags == 1) 
+				e.Replacement = "B_M14_Empty";
+			else
+				e.Replacement = "M14_random_giver";
 		}
 		else if (e.Replacee is "HD7mMag") {
-			e.Replacement = "b762_m14_mag";
+			if (b_spawn_empty_mags == 1)
+				e.Replacement = "B762MagEmpty2";
+			else
+				e.Replacement = "b762_m14_mag";
 		}
 		// Chaingun
 		else if (e.Replacee is "ChaingunReplaces") {
-			e.Replacement = "M249_Random_Giver";
+			if (b_spawn_empty_mags == 1)
+				e.Replacement = "B_M249_Empty";
+			else
+				e.Replacement = "M249_Random_Giver";
 		}
 		// Shotgun
 		else if (e.Replacee is "ShotgunReplaces" || e.Replacee is "SSGReplaces") {
-			e.Replacement = "fauxtech_random_noammo_giver";
+			if (b_spawn_empty_mags == 1) 
+				e.Replacement = "B_Fauxtech_Empty";
+			else
+				e.Replacement = "fauxtech_random_noammo_giver";
 		}
 		else if (e.Replacee is "ShellBoxPickup") {
-			e.Replacement = "BFauxDrum";
+			if (b_spawn_empty_mags == 1)
+				e.Replacement = "BFauxDrumEmpty";
+			else
+				e.Replacement = "BFauxDrum";
 		}
 		else if (e.Replacee is "HDAmBox") {
 			if (rollcheck()) {
-				if (rollcheck()) {
-					e.Replacement = "BAmBox";
+				if (b_spawn_raw_resources == 1) {
+					if (rollcheck()) {
+						e.Replacement = "BAmBox";
+					}
+					else {
+						e.Replacement = "BResourceBox";
+					}
 				}
 				else {
-					e.Replacement = "BResourceBox";
+					e.Replacement = "BAmBox";
 				}
 			}
 		}
@@ -257,6 +188,52 @@ class PlayerEvents : EventHandler {
 		else if (e.thing is "HEATAmmo") {
 			HEATAmmo het = HEATAmmo(e.thing);
 			het.itemsthatusethis.push("B_RPGLauncher");
+		}
+
+		// Barrels spawn raw resources if resource mode on
+		if (b_spawn_raw_resources == 1) {
+			//console.printf("spawn thing %s", e.thing.getClassName());
+
+			if (e.thing is "HDBarrel") {
+
+				HDBarrel bar = HDBarrel(e.thing);
+				int moreRng = random(0, 100) > 50;
+
+				if (moreRng) {
+					int rng = random(1, 30);
+					for (int i = 0; i < rng; i++) {
+						let pickup = RandomSmallResourcePickup.Spawn("RandomSmallResourcePickup", e.thing.pos);
+						pickup.vel += (
+							random(-5, 5),
+							random(-5, 5),
+							random(2, 20)
+						);
+					}
+				}
+				else {
+					int benchRng = random(0, 100);
+					if (benchRng < 25) {
+						let bench = Actor.Spawn("RandomCraftingBench", e.thing.pos);
+						bench.vel += (
+							random(-2, 2),
+							random(-2, 2),
+							random(2, 4)
+						);
+					}
+					else {
+						int rng = random(1, 2);
+						for (int i = 0; i < rng; i++) {
+							let pickup = RandomSmallResourcePickup.Spawn("RandomResourcePickup", e.thing.pos);
+							pickup.vel += (
+								random(-2, 2),
+								random(-2, 2),
+								random(2, 4)
+							);
+						}
+					}
+				}
+
+			}
 		}
 	}
 

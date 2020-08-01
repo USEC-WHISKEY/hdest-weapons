@@ -296,8 +296,52 @@ class B_MP5 : BHDWeapon {
 				A_Overlay(invoker.BLayerRHand, "HandDisengageBolt");
 				A_Overlay(invoker.BLayerGun, "UnloadFront");
 				A_Overlay(invoker.BLayerGunBack, "UnloadBack");
+				A_StartSound(invoker.bloadSound, CHAN_WEAPON, CHANF_OVERLAP);
 			}
-			Goto Super::UnloadMag;
+			#### A 1 Offset(0, 33);
+			#### A 1 Offset(-3, 34);
+			#### A 1 Offset(-8, 37);
+			#### A 2 Offset(-11, 39) {
+
+				if (invoker.magazineGetAmmo() < 0) {
+					return ResolveState("MagOut");
+				}
+				if (invoker.brokenChamber()) {
+					invoker.weaponStatus[I_FLAGS] |= F_UNLOAD_ONLY;
+				}
+				//A_SetPitch(pitch - 0.3, SPF_INTERPOLATE);
+				//A_SetAngle(angle - 0.3, SPF_INTERPOLATE);
+				//A_StartSound(invoker.bClickSound, CHAN_WEAPON);
+				return ResolveState(NULL);
+			}
+			#### A 4 Offset(-12, 40) {
+				//A_SetPitch(pitch - 0.3, SPF_INTERPOLATE);
+				//A_SetAngle(angle - 0.3, SPF_INTERPOLATE);
+			}
+			#### A 20 offset(-14, 44) {
+
+				int inMag = invoker.magazineGetAmmo();
+				if (inMag > (invoker.bMagazineCapacity + 1)) {
+					inMag %= invoker.bMagazineCapacity;
+				}
+
+				invoker.weaponStatus[I_MAG] = -1;
+				if (invoker.chambered()) {
+					A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
+				}
+				invoker.unchamber();
+				
+
+				if (!PressingUnload() && !PressingReload() || A_JumpIfInventory(invoker.bMagazineClass, 0, "null")) {
+					HDMagAmmo.SpawnMag(self, invoker.bMagazineClass, inMag);
+					A_SetTics(1);
+				}
+				else {
+					HDMagAmmo.GiveMag(self, invoker.bMagazineClass, inMag);
+					A_StartSound("weapons/pocket", CHAN_WEAPON);
+				}
+				return ResolveState("MagOut");
+			}
 
 		UnloadFront:
 			MP5G K 4;
@@ -911,9 +955,11 @@ class B_MP5_M203 : BaseGLRifle {
 				}
 
 				invoker.weaponStatus[I_MAG] = -1;
+				if (invoker.chambered()) {
+					A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
+				}
 				invoker.unchamber();
-				A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
-
+				
 
 				if (!PressingUnload() && !PressingReload() || A_JumpIfInventory(invoker.bMagazineClass, 0, "null")) {
 					HDMagAmmo.SpawnMag(self, invoker.bMagazineClass, inMag);

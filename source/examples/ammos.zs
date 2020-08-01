@@ -210,9 +210,6 @@ class B_762_Box : HDUPK {
 
 
 
-
-
-
 class BAmBox : HDUPK {
 
 	default {

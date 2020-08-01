@@ -42,6 +42,21 @@ class B556MagEmpty:IdleDummy{
 	}
 }
 
+class B556MagEmpty2 : B556Mag {
+	states {
+		spawn:
+			TNT1 A 0 NoDelay {
+				let mag = B556Mag(Spawn("B556mag", pos, ALLOW_REPLACE));
+				if (!mag) {
+					return;
+				}
+				mag.SyncAmount();
+				mag.mags[0] = 0;
+			}
+			stop;
+	}
+}
+
 class BM249Mag : HDMagAmmo {
 	default{
 		hdmagammo.maxperunit 200;
@@ -119,6 +134,30 @@ class B9mm_MP5K_MAG : HDMagAmmo {
 	}
 }
 
+
+class BMp5MagEmpty:IdleDummy{
+	override void postbeginplay(){
+		super.postbeginplay();
+		HDMagAmmo.SpawnMag(self,"B9mm_MP5K_MAG",0);
+		destroy();
+	}
+}
+
+class BMp5MagEmpty2 : B9mm_MP5K_MAG {
+	states {
+		spawn:
+			TNT1 A 0 NoDelay {
+				let mag = B9mm_MP5K_MAG(Spawn("B9mm_MP5K_MAG", pos, ALLOW_REPLACE));
+				if (!mag) {
+					return;
+				}
+				mag.SyncAmount();
+				mag.mags[0] = 0;
+			}
+			stop;
+	}
+}
+
 class BFauxDrum : HDMagAmmo {
 	default {
 		hdmagammo.maxperunit 20;
@@ -153,6 +192,15 @@ class BFauxDrum : HDMagAmmo {
 	}
 
 }
+
+class BFauxDrumEmpty:IdleDummy{
+	override void postbeginplay(){
+		super.postbeginplay();
+		HDMagAmmo.SpawnMag(self,"BFauxDrum",0);
+		destroy();
+	}
+}
+
 
 
 class b762_m14_mag : HDMagAmmo {
@@ -189,6 +237,31 @@ class b762_m14_mag : HDMagAmmo {
 	}
 }
 
+class B762MagEmpty2 : b762_m14_mag {
+	states {
+		spawn:
+			TNT1 A 0 NoDelay {
+				let mag = B762MagEmpty2(Spawn("B762MagEmpty2", pos, ALLOW_REPLACE));
+				if (!mag) {
+					return;
+				}
+				mag.SyncAmount();
+				mag.mags[0] = 0;
+			}
+			stop;
+	}
+}
+
+
+class B762MagEmpty:IdleDummy{
+	override void postbeginplay(){
+		super.postbeginplay();
+		HDMagAmmo.SpawnMag(self,"b762_m14_mag",0);
+		destroy();
+	}
+}
+
+
 class GlockMagazine : HDMagAmmo {
 	default{
 		hdmagammo.maxperunit 15;
@@ -223,13 +296,26 @@ class GlockMagazine : HDMagAmmo {
 	}
 }
 
-class BryanHeat : GyroGrenade {
+class BGlockMagEmpty:IdleDummy{
+	override void postbeginplay(){
+		super.postbeginplay();
+		HDMagAmmo.SpawnMag(self,"GlockMagazine",0);
+		destroy();
+	}
+}
+
+class BGlockMagEmpty2 : GlockMagazine {
 	states {
 		spawn:
-			RPGR A 0 nodelay { 
-				primed = true; 
+			TNT1 A 0 NoDelay {
+				let mag = GlockMagazine(Spawn("GlockMagazine", pos, ALLOW_REPLACE));
+				if (!mag) {
+					return;
+				}
+				mag.SyncAmount();
+				mag.mags[0] = 0;
 			}
-			Goto SpawnRocket;
+			stop;
 	}
 }
 

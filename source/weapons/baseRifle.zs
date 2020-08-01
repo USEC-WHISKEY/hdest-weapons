@@ -55,6 +55,26 @@ class BaseAltRifle : BHDWeapon {
 		*/
 	}
 
+	override void DropOneAmmo(int amt){
+		if(owner){
+			amt = clamp(amt, 1, 10);
+			if (owner.CountInv(bAmmoClass)) {
+				owner.A_DropInventory(bAmmoClass, amt * bMagazineCapacity);
+			}
+			else {
+				double angchange=(weaponstatus[0]&ZM66F_NOLAUNCHER)?0:-10;
+				if(angchange)owner.angle-=angchange;
+				owner.A_DropInventory(BMagazineClass, amt);
+				if(angchange){
+					owner.angle+=angchange*2;
+					owner.A_DropInventory(bAltMagClass, amt);
+					owner.angle-=angchange;
+				}
+			}
+		}
+	}
+
+
 	States {
 
 		AltFire:
@@ -205,12 +225,13 @@ class BaseGLRifle : BaseAltRifle {
 
 	override void PostBeginPlay() {
 		super.PostBeginPlay();
-		weaponStatus[I_FLAGS] |= I_GRENADE;
+		if (!spawnEmpty) {
+			weaponStatus[I_FLAGS] |= I_GRENADE;
+		}
 		//weaponStatus[I_FLAGS] |= F_CHAMBER;
 		//weaponStatus[I_MAG]--;
 		// This bugs if you're carrying multiple rifles, need to check it out?
 	}
-
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl) {
 		super.DrawHUDStuff(sb, hdw, hpl);

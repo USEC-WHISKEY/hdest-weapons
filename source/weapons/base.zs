@@ -292,11 +292,14 @@ class BHDWeapon : HDWeapon {
 	// DOom Overrides
 	override void PostBeginPlay() {
 		super.PostBeginPlay();
-		weaponStatus[I_FLAGS] |= F_CHAMBER;
+		if (!spawnEmpty) {
+			weaponStatus[I_FLAGS] |= F_CHAMBER;
+		}
 		//weaponStatus[I_MAG]--;
 		// This bugs if you're carrying multiple rifles, need to check it out?
 	}
 
+	bool spawnEmpty;
 
 	// HD API
 
@@ -845,6 +848,7 @@ class BHDWeapon : HDWeapon {
 		
 
 		GetAttachmentStateBarrel(mgr);
+		// fuck why did I comment this out here
 		//GetAttachmentStateScope(mgr);
 		GetAttachmentStateMisc(mgr);
 	}

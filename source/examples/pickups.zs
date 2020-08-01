@@ -340,3 +340,139 @@ class RandomWeaponPickup : HDInvRandomSpawner {
 	}
 }
 
+class RandomEmptyWeaponPickup : HDInvRandomSpawner {
+	default {
+		dropitem "B_Glock_Empty", 256, 1;
+		dropitem "B_MP5_Empty", 256, 1;
+		dropitem "B_M4_Empty", 256, 1;
+		dropitem "B_M14_Empty", 256, 1;
+		dropitem "B_M249_Empty", 256, 1;
+		dropitem "B_RPG_Empty", 256, 1;
+	}
+}
+
+class RandomResourcePickup : HDInvRandomSpawner {
+	default {
+		dropitem "B_GunPowderBag", 256, 1;
+		dropitem "B_LeadRock", 256, 1;
+		dropitem "B_BrassSheets", 256, 1;
+	}
+}
+
+class RandomSmallResourcePickup : HDInvRandomSpawner {
+	default {
+		dropitem "B_GunPowder", 256, 1;
+		dropitem "B_Lead", 256, 1;
+		dropitem "B_Brass", 256, 1;
+	}
+}
+
+class RandomCraftingBench : HDInvRandomSpawner {
+	default {
+		dropitem "B_BallCrafter", 256, 1;
+		dropitem "B_CaseCrafter", 256, 1;
+		dropitem "B_BulletAssembler", 256, 1;
+		dropitem "B_RocketAssembler", 256, 1;
+	}
+}
+
+class EmptySpawner : IdleDummy {
+	virtual string getGun() { return ""; }
+	virtual int magLim() { return 0; }
+	virtual int topLim() { return 0; }
+	states {
+		spawn:
+			TNT1 A 0 NoDelay {
+				let gun = BHDWeapon(Spawn(invoker.getGun(), pos, ALLOW_REPLACE));
+				if (!gun) {
+					return;
+				}
+
+				bool emptyRng = random(0, 100) > 50;
+				if (!emptyRng) {
+					gun.spawnEmpty = true;
+					gun.weaponStatus[I_MAG] = invoker.magLim();
+				}
+				else {
+					gun.weaponStatus[I_MAG] = random(1, invoker.topLim());
+				}
+			}
+			stop;
+	}
+}
+
+class B_Glock_Empty : EmptySpawner {
+	override string getGun() { return "B_Glock"; }
+	override int topLim() { return 15; }
+}
+
+class B_MP5_Empty : EmptySpawner {
+	override string getGun() { 
+		return random(0, 100) > 50 ? "B_MP5_M203" : "B_MP5"; 
+	}
+	override int topLim() { return 30; }
+}
+
+class B_M4_Empty : B_M4 {
+	states {
+		spawn:
+			TNT1 A 0 NoDelay {
+				let gun = B_M4(Spawn("B_m4", pos, ALLOW_REPLACE));
+				if (!gun) {
+					return;
+				}
+
+				bool emptyRng = random(0, 100) > 50;
+				if (!emptyRng) {
+					gun.spawnEmpty = true;
+					gun.weaponStatus[I_MAG] = 0;
+				}
+				else {
+					gun.weaponStatus[I_MAG] = random(1, 30);
+				}
+
+
+
+				gun.setStateLabel("Spawn");
+
+			}
+			stop;
+	}
+}
+
+class B_Fauxtech_Empty : EmptySpawner {
+	override string getGun() { return "B_FauxtechOrigin"; }
+	override int topLim() { return 20; }
+}
+
+class B_M14_Empty : EmptySpawner {
+	override string getGun() { return "B_M14"; }
+	override int topLim() { return 20; }
+}
+
+class B_M249_Empty : EmptySpawner {
+	override string getGun() { 
+		return "B_M249"; 
+	}
+	override int topLim() { return 200; }
+}
+
+class B_RPG_Empty : EmptySpawner {
+	override string getGun() { return "B_RPGLauncher"; }
+	states {
+		spawn:
+			TNT1 A 0 NoDelay {
+				let gun = B_RPGLauncher(Spawn(invoker.getGun(), pos, ALLOW_REPLACE));
+				gun.setStateLabel("Spawn");
+				if (!gun) {
+					return;
+				}
+				if (gun is "BaseAltRifle") {
+					console.printf("Remove Grenade");
+				}
+				gun.spawnEmpty = true;
+				gun.weaponStatus[I_MAG] = invoker.magLim();
+			}
+			stop;
+	}
+}

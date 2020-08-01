@@ -434,51 +434,41 @@ class B_RocketAssembler : HDWeapon {
 		return "BNCHD0",1.;
 	}
 
+	int mode;
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl){
 		vector2 bob=hpl.hudbob*0.3;
 		sb.drawString(sb.psmallfont, "Rocket Assembler", (0, -10) + bob, sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_GOLD);
 
-		/*
-		int powderRequired = 5;
-		int powderCount = hpl.countinv("B_GunPowder");
+		int powderCount  = hpl.countInv("B_GunPowder");
+		int leadCount    = hpl.countInv("B_Lead");
+		int grenadeCount = hpl.countInv("HDFragGrenadeAmmo"); // FRAGA0
 
-
-		int cases = 0;
-		int balls = 0;
-		string caseClass = "B556Brass";
-		string ballClass = "B_556Ball";
-		string caseSprite = "BF56A7A3";
-		string ballSprite = "B56TA0";
-
+		int powderRequired  = 5;
+		int leadRequired    = 2;
 
 		if (mode == 1) {
-			powderRequired = 3;
-			caseClass = "B762x51Brass";
-			caseSprite = "BB76A3A7";
-			ballClass = "B_762Ball";
-			ballSprite = "B76TA0";
-			sb.drawString(sb.psmallfont, "Mode: 5.56x45mm", (0, 0) + bob, sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_GREEN);
+			sb.drawString(sb.psmallfont, "Mode: Rocket Grenade", (0, 0) + bob, sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, FONT.CR_RED);
+			sb.drawString(sb.psmallfont, "5", (-30, 25) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, Font.CR_LIGHTBLUE); // powder
+			sb.drawString(sb.psmallfont, "2", (0, 25) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, Font.CR_LIGHTBLUE);   // lead
+			sb.drawString(sb.psmallfont, "1", (30, 25) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, Font.CR_LIGHTBLUE);  // grenade
+			sb.drawImage("BBBGA0", (-30, 40) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale: (2, 2));
+			sb.drawImage("BBBGC0", (0, 40) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale: (3, 3));
+			sb.drawImage("FRAGA0", (30, 40) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER);
+			sb.drawString(sb.psmallfont, ""..powderCount, (-30, 55) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, powderCount >= 5 ? Font.CR_GREEN : Font.CR_DARKGRAY); // powder
+			sb.drawString(sb.psmallfont, ""..leadCount, (0, 55) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, leadCount >= 2 ? Font.CR_GREEN : Font.CR_DARKGRAY);   // lead
+			sb.drawString(sb.psmallfont, ""..grenadeCount, (30, 55) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, grenadeCount >= 1 ? Font.CR_GREEN : Font.CR_DARKGRAY);  // grenade
+
 		}
 		else {
-			sb.drawString(sb.psmallfont, "Mode: 7.62x45mm", (0, 0) + bob, sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_RED);
+			sb.drawString(sb.psmallfont, "Mode: RPG HEAT Rocket", (0, 0) + bob, sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, FONT.CR_GREEN);
+			sb.drawString(sb.psmallfont, "20", (-15, 25) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, Font.CR_LIGHTBLUE); // powder
+			sb.drawString(sb.psmallfont, "10", (15, 25) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, Font.CR_LIGHTBLUE);  // lead
+			sb.drawImage("BBBGA0", (-15, 40) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale: (2, 2));
+			sb.drawImage("BBBGC0", (15, 40) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale: (3, 3));
+			sb.drawString(sb.psmallfont, ""..powderCount, (-15, 55) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, powderCount >= 20 ? Font.CR_GREEN : Font.CR_DARKGRAY); // powder
+			sb.drawString(sb.psmallfont, ""..leadCount, (15, 55) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, leadCount >= 10 ? Font.CR_GREEN : Font.CR_DARKGRAY);   // lead
 		}
-
-		sb.drawString(sb.psmallfont, "1", (-30, 25) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, Font.CR_LIGHTBLUE);
-		sb.drawString(sb.psmallfont, ""..powderRequired, (0, 25) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, Font.CR_LIGHTBLUE);
-		sb.drawString(sb.psmallfont, "1", (30, 25) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, Font.CR_LIGHTBLUE);
-		
-		sb.drawImage(caseSprite, (-30, 40) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale: (3, 3));
-		sb.drawImage("BBBGA0", (0, 40) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER);
-		sb.drawImage(ballSprite, (30, 40) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER);
-
-		int caseCount = hpl.countinv(caseClass);
-		int ballCount = hpl.countinv(ballClass);
-
-		sb.drawString(sb.psmallfont, ""..caseCount, (-30, 55) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, caseCount >= 1 ? Font.CR_GREEN : Font.CR_DARKGRAY);
-		sb.drawString(sb.psmallfont, ""..powderCount, (0, 55) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, caseCount >= 1 ? Font.CR_GREEN : Font.CR_DARKGRAY);
-		sb.drawString(sb.psmallfont, ""..ballCount, (30, 55) + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, caseCount >= 1 ? Font.CR_GREEN : Font.CR_DARKGRAY);
-		*/
 	}
 
 	override string gethelptext(){
@@ -509,42 +499,68 @@ class B_RocketAssembler : HDWeapon {
 			Goto ReadyEnd;
 
 		Fire:
-			TNT1 A 7 {
-				/*
-				int powderRequired = 2;
+			TNT1 A 0 {
+				if (invoker.mode == 0) {
+					return ResolveState("MakeHeat");
+				}
+				return ResolveState("MakeGrenade");
+			}
+
+		MakeHeat:
+			TNT1 A 5;
+			TNT1 A 1 {
 				int powderCount = invoker.owner.countinv("B_GunPowder");
-				int cases = 0;
-				int balls = 0;
-				string caseClass = "B556Brass";
-				string ballClass = "B_556Ball";
-				string caseSprite = "BF56A7A3";
-				string ballSprite = "B56TA0";
-				string bulletClass = "B556Ammo";
-				if (invoker.mode == 1) {
-					powderRequired = 3;
-					caseClass = "B762x51Brass";
-					caseSprite = "BB76A3A7";
-					ballClass = "B_762Ball";
-					ballSprite = "B76TA0";
-					bulletClass = "B762x51Ammo";
-				}
+				int leadCount = invoker.owner.countinv("B_Lead");
 
-				int caseCount = invoker.owner.countinv(caseClass);
-				int ballCount = invoker.owner.countinv(ballClass);
-
-				if (caseCount >= 1 && ballCount >= 1 && powderCount >= powderRequired) {
+				if (powderCount >= 20 && leadCount >= 10) {
 					A_StartSound("crafting/motor", CHAN_WEAPON, CHANF_OVERLAP);
-					A_SpawnItemEx(bulletClass, 10, 0, height - 12, 0, 0, 0);
-					invoker.owner.TakeInventory(caseClass, 1);
-					invoker.owner.TakeInventory(ballClass, 1);
-					invoker.owner.TakeInventory("B_GunPowder", powderRequired);
-					if (invoker.mode == 1) {
-						A_SetTics(10);
-					}
+					invoker.owner.TakeInventory("B_GunPowder", 20);
+					invoker.owner.TakeInventory("B_Lead", 10);
+					return ResolveState(NULL);
 				}
-				*/
+				else {
+					return ResolveState("Ready");
+				}
+			}
+			TNT1 A 20 {
+				A_SpawnItemEx("BRpgRocket", 10, 0, height - 12, 0, 0, 0);
+			}
+			TNT1 A 1 {
+				A_StartSound("crafting/motor/ready", CHAN_WEAPON, CHANF_OVERLAP);
 			}
 			Goto Ready;
+
+
+		MakeGrenade:
+			TNT1 A 5;
+			TNT1 A 1 {
+				int powderCount = invoker.owner.countinv("B_GunPowder");
+				int leadCount = invoker.owner.countinv("B_Lead");
+				int grenadeCount = invoker.owner.countinv("HDFragGrenadeAmmo");
+
+				if (powderCount >= 5 && leadCount >= 2 && grenadeCount >= 1) {
+					A_StartSound("crafting/motor", CHAN_WEAPON, CHANF_OVERLAP);
+					invoker.owner.TakeInventory("B_GunPowder", 5);
+					invoker.owner.TakeInventory("B_Lead", 2);
+					invoker.owner.TakeInventory("HDFragGrenadeAmmo", 1);
+					return ResolveState(NULL);
+				}
+				else {
+					return ResolveState("Ready");
+				}
+			}
+			TNT1 A 5 {
+				A_SpawnItemEx("HDRocketAmmo", 10, 0, height - 12, 0, 0, 0);
+			}
+			TNT1 A 1 {
+				A_StartSound("crafting/motor/ready", CHAN_WEAPON, CHANF_OVERLAP);
+			}
+			Goto Ready;
+
+		AltFire:
+			TNT1 A 1 {
+				invoker.mode = invoker.mode == 0 ? 1 : 0;
+			}
 
 		Switched:
 			TNT1 A 0 A_Refire();

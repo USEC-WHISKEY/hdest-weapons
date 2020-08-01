@@ -15,6 +15,16 @@ OptionValue "B_Attach_Spawn_Options" {
 	2, "Random"
 }
 
+OptionValue "B_Resource_Options" {
+	0, "Off"
+	1, "On"
+}
+
+OptionValue "B_Mag_Options" {
+	0, "Filled"
+	1, "Empty"
+}
+
 AddOptionMenu "OptionsMenu" {
 	StaticText ""
 	Submenu "Bryan's Weapons Options", "B_Options"
@@ -43,5 +53,26 @@ OptionMenu "B_Options" {
 	statictext "None:    Weapons will not spawn with attachments,      "
 	statictext "         just their default sights.                    "
 	statictext "Random:  Weapons can spawn with random attachments.    "
+
+	statictext ""
+	statictext "In development features - expect it to be broken"
+	statictext ""
+
+	option "Resource mode", "b_spawn_raw_resources", "B_Resource_Options"
+	statictext "Off:       Items to craft ammo will not spawn.         "
+	statictext "On:        Gun powder, lead, and brass will appear as  "
+	statictext "           resources that can be used to craft ammo    "
+	statictext "           and rockets.                                "
+
+	option "Weapon Mag mode", "b_spawn_empty_mags", "B_Mag_Options"
+	statictext "Filled:    Guns spawn with a full magazine.            "
+	statictext "Empty:     Guns spawn without a magazine.              "
+	statictext ""
+
+	option "Loose Mag mode", "b_spawn_no_ammo", "B_Mag_Options"
+	statictext "Filled:    Magazines spawn with full ammo.             "
+	statictext "Empty:     Magazines spawn without any ammo.           "
+	statictext ""
+
 
 }
