@@ -537,9 +537,10 @@ class b_M249 : BHDWeapon {
 			#### A 2 Offset(0, 42) {
 				//A_MuzzleClimb(frandom(-.4, .4), frandom(-.4, .4));
 				if (invoker.chambered() && !invoker.brokenChamber()) {
-					//A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
+					A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
 					invoker.WeaponStatus[I_FLAGS] &= ~F_CHAMBER;
 				}
+				/*
 				else if (!random(0, 4)) {
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER_BROKE;
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER;
@@ -551,6 +552,8 @@ class b_M249 : BHDWeapon {
 						A_SpawnItemEx("HDSmokeChunk", 12, 0, height - 12, 4, frandom(-2, 2), frandom(2, 4));
 					}
 				}
+				*/
+
 				else if (invoker.brokenChamber()) {
 					A_StartSound("weapons/smack", CHAN_WEAPON, CHANF_OVERLAP);
 				}
