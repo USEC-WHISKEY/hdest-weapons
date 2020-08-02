@@ -1529,6 +1529,9 @@ class BHDWeapon : HDWeapon {
 
 		Select0:
 			#### A 0 GetAttachmentState();
+			#### A 0 {
+				invoker.weaponStatus[I_FLAGS] &= ~F_GL_MODE;			
+			}
 			Goto super::select0small;
 
 		deselect:

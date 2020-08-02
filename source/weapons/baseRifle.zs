@@ -216,6 +216,7 @@ class BaseGLRifle : BaseAltRifle {
 		if (!spawnEmpty) {
 			weaponStatus[I_FLAGS] |= I_GRENADE;
 		}
+		
 		//weaponStatus[I_FLAGS] |= F_CHAMBER;
 		//weaponStatus[I_MAG]--;
 		// This bugs if you're carrying multiple rifles, need to check it out?
