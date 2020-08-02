@@ -490,7 +490,7 @@ class BHDWeapon : HDWeapon {
 			sb.DrawWepDot(-16, -10, (3, 1));
 			//ammoBarAmt++;
 		}
-		sb.DrawNum(ammoBarAmt, -16, -22, sb.DI_SCREEN_CENTER_BOTTOM | sb.DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
+		//sb.DrawNum(ammoBarAmt, -16, -22, sb.DI_SCREEN_CENTER_BOTTOM | sb.DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
 	}
 
 	String getFrontSightImage(HDPlayerPawn hpl) const {

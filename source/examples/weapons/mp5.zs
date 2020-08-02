@@ -12,7 +12,7 @@ class B_MP5 : BHDWeapon {
 		weapon.bobrangey             0.9;
 		obituary                     "%o was assaulted by %k.";
 		tag                          "MP5";
-		inventory.icon               "M4RPA0";
+		inventory.icon               "MP5PA0";
 		BHDWeapon.BFlashSprite       "MPFLA0";
 		BHDWeapon.BHeatDrain         12;
 		BHDWeapon.BBulletClass       "HDB_9";
@@ -626,7 +626,7 @@ class B_MP5_M203 : BaseGLRifle {
 		weapon.bobrangey             0.9;
 		obituary                     "%o was assaulted by %k.";
 		tag                          "MP5 M203";
-		inventory.icon               "M5GUA0";
+		inventory.icon               "MP5PA0";
 		BHDWeapon.BFlashSprite       "MPFLA0";
 		BHDWeapon.BHeatDrain         12;
 		BHDWeapon.BBulletClass       "HDB_9";

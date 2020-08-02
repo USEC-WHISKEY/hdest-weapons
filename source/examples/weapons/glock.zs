@@ -13,7 +13,7 @@ class b_Glock : BasePistol {
 		weapon.bobrangey             0.7;
 		obituary                     "%o was assaulted by %k.";
 		tag                          "Glock";
-		inventory.icon               "GLKCA0";
+		inventory.icon               "GLKPA0";
 		BHDWeapon.BFlashSprite       "GLFLA0";
 		BHDWeapon.BHeatDrain         12;
 		BHDWeapon.BBulletClass       "HDB_9";

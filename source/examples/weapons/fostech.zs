@@ -13,7 +13,7 @@ class b_FauxtechOrigin : BaseShotgun {
 		weapon.bobrangey             0.9;
 		obituary                     "%o was assaulted by %k.";
 		tag                          "Fauxtech Origin 12";
-		inventory.icon               "M4RPA0";
+		inventory.icon               "FOSPA0";
 		BHDWeapon.BHeatDrain         12;
 		BHDWeapon.BBulletClass       "HDB_00";
 		BHDWeapon.BAmmoClass         "HDShellAmmo";

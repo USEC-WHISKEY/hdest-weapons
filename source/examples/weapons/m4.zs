@@ -476,7 +476,7 @@ class B_M4_M203 : BaseGLRifle {
 		weapon.bobrangey             0.9;
 		obituary                     "%o was assaulted by %k.";
 		tag                          "M4 M203";
-		inventory.icon               "M4PCA0";
+		inventory.icon               "M4PCC0";
 		BHDWeapon.BFlashSprite       "FLSHA0";
 		BHDWeapon.BHeatDrain         12;
 		BHDWeapon.BBulletClass       "HDB_556";
