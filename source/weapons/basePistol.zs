@@ -17,17 +17,20 @@ class BasePistol : BaseStandardRifle {
 		vector2 scc;
 		vector2 bobb=bob*1.6;
 		double dotoff = max(abs(bob.x), abs(bob.y));
-
+//BHDWeapon.BLayerGun    100;
 		int cx,cy,cw,ch;
 		[cx,cy,cw,ch]=screen.GetClipRect();
 
-		if(hpl.player.getpsprite(PSP_WEAPON).frame == 1){
+		BasePistol ref = BasePistol(hdw);
+
+		//console.printf("%i", hpl.player.getpsprite(ref.BLayerGun).frame);
+		if(hpl.player.getpsprite(ref.BLayerGun).frame == 6){
 			//sb.SetClipRect(-40 + bob.x, -5 + bob.y, 20, 14, sb.DI_SCREEN_CENTER );
-			scc=(0.8,0.9);
+			scc=(0.7,0.8);
 			bobb.y=clamp(bobb.y*1.1-3,-10,10);
 		}else{
 			//sb.SetClipRect(-8 + bob.x, -4 + bob.y, 16, 10, sb.DI_SCREEN_CENTER);
-			scc=(0.7,0.7);
+			scc=(0.6,0.6);
 			bobb.y=clamp(bobb.y,-8,8);
 		}
 

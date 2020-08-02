@@ -2,7 +2,7 @@
 class b_FauxtechOrigin : BaseShotgun {
 
 	default {
-		+hdweapon.fitsinbackpack
+		-hdweapon.fitsinbackpack
 		weapon.selectionorder        20;
 		weapon.slotnumber            3;
 		weapon.slotpriority          1;

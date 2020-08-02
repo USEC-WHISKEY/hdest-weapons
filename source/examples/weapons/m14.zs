@@ -1,7 +1,7 @@
 
 class b_m14 : basestandardrifle {
 	default {
-		+hdweapon.fitsinbackpack
+		-hdweapon.fitsinbackpack
 		weapon.selectionorder        20;
 		weapon.slotnumber            5;
 		weapon.slotpriority          1;

@@ -64,6 +64,11 @@ class B_M4 : BaseStandardRifle {
 		BHDWeapon.BLayerSight  104;
 		BHDWeapon.bLayerRHand  105;
 		BHDWeapon.bLayerGunBack -99;
+
+		BHDWeapon.BRecoilXLow -1.2;
+		BHDWeapon.BRecoilXHigh 1.2;
+		BHDWeapon.BRecoilYLow  1.1;
+		BHDWeapon.BRecoilYHigh 2.1;		
 	}
 
 	states {

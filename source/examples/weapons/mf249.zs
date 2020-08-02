@@ -1,7 +1,7 @@
 
 class b_M249 : BHDWeapon {
 	default {
-		+hdweapon.fitsinbackpack
+		-hdweapon.fitsinbackpack
 		weapon.selectionorder        20;
 		weapon.slotnumber            6;
 		weapon.slotpriority          1;

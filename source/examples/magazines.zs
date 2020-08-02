@@ -8,6 +8,7 @@ class B556Mag : HDMagAmmo{
 		hdpickup.refid B_556_MAG_REFID;
 		tag "5.56x45mm magazine";
 		inventory.pickupmessage "Picked up a 5.56x45mm NATO STANAG magazine.";
+		Inventory.Icon "M4RCA0";
 		scale 0.8;
 	}
 
@@ -43,6 +44,7 @@ class B556MagEmpty:IdleDummy{
 }
 
 class B556MagEmpty2 : B556Mag {
+	default { -hdpickup.fitsinbackpack }
 	states {
 		spawn:
 			TNT1 A 0 NoDelay {
@@ -65,6 +67,7 @@ class BM249Mag : HDMagAmmo {
 		hdmagammo.magbulk ENC_556MAG_EMPTY;
 		hdpickup.refid B_MF249_MAG_REFID;
 		tag "5.56x45mm 200 round pouch";
+		inventory.icon "M24CA0";
 		inventory.pickupmessage "Picked up a 5.56x45mm 200 Round NATO STANAG magazine.";
 		scale 0.8;
 	}
@@ -107,6 +110,7 @@ class B9mm_MP5K_MAG : HDMagAmmo {
 		hdmagammo.magbulk ENC_556MAG_EMPTY;
 		hdpickup.refid B_MP5_MAG_REFID;
 		tag "MP5 Magazine";
+		inventory.icon "MP5CA0";
 		inventory.pickupmessage "Picked up a MP5 magazine.";
 		scale 0.8;
 	}
@@ -144,6 +148,9 @@ class BMp5MagEmpty:IdleDummy{
 }
 
 class BMp5MagEmpty2 : B9mm_MP5K_MAG {
+	default {
+		-hdpickup.fitsinbackpack
+	}
 	states {
 		spawn:
 			TNT1 A 0 NoDelay {
@@ -166,6 +173,7 @@ class BFauxDrum : HDMagAmmo {
 		hdmagammo.magbulk ENC_556MAG_EMPTY;
 		hdpickup.refid B_FAUX_DRUM_REFID;
 		tag "Fauxtech Origin 12 Drum";
+		inventory.icon "FOSCA0";
 		inventory.pickupmessage "Picked up a Fauxtech Origin 12 drum.";
 		scale 0.8;
 	}
@@ -211,6 +219,7 @@ class b762_m14_mag : HDMagAmmo {
 		HDMagAmmo.MagBulk ENC_776MAG_EMPTY;
 		tag "7.62x51mm magazine";
 		hdpickup.refid B_M14_MAG_REFID;
+		Inventory.Icon "M14CA0";
 		inventory.pickupmessage "Picked up a 7.62x51mm NATO magazine.";
 		scale 0.8;
 	}
@@ -238,6 +247,9 @@ class b762_m14_mag : HDMagAmmo {
 }
 
 class B762MagEmpty2 : b762_m14_mag {
+	default {
+		-hdpickup.fitsinbackpack
+	}
 	states {
 		spawn:
 			TNT1 A 0 NoDelay {
@@ -254,6 +266,7 @@ class B762MagEmpty2 : b762_m14_mag {
 
 
 class B762MagEmpty:IdleDummy{
+
 	override void postbeginplay(){
 		super.postbeginplay();
 		HDMagAmmo.SpawnMag(self,"b762_m14_mag",0);
@@ -270,6 +283,7 @@ class GlockMagazine : HDMagAmmo {
 		hdmagammo.magbulk ENC_762MAG_EMPTY;
 		hdpickup.refid B_GLOCK_MAG_REFID;
 		tag "Glock magazine";
+		inventory.icon "GLKCA0";
 		inventory.pickupmessage "Picked up a Glock magazine.";
 		scale 0.8;
 	}
@@ -305,6 +319,9 @@ class BGlockMagEmpty:IdleDummy{
 }
 
 class BGlockMagEmpty2 : GlockMagazine {
+	default {
+		-hdpickup.fitsinbackpack
+	}
 	states {
 		spawn:
 			TNT1 A 0 NoDelay {
@@ -324,6 +341,7 @@ class BGlockMagEmpty2 : GlockMagazine {
 
 class BRpgRocket : HDMagAmmo {
 	default{
+		-hdpickup.fitsinbackpack
 		hdmagammo.maxperunit 1;
 		hdmagammo.roundtype "HEATAmmo";
 		hdmagammo.roundbulk ENC_762_LOADED;
@@ -331,6 +349,7 @@ class BRpgRocket : HDMagAmmo {
 		hdpickup.refid B_RPG_ROCKET_REFID;
 		tag "RPG Rocket";
 		inventory.pickupmessage "Picked up a RPG rocket.";
+		Inventory.Icon "RPGRA0";
 		scale 0.3;
 	}
 

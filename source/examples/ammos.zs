@@ -4,6 +4,7 @@ class DeformedAmmo : BRoundAmmo {
 		tag "Deformed round";
 		hdpickup.bulk 1;
 		Inventory.Icon "BB56A7A3";
+		-hdpickup.fitsinbackpack
 	}
 	override string pickupmessage() {
 		return "Picked up a deformed round.";
@@ -20,6 +21,7 @@ class DeformedShell : BRoundAmmo {
 		tag "Deformed 12 gauge shell";
 		hdpickup.bulk 1;
 		Inventory.Icon "SHELA0";
+		-hdpickup.fitsinbackpack
 	}
 	override string pickupmessage() {
 		return "Picked up a deformed round.";
