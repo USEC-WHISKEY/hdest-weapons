@@ -1353,16 +1353,20 @@ class BHDWeapon : HDWeapon {
 				if (invoker.weaponstatus[I_FLAGS] & F_CHAMBER_BROKE) {
 					invoker.weaponStatus[I_FLAGS] |= F_UNLOAD_ONLY;
 					//console.printf("break the chamber r2 %i", invoker.weaponStatus[I_FLAGS] & F_CHAMBER_BROKE);
+					console.printf("unchambersdfsdfsding?");
 					return ResolveState("UnloadChamber");
 				}
 				else if (!invoker.chambered() && invoker.weaponStatus[I_MAG] < 1 && (pressingUse() || nomags)) {
+
 					return ResolveState("LoadChamber");
 				}
 				else if (invoker.magazineGetAmmo() < 0 && invoker.brokenChamber()) {
 					invoker.weaponStatus[I_FLAGS] |= F_UNLOAD_ONLY;
+					console.printf("unchambering?");
 					return ResolveState("UnloadChamber");
 				}
-				else if (!HDMagAmmo.NothingLoaded(self, invoker.bMagazineClass)) {
+				else if (!HDMagAmmo.NothingLoaded(self, invoker.bMagazineClass) && invoker.magazineGetAmmo() < invoker.bMagazineCapacity) {
+					console.printf("ussssssnchambering?");
 					return ResolveState("UnloadMag");
 				}
 				else if (!invoker.brokenChamber() && invoker.magazineGetAmmo() % 999 >= invoker.bMagazineCapacity && !(invoker.weaponstatus[I_FLAGS] & F_UNLOAD_ONLY)) {
