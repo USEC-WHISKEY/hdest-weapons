@@ -1171,7 +1171,6 @@ class BHDWeapon : HDWeapon {
 				}
 
 				if (hdplayerpawn(invoker.owner) && hdplayerpawn(invoker.owner).gunbraced) {
-					console.printf("bracing");
 					muzzleMul *= 0.5;
 				}
 
