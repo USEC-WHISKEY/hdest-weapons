@@ -26,7 +26,7 @@ class b_M249 : BHDWeapon {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "M24CA0";
-		BHDWeapon.BWeaponBulk        150;
+		BHDWeapon.BWeaponBulk        200;
 		BHDWeapon.BMagazineBulk      50;
 		BHDWeapon.BBulletBulk        1;
 		BHDWeapon.BMagazineCapacity  200;
@@ -66,6 +66,11 @@ class b_M249 : BHDWeapon {
 		BHDWeapon.bLayerEHand   105;
 		BHDWeapon.BLayerGun     100;
 		BHDWeapon.bLayerGunBack 107;
+
+		BHDWeapon.BRecoilXLow -0.9;
+		BHDWeapon.BRecoilXHigh 0.9;
+		BHDWeapon.BRecoilYLow  1.1;
+		BHDWeapon.BRecoilYHigh 2.1;		
 	}
 
 
@@ -747,7 +752,7 @@ class M249FullOffset : ScopeOffset {
 		Offset.WeaponClass "B_M249";
 		Offset.WeaponOverlay "B_SIght_crdot";
 		Offset.OffX 0;
-		Offset.OffY -10;
+		Offset.OffY -15;
 	}
 }
 
@@ -757,5 +762,14 @@ class M24910xScopeOffset : ScopeOffset {
 		Offset.WeaponOverlay "B_Scope_10x";
 		Offset.OffY -21;
 		Offset.OffX -1;
+	}
+}
+
+class M249HoloOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "B_M249";
+		Offset.WeaponOverlay "B_Sight_Holo_Red";
+		Offset.OffY -10;
+		//Offset.OffX -1;
 	}
 }

@@ -90,3 +90,10 @@ sprite ZUXKA0, 93, 80 {
 	Offset 46, 30
 	Patch "sprites/accessory/fullsize/rreflex.png", 0, 0
 }
+
+sprite ZXOIA0, 93, 80 {
+	XScale 6
+	YScale 6
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/magniscope.png", 0, 0
+}

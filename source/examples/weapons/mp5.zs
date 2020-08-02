@@ -26,7 +26,7 @@ class B_MP5 : BHDWeapon {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "MP5CA0";
-		BHDWeapon.BWeaponBulk        50;
+		BHDWeapon.BWeaponBulk        60;
 		BHDWeapon.BMagazineBulk      13;
 		BHDWeapon.BBulletBulk        1;
 		BHDWeapon.BMagazineCapacity  30;
@@ -69,6 +69,11 @@ class B_MP5 : BHDWeapon {
 		BHDWeapon.bLayerBarrel 99;
 		BHDWeapon.bLayerRHand  104;
 		BHDWeapon.bLayerGunBack 106;
+
+		BHDWeapon.BRecoilXLow -0.4;
+		BHDWeapon.BRecoilXHigh 0.4;
+		BHDWeapon.BRecoilYLow  0.8;
+		BHDWeapon.BRecoilYHigh 1.3;		
 	}
 
 	states {
@@ -595,7 +600,7 @@ class B_MP5_M203 : BaseGLRifle {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "MP5CA0";
-		BHDWeapon.BWeaponBulk        50;
+		BHDWeapon.BWeaponBulk        60;
 		BHDWeapon.BMagazineBulk      13;
 		BHDWeapon.BBulletBulk        1;
 		BHDWeapon.BMagazineCapacity  30;
@@ -646,6 +651,11 @@ class B_MP5_M203 : BaseGLRifle {
 		BHDWeapon.bLayerBarrel 99;
 		BHDWeapon.bLayerRHand  104;
 		BHDWeapon.bLayerGunBack 106;
+
+		BHDWeapon.BRecoilXLow -0.4;
+		BHDWeapon.BRecoilXHigh 0.4;
+		BHDWeapon.BRecoilYLow  0.8;
+		BHDWeapon.BRecoilYHigh 1.3;	
 	}
 
 	bool boltIsBack;

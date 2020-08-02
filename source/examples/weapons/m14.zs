@@ -61,6 +61,11 @@ class b_m14 : basestandardrifle {
 		BHDWeapon.BAltFrontSightImage "bm14ir";
 		BHDWeapon.BAltBackSightImage "bm14sig";
 
+		BHDWeapon.BRecoilXLow -1.4;
+		BHDWeapon.BRecoilXHigh 1.4;
+		BHDWeapon.BRecoilYLow  2.3;
+		BHDWeapon.BRecoilYHigh 4.6;
+
 		BHDWeapon.BLayerSight   104;
 		BHDWeapon.bLayerRHand   107;
 		BHDWeapon.bLayerGun     102;

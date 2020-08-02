@@ -61,6 +61,11 @@ class b_FauxtechOrigin : BaseShotgun {
 		BHDWeapon.BAltFrontSightImage "altfaf";
 		BHDWeapon.BAltBackSightImage "";
 
+		BHDWeapon.BRecoilXLow -1.4;
+		BHDWeapon.BRecoilXHigh 1.4;
+		BHDWeapon.BRecoilYLow  2.3;
+		BHDWeapon.BRecoilYHigh 4.6;
+
 		BHDWeapon.BLayerSight  106;
 		BHDWeapon.bLayerRHand  105;
 		BHDWeapon.bLayerGunBack -99;

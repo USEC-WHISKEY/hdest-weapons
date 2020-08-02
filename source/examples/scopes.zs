@@ -22,6 +22,7 @@ class BaseAcog : BaseScopeAttachment {
 		BaseScopeAttachment.ScopeImageScaleY 1;
 		BaseScopeAttachment.ScopeBackX       2.5;
 		BaseScopeAttachment.ScopeBackY       15;
+		BaseScopeAttachment.zoomFactor 5;
 		HDPickup.Bulk 1;
 		BaseScopeAttachment.ScopeImage "acog2sg";
 		BaseScopeAttachment.SightImage "acog1";
@@ -226,11 +227,12 @@ class B_Sight_CRdot : BaseFullDotSight {
 	default {
 		BaseAttachment.SerialId B_SIGHT_CRDOT_ID;
 		BaseAttachment.BaseSprite "SCOP";
-		BaseAttachment.BaseFrame 1;
+		BaseAttachment.BaseFrame 3;
 		BaseSightAttachment.useWeaponIron true;
 		Tag "Red-dot full sight";
 		HDPickup.RefID "rdt";
 		Inventory.Icon "SCPPB0";
+		BaseSightAttachment.bbackAltImage "ardssg";
 		Inventory.PickupMessage "Picked up a red-dot full sight.";
 	}
 
@@ -240,7 +242,7 @@ class B_Sight_CRdot : BaseFullDotSight {
 			Stop;
 
 		OverlayImage:
-			SCOP B -1;
+			SCOP D -1;
 			Stop;
 	}
 }
@@ -299,10 +301,10 @@ class B_Scope_10x : BaseAcog {
 		BaseAttachment.BaseSprite "SCOP";
 		BaseAttachment.BaseFrame 2;
 		HDPickup.RefID "s10";
-		Tag "10x scope";
-		Inventory.Icon "SCPPA0";
-		Inventory.PickupMessage "Picked up a 10x scope.";
-		BaseScopeAttachment.zoomFactor 2;
+		Tag "LR scope";
+		Inventory.Icon "ZXOIA0";
+		Inventory.PickupMessage "Picked up a LR scope.";
+		BaseScopeAttachment.zoomFactor 1;
 		BaseScopeAttachment.SightImage "sight10z";
 		BaseScopeAttachment.ScopeImage "bscope1";
 
@@ -330,7 +332,7 @@ class B_Scope_10x : BaseAcog {
 
 	States {
 		Spawn:
-			SCPP A -1;
+			ZXOI A -1;
 			Stop;
 
 		OverlayImage:

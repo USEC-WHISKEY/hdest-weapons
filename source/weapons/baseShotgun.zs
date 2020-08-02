@@ -31,10 +31,15 @@ class BaseShotgun : BaseStandardRifle {
 
 				HDBulletActor.FireBullet(self, "HDB_wad");
 				let p = HDBulletActor.FireBullet(self, invoker.bBulletClass, spread: random(-10, 20), speedfactor: 1.0, amount: 15);
+				double muzzleMul = 1.0;
+				if (invoker.weaponstatus[I_AUTO] == 1) {
+					muzzleMul = 1.8;
+				}
 				A_MuzzleClimb(
 					-frandom(0.1,0.1), -frandom(0,0.1),
 					-0.2,              -frandom(0.3,0.4),
-					-frandom(0.4,1.4), -frandom(1.3,2.6)
+					frandom(invoker.BRecoilXLow, invoker.BRecoilXHigh) * muzzleMul, 
+					-frandom(invoker.BRecoilYLow, invoker.BRecoilYHigh) * muzzleMul
 				);
 				//invoker.addHeat(random(3, 5));
 				invoker.unchamber();

@@ -27,7 +27,7 @@ class B_M4 : BaseStandardRifle {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "M4RCA0";
-		BHDWeapon.BWeaponBulk        90;
+		BHDWeapon.BWeaponBulk        150;
 		BHDWeapon.BMagazineBulk      15;
 		BHDWeapon.BBulletBulk        1;
 		BHDWeapon.BMagazineCapacity  30;

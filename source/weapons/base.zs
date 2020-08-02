@@ -21,7 +21,20 @@ class BHDWeapon : HDWeapon {
 		BHDWeapon.bFlashSprite "MPFLA0";
 		BHDWeapon.bIronThreshold 35;
 		BHDWeapon.BAmmoHudScale 2;
+
+		BHDWeapon.BRecoilXLow -1.4;
+		BHDWeapon.BRecoilXHigh 1.4;
+		BHDWeapon.BRecoilYLow  1.3;
+		BHDWeapon.BRecoilYHigh 2.6;
 	}
+
+	property BRecoilXLow: BRecoilXLow;
+	property BRecoilXHigh: BRecoilXHigh;
+	property BRecoilYLow: BRecoilYLow;
+	property BRecoilYHigh: BRecoilYHigh;
+
+	double BRecoilXLow, BRecoilXHigh;
+	double BRecoilYLow, BRecoilYHigh;	
 
 	property BIronThreshold: bIronThreshold;
 	double bIronThreshold;
@@ -1150,11 +1163,21 @@ class BHDWeapon : HDWeapon {
 				A_ZoomRecoil(max(0.95, 1. -0.05 * invoker.fireMode()));
 				double burn = max(invoker.heatAmount(), invoker.boreStretch()) * 0.01;
 				HDBulletActor.FireBullet(self, invoker.bBulletClass, spread: burn > 1.2 ? burn : 0);
+
+
+				double muzzleMul = 1.0;
+				if (invoker.weaponstatus[I_AUTO] == 1) {
+					muzzleMul = 1.8;
+				}
 				A_MuzzleClimb(
 					-frandom(0.1,0.1), -frandom(0,0.1),
 					-0.2,              -frandom(0.3,0.4),
-					frandom(-1.4,1.4), -frandom(1.3,2.6)
+					frandom(invoker.BRecoilXLow, invoker.BRecoilXHigh) * muzzleMul, 
+					-frandom(invoker.BRecoilYLow, invoker.BRecoilYHigh) * muzzleMul
 				);
+
+				// double BRecoilXLow, BRecoilXHigh;
+				// double BRecoilYLow, BRecoilYHigh;	
 				//invoker.addHeat(random(3, 5));
 				invoker.unchamber();
 
