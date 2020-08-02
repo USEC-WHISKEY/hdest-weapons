@@ -540,22 +540,11 @@ class b_M249 : BHDWeapon {
 					A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
 					invoker.WeaponStatus[I_FLAGS] &= ~F_CHAMBER;
 				}
-				/*
-				else if (!random(0, 4)) {
+				else {
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER_BROKE;
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER;
 					A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
-					for (int i = 0; i < 3; i++) {
-						A_SpawnItemEx("TinyWallChunk", 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
-					}
-					if (!random(0, 5)) {
-						A_SpawnItemEx("HDSmokeChunk", 12, 0, height - 12, 4, frandom(-2, 2), frandom(2, 4));
-					}
-				}
-				*/
-
-				else if (invoker.brokenChamber()) {
-					A_StartSound("weapons/smack", CHAN_WEAPON, CHANF_OVERLAP);
+					A_SpawnItemEx("DeformedAmmo", 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
 				}
 				return ResolveState("UnchamberEnd");
 			}

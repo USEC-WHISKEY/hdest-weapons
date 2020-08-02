@@ -1,4 +1,36 @@
 
+class DeformedAmmo : BRoundAmmo {
+	default {
+		tag "Deformed round";
+		hdpickup.bulk 1;
+		Inventory.Icon "BB56A7A3";
+	}
+	override string pickupmessage() {
+		return "Picked up a deformed round.";
+	}
+	states {
+		spawn:
+			BB56 A -1;
+			stop;
+	}
+}
+
+class DeformedShell : BRoundAmmo {
+	default {
+		tag "Deformed 12 gauge shell";
+		hdpickup.bulk 1;
+		Inventory.Icon "SHELA0";
+	}
+	override string pickupmessage() {
+		return "Picked up a deformed round.";
+	}
+	states {
+		spawn:
+			SHL1 A -1;
+			stop;
+	}
+}
+
 class B556Ammo : BRoundAmmo {
 	default {
 		tag "5.56x45mm round";

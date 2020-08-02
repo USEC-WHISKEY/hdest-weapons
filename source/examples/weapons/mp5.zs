@@ -423,6 +423,46 @@ class B_MP5 : BHDWeapon {
 				return ResolveState("Nope");
 			}
 
+		user4:
+		Unload:
+			#### A 0 {
+				invoker.weaponStatus[I_FLAGS] |= F_UNLOAD_ONLY;				
+				if (invoker.magazineGetAmmo() >= 0) {
+					
+					return ResolveState("UnloadMag");
+				}
+				else {
+					return ResolveState("Nope");
+				}
+			}
+
+		Reload:
+			#### A 0 {
+				invoker.weaponStatus[I_FLAGS] &= ~F_UNLOAD_ONLY;
+				bool nomags=HDMagAmmo.NothingLoaded(self, invoker.bMagazineClass);
+
+				if (invoker.weaponstatus[I_FLAGS] & F_CHAMBER_BROKE) {
+					return ResolveState("UnloadChamber");
+				}
+				else if (!invoker.chambered() && invoker.weaponStatus[I_MAG] < 1 && (pressingUse() || nomags)) {
+					return ResolveState("LoadChamber");
+				}
+				if (!invoker.brokenChamber() && invoker.magazineGetAmmo() % 30 >= invoker.bMagazineCapacity && !(invoker.weaponstatus[I_FLAGS] & F_UNLOAD_ONLY)) {
+					return ResolveState("Nope");
+				}
+				else if (invoker.magazineGetAmmo() == invoker.bMagazineCapacity - 1) {
+					return ResolveState("Nope");
+				}
+				else if (invoker.magazineGetAmmo() < 0 && invoker.brokenChamber()) {
+					invoker.weaponStatus[I_FLAGS] |= F_UNLOAD_ONLY;
+					return ResolveState("UnloadChamber");
+				}
+				else if (!HDMagAmmo.NothingLoaded(self, invoker.bMagazineClass)) {
+					return ResolveState("UnloadMag");
+				}
+				return ResolveState("Nope");
+			}
+
 		Dummy:
 			MPFL A -1;
 			MPFL B -1;
@@ -873,8 +913,14 @@ class B_MP5_M203 : BaseGLRifle {
 		Reload:
 			#### A 0 {
 				invoker.weaponStatus[I_FLAGS] &= ~F_UNLOAD_ONLY;
+				bool nomags=HDMagAmmo.NothingLoaded(self, invoker.bMagazineClass);
 
-
+				if (invoker.weaponstatus[I_FLAGS] & F_CHAMBER_BROKE) {
+					return ResolveState("UnloadChamber");
+				}
+				else if (!invoker.chambered() && invoker.weaponStatus[I_MAG] < 1 && (pressingUse() || nomags)) {
+					return ResolveState("LoadChamber");
+				}
 				if (!invoker.brokenChamber() && invoker.magazineGetAmmo() % 30 >= invoker.bMagazineCapacity && !(invoker.weaponstatus[I_FLAGS] & F_UNLOAD_ONLY)) {
 					return ResolveState("Nope");
 				}

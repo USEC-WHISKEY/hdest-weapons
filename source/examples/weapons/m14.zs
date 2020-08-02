@@ -39,7 +39,7 @@ class b_m14 : basestandardrifle {
 		BHDWeapon.BChamberSound      "weapons/m14/chamber";
 		BHDWeapon.BBoltForwardSound  "weapons/m14/boltback";
 		BHDWeapon.BBoltBackwardSound "weapons/m14/boltforward";
-		BHDWeapon.BClickSound        "weapons/m14/click";
+		BHDWeapon.BClickSound        "weapons/m4/click";
 		BHDWeapon.BLoadSound         "weapons/m14/clipinsert";
 		BHDWeapon.BUnloadSound       "weapons/m14/clipeject";
 
@@ -277,6 +277,26 @@ class b_m14 : basestandardrifle {
 			Stop; 
 
 
+		UnloadChamber:
+			#### A 1 Offset(-3, 34);
+			#### A 1 Offset(-9, 39);
+			#### A 3 Offset(-19, 44) ;//A_MuzzleClimb(frandom(-.4, .4), frandom(-.4, .4));
+			#### B 2 Offset(-16, 42) {
+				//A_MuzzleClimb(frandom(-.4, .4), frandom(-.4, .4));
+				if (invoker.chambered() && !invoker.brokenChamber()) {
+					A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
+					invoker.WeaponStatus[I_FLAGS] &= ~F_CHAMBER;
+				}
+				else {
+					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER_BROKE;
+					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER;
+					A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
+					A_SpawnItemEx("DeformedAmmo", 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
+					//invoker.weaponStatus[I_MAG]--;
+				}
+				return ResolveState("ReloadEnd");
+			}
+
 		Chamber_Manual:
 			#### C 0 { 
 				if (invoker.chambered() || invoker.magazineGetAmmo() <= -1) {
@@ -317,7 +337,15 @@ class b_m14 : basestandardrifle {
 
 
 
-
+		ReloadEnd:
+			#### A 2 Offset(-11, 39);
+			#### A 1 Offset(-8, 37); //A_MuzzleClimb(frandom(0.2, -2.4), frandom(-0.2, -1.4));
+			#### A 0 A_CheckCookoff();
+			#### A 1 Offset(-3, 34);
+			#### A 0 {
+				//console.printf("m14 am I here? %i", invoker.weaponStatus[I_FLAGS] & F_CHAMBER_BROKE);
+				return ResolveState("Chamber_Manual");
+			}
 
 
 

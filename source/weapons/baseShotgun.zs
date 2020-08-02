@@ -2,6 +2,26 @@
 class BaseShotgun : BaseStandardRifle {
 	
 	states {
+
+		UnloadChamber:
+			#### A 1 Offset(-3, 34);
+			#### A 1 Offset(-9, 39);
+			#### A 3 Offset(-19, 44) ;//A_MuzzleClimb(frandom(-.4, .4), frandom(-.4, .4));
+			#### B 2 Offset(-16, 42) {
+				//A_MuzzleClimb(frandom(-.4, .4), frandom(-.4, .4));
+				if (invoker.chambered() && !invoker.brokenChamber()) {
+					A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
+					invoker.WeaponStatus[I_FLAGS] &= ~F_CHAMBER;
+				}
+				else {
+					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER_BROKE;
+					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER;
+					A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
+					A_SpawnItemEx("DeformedShell", 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
+				}
+				return ResolveState("ReloadEnd");
+			}
+	
 		Flash:
 			TNT1 A 0 {
 				if (!(invoker.barrelClass is "BaseFlashAttachment") && !(invoker.barrelClass is "BaseSilencerAttachment")) {
