@@ -34,7 +34,7 @@ class b_M249 : BHDWeapon {
 		BHDWeapon.BarrelWidth        1;
 		BHDWeapon.BarrelDepth        3;
 		
-		BHDWeapon.BFireSound         "weapons/m249/fire";
+		BHDWeapon.BFireSound         "weapons/m4/fire";
 		BHDWeapon.BSFireSound        "weapons/m4/silentfire";
 		BHDWeapon.BChamberSound      "weapons/m4/chamber";
 		BHDWeapon.BBoltForwardSound  "weapons/m4/boltback";
@@ -46,10 +46,10 @@ class b_M249 : BHDWeapon {
 		BHDWeapon.BROF               0.5;
 		BHDWeapon.BBackSightImage    "m24rsig";
 		BHDWeapon.BBackOffsetX       4;
-		BHDWeapon.BBackOffsetY       32;
+		BHDWeapon.BBackOffsetY       23;
 		BHDWeapon.BFrontSightImage   "m24fr";
 		BHDWeapon.BFrontOffsetX      0;
-		BHDWeapon.BFrontOffsetY      16;
+		BHDWeapon.BFrontOffsetY      23;
 		BHDWeapon.BSilentOffsetX     0;
 		BHDWeapon.BSilentOffsetY     0;
 		BHDWeapon.bBarrelMount       "556_NATO_BARREL";
@@ -59,10 +59,10 @@ class b_M249 : BHDWeapon {
 		hdweapon.refid               B_MF249_REFID;
 
 		BHDWeapon.BAltFrontSightImage "m24fr";
-		BHDWeapon.BAltBackSightImage "m24rsig";
+		BHDWeapon.BAltBackSightImage  "m24rsig";
 
-		BHDWeapon.BLayerSight  106;
-		BHDWeapon.bLayerRHand  130;
+		BHDWeapon.BLayerSight   106;
+		BHDWeapon.bLayerRHand   130;
 		BHDWeapon.bLayerEHand   105;
 		BHDWeapon.BLayerGun     100;
 		BHDWeapon.bLayerGunBack 107;

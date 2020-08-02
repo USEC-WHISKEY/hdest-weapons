@@ -648,7 +648,7 @@ class BHDWeapon : HDWeapon {
 			sb.drawImage(image, scopeBack + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale: (1.5, 1.5));
 		}
 
-		//sb.drawImage("calib", (0, 0), sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.3);
+		sb.drawImage("calib", (0, 0), sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.3);
 
 
 	}
@@ -1169,6 +1169,12 @@ class BHDWeapon : HDWeapon {
 				if (invoker.weaponstatus[I_AUTO] == 1) {
 					muzzleMul = 1.8;
 				}
+
+				if (hdplayerpawn(invoker.owner) && hdplayerpawn(invoker.owner).gunbraced) {
+					console.printf("bracing");
+					muzzleMul *= 0.5;
+				}
+
 				A_MuzzleClimb(
 					-frandom(0.1,0.1), -frandom(0,0.1),
 					-0.2,              -frandom(0.3,0.4),
