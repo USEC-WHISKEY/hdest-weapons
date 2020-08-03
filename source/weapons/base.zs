@@ -1236,7 +1236,7 @@ class BHDWeapon : HDWeapon {
 					invoker.setChamber();
 
 					int rngagain = random(0, 1000000);
-					if (rngagain < 5000 || rngagain > 995000) {
+					if (rngagain < 50 || rngagain > 999980) {
 						//console.printf("break the chamber %i", invoker.weaponStatus[I_FLAGS] & F_CHAMBER_BROKE);
 						invoker.breakChamber();
 						//console.printf("break the chamber %i", invoker.weaponStatus[I_FLAGS] & F_CHAMBER_BROKE);
