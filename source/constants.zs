@@ -84,4 +84,5 @@ const B_762_SILENCER_ID   = 4;
 const B_FOS_SILENCER_ID   = 5;
 
 const B_FOS_IMPR_CHOKE    = 6;
-const B_FOS_IMPR_MOD      = 7;
+const B_FOS_MOD_CHOKE     = 7;
+const B_FOS_FULL_CHOKE    = 8;

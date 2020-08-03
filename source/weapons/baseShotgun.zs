@@ -17,24 +17,6 @@ class BaseShotgun : BaseStandardRifle {
 			}
 		}
 		sb.DrawImage(chokeImage, (-26, -15), sb.DI_SCREEN_CENTER_BOTTOM, scale: (0.5, 0.5));
-
-		/*
-		if (sb.hudLevel == 1) {
-			int nextMag = sb.GetNextLoadMag(HDMagAmmo(hpl.findInventory(basicWep.bMagazineClass)));
-			sb.DrawImage(basicWep.bMagazineSprite, (-46, -3), sb.DI_SCREEN_CENTER_BOTTOM, scale: (basicWep.BAmmoHudScale, basicWep.BAmmoHudScale));
-			sb.DrawNum(hpl.CountInv(basicWep.bMagazineClass), -43, -8, sb.DI_SCREEN_CENTER_BOTTOM);
-		}
-		if(!(hdw.weaponstatus[I_FLAGS] & F_NO_FIRE_SELECT)) {
-			sb.drawwepcounter(hdw.weaponstatus[I_AUTO], -22, -10, "RBRSA3A7", "STFULAUT", "STBURAUT" );
-		}
-		int ammoBarAmt = clamp(basicWep.magazineGetAmmo() % 999, 0, basicWep.bMagazineCapacity);
-		sb.DrawWepNum(ammoBarAmt, basicWep.bMagazineCapacity);
-		if (basicWep.chambered()) {
-			sb.DrawWepDot(-16, -10, (3, 1));
-			//ammoBarAmt++;
-		}
-		*/
-		//sb.DrawNum(ammoBarAmt, -16, -22, sb.DI_SCREEN_CENTER_BOTTOM | sb.DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
 	}
 
 	states {
@@ -42,7 +24,7 @@ class BaseShotgun : BaseStandardRifle {
 		UnloadChamber:
 			#### A 1 Offset(-3, 34);
 			#### A 1 Offset(-9, 39);
-			#### A 3 Offset(-19, 44) ;//A_MuzzleClimb(frandom(-.4, .4), frandom(-.4, .4));
+			#### A 3 Offset(-19, 44);
 			#### B 2 Offset(-16, 42) {
 				//A_MuzzleClimb(frandom(-.4, .4), frandom(-.4, .4));
 				if (invoker.chambered() && !invoker.brokenChamber()) {

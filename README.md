@@ -253,8 +253,13 @@ Note: The M4 and Fauxtech origin by default have no rear sight. You have to pick
 ### Muzzle IDs
 
 - `ba1`: 5.56mm suppressor
+- `ba2`: 5.56mm flash suppressor
 - `ba3`: 9mm suppressor
 - `ba4`: 7.62mm suppressor
+- `ba5`: Fauxtech Silencerr
+- `ba6`: Fauxtech Improved Choke
+- `ba7`: Fauxtech Modified Choke
+- `ba8`: Fauxtech Full Choke
 
 ### Sight IDs
 
@@ -288,6 +293,8 @@ Note: The M4 and Fauxtech origin by default have no rear sight. You have to pick
 
 - `bs8`: 10x Scope
 
+<p><img src="sprites/accessory/fullsize/rreflex.png"></p>
+
 ### Misc IDs
 
 - `bm1`: Flashlight attachment
@@ -308,7 +315,10 @@ These are for adding attachments as loose items in your inventory if you plan to
 - `sl5`: 5.56 silencer
 - `sl7`: 7.62 silencer
 - `sl9`: 9mm silencer
-- `slf`: Fostech Silencer
+- `slf`: Fauxtech Silencer
+- `ck1`: Fauxtech improved choke
+- `ck2`: Fauxtech modified choke
+- `ck3`: Fauxtech full choke
 
 - `gfl`: Misc flashlight attachment
 
