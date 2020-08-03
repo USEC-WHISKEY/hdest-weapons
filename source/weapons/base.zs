@@ -1360,9 +1360,11 @@ class BHDWeapon : HDWeapon {
 				}
 				else if (invoker.magazineGetAmmo() < 0 && invoker.brokenChamber()) {
 					invoker.weaponStatus[I_FLAGS] |= F_UNLOAD_ONLY;
+					console.printf("here?");
 					return ResolveState("UnloadChamber");
 				}
 				else if (!HDMagAmmo.NothingLoaded(self, invoker.bMagazineClass) && invoker.magazineGetAmmo() < invoker.bMagazineCapacity) {
+					console.printf("hereeeee?");
 					return ResolveState("UnloadMag");
 				}
 				else if (!invoker.brokenChamber() && invoker.magazineGetAmmo() % 999 >= invoker.bMagazineCapacity && !(invoker.weaponstatus[I_FLAGS] & F_UNLOAD_ONLY)) {

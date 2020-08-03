@@ -341,6 +341,18 @@ class B_M4 : BaseStandardRifle {
 			M4RH A 3;
 			Stop;
 
+		ReloadEnd:
+			#### A 2 Offset(-11, 39);
+			#### A 1 Offset(-8, 37); //A_MuzzleClimb(frandom(0.2, -2.4), frandom(-0.2, -1.4));
+			#### A 0 A_CheckCookoff();
+			#### A 1 Offset(-3, 34);
+			#### A 0 {
+				if (invoker.brokenChamber()) {
+					return ResolveState("Nope");
+				}
+				return ResolveState("Chamber_Manual");
+			}
+
 		GunPullBolt:
 			M4RG E 3 A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);
 			Goto LayerGun;
@@ -822,6 +834,18 @@ class B_M4_M203 : BaseGLRifle {
 			M4RH B 2; //A_StartSound(invoker.bBoltForwardSound, CHAN_WEAPON);
 			M4RH A 2;
 			Stop;
+			
+		ReloadEnd:
+			#### A 2 Offset(-11, 39);
+			#### A 1 Offset(-8, 37); //A_MuzzleClimb(frandom(0.2, -2.4), frandom(-0.2, -1.4));
+			#### A 0 A_CheckCookoff();
+			#### A 1 Offset(-3, 34);
+			#### A 0 {
+				if (invoker.brokenChamber()) {
+					return ResolveState("Nope");
+				}
+				return ResolveState("Chamber_Manual");
+			}
 
 		GunPullBolt:
 			M4RG E 3 A_StartSound(invoker.bBoltBackwardSound, CHAN_WEAPON);

@@ -45,6 +45,9 @@ version "4.4"
 #include "source/examples/robots2.zs"
 
 class BryanOperator : HDSkin {
+	default {
+		hdskin.mug "MOS";	
+	}
 	states {
 		spawn: 
 			MOSA A 0;
