@@ -1,6 +1,42 @@
 
 class BaseShotgun : BaseStandardRifle {
 	
+	override void DrawHUDStuff(HDStatusBar sb,HDWeapon hdw,HDPlayerPawn hpl){
+		super.DrawHUDStuff(sb, hdw, hpl);
+		BHDWeapon basicWep = BHDWeapon(hdw);
+		string chokeImage = "schoke1";
+		if (basicWep.barrelClass && basicWep.barrelClass is "BaseChokeAttachment") {
+			if (basicWep.barrelClass is "FosImprovedChoke") {
+				chokeImage = "schoke2";
+			} 
+			else if (basicWep.barrelClass is "FosModifiedChoke") {
+				chokeImage = "schoke3";
+			}
+			else if (basicWep.barrelClass is "FosFullChoke") {
+				chokeImage = "schoke4";
+			}
+		}
+		sb.DrawImage(chokeImage, (-26, -15), sb.DI_SCREEN_CENTER_BOTTOM, scale: (0.5, 0.5));
+
+		/*
+		if (sb.hudLevel == 1) {
+			int nextMag = sb.GetNextLoadMag(HDMagAmmo(hpl.findInventory(basicWep.bMagazineClass)));
+			sb.DrawImage(basicWep.bMagazineSprite, (-46, -3), sb.DI_SCREEN_CENTER_BOTTOM, scale: (basicWep.BAmmoHudScale, basicWep.BAmmoHudScale));
+			sb.DrawNum(hpl.CountInv(basicWep.bMagazineClass), -43, -8, sb.DI_SCREEN_CENTER_BOTTOM);
+		}
+		if(!(hdw.weaponstatus[I_FLAGS] & F_NO_FIRE_SELECT)) {
+			sb.drawwepcounter(hdw.weaponstatus[I_AUTO], -22, -10, "RBRSA3A7", "STFULAUT", "STBURAUT" );
+		}
+		int ammoBarAmt = clamp(basicWep.magazineGetAmmo() % 999, 0, basicWep.bMagazineCapacity);
+		sb.DrawWepNum(ammoBarAmt, basicWep.bMagazineCapacity);
+		if (basicWep.chambered()) {
+			sb.DrawWepDot(-16, -10, (3, 1));
+			//ammoBarAmt++;
+		}
+		*/
+		//sb.DrawNum(ammoBarAmt, -16, -22, sb.DI_SCREEN_CENTER_BOTTOM | sb.DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
+	}
+
 	states {
 
 		UnloadChamber:
@@ -50,11 +86,19 @@ class BaseShotgun : BaseStandardRifle {
 				//A_FireHDShotgun(0, 0, invoker.barrelLength, true);
 
 				HDBulletActor.FireBullet(self, "HDB_wad");
-				let p = HDBulletActor.FireBullet(self, invoker.bBulletClass, spread: random(-10, 20), speedfactor: 1.0, amount: 15);
+
+				int spreadlow = -10, spreadhigh = 20;
+				if (invoker.barrelClass is "BaseChokeAttachment") {
+					spreadlow = GetDefaultByType((Class<BaseChokeAttachment>)(invoker.barrelClass)).Clow;
+					spreadhigh = GetDefaultByType((Class<BaseChokeAttachment>)(invoker.barrelClass)).Chigh;
+				}
+				let p = HDBulletActor.FireBullet(self, invoker.bBulletClass, spread: random(spreadlow, spreadhigh), speedfactor: 1.0, amount: 15);
+
 				double muzzleMul = 1.0;
 				if (invoker.weaponstatus[I_AUTO] == 1) {
-					muzzleMul = 1.8;
+					muzzleMul = 1.9;
 				}
+
 				A_MuzzleClimb(
 					-frandom(0.1,0.1), -frandom(0,0.1),
 					-0.2,              -frandom(0.3,0.4),

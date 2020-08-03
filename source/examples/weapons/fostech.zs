@@ -83,7 +83,7 @@ class b_FauxtechOrigin : BaseShotgun {
 						if (invoker.barrelClass && invoker.miscClass) {
 							return ResolveState("HighMiscBarrel");
 						}
-						else if (invoker.barrelClass) {
+						else if (invoker.barrelClass && invoker.barrelClass is "BaseSilencerAttachment") {
 							return ResolveState("HighBarrel");
 						}
 						else if (invoker.miscClass) {
@@ -95,7 +95,7 @@ class b_FauxtechOrigin : BaseShotgun {
 						if (invoker.barrelClass && invoker.miscClass) {
 							return ResolveState("LowMiscBarrel");
 						}
-						else if (invoker.barrelClass) {
+						else if (invoker.barrelClass && invoker.barrelClass is "BaseSilencerAttachment") {
 							return ResolveState("LowBarrel");
 						}
 						else if (invoker.miscClass) {
@@ -108,7 +108,7 @@ class b_FauxtechOrigin : BaseShotgun {
 					if (invoker.barrelClass && invoker.miscClass) {
 						return ResolveState("NoneMiscBarrel");
 					}
-					else if (invoker.barrelClass) {
+					else if (invoker.barrelClass && invoker.barrelClass is "BaseSilencerAttachment") {
 						return ResolveState("NoneBarrel");
 					}
 					else if (invoker.miscClass) {
@@ -175,7 +175,7 @@ class b_FauxtechOrigin : BaseShotgun {
 						if (invoker.barrelClass && invoker.miscClass) {
 							return ResolveState("HighMiscBarrelEmpty");
 						}
-						else if (invoker.barrelClass) {
+						else if (invoker.barrelClass && invoker.barrelClass is "BaseSilencerAttachment") {
 							return ResolveState("HighBarrelEmpty");
 						}
 						else if (invoker.miscClass) {
@@ -187,7 +187,7 @@ class b_FauxtechOrigin : BaseShotgun {
 						if (invoker.barrelClass && invoker.miscClass) {
 							return ResolveState("LowMiscBarrelEmpty");
 						}
-						else if (invoker.barrelClass) {
+						else if (invoker.barrelClass && invoker.barrelClass is "BaseSilencerAttachment") {
 							return ResolveState("LowBarrelEmpty");
 						}
 						else if (invoker.miscClass) {
@@ -200,7 +200,7 @@ class b_FauxtechOrigin : BaseShotgun {
 					if (invoker.barrelClass && invoker.miscClass) {
 						return ResolveState("NoneMiscBarrelEmpty");
 					}
-					else if (invoker.barrelClass) {
+					else if (invoker.barrelClass && invoker.barrelClass is "BaseSilencerAttachment") {
 						return ResolveState("NoneBarrelEmpty");
 					}
 					else if (invoker.miscClass) {
@@ -339,7 +339,7 @@ class b_FauxtechOrigin : BaseShotgun {
 					if (barrelClass && miscClass) {
 						return "FOSUW0", 1.;
 					}
-					else if (barrelClass) {
+					else if (barrelClass && barrelClass is "BaseSilencerAttachment") {
 						return "FOSUU0", 1.;
 					}
 					else if (miscClass) {
@@ -351,7 +351,7 @@ class b_FauxtechOrigin : BaseShotgun {
 					if (barrelClass && miscClass) {
 						return "FOSUO0", 1.;
 					}
-					else if (barrelClass) {
+					else if (barrelClass && barrelClass is "BaseSilencerAttachment") {
 						return "FOSUM0", 1.;
 					}
 					else if (miscClass) {
@@ -364,7 +364,7 @@ class b_FauxtechOrigin : BaseShotgun {
 				if (barrelClass && miscClass) {
 					return "FOSUG0", 1.;
 				}
-				else if (barrelClass) {
+				else if (barrelClass && barrelClass is "BaseSilencerAttachment") {
 					return "FOSUE0", 1.;
 				}
 				else if (miscClass) {

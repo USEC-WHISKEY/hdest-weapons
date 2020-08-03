@@ -3,5 +3,13 @@ AddKeySection "Bryan HD Keys" BKeybinds
 AddMenuKey "Open attachment manager" openAttachmentManager
 AddMenuKey "Use misc. weapon attachment" useMiscAttachment
 
+AddMenuKey "Remove muzzle attachment" removeMuzzleAttachment
+AddMenuKey "Remove sight attachment" removeSightAttachment
+AddMenuKey "Remove misc attachment" removeMiscAttachment
+
 alias openAttachmentManager "openmenu \"AttachmentMenu\""
 alias useMiscAttachment "use MiscAttachmentInput"
+
+alias removeMuzzleAttachment "use BSilencerRemover"
+alias removeSightAttachment "use BScopeRemover"
+alias removeMiscAttachment "use BMiscRemover"

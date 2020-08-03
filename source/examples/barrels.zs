@@ -121,3 +121,85 @@ class FosSilencer : BaseSilencerAttachment {
 
 	}
 }
+
+
+class FosImprovedChoke : BaseChokeAttachment {
+	default {
+		BaseBarrelAttachment.Length 2;
+		BaseAttachment.MountId "FOSTECH";
+		BaseAttachment.SerialId B_FOS_IMPR_CHOKE;
+		BaseAttachment.BaseSprite "TNT1";
+		BaseAttachment.BaseFrame 0;
+		HDPickup.Bulk 1;
+		HDPickup.RefId "ck1";
+		Tag "Improved cylinder choke";
+		Inventory.Icon "CHKAA0";
+		Inventory.PickupMessage "Picked up a improved cylinder choke.";
+		BaseChokeAttachment.Clow -7;
+		BaseChokeAttachment.Chigh 17;
+	}
+
+	States {
+		Spawn:
+			CHKA A -1;
+			Stop;
+		OverlayImage:
+			TNT1 A -1;
+			Stop;
+
+	}
+}
+
+class FosModifiedChoke : BaseChokeAttachment {
+	default {
+		BaseBarrelAttachment.Length 2;
+		BaseAttachment.MountId "FOSTECH";
+		BaseAttachment.SerialId B_FOS_IMPR_MOD;
+		BaseAttachment.BaseSprite "TNT1";
+		BaseAttachment.BaseFrame 0;
+		HDPickup.Bulk 1;
+		HDPickup.RefId "ck2";
+		Tag "Improved modified choke";
+		Inventory.Icon "CHKAB0";
+		Inventory.PickupMessage "Picked up a modified choke.";
+		BaseChokeAttachment.Clow -4;
+		BaseChokeAttachment.Chigh 14;
+	}
+
+	States {
+		Spawn:
+			CHKA B -1;
+			Stop;
+		OverlayImage:
+			TNT1 A -1;
+			Stop;
+
+	}
+}
+
+class FosFullChoke : BaseChokeAttachment {
+	default {
+		BaseBarrelAttachment.Length 2;
+		BaseAttachment.MountId "FOSTECH";
+		BaseAttachment.SerialId B_FOS_IMPR_MOD;
+		BaseAttachment.BaseSprite "TNT1";
+		BaseAttachment.BaseFrame 0;
+		HDPickup.Bulk 1;
+		HDPickup.RefId "ck3";
+		Tag "Full choke";
+		Inventory.Icon "CHKAC0";
+		Inventory.PickupMessage "Picked up a full choke.";
+		BaseChokeAttachment.Clow -2;
+		BaseChokeAttachment.Chigh 12;
+	}
+
+	States {
+		Spawn:
+			CHKA C -1;
+			Stop;
+		OverlayImage:
+			TNT1 A -1;
+			Stop;
+
+	}
+}

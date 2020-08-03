@@ -355,3 +355,16 @@ class BaseMiscAttachmentEvent {
 	}
 
 }
+
+
+
+class BaseChokeAttachment : BaseBarrelAttachment {
+	property CLow: clow;
+	property Chigh: chigh;
+	double clow;
+	double chigh;
+	default {
+		BaseChokeAttachment.Clow -10;
+		BaseChokeAttachment.CHigh 20;
+	}
+}

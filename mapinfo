@@ -42,6 +42,9 @@ DoomEdNums {
 	19020 = B_LeadRock
 	19021 = B_BrassSheets
 	19022 = B_RocketAssembler
+	19023 = FosImprovedChoke
+	19024 = FosModifiedChoke
+	19025 = FosFullChoke
 
 	19100 = Glock_Random_Noammo_Noatta_Giver
 	19101 = mp5_noammo_noatta_giver

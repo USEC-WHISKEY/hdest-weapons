@@ -1356,7 +1356,6 @@ class BHDWeapon : HDWeapon {
 					return ResolveState("UnloadChamber");
 				}
 				else if (!invoker.chambered() && invoker.weaponStatus[I_MAG] < 1 && (pressingUse() || nomags)) {
-
 					return ResolveState("LoadChamber");
 				}
 				else if (invoker.magazineGetAmmo() < 0 && invoker.brokenChamber()) {
@@ -1382,17 +1381,22 @@ class BHDWeapon : HDWeapon {
 			---- A 2 offset (-7, 70);
 			---- A 6 offset (-8, 80);
 			---- A 10 offset (-8, 87) {
+
 				if (CountInv(invoker.bAmmoClass)) {
 					A_TakeInventory(invoker.bAmmoClass, 1, TIF_NOTAKEINFINITE);
 					invoker.setChamber();
 					if (random(0, 1000) > 975) {
 						invoker.weaponstatus[I_FLAGS] |= F_CHAMBER_BROKE;
+						A_StartSound(invoker.bClickSound, 8);
 					}
-					A_StartSound(invoker.bChamberSound, 8);
+					else {
+						A_StartSound(invoker.bBoltForwardSound, 8);
+					}
 				}
 				else {
 					A_SetTics(4);
 				}
+
 			}
 			---- A 3 offset (-9, 76);
 			---- A 2 offset (-5, 70);
@@ -1459,10 +1463,11 @@ class BHDWeapon : HDWeapon {
 				}
 				else {
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER_BROKE;
-					//invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER;
+					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER;
+
 					A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
 					A_SpawnItemEx("DeformedAmmo", 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
-					invoker.weaponStatus[I_MAG]--;
+					//invoker.weaponStatus[I_MAG]--;
 				}
 				return ResolveState("ReloadEnd");
 			}
@@ -1509,7 +1514,7 @@ class BHDWeapon : HDWeapon {
 			#### A 0 A_CheckCookoff();
 			#### A 1 Offset(-3, 34);
 			#### A 0 {
-				if (invoker.brokenChamber()) {
+				if (invoker.brokenChamber() || invoker.weaponStatus[I_MAG] > 0) {
 					return ResolveState("Nope");
 				}
 				return ResolveState("Chamber_Manual");

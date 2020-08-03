@@ -97,3 +97,24 @@ sprite ZXOIA0, 93, 80 {
 	Offset 46, 30
 	Patch "sprites/accessory/fullsize/magniscope.png", 0, 0
 }
+
+sprite CHKAA0, 93, 80 {
+	XScale 12
+	YScale 12
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/brlchka.png", 0, 0
+}
+
+sprite CHKAB0, 93, 80 {
+	XScale 12
+	YScale 12
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/brlchkb.png", 0, 0
+}
+
+sprite CHKAC0, 93, 80 {
+	XScale 12
+	YScale 12
+	Offset 46, 30
+	Patch "sprites/accessory/fullsize/brlchkc.png", 0, 0
+}

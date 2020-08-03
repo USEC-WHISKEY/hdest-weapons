@@ -78,7 +78,7 @@ Options for this mod can be found in at the bottom of the default GZdoom options
 - Replace: Hideous Destructor weapon spawns will be replaced with weapons from this mod.
 - Map: Weapons are only replaced at the start of the level.
 
-WARNING: Vanilla loadouts and certain vanilla weapons will not if using replace mode. This is intended to replace the default weapons entirely. It is still possible to spawn vanilla items via the loadout manager, but they will not function properly. If you want to use both weapons, play using map start or map mixed. The following items are replaced:
+WARNING: Vanilla loadouts and certain vanilla weapons will not function properly if using replace mode. This is intended to replace the default weapons entirely. It is still possible to spawn vanilla items via the loadout manager, but they will not function properly. If you want to use both weapons, play using map start or map mixed. The following items are replaced:
 
 - Pistol with the Glock
 - SMG with the MP5
