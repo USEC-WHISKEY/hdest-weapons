@@ -1561,7 +1561,7 @@ class BHDWeapon : HDWeapon {
 				A_StartSound("weapons/pocket", CHAN_WEAPON, CHANF_OVERLAP);
 				PlayerInfo pl = players[invoker.playernumber()];
 				BHDWeapon wep = BHDWeapon(pl.readyWeapon);
-				if (wep.lastRef) {
+				if (wep && wep.lastRef) {
 					PlayerPawn player = players[invoker.playernumber()].mo;
 					wep.lastRef.ClearAttachment(wep, player);
 				}
