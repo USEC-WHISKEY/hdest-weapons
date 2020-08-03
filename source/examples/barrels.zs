@@ -154,7 +154,7 @@ class FosModifiedChoke : BaseChokeAttachment {
 	default {
 		BaseBarrelAttachment.Length 2;
 		BaseAttachment.MountId "FOSTECH";
-		BaseAttachment.SerialId B_FOS_IMPR_MOD;
+		BaseAttachment.SerialId B_FOS_MOD_CHOKE;
 		BaseAttachment.BaseSprite "TNT1";
 		BaseAttachment.BaseFrame 0;
 		HDPickup.Bulk 1;
@@ -181,7 +181,7 @@ class FosFullChoke : BaseChokeAttachment {
 	default {
 		BaseBarrelAttachment.Length 2;
 		BaseAttachment.MountId "FOSTECH";
-		BaseAttachment.SerialId B_FOS_IMPR_MOD;
+		BaseAttachment.SerialId B_FOS_FULL_CHOKE;
 		BaseAttachment.BaseSprite "TNT1";
 		BaseAttachment.BaseFrame 0;
 		HDPickup.Bulk 1;
