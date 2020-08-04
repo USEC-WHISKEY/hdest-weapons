@@ -69,12 +69,13 @@ class BaseShotgun : BaseStandardRifle {
 
 				HDBulletActor.FireBullet(self, "HDB_wad");
 
-				int spreadlow = -10, spreadhigh = 20;
+				int spreadlow = -10, spreadhigh = 5;
 				if (invoker.barrelClass is "BaseChokeAttachment") {
 					spreadlow = GetDefaultByType((Class<BaseChokeAttachment>)(invoker.barrelClass)).Clow;
 					spreadhigh = GetDefaultByType((Class<BaseChokeAttachment>)(invoker.barrelClass)).Chigh;
 				}
-				let p = HDBulletActor.FireBullet(self, invoker.bBulletClass, spread: random(spreadlow, spreadhigh), speedfactor: 1.0, amount: 15);
+				let p = HDBulletActor.FireBullet(self, invoker.bBulletClass, 
+					spread: spreadhigh, speedfactor: 1.0, amount: 15);
 
 				double muzzleMul = 1.0;
 				if (invoker.weaponstatus[I_AUTO] == 1) {

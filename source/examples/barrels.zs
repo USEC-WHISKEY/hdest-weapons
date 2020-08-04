@@ -136,7 +136,7 @@ class FosImprovedChoke : BaseChokeAttachment {
 		Inventory.Icon "CHKAA0";
 		Inventory.PickupMessage "Picked up a improved cylinder choke.";
 		BaseChokeAttachment.Clow -7;
-		BaseChokeAttachment.Chigh 17;
+		BaseChokeAttachment.Chigh 3;
 	}
 
 	States {
@@ -163,7 +163,7 @@ class FosModifiedChoke : BaseChokeAttachment {
 		Inventory.Icon "CHKAB0";
 		Inventory.PickupMessage "Picked up a modified choke.";
 		BaseChokeAttachment.Clow -4;
-		BaseChokeAttachment.Chigh 14;
+		BaseChokeAttachment.Chigh 2;
 	}
 
 	States {
@@ -190,7 +190,7 @@ class FosFullChoke : BaseChokeAttachment {
 		Inventory.Icon "CHKAC0";
 		Inventory.PickupMessage "Picked up a full choke.";
 		BaseChokeAttachment.Clow -2;
-		BaseChokeAttachment.Chigh 12;
+		BaseChokeAttachment.Chigh 1;
 	}
 
 	States {
