@@ -463,6 +463,20 @@ class B_MP5 : BHDWeapon {
 				return ResolveState("Nope");
 			}
 
+		ReloadEnd:
+			#### A 2 Offset(-11, 39);
+			#### A 1 Offset(-8, 37); //A_MuzzleClimb(frandom(0.2, -2.4), frandom(-0.2, -1.4));
+			#### A 0 A_CheckCookoff();
+			#### A 1 Offset(-3, 34);
+			#### A 0 {
+				//console.printf("I'm here");
+				if (invoker.brokenChamber()) {
+					//console.printf("nahing out");
+					return ResolveState("Nope");
+				}
+				return ResolveState("Chamber_Manual");
+			}
+
 		Dummy:
 			MPFL A -1;
 			MPFL B -1;
@@ -1129,6 +1143,19 @@ class B_MP5_M203 : BaseGLRifle {
 			MPFL D -1;
 			Stop;
 
+		ReloadEnd:
+			#### A 2 Offset(-11, 39);
+			#### A 1 Offset(-8, 37); //A_MuzzleClimb(frandom(0.2, -2.4), frandom(-0.2, -1.4));
+			#### A 0 A_CheckCookoff();
+			#### A 1 Offset(-3, 34);
+			#### A 0 {
+				//console.printf("I'm here");
+				if (invoker.brokenChamber()) {
+					//console.printf("nahing out");
+					return ResolveState("Nope");
+				}
+				return ResolveState("Chamber_Manual");
+			}
 
 	}	
 

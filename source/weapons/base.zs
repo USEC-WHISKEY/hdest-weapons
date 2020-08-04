@@ -1517,7 +1517,9 @@ class BHDWeapon : HDWeapon {
 			#### A 0 A_CheckCookoff();
 			#### A 1 Offset(-3, 34);
 			#### A 0 {
+				console.printf("I'm here");
 				if (invoker.brokenChamber() || invoker.weaponStatus[I_MAG] > 0) {
+					console.printf("nahing out");
 					return ResolveState("Nope");
 				}
 				return ResolveState("Chamber_Manual");
@@ -1565,7 +1567,7 @@ class BHDWeapon : HDWeapon {
 				PlayerInfo pl = players[invoker.playernumber()];
 				BHDWeapon wep = BHDWeapon(pl.readyWeapon);
 				if (wep && wep.lastRef) {
-					PlayerPawn player = players[invoker.playernumber()].mo;
+					PlayerPawn player = players[invoker.owner.playernumber()].mo;
 					wep.lastRef.ClearAttachment(wep, player);
 				}
 			}
@@ -1587,7 +1589,7 @@ class BHDWeapon : HDWeapon {
 				A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
 				if (invoker.lastRef) {
 					BHDWeapon wep = BHDWeapon(invoker);
-					PlayerPawn player = players[invoker.playernumber()].mo;
+					PlayerPawn player = players[invoker.owner.playernumber()].mo;
 					invoker.lastRef.AttemptAttach(wep, player);
 					TakeInventory(invoker.lastRef.getClassName(), 1);
 					invoker.lastRef = null;
