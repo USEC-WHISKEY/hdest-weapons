@@ -54,7 +54,7 @@ class B_RPGLauncher : BaseRPG {
 		BHDWeapon.BFrontOffsetY      22;
 		BHDWeapon.BSilentOffsetX     0;
 		BHDWeapon.BSilentOffsetY     0;
-		BHDWeapon.bBarrelMount       "556_NATO_BARREL";
+		BHDWeapon.bBarrelMount       "RPG_BARREL";
 		BHDWeapon.bScopeMount        "NATO_RAILS";
 		BHDWeapon.bMiscMount         "NATO_RAILS";
 		BHDWeapon.EjectShellClass    "B556Spent";
@@ -139,4 +139,61 @@ class B_RPGLauncher : BaseRPG {
 
 
 
+}
+
+
+
+
+class RpgAcogOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "B_RPGLauncher";
+		Offset.WeaponOverlay "B_Acog_Red";
+		Offset.OffY 15;
+		Offset.OffX -20;
+	}
+}
+
+class RpgScopeOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "B_RPGLauncher";
+		Offset.WeaponOverlay "B_Scope_10x";
+		Offset.OffY 15;
+		Offset.OffX -20;
+	}
+}
+
+class RpgFlashLightOffset : MiscOffset {
+	default {
+		Offset.WeaponClass "B_RPGLauncher";
+		Offset.WeaponOverlay "B_M16_Flashlight";
+		Offset.OffX 1;
+		offset.OffY 33;
+	}
+}
+
+class RpgCrdotOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "B_RPGLauncher";
+		Offset.WeaponOverlay "B_Sight_CRdot";
+		Offset.OffY 27;
+		Offset.OffX -20;
+	}
+}
+
+class RpgHoloOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "B_RPGLauncher";
+		Offset.WeaponOverlay "B_Sight_Holo_Red";
+		Offset.OffY 12;
+		Offset.OffX -20;
+	}
+}
+
+class RpgReflexOffset : ScopeOffset {
+	default {
+		Offset.WeaponClass "B_RPGLauncher";
+		Offset.WeaponOverlay "B_Reflex_Red";
+		Offset.OffY 18;
+		Offset.OffX -20;
+	}
 }

@@ -308,6 +308,7 @@ class BHDWeapon : HDWeapon {
 		if (!spawnEmpty) {
 			weaponStatus[I_FLAGS] |= F_CHAMBER;
 		}
+
 		//weaponStatus[I_MAG]--;
 		// This bugs if you're carrying multiple rifles, need to check it out?
 	}
