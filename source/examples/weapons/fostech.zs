@@ -14,6 +14,7 @@ class b_FauxtechOrigin : BaseShotgun {
 		obituary                     "%o was assaulted by %k.";
 		tag                          "Fauxtech Origin 12";
 		inventory.icon               "FOSPA0";
+		BHDWeapon.BFlashSprite       "FXFLA0";
 		BHDWeapon.BHeatDrain         12;
 		BHDWeapon.BBulletClass       "HDB_00";
 		BHDWeapon.BAmmoClass         "HDShellAmmo";
@@ -342,6 +343,12 @@ class b_FauxtechOrigin : BaseShotgun {
 				}
 				return ResolveState("Chamber_Manual");
 			}
+
+		Dummy:
+			FXFL A -1;
+			FXFL B -1;
+			FXFL C -1;
+			FXFL D -1;
 
 	}
 

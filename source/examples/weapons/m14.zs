@@ -291,7 +291,7 @@ class b_m14 : basestandardrifle {
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER_BROKE;
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER;
 					A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
-					A_SpawnItemEx("DeformedAmmo", 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
+					A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
 					//invoker.weaponStatus[I_MAG]--;
 				}
 				return ResolveState("ReloadEnd");

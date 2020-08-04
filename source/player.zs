@@ -49,6 +49,9 @@ class PlayerEvents : EventHandler {
 		else if (e.Replacee is "HEATAmmo") {
 			e.Replacement = "BRpgRocket";
 		}
+		else if (e.Replacee is "RocketBigPickup") {
+			e.Replacement = "BRocketPickup";
+		}
 		// Pistol
 		else if (e.Replacee is "HDPistol" || e.Replacee is "HDAutoPistol") {
 			if (b_spawn_empty_mags == 1)

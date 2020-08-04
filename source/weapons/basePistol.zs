@@ -94,7 +94,7 @@ class BasePistol : BaseStandardRifle {
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER_BROKE;
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER;
 					A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
-					A_SpawnItemEx("DeformedAmmo", 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
+					A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
 				}
 				return ResolveState("ReloadEnd");
 			}

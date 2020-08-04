@@ -43,9 +43,17 @@ class B556Ammo : BRoundAmmo {
 	override string pickupmessage(){
 		return "Picked up a stray 5.56x45mm round.";
 	}
+
+	override void SplitPickup(){
+		SplitPickupBoxableRound(10,100,"B_556_Box","BS56A0","BB56A7A3");
+	}
+
 	states {
 		spawn:
 			BB56 A -1;
+			stop;
+		dummy:
+			BS56 A -1;
 			stop;
 	}
 	override void GetItemsThatUseThis() {
@@ -165,9 +173,15 @@ class B762x51Ammo : BRoundAmmo {
 		itemsthatusethis.push("B_M14");
 		itemsthatusethis.push("b762_m14_mag");
 	}
+	override void SplitPickup(){
+		SplitPickupBoxableRound(10,100,"B_762_Box","BS76A0","BF76A3A7");
+	}
 	states {
 		spawn:
 			BF76 A -1;
+			stop;
+		dummy:
+			BS76 A -1;
 			stop;
 	}
 }
@@ -310,7 +324,29 @@ class BAmBox : HDUPK {
 
 
 
+class BRocketPickup : HDUPK{
+	default{
+		//$Category "Ammo/Hideous Destructor/"
+		//$Title "Box of Rocket Grenades"
+		//$Sprite "BROKA0"
 
+		scale 0.5;
+		hdupk.pickupmessage "Picked up a box of rpg rockets.";
+		hdupk.pickuptype "BRpgRocket";
+		hdupk.amount 5;
+	}
+	override void postbeginplay(){
+		super.postbeginplay();
+		//A_SpawnItemEx("BRpgRocket",10,0,0,0,0,0,0,0,220);
+		//A_SpawnItemEx("BRpgRocket",13,0,0,0,0,0,0,0,220);
+		//A_SpawnItemEx("BRpgRocket",16,0,0,0,0,0,0,0,220);
+	}
+	states{
+	spawn:
+		RBOX A -1;
+		stop;
+	}
+}
 
 
 

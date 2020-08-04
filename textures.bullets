@@ -72,6 +72,12 @@ sprite BF76A5, 7, 7 {
 	Patch "graphics/bulletimages/brass_762_5.png", 0, 0
 }
 
+sprite BS76A0, 41, 42 {
+	XScale 8
+	YScale 8
+	Offset 20, 42
+	Patch "graphics/bulletimages/776stack.png", 0, 0
+}
 
 
 
@@ -145,4 +151,11 @@ sprite BF56A5, 5, 5 {
 	YScale 8
 	Offset 3, 5
 	Patch "graphics/bulletimages/556/full_A5.png", 0, 0
+}
+
+sprite BS56A0, 34, 32 {
+	XScale 8
+	YScale 8
+	Offset 17, 32
+	Patch "graphics/bulletimages/556/556stack.png", 0, 0
 }

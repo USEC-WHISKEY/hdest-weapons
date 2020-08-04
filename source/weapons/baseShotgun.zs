@@ -35,7 +35,7 @@ class BaseShotgun : BaseStandardRifle {
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER_BROKE;
 					invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER;
 					A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
-					A_SpawnItemEx("DeformedShell", 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
+					A_SpawnItemEx(invoker.BAmmoClass, 0, 0, 20, random(4, 7), random(-2, 2), random(-2, 1), 0, SXF_NOCHECKPOSITION);
 				}
 				return ResolveState("ReloadEnd");
 			}
@@ -43,10 +43,10 @@ class BaseShotgun : BaseStandardRifle {
 		Flash:
 			TNT1 A 0 {
 				if (!(invoker.barrelClass is "BaseFlashAttachment") && !(invoker.barrelClass is "BaseSilencerAttachment")) {
-					let psp = player.FindPSprite(-1000);
+					let psp = player.FindPSprite(-500);
 					if (psp) {
-						psp.sprite = GetSpriteIndex("FLSHA0");
-						psp.frame = random(5, 8);
+						psp.sprite = GetSpriteIndex("FXFLA0");
+						psp.frame = random(0, 3);
 					}
 				}
 			}
