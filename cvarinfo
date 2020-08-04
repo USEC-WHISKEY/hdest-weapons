@@ -1,5 +1,6 @@
 server int b_replace_type = 6;
 server int b_attach_spawn_mode = 1;
+server int b_weapon_jamming = 0;
 
 server int b_spawn_raw_resources = 1;
 server int b_spawn_empty_mags = 0;

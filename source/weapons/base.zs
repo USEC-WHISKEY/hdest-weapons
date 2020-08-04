@@ -1236,13 +1236,15 @@ class BHDWeapon : HDWeapon {
 					invoker.magazineAddAmmo(-1);
 					invoker.setChamber();
 
-					int rngagain = random(0, 1000000);
-					if (rngagain < 50 || rngagain > 999980) {
-						//console.printf("break the chamber %i", invoker.weaponStatus[I_FLAGS] & F_CHAMBER_BROKE);
-						invoker.breakChamber();
-						//console.printf("break the chamber %i", invoker.weaponStatus[I_FLAGS] & F_CHAMBER_BROKE);
-						A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
-						//return ResolveState("Nope");
+					if (b_weapon_jamming == 1) {
+						int rngagain = random(0, 1000000);
+						if (rngagain < 50 || rngagain > 999980) {
+							//console.printf("break the chamber %i", invoker.weaponStatus[I_FLAGS] & F_CHAMBER_BROKE);
+							invoker.breakChamber();
+							//console.printf("break the chamber %i", invoker.weaponStatus[I_FLAGS] & F_CHAMBER_BROKE);
+							A_StartSound(invoker.bClickSound, CHAN_WEAPON, CHANF_OVERLAP);
+							//return ResolveState("Nope");
+						}
 					}
 
 				}
@@ -1386,7 +1388,7 @@ class BHDWeapon : HDWeapon {
 				if (CountInv(invoker.bAmmoClass)) {
 					A_TakeInventory(invoker.bAmmoClass, 1, TIF_NOTAKEINFINITE);
 					invoker.setChamber();
-					if (random(0, 1000) > 975) {
+					if (b_weapon_jamming == 1 && random(0, 1000) > 975) {
 						invoker.weaponstatus[I_FLAGS] |= F_CHAMBER_BROKE;
 						A_StartSound(invoker.bClickSound, 8);
 					}

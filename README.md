@@ -8,9 +8,9 @@ What was originally intended as a library for creating Hideous Destructor weapon
 
 ## How to play
 
-This mod requires GZdoom. 
+This mod requires GZdoom & Hideous Destructor. LZDoom is also supported though there are some UI issues.
 
-GZDoom: https://zdoom.org/index
+GZDoom/LZDoom: https://zdoom.org/index
 
 Hideous Destructor: https://github.com/MatthewTheGlutton/HideousDestructor
 
@@ -209,6 +209,8 @@ Weapons are configured based on the follow syntax: `w## ba# bs# bm#`. The values
 - `ba#` is the muzzle attachment reference number
 - `bs#` is the sight attachment reference number
 - `bm#` is the misc. attachment reference number
+
+It's possible via the loadout manager to place attachments on weapons that otherwise wouldn't be supported. This is a known issue. You can remove the attachment, but you won't be able to put it back on later.
 
 Magazines for weapons correspond to their weapon number, except for the M203 weapon variants. 
 

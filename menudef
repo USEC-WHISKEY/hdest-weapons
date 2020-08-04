@@ -20,6 +20,11 @@ OptionValue "B_Resource_Options" {
 	1, "On"
 }
 
+OptionValue "B_Jam_Options" {
+	0, "Off"
+	1, "On"
+}
+
 OptionValue "B_Mag_Options" {
 	0, "Filled"
 	1, "Empty"
@@ -49,10 +54,17 @@ OptionMenu "B_Options" {
 	statictext "Minimal: Only the vital parts of sights are shown.     "
 	statictext ""
 
+	option "Weapon Jamming", "b_weapon_jamming", "B_Jam_Options"
+	statictext "Off:     Weapons won't jam.                            "
+	statictext "On:      Weapons when chambering can sometimes jam.    "
+	statictext "         Manually chambering increases the chance.     "
+	statictext ""
+
 	option "Attachment Spawn Mode", "b_attach_spawn_mode", "B_Attach_Spawn_Options"
 	statictext "None:    Weapons will not spawn with attachments,      "
 	statictext "         just their default sights.                    "
 	statictext "Random:  Weapons can spawn with random attachments.    "
+	statictext ""
 
 	statictext ""
 	statictext "In development features - expect it to be broken"

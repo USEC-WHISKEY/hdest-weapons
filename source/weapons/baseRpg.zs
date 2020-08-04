@@ -109,6 +109,7 @@ class BaseRPG : BHDWeapon {
 				//A_StartSound("weapons/rockboom",CHAN_AUTO);
 
 				A_StartSound(invoker.BFireSound, CHAN_AUTO, CHANF_OVERLAP);
+				A_StartSound(invoker.BClickSound, CHAN_AUTO, CHANF_OVERLAP);
 				//A_StartSound("weapons/rpg/whoosh",CHAN_AUTO, CHANF_OVERLAP);
 
 
