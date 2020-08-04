@@ -14,7 +14,7 @@ This mod requires GZdoom & Hideous Destructor. LZDoom is also supported though t
 
 GZDoom/LZDoom: https://zdoom.org/index
 
-Hideous Destructor: https://github.com/MatthewTheGlutton/HideousDestructor
+Hideous Destructor: https://forum.zdoom.org/viewtopic.php?t=12973
 
 If you aren't using `git` you can download this repository as a ZIP via the green code button at the top of this page.
 
