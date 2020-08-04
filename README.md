@@ -4,7 +4,9 @@
 
 # Bryan's Weapons
 
-What was originally intended as a library for creating Hideous Destructor weapons has turned into a modern tactical weapons pack. These weapons come with the benefit of some modularity, allowing for weapon attachments such as scopes, muzzle, and miscellaneous attachments such as a flashlight. 
+What was originally intended as a library for creating Hideous Destructor weapons has turned into a modern tactical weapons pack. These weapons come with the benefit of some modularity, allowing for weapon attachments such as scopes, muzzle, and a miscellaneous flashlight attachments. 
+
+Demonstration video: https://youtu.be/6MUE1xlJy-s
 
 ## How to play
 
@@ -27,7 +29,7 @@ git clone https://github.com/abramsba/bryan-hdest-weapons.git
 And then load this mod as you would any other Doom mod.
 
 ```
-gzdoom -file "HideousDestructor" "bryan-hdest-weapons"
+gzdoom -file "HideousDestructor" "hdest-weapons"
 ```
 
 ZDL (ZDoom Launcher) is also available to help manage loading multiple wads.
@@ -60,7 +62,7 @@ The gun art assets, sounds, and player sprite are not allowed to be reused in ot
 
 ## Multiplayer
 
-Multiplayer compatibility has not been extensively tested. 
+Multiplayer compatibility has not been extensively tested. Use at your own risk for now. 
 
 ## Player Skin
 
@@ -178,7 +180,7 @@ Also note that other mods that spawn or replace actors if using "Replace" mode m
 
 ## Ammo
 
-Each weapon has its own magazine/drum/pouch. The Glock and MP5 are chambered in the the default Hideous Destructor 9mm bullet. The Fauxtech Origin also reuses thd default Hideous Destructor shotgun shells. Ammo for the M203 uses the default rocket grenade ammo as well. 
+Each weapon has its own magazine/drum/pouch. The Glock and MP5 are chambered in the the default Hideous Destructor 9mm bullet. The Fauxtech Origin also reuses the default Hideous Destructor shotgun shells. Ammo for the M203 uses the default rocket grenade ammo as well. 
 
 <p>
 	<img src="sprites/ammo/5BOXA0.png">
@@ -193,13 +195,13 @@ Each weapon has its own magazine/drum/pouch. The Glock and MP5 are chambered in 
 - Fauxtech Drum: 20 shells
 - M249 Pouch: (5.56mm): 200 rounds
 
-For the M249 pouch, a reloading tool is available. It is similar to the 7mm reloader. It needs an empty M249 magazine and 200 5.56 rounds.
+For the M249 pouch, a reloading tool is available. It is similar to the 7mm reloader. It needs an empty M249 magazine and loose 5.56 rounds.
 
 ## Using Attachments
 
-Attachments will either be found in backpacks or already equipped on weapons dropped by enemies or find in the level. An attachment must be compatible with the weapon to be able to attach it. To swap an attachment, simply use an attachment item. It will remove the attachment already occupying the slot, place it back in your inventory, and attach the item just used. 
+Attachments will either be found in backpacks or already equipped on weapons dropped by enemies. An attachment must be compatible with the weapon to be able to attach it. To swap an attachment, simply use an attachment item. It will remove the attachment already occupying the slot, place it back in your inventory, and attach the item just used. 
 
-There is a keybind available in the options for opening an attachment manager.
+There is a keybind available for removing each attachment in the options for opening an attachment manager.
 
 ## Loadout Manager
 
@@ -210,7 +212,7 @@ Weapons are configured based on the follow syntax: `w## ba# bs# bm#`. The values
 - `bs#` is the sight attachment reference number
 - `bm#` is the misc. attachment reference number
 
-It's possible via the loadout manager to place attachments on weapons that otherwise wouldn't be supported. This is a known issue. You can remove the attachment, but you won't be able to put it back on later.
+It's possible via the loadout manager to place attachments on weapons that otherwise wouldn't be supported. This is a known issue. You can remove the attachment, but you won't be able to put it back on later. Putting chokes on weapons other than the Fauxtech Origin will have no effect.
 
 Magazines for weapons correspond to their weapon number, except for the M203 weapon variants. 
 
@@ -238,7 +240,7 @@ Magazines for weapons correspond to their weapon number, except for the M203 wea
 
 <p><img src="sprites/mf240/bm249clip.png"></p>
 
-Note: The M4 and Fauxtech origin by default have no rear sight. You have to pick one yourself or you will only see the front sight image.
+Note: The M4 and Fauxtech Origin by default have no rear sight. You have to pick one yourself or you will only see the front sight image.
 
 ### Weapon IDs
 
@@ -335,4 +337,4 @@ These are for adding attachments as loose items in your inventory if you plan to
 - `bcr`: Ball crafter
 - `ccr`: Case crafter
 - `asm`: Bullet Assembler
-- `rsm`: Rocket Aseembler
+- `rsm`: Rocket Assembler
