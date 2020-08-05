@@ -782,7 +782,7 @@ class TDerpController:HDWeapon{
 		+weapon.wimpy_weapon
 		+nointeraction
 		+hdweapon.droptranslation
-		inventory.icon "DERPA5";
+		inventory.icon "TDRPA5";
 		weapon.selectionorder 1012;
 	}
 	array<TDERPBot> derps;
