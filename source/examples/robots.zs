@@ -496,7 +496,7 @@ class THERPUsable:HDWeapon{
 		+hdweapon.fitsinbackpack
 		inventory.amount 1;
 		inventory.maxamount 1;
-		inventory.icon "HERPEX";
+		inventory.icon "THRPEX";
 		inventory.pickupsound "misc/w_pkup";
 		inventory.pickupmessage "Picked up a Tactical Heavy Engagement Rotary Platform robot.";
 		tag "T.H.E.R.P. robot";
