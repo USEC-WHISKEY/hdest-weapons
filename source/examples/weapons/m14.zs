@@ -25,9 +25,9 @@ class b_m14 : basestandardrifle {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "M14CA0";
-		BHDWeapon.BWeaponBulk        110;
-		BHDWeapon.BMagazineBulk      20;
-		BHDWeapon.BBulletBulk        1;
+		BHDWeapon.BWeaponBulk        c_m14_bulk;
+		BHDWeapon.BMagazineBulk      c_m14_mag_bulk;
+		BHDWeapon.BBulletBulk        c_762_round_bulk;
 		BHDWeapon.BMagazineCapacity  20;
 		BHDWeapon.BarrelLength       25;
 		BHDWeapon.BarrelWidth        1;

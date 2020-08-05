@@ -26,9 +26,9 @@ class B_MP5 : BHDWeapon {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "MP5CA0";
-		BHDWeapon.BWeaponBulk        60;
-		BHDWeapon.BMagazineBulk      13;
-		BHDWeapon.BBulletBulk        1;
+		BHDWeapon.BWeaponBulk        c_mp5_bulk;
+		BHDWeapon.BMagazineBulk      c_mp5_mag_bulk;
+		BHDWeapon.BBulletBulk        c_van_9mm_bulk;
 		BHDWeapon.BMagazineCapacity  30;
 		BHDWeapon.BarrelLength       25;
 		BHDWeapon.BarrelWidth        1;
@@ -654,9 +654,9 @@ class B_MP5_M203 : BaseGLRifle {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "MP5CA0";
-		BHDWeapon.BWeaponBulk        60;
-		BHDWeapon.BMagazineBulk      13;
-		BHDWeapon.BBulletBulk        1;
+		BHDWeapon.BWeaponBulk        c_mp5_m203_bulk;
+		BHDWeapon.BMagazineBulk      c_mp5_mag_bulk;
+		BHDWeapon.BBulletBulk        c_van_9mm_bulk;
 		BHDWeapon.BMagazineCapacity  30;
 		BHDWeapon.BarrelLength       25;
 		BHDWeapon.BarrelWidth        1;

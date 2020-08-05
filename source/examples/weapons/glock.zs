@@ -27,8 +27,8 @@ class b_Glock : BasePistol {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "GLKCA0";
-		BHDWeapon.BWeaponBulk        34;
-		BHDWeapon.BMagazineBulk      5;
+		BHDWeapon.BWeaponBulk        c_glock_bulk;
+		BHDWeapon.BMagazineBulk      c_glock_mag_bulk;
 		BHDWeapon.BBulletBulk        1;
 		BHDWeapon.BMagazineCapacity  15;
 		BHDWeapon.BarrelLength       15;

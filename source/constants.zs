@@ -86,3 +86,53 @@ const B_FOS_SILENCER_ID   = 5;
 const B_FOS_IMPR_CHOKE    = 6;
 const B_FOS_MOD_CHOKE     = 7;
 const B_FOS_FULL_CHOKE    = 8;
+
+
+
+
+
+
+
+
+const c_glock_bulk = 35;
+const c_glock_mag_bulk = 4;
+
+const c_m4_bulk = 90;
+const c_m4_m203_bulk = 120;
+const c_m4_mag_bulk = 8;
+
+const c_mp5_bulk = 60;
+const c_mp5_m203_bulk = 90;
+const c_mp5_mag_bulk = 6;
+
+const c_m14_bulk = 110;
+const c_m14_mag_bulk = 8;
+
+const c_faux_bulk = 130;
+const c_faux_drum_bulk = 20;
+
+const c_m249_bulk = 200;
+const c_m249_pouch_bulk = 15;
+
+const c_556_round_bulk = 0.35;
+const c_556_spent_bulk = c_556_round_bulk / 0.7;
+const c_556_load_bulk = c_556_round_bulk / 2;
+
+const c_762_round_bulk = 1.2;
+const c_762_spent_bulk = c_762_round_bulk / 0.6;
+const c_762_load_bulk = c_762_round_bulk / 2;
+
+const c_rpg_bulk = 75;
+const c_rpg_case_bulk = 2.8;
+const c_rpg_charge_bulk = 17.2;
+
+const c_raw_resource_bulk = 0.1;
+
+const c_van_9mm_bulk = 0.65;
+const c_9mm_load_bulk = c_van_9mm_bulk / 2;
+
+const c_van_shell_bulk = 1.8;
+const c_shell_load_bulk = c_van_shell_bulk / 2;
+
+const c_van_rocket_bulk = 24.4;
+const c_rocket_load_bulk = c_van_rocket_bulk / 4;

@@ -26,8 +26,8 @@ class b_M249 : BHDWeapon {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "M24CA0";
-		BHDWeapon.BWeaponBulk        200;
-		BHDWeapon.BMagazineBulk      50;
+		BHDWeapon.BWeaponBulk        c_m249_bulk;
+		BHDWeapon.BMagazineBulk      c_m249_pouch_bulk;
 		BHDWeapon.BBulletBulk        1;
 		BHDWeapon.BMagazineCapacity  200;
 		BHDWeapon.BarrelLength       25;

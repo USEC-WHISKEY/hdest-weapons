@@ -2,7 +2,7 @@
 class DeformedAmmo : BRoundAmmo {
 	default {
 		tag "Deformed round";
-		hdpickup.bulk 1;
+		hdpickup.bulk 0.01;
 		Inventory.Icon "BB56A7A3";
 		-hdpickup.fitsinbackpack
 	}
@@ -19,7 +19,7 @@ class DeformedAmmo : BRoundAmmo {
 class DeformedShell : BRoundAmmo {
 	default {
 		tag "Deformed 12 gauge shell";
-		hdpickup.bulk 1;
+		hdpickup.bulk 0.01;
 		Inventory.Icon "SHELA0";
 		-hdpickup.fitsinbackpack
 	}
@@ -37,7 +37,7 @@ class B556Ammo : BRoundAmmo {
 	default {
 		tag "5.56x45mm round";
 		hdpickup.refid "b56";
-		hdpickup.bulk ENC_556;
+		hdpickup.bulk c_556_round_bulk;
 		Inventory.Icon "BB56A7A3";
 	}
 	override string pickupmessage(){
@@ -68,7 +68,7 @@ class B556Brass : BRoundShell {
 	default {
 		tag "5.56 brass";
 		HDPickUp.RefId "b5b";
-		HdPickup.Bulk 1;
+		HdPickup.Bulk c_556_spent_bulk;
 		Inventory.PickupMessage "Picked up some 5.56x45mm brass.";
 	}
 	states {
@@ -136,7 +136,7 @@ class B_556_Box : HDUPK {
 
 
 
-
+// Am I using this?
 class BRPGRocketAmmo : BRoundAmmo {
 	default {
 		tag "RPG Rocket Ammo";
@@ -163,7 +163,7 @@ class B762x51Ammo : BRoundAmmo {
 	default {
 		tag "7.62x51mm round";
 		HDPickup.RefId "b75";
-		HDPickup.Bulk ENC_762;
+		HDPickup.Bulk c_762_round_bulk;
 		Inventory.icon "BF76A3A7";
 	}
 	override string pickupmessage(){
@@ -190,7 +190,7 @@ class B762x51Brass : BRoundShell {
 	default {
 		tag "7.62x51mm brass";
 		HDPickup.RefId "B762x51Casing";
-		HDPickup.Bulk 1;
+		HDPickup.Bulk c_762_spent_bulk;
 		Inventory.PickupMessage "Picked up some 7.62x51mm brass.";
 	}
 	states {

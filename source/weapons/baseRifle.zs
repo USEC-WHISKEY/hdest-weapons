@@ -247,5 +247,9 @@ class BaseGLRifle : BaseAltRifle {
 		}
 	}	
 
+	override double WeaponBulk() {
+		return super.WeaponBulk() + (weaponStatus[I_FLAGS] & I_GRENADE ? c_rocket_load_bulk : 0.0);
+	}
+
 }
 

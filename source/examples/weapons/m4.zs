@@ -27,9 +27,9 @@ class B_M4 : BaseStandardRifle {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "M4RCA0";
-		BHDWeapon.BWeaponBulk        150;
-		BHDWeapon.BMagazineBulk      15;
-		BHDWeapon.BBulletBulk        1;
+		BHDWeapon.BWeaponBulk        c_m4_bulk;
+		BHDWeapon.BMagazineBulk      c_m4_mag_bulk;
+		BHDWeapon.BBulletBulk        c_556_round_bulk;
 		BHDWeapon.BMagazineCapacity  30;
 		BHDWeapon.BarrelLength       25;
 		BHDWeapon.BarrelWidth        1;
@@ -508,9 +508,9 @@ class B_M4_M203 : BaseGLRifle {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "M4RCA0";
-		BHDWeapon.BWeaponBulk        90;
-		BHDWeapon.BMagazineBulk      15;
-		BHDWeapon.BBulletBulk        1;
+		BHDWeapon.BWeaponBulk        c_m4_m203_bulk;
+		BHDWeapon.BMagazineBulk      c_m4_mag_bulk;
+		BHDWeapon.BBulletBulk        c_556_round_bulk;
 		BHDWeapon.BMagazineCapacity  30;
 		BHDWeapon.BarrelLength       25;
 		BHDWeapon.BarrelWidth        1;

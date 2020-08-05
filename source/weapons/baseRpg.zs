@@ -15,6 +15,11 @@ class BaseRPG : BHDWeapon {
 		//sb.DrawNum(ammoBarAmt, -16, -22, sb.DI_SCREEN_CENTER_BOTTOM | sb.DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
 	}
 
+	override double WeaponBulk() {
+		// Yugh, what to do here
+		return bWeaponBulk + (weaponStatus[I_FLAGS] & F_CHAMBER) ? ((c_rpg_case_bulk + c_rpg_charge_bulk) / 2) : 0; //      (mgg < 0 ? 0 : (loadedMagBulk + mgg * loadedRoundBulk));
+	}
+
 	override void PostBeginPlay() {
 		super.PostBeginPlay();
 		if (!spawnEmpty && weaponStatus[I_MAG] > 0) {

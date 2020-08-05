@@ -363,10 +363,12 @@ class BHDWeapon : HDWeapon {
 		}
 	}
 
-	override double WeaponBulk(){
-		double blx = bWeaponBulk;
-		int mgg = magazineGetAmmo();
-		return blx + (mgg < 0 ? 0 : (bMagazineBulk + mgg * bBulletBulk));
+	override double WeaponBulk() {
+		// Fuck it do like the zm66
+		int mgg = weaponStatus[I_MAG];
+		double loadedMagBulk = (bMagazineBulk * 0.4) * 0.4;
+		double loadedRoundBulk = (bBulletBulk / 2);
+		return bWeaponBulk + (mgg < 0 ? 0 : (loadedMagBulk + mgg * loadedRoundBulk));
 	}
 
 	override void DropOneAmmo(int amt){
@@ -1519,9 +1521,9 @@ class BHDWeapon : HDWeapon {
 			#### A 0 A_CheckCookoff();
 			#### A 1 Offset(-3, 34);
 			#### A 0 {
-				console.printf("I'm here");
+				//console.printf("I'm here");
 				if (invoker.brokenChamber() || invoker.weaponStatus[I_MAG] > 0) {
-					console.printf("nahing out");
+					//console.printf("nahing out");
 					return ResolveState("Nope");
 				}
 				return ResolveState("Chamber_Manual");

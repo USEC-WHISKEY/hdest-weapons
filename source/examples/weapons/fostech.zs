@@ -27,9 +27,9 @@ class b_FauxtechOrigin : BaseShotgun {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "FOSCA0";
-		BHDWeapon.BWeaponBulk        100;
-		BHDWeapon.BMagazineBulk      30;
-		BHDWeapon.BBulletBulk        1;
+		BHDWeapon.BWeaponBulk        c_faux_bulk;
+		BHDWeapon.BMagazineBulk      c_faux_drum_bulk;
+		BHDWeapon.BBulletBulk        c_van_shell_bulk;
 		BHDWeapon.BMagazineCapacity  20;
 		BHDWeapon.BarrelLength       25;
 		BHDWeapon.BarrelWidth        1;

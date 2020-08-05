@@ -28,9 +28,9 @@ class B_RPGLauncher : BaseRPG {
 		BHDWeapon.BSpriteWithFrame    0;
 		BHDWeapon.BSpriteWithoutFrame 1;
 		BHDWeapon.BMagazineSprite    "RPGRA7A3";
-		BHDWeapon.BWeaponBulk        70;
-		BHDWeapon.BMagazineBulk      10;
-		BHDWeapon.BBulletBulk        1;
+		BHDWeapon.BWeaponBulk        c_rpg_bulk;
+		BHDWeapon.BMagazineBulk      c_rpg_case_bulk;
+		BHDWeapon.BBulletBulk        c_rpg_charge_bulk;
 		BHDWeapon.BMagazineCapacity  1;
 		BHDWeapon.BarrelLength       25;
 		BHDWeapon.BarrelWidth        1;

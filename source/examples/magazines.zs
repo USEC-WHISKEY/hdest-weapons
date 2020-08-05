@@ -3,8 +3,8 @@ class B556Mag : HDMagAmmo{
 	default{
 		hdmagammo.maxperunit 30;
 		hdmagammo.roundtype "B556Ammo";
-		hdmagammo.roundbulk ENC_556_LOADED;
-		hdmagammo.magbulk ENC_556MAG_EMPTY;
+		hdmagammo.roundbulk c_556_load_bulk;
+		hdmagammo.magbulk c_m4_mag_bulk;
 		hdpickup.refid B_556_MAG_REFID;
 		tag "5.56x45mm magazine";
 		inventory.pickupmessage "Picked up a 5.56x45mm NATO STANAG magazine.";
@@ -63,8 +63,8 @@ class BM249Mag : HDMagAmmo {
 	default{
 		hdmagammo.maxperunit 200;
 		hdmagammo.roundtype "B556Ammo";
-		hdmagammo.roundbulk ENC_556_LOADED;
-		hdmagammo.magbulk ENC_556MAG_EMPTY;
+		hdmagammo.roundbulk c_556_load_bulk;
+		hdmagammo.magbulk c_m249_pouch_bulk;
 		hdpickup.refid B_MF249_MAG_REFID;
 		tag "5.56x45mm 200 round pouch";
 		inventory.icon "M24CA0";
@@ -106,8 +106,8 @@ class B9mm_MP5K_MAG : HDMagAmmo {
 	default{
 		hdmagammo.maxperunit 30;
 		hdmagammo.roundtype "HDPistolAmmo";
-		hdmagammo.roundbulk ENC_556_LOADED;
-		hdmagammo.magbulk ENC_556MAG_EMPTY;
+		hdmagammo.roundbulk c_9mm_load_bulk;
+		hdmagammo.magbulk c_mp5_mag_bulk;
 		hdpickup.refid B_MP5_MAG_REFID;
 		tag "MP5 Magazine";
 		inventory.icon "MP5CA0";
@@ -169,8 +169,8 @@ class BFauxDrum : HDMagAmmo {
 	default {
 		hdmagammo.maxperunit 20;
 		hdmagammo.roundtype "HDShellAmmo";
-		hdmagammo.roundbulk ENC_556_LOADED;
-		hdmagammo.magbulk ENC_556MAG_EMPTY;
+		hdmagammo.roundbulk c_shell_load_bulk;
+		hdmagammo.magbulk c_faux_drum_bulk;
 		hdpickup.refid B_FAUX_DRUM_REFID;
 		tag "Fauxtech Origin 12 Drum";
 		inventory.icon "FOSCA0";
@@ -215,8 +215,8 @@ class b762_m14_mag : HDMagAmmo {
 	default {
 		HDMagAmmo.MaxPerUnit 20;
 		HDMagAmmo.RoundType "B762x51Ammo";
-		HDMagAmmo.RoundBulk ENC_776_LOADED;
-		HDMagAmmo.MagBulk ENC_776MAG_EMPTY;
+		HDMagAmmo.RoundBulk c_762_load_bulk;
+		HDMagAmmo.MagBulk c_m14_mag_bulk;
 		tag "7.62x51mm magazine";
 		hdpickup.refid B_M14_MAG_REFID;
 		Inventory.Icon "M14CA0";
@@ -279,8 +279,8 @@ class GlockMagazine : HDMagAmmo {
 	default{
 		hdmagammo.maxperunit 15;
 		hdmagammo.roundtype "HDPistolAmmo";
-		hdmagammo.roundbulk ENC_762_LOADED;
-		hdmagammo.magbulk ENC_762MAG_EMPTY;
+		hdmagammo.roundbulk c_van_9mm_bulk;
+		hdmagammo.magbulk c_glock_mag_bulk;
 		hdpickup.refid B_GLOCK_MAG_REFID;
 		tag "Glock magazine";
 		inventory.icon "GLKCA0";
@@ -344,8 +344,8 @@ class BRpgRocket : HDMagAmmo {
 		-hdpickup.fitsinbackpack
 		hdmagammo.maxperunit 1;
 		hdmagammo.roundtype "HEATAmmo";
-		hdmagammo.roundbulk ENC_762_LOADED;
-		hdmagammo.magbulk 10;
+		hdmagammo.roundbulk c_rpg_charge_bulk;
+		hdmagammo.magbulk c_rpg_case_bulk;
 		hdpickup.refid B_RPG_ROCKET_REFID;
 		tag "RPG Rocket";
 		inventory.pickupmessage "Picked up a RPG rocket.";
