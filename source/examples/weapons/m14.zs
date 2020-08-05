@@ -3,7 +3,7 @@ class b_m14 : basestandardrifle {
 	default {
 		-hdweapon.fitsinbackpack
 		weapon.selectionorder        20;
-		weapon.slotnumber            5;
+		weapon.slotnumber            6;
 		weapon.slotpriority          1;
 		inventory.pickupsound        "misc/w_pkup";
 		inventory.pickupmessage      "You got the M14.";
