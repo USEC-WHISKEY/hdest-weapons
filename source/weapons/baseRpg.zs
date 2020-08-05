@@ -15,6 +15,16 @@ class BaseRPG : BHDWeapon {
 		//sb.DrawNum(ammoBarAmt, -16, -22, sb.DI_SCREEN_CENTER_BOTTOM | sb.DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
 	}
 
+	override void PostBeginPlay() {
+		super.PostBeginPlay();
+		if (!spawnEmpty && weaponStatus[I_MAG] > 0) {
+			weaponStatus[I_FLAGS] |= F_CHAMBER;
+		}
+
+		//weaponStatus[I_MAG]--;
+		// This bugs if you're carrying multiple rifles, need to check it out?
+	}
+
 	states {
 
 		MagOut:
@@ -55,6 +65,8 @@ class BaseRPG : BHDWeapon {
 					HDMagAmmo.SpawnMag(self, invoker.bMagazineClass, 1);
 				}
 				invoker.unchamber();
+				invoker.weaponStatus[I_FLAGS] &= ~F_CHAMBER;
+				invoker.weaponStatus[I_MAG] = -1;
 				return ResolveState("MagOut");
 			}
 
@@ -73,6 +85,11 @@ class BaseRPG : BHDWeapon {
 				}
 				return ResolveState("LoadMag");
 			}
+
+		FireAlt:
+		AltFire:
+			#### A 1;
+			Goto Nope;
 
 		user4:
 		Unload:
@@ -115,6 +132,7 @@ class BaseRPG : BHDWeapon {
 
 				A_ChangeVelocity(cos(pitch), 0, sin(pitch), CVF_RELATIVE);
 				invoker.unchamber();
+				invoker.weaponStatus[I_MAG] = -1;
 				return ResolveState("LightDone");
 			}
 

@@ -305,7 +305,9 @@ class BHDWeapon : HDWeapon {
 	// DOom Overrides
 	override void PostBeginPlay() {
 		super.PostBeginPlay();
-		if (!spawnEmpty) {
+
+		if (!spawnEmpty && weaponStatus[I_MAG] != -1) {
+			//console.printf("%s here? %i %i %i", getClassName(), weaponStatus[I_MAG], weaponStatus[I_FLAGS], weaponStatus[I_FLAGS] & F_CHAMBER);
 			weaponStatus[I_FLAGS] |= F_CHAMBER;
 		}
 
@@ -1060,10 +1062,10 @@ class BHDWeapon : HDWeapon {
 				}
 
 			}
-			#### B 1 {
+			#### B 1 Offset (0, 42) {
 				A_Overlay(invoker.bLayerGun, "LayerGunFire");
 			}
-			#### B 0 {
+			#### B 0 Offset (0, 38) {
 				return ResolveState("Chamber");
 			}
 

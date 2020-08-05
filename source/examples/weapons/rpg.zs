@@ -5,7 +5,7 @@ class B_RPGLauncher : BaseRPG {
 	default {
 		+hdweapon.fitsinbackpack
 		weapon.selectionorder        20;
-		weapon.slotnumber            7;
+		weapon.slotnumber            5;
 		weapon.slotpriority          1;
 		inventory.pickupsound        "misc/w_pkup";
 		inventory.pickupmessage      "You got the RPG Launcher.";

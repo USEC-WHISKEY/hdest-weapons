@@ -9,6 +9,22 @@ class BasePistol : BaseStandardRifle {
 		
 	}
 
+	override void DrawHUDStuff(HDStatusBar sb,HDWeapon hdw,HDPlayerPawn hpl){
+		BHDWeapon basicWep = BHDWeapon(hdw);
+		if (sb.hudLevel == 1) {
+			int nextMag = sb.GetNextLoadMag(HDMagAmmo(hpl.findInventory(basicWep.bMagazineClass)));
+			sb.DrawImage(basicWep.bMagazineSprite, (-46, -3), sb.DI_SCREEN_CENTER_BOTTOM, scale: (basicWep.BAmmoHudScale, basicWep.BAmmoHudScale));
+			sb.DrawNum(hpl.CountInv(basicWep.bMagazineClass), -43, -8, sb.DI_SCREEN_CENTER_BOTTOM);
+		}
+		int ammoBarAmt = clamp(basicWep.magazineGetAmmo() % 999, 0, basicWep.bMagazineCapacity);
+		sb.DrawWepNum(ammoBarAmt, basicWep.bMagazineCapacity);
+		if (basicWep.chambered()) {
+			sb.DrawWepDot(-16, -10, (3, 1));
+			//ammoBarAmt++;
+		}
+		//sb.DrawNum(ammoBarAmt, -16, -22, sb.DI_SCREEN_CENTER_BOTTOM | sb.DI_TEXT_ALIGN_RIGHT, Font.CR_RED);
+	}
+
 	override void DrawSightPicture(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl, bool sightbob, vector2 bob, double fov, bool scopeview, actor hpc, string whichdot) {
 
 		PlayerInfo info = players[hpl.playernumber()];
@@ -72,8 +88,8 @@ class BasePistol : BaseStandardRifle {
 				}
 
 			}
-			#### B 1;
-			#### B 0 {
+			#### B 1 Offset (0, 44);
+			#### B 0 Offset (0, 40){
 				return ResolveState("Chamber");
 			}
 

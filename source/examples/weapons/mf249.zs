@@ -3,8 +3,8 @@ class b_M249 : BHDWeapon {
 	default {
 		-hdweapon.fitsinbackpack
 		weapon.selectionorder        20;
-		weapon.slotnumber            6;
-		weapon.slotpriority          1;
+		weapon.slotnumber            4;
+		weapon.slotpriority          2;
 		inventory.pickupsound        "misc/w_pkup";
 		inventory.pickupmessage      "You got the M249.";
 		scale                        0.7;
