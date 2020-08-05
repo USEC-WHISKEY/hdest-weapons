@@ -74,7 +74,7 @@ class BaseRPG : BHDWeapon {
 		Reload:
 			#### A 0 {
 				invoker.weaponStatus[I_FLAGS] &= ~F_UNLOAD_ONLY;
-				if (!invoker.brokenChamber() && invoker.magazineGetAmmo() % 999 >= invoker.bMagazineCapacity && !(invoker.weaponstatus[I_FLAGS] & F_UNLOAD_ONLY)) {
+				if (!invoker.brokenChamber() && invoker.magazineGetAmmo() != -1 && !(invoker.weaponstatus[I_FLAGS] & F_UNLOAD_ONLY)) {
 					return ResolveState("Nope");
 				}
 				else if (invoker.magazineGetAmmo() < 0 && invoker.brokenChamber()) {
