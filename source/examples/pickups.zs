@@ -295,17 +295,10 @@ class M249_Random_Giver : BWeaponGiver {
 		return config_args;
 	}
 	override void SpawnMagazines() {
-		int amt = random(0, 3);
-		for (int i = 0; i < amt; i++) {
-			let randomPos = pos + (random(-8, 8), random(-8, 8));
-			Spawn("BM249Mag", randomPos);
-		}
 	}
 }
 
 class M249_random_noammo_giver : M249_Random_Giver {
-	override void SpawnMagazines() {}
-
 }
 
 class M249_noammo_noatta_giver : M249_Random_Giver {
