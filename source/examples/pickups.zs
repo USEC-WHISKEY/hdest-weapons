@@ -146,6 +146,39 @@ class M4_noammo_atta_giver : M4_Random_Noammo_Giver {
 	}
 }
 
+class m4_replacer : hdweapon {
+	static const int sight_ids[] = { 1, 2, 4, 5, 6, 7 };
+	states {
+		spawn:
+			TNT1 A 0 NoDelay {
+				int rng = random(0, 100) > 50;
+				let gun = BHDWeapon(Actor.Spawn(rng ? "B_m4" : "B_M4_m203", invoker.pos, ALLOW_REPLACE));
+			}
+			Stop;
+	}
+}
+
+class glock_replacer : hdweapon {
+	states {
+		spawn:
+			TNT1 A 0 NoDelay {
+				let gun = BHDWeapon(Actor.Spawn("B_Glock", invoker.pos, ALLOW_REPLACE));
+			}
+			Stop;
+	}
+}
+
+class mp5_replacer : hdweapon {
+	states {
+		spawn:
+			TNT1 A 0 NoDelay {
+				int rng = random(0, 100) > 50;
+				let gun = BHDWeapon(Actor.Spawn(rng ? "B_mp5" : "B_mp5_m203", invoker.pos, ALLOW_REPLACE));
+			}
+			Stop;
+	}
+}
+
 class M14_Random_Giver : BWeaponGiver {
 	static const int sight_ids[] = { 0, 4, 5, 6, 7 };
 	override String getWeaponClass() {

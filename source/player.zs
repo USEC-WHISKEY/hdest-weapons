@@ -29,7 +29,7 @@ class PlayerEvents : EventHandler {
 			if (b_spawn_empty_mags == 1) 
 				e.Replacement = "B_M4_Empty";
 			else
-				e.Replacement = "M4_Random_Noammo_Giver";
+				e.Replacement = "m4_replacer";
 		}
 		else if (e.Replacee is "HD4mMag" || e.Replacee is "HDDirtyMagazine") {
 			if (b_spawn_empty_mags == 1)
@@ -54,7 +54,7 @@ class PlayerEvents : EventHandler {
 			if (b_spawn_empty_mags == 1)
 				e.Replacement = "B_GLock_Empty";
 			else
-				e.Replacement = "Glock_Random_Noammo_Giver";
+				e.Replacement = "glock_replacer";
 		}
 		else if (e.Replacee is "HD9mMag30") {
 			if (b_spawn_empty_mags == 1)
@@ -73,7 +73,7 @@ class PlayerEvents : EventHandler {
 			if (b_spawn_empty_mags == 1)
 				e.Replacement = "b_mp5_empty";
 			else
-				e.Replacement = "mp5_random_noammo_giver";
+				e.Replacement = "mp5_replacer";
 		}
 		// Liberator
 		else if (e.Replacee is "LiberatorRifle" || e.Replacee is "LiberatorNoBullpupNoGL" || e.Replacee is "LiberatorNoBullpup" || e.Replacee is "LiberatorNoGL") {

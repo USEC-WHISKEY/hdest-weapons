@@ -38,8 +38,8 @@ class BaseAltRifle : BHDWeapon {
 		WEPHELP_FIRE.."  Shoot\n"
 		..WEPHELP_RELOAD.."  Reload mag\n"
 		..WEPHELP_UNLOAD.."  Release mag \\ Unchamber\n"
-		..WEPHELP_ALTRELOAD.."  Reload alt\n"
-		..WEPHELP_ALTFIRE..("  Rifle mode\n")
+		..WEPHELP_ALTRELOAD.."  Reload Grenade\n"
+		..WEPHELP_ALTFIRE..("  Rifle/GL mode\n")
 		..WEPHELP_MAGMANAGER;
 	}
 
