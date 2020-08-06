@@ -54,7 +54,7 @@ class b_Glock : BasePistol {
 		BHDWeapon.BSilentOffsetX     0;
 		BHDWeapon.BSilentOffsetY     0;
 		BHDWeapon.bBarrelMount       "9MM_GLOCK";
-		BHDWeapon.bMiscMount         "NATO_RAILS";
+		BHDWeapon.bMiscMount         "NOT_ANYMORE";
 		BHDWeapon.EjectShellClass    "HDSpent9mm";
 		hdweapon.refid               B_GLOCK_REFID;
 		BHDWeapon.bIronThreshold 	5;
