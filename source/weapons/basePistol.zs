@@ -55,9 +55,7 @@ class BasePistol : BaseStandardRifle {
 		sb.SetClipRect(cx,cy,cw,ch);
 		sb.drawimage(getBackSightImage(hpl), getBackSightOffsets() + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, scale:scc);
 
-		sb.drawImage("calib", (0, 0), sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.3);
-
-
+		//sb.drawImage("calib", (0, 0), sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.3);
 	}
 
 
