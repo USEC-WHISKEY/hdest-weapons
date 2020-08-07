@@ -9,8 +9,8 @@ class b_Glock : BasePistol {
 		inventory.pickupsound        "misc/w_pkup";
 		inventory.pickupmessage      "You got the Glock.";
 		scale                        0.7;
-		weapon.bobrangex             0.12;
-		weapon.bobrangey             0.7;
+		weapon.bobrangex 0.1;
+		weapon.bobrangey 0.6;
 		obituary                     "%o was assaulted by %k.";
 		tag                          "Glock";
 		inventory.icon               "GLKPA0";
@@ -47,10 +47,10 @@ class b_Glock : BasePistol {
 		BHDWeapon.BROF               0;
 		BHDWeapon.BBackSightImage    "glckbk";
 		BHDWeapon.BBackOffsetX       0;
-		BHDWeapon.BBackOffsetY       17;
+		BHDWeapon.BBackOffsetY       1;
 		BHDWeapon.BFrontSightImage   "glckfr";
 		BHDWeapon.BFrontOffsetX      0;
-		BHDWeapon.BFrontOffsetY      17;
+		BHDWeapon.BFrontOffsetY      1;
 		BHDWeapon.BSilentOffsetX     0;
 		BHDWeapon.BSilentOffsetY     0;
 		BHDWeapon.bBarrelMount       "9MM_GLOCK";

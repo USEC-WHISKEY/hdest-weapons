@@ -307,7 +307,7 @@ class BAmBox : HDUPK {
 			}
 			---- A 10;
 			---- A 0 {
-				int rng_count = 5;
+				int rng_count = random(1, 2);
 				for (int i = 0; i < rng_count; i++) {
 					string clsname = bullets[random(0, 5)];
 					let mag = Actor.Spawn(clsname, invoker.pos);

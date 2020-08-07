@@ -41,21 +41,21 @@ class BasePistol : BaseStandardRifle {
 
 		//console.printf("%i", hpl.player.getpsprite(ref.BLayerGun).frame);
 		if(hpl.player.getpsprite(ref.BLayerGun).frame == 6){
-			//sb.SetClipRect(-40 + bob.x, -5 + bob.y, 20, 14, sb.DI_SCREEN_CENTER );
+			sb.SetClipRect(-10 + bob.x, -5 + bob.y, 20, 14, sb.DI_SCREEN_CENTER );
 			scc=(0.7,0.8);
 			bobb.y=clamp(bobb.y*1.1-3,-10,10);
 		}else{
-			//sb.SetClipRect(-8 + bob.x, -4 + bob.y, 16, 10, sb.DI_SCREEN_CENTER);
+			sb.SetClipRect(-8 + bob.x, -4 + bob.y, 16, 10, sb.DI_SCREEN_CENTER );
 			scc=(0.6,0.6);
 			bobb.y=clamp(bobb.y,-8,8);
 		}
 
-		sb.drawImage(getFrontSightImage(hpl), getFrontSightOffsets() + bobb * 3, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.9 - dotoff * 0.3, scale: scc);
+		sb.drawImage(getFrontSightImage(hpl), getFrontSightOffsets() + bobb, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, alpha: 0.9, scale: scc);
 
-		//sb.SetClipRect(cx,cy,cw,ch);
-		sb.drawimage(getBackSightImage(hpl), getBackSightOffsets() + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, scale:scc);
+		sb.SetClipRect(cx,cy,cw,ch);
+		sb.drawimage(getBackSightImage(hpl), getBackSightOffsets() + bob, sb.DI_SCREEN_CENTER | sb.DI_ITEM_TOP, scale:scc);
 
-		//sb.drawImage("calib", (0, 0), sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.3);
+		sb.drawImage("calib", (0, 0), sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.3);
 
 
 	}

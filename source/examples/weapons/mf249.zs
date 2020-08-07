@@ -67,10 +67,10 @@ class b_M249 : BHDWeapon {
 		BHDWeapon.BLayerGun     100;
 		BHDWeapon.bLayerGunBack 107;
 
-		BHDWeapon.BRecoilXLow -0.9;
-		BHDWeapon.BRecoilXHigh 0.9;
+		BHDWeapon.BRecoilXLow -0.7;
+		BHDWeapon.BRecoilXHigh 0.7;
 		BHDWeapon.BRecoilYLow  1.1;
-		BHDWeapon.BRecoilYHigh 2.1;		
+		BHDWeapon.BRecoilYHigh 1.5;		
 	}
 
 

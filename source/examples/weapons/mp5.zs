@@ -39,7 +39,7 @@ class B_MP5 : BHDWeapon {
 		BHDWeapon.BChamberSound      "weapons/mp5/chamber";
 		BHDWeapon.BBoltForwardSound  "weapons/mp5/boltback";
 		BHDWeapon.BBoltBackwardSound "weapons/mp5/boltforward";
-		BHDWeapon.BClickSound        "weapons/mp5/click";
+		BHDWeapon.BClickSound        "weapons/m4/click";
 		BHDWeapon.BLoadSound         "weapons/mp5/clipinsert";
 		BHDWeapon.BUnloadSound       "weapons/mp5/clipeject";
 
@@ -667,7 +667,7 @@ class B_MP5_M203 : BaseGLRifle {
 		BHDWeapon.BChamberSound      "weapons/mp5/chamber";
 		BHDWeapon.BBoltForwardSound  "weapons/mp5/boltback";
 		BHDWeapon.BBoltBackwardSound "weapons/mp5/boltforward";
-		BHDWeapon.BClickSound        "weapons/mp5/click";
+		BHDWeapon.BClickSound        "weapons/m4/click";
 		BHDWeapon.BLoadSound         "weapons/mp5/clipinsert";
 		BHDWeapon.BUnloadSound       "weapons/mp5/clipeject";
 
