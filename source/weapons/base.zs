@@ -302,19 +302,6 @@ class BHDWeapon : HDWeapon {
 		weaponStatus[I_3RD] |= offset;
 	}
 
-	// DOom Overrides
-	override void PostBeginPlay() {
-		super.PostBeginPlay();
-
-		if (!spawnEmpty && weaponStatus[I_MAG] != -1) {
-			//console.printf("%s here? %i %i %i", getClassName(), weaponStatus[I_MAG], weaponStatus[I_FLAGS], weaponStatus[I_FLAGS] & F_CHAMBER);
-			weaponStatus[I_FLAGS] |= F_CHAMBER;
-		}
-
-		//weaponStatus[I_MAG]--;
-		// This bugs if you're carrying multiple rifles, need to check it out?
-	}
-
 	bool spawnEmpty;
 
 	// HD API
@@ -391,6 +378,8 @@ class BHDWeapon : HDWeapon {
 
 	override void InitializeWepStats (bool idfa) {
 		weaponStatus[I_MAG] = bMagazineCapacity - 1;
+		weaponStatus[I_FLAGS] |= F_CHAMBER;
+		//setchamber();
 	}
 
 	override void LoadoutConfigure(string input){
@@ -424,7 +413,9 @@ class BHDWeapon : HDWeapon {
 				setMiscSerialID(miscId);
 				miscClass = bmClass;
 			}
-		}		
+		}
+
+		weaponstatus[I_FLAGS] |= F_CHAMBER;
 	}
 
 	// HD Action Functions

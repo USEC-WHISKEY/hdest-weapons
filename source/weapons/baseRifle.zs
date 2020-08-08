@@ -211,15 +211,14 @@ class BaseAltRifle : BHDWeapon {
 
 class BaseGLRifle : BaseAltRifle {
 
-	override void PostBeginPlay() {
-		super.PostBeginPlay();
-		if (!spawnEmpty) {
-			weaponStatus[I_FLAGS] |= I_GRENADE;
-		}
-		
-		//weaponStatus[I_FLAGS] |= F_CHAMBER;
-		//weaponStatus[I_MAG]--;
-		// This bugs if you're carrying multiple rifles, need to check it out?
+	override void InitializeWepStats (bool idfa) {
+		super.InitializeWepStats(idfa);
+		weaponStatus[I_FLAGS] |= I_GRENADE;
+	}
+
+	override void LoadoutConfigure(string input) {
+		super.LoadoutConfigure(input);
+		weaponStatus[I_FLAGS] |= I_GRENADE;
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl) {
