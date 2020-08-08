@@ -78,8 +78,14 @@ class BaseShotgun : BaseStandardRifle {
 					spread: spreadhigh, speedfactor: 1.0, amount: 15);
 
 				double muzzleMul = 1.0;
+				PlayerInfo pi = players[invoker.owner.playerNumber()];
 				if (invoker.weaponstatus[I_AUTO] == 1) {
-					muzzleMul = 1.9;
+					if (pi.cmd.buttons & BT_FORWARD) {
+						muzzleMul = 1.9;
+					}
+					else {
+						muzzleMul = 1.5;
+					}
 				}
 
 				A_MuzzleClimb(

@@ -1169,8 +1169,14 @@ class BHDWeapon : HDWeapon {
 
 
 				double muzzleMul = 1.0;
+				PlayerInfo pi = players[invoker.owner.playerNumber()];
 				if (invoker.weaponstatus[I_AUTO] == 1) {
-					muzzleMul = 1.8;
+					if (pi.cmd.buttons & BT_FORWARD) {
+						muzzleMul = 1.8;
+					}
+					else {
+						muzzleMul = 1.3;
+					}
 				}
 
 				if (hdplayerpawn(invoker.owner) && hdplayerpawn(invoker.owner).gunbraced) {
