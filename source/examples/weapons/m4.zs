@@ -460,21 +460,6 @@ class B_M4 : BaseStandardRifle {
 			return "M4PAB0", 1.;
 		}
 	}
-
-	override void PostBeginPlay() {
-		super.PostBeginPlay();
-		// If this item doesn't have a scope ID, just give it one or the other
-		if (getScopeSerialID() == 0) {
-			int scopeId = random(1, 2);
-			
-			AttachmentManager mgr = AttachmentManager(EventHandler.Find("AttachmentManager"));
-
-			setScopeSerialID(scopeId);
-			scopeClass = mgr.getScopeClass(scopeId);
-		}
-		//weaponStatus[I_MAG]--;
-		// This bugs if you're carrying multiple rifles, need to check it out?
-	}
 	
 }
 
@@ -548,21 +533,6 @@ class B_M4_M203 : BaseGLRifle {
 		BHDWeapon.BLayerSight  104;
 		BHDWeapon.bLayerRHand  105;
 		BHDWeapon.bLayerGunBack -99;
-	}
-
-	override void PostBeginPlay() {
-		super.PostBeginPlay();
-		// If this item doesn't have a scope ID, just give it one or the other
-		if (getScopeSerialID() == 0) {
-			int scopeId = random(1, 2);
-			
-			AttachmentManager mgr = AttachmentManager(EventHandler.Find("AttachmentManager"));
-
-			setScopeSerialID(scopeId);
-			scopeClass = mgr.getScopeClass(scopeId);
-		}
-		//weaponStatus[I_MAG]--;
-		// This bugs if you're carrying multiple rifles, need to check it out?
 	}
 
 	states {
