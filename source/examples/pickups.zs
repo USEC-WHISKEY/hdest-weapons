@@ -91,7 +91,7 @@ class Fauxtech_noammo_noatta_giver : fauxtech_random_noammo_giver {
 }
 
 class M4_Random_Giver : BWeaponGiver {
-	static const int sight_ids[] = { 1, 2, 4, 5, 6, 7 };
+	static const int sight_ids[] = { 1, 2 };
 	int isGl;
 
 	override String getWeaponClass() {
@@ -109,7 +109,7 @@ class M4_Random_Giver : BWeaponGiver {
 
 		bool hasSilencer = (random(0, 100)) > 50;
 		bool hasLight = (random(0, 100)) > 50;
-		let config_args = string.format("bs%i", sight_ids[random(0, 5)]);
+		let config_args = string.format("bs%i", sight_ids[random(0, 1)]);
 		if (hasSilencer) {
 			config_args = string.format("%s ba1", config_args);
 		}
@@ -151,16 +151,16 @@ class m4_replacer : hdweapon {
 	states {
 		spawn:
 			TNT1 A 0 NoDelay {
+				int rng2 = 0;
 				bool rng = random(0, 100) > 50;
 				let gun = BHDWeapon(Actor.Spawn(rng ? "B_m4" : "B_M4_m203", invoker.pos, ALLOW_REPLACE));
+				AttachmentManager mgr = AttachmentManager(EventHandler.find("AttachmentManager"));
 				if (b_attach_spawn_mode == 2) {
-					AttachmentManager mgr = AttachmentManager(EventHandler.find("AttachmentManager"));
-					rng = random(0, 100) > 50;
-					if (rng) {
-						int scopeId = invoker.sight_ids[random(0, invoker.sight_ids.size() - 1)];
-						gun.setScopeSerialId(invoker.sight_ids[random(0, invoker.sight_ids.size() - 1)]);
-						gun.scopeClass = mgr.getScopeClass(scopeId);
-					}
+
+					rng2 = random(1, 2);
+					gun.setScopeSerialId(rng2);
+					gun.scopeClass = mgr.getScopeClass(rng2);
+
 					rng = random(0, 100) > 50;
 					if (rng) {
 						gun.setMiscSerialId(B_FLASHLIGHT_ID);
@@ -171,6 +171,11 @@ class m4_replacer : hdweapon {
 						gun.setBarrelSerialId(B_556_SILENCER_ID);
 						gun.barrelClass = mgr.getBarrelClass(B_556_SILENCER_ID);
 					}
+				}
+				else {
+					rng2 = random(1, 2);
+					gun.setScopeSerialId(rng2);
+					gun.scopeClass = mgr.getScopeClass(rng2);
 				}
 				
 			}
