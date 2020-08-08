@@ -240,7 +240,7 @@ class B_762_Box : HDUPK {
 		scale 0.4;
 		hdupk.amount 50;
 		hdupk.pickupsound "weapons/pocket";
-		hdupk.pickupmessage "Picked up some 5.56x45mm ammo.";
+		hdupk.pickupmessage "Picked up some 7.62x51mm ammo.";
 		hdupk.pickuptype "B762x51Ammo";
 	}
 	states{
