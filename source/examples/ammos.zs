@@ -174,7 +174,7 @@ class B762x51Ammo : BRoundAmmo {
 		itemsthatusethis.push("b762_m14_mag");
 	}
 	override void SplitPickup(){
-		SplitPickupBoxableRound(10,100,"B_762_Box","BS76A0","BF76A3A7");
+		SplitPickupBoxableRound(10,50,"B_762_Box","BS76A0","BF76A3A7");
 	}
 	states {
 		spawn:
