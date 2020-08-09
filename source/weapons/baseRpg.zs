@@ -112,6 +112,7 @@ class BaseRPG : BHDWeapon {
 			TNT1 A 0;
 			#### # 1 { 
 
+				
 				let rkt=gyrogrenade(spawn("HDHEAT",(
 					pos.xy,
 					pos.z+HDWeapon.GetShootOffset(
@@ -119,13 +120,14 @@ class BaseRPG : BHDWeapon {
 						invoker.barrellength-HDCONST_SHOULDERTORADIUS
 					)
 				),ALLOW_REPLACE));
-				A_ChangeVelocity(cos(pitch), 0, sin(pitch), CVF_RELATIVE);
+				//A_ChangeVelocity(cos(pitch), 0, sin(pitch), CVF_RELATIVE);
 				rkt.angle = angle;
 				rkt.target = self;
 				rkt.master = self;
 				rkt.pitch = pitch;
 				rkt.primed=false;
 				rkt.isrocket=true;
+				
 
 				//A_StartSound("weapons/rpg/fire",CHAN_AUTO);
 				//A_StartSound("weapons/rockboom",CHAN_AUTO);
@@ -134,8 +136,6 @@ class BaseRPG : BHDWeapon {
 				A_StartSound(invoker.BClickSound, CHAN_AUTO, CHANF_OVERLAP);
 				//A_StartSound("weapons/rpg/whoosh",CHAN_AUTO, CHANF_OVERLAP);
 
-
-				A_ChangeVelocity(cos(pitch), 0, sin(pitch), CVF_RELATIVE);
 				invoker.unchamber();
 				invoker.weaponStatus[I_MAG] = -1;
 				return ResolveState("LightDone");
