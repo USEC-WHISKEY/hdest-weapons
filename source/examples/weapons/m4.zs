@@ -78,7 +78,7 @@ class B_M4 : BaseStandardRifle {
 
 		Firemode:
 			#### A 1 {
-				invoker.weaponStatus[I_AUTO] == 2 ? 0 : 2;
+				invoker.weaponStatus[I_AUTO] = (invoker.weaponStatus[I_AUTO] == 2 ? 0 : 2);
 				A_WeaponReady(WRF_NONE);
 				return ResolveState("Nope");
 			}
