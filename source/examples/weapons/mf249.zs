@@ -73,15 +73,22 @@ class b_M249 : BHDWeapon {
 		BHDWeapon.BRecoilYHigh 1.5;		
 	}
 
-
+	override void InitializeWepStats (bool idfa) {
+		super.InitializeWepStats(idfa);
+		weaponStatus[I_AUTO] = 1;
+		//weaponStatus[]
+		//weaponStatus[I_MAG] = bMagazineCapacity - 1;
+		//weaponStatus[I_FLAGS] |= F_CHAMBER;
+		//setchamber();
+	}
 
 	states {
 		Spawn:
 			M29U A 0 GetMagState();
 			Goto Super::Spawn;
 
-
-
+		Firemode:
+			goto nope;
 
 		SpawnMag:
 			TNT1 A 0 {

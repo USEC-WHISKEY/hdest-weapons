@@ -1564,6 +1564,7 @@ class BHDWeapon : HDWeapon {
 		AttachmentStart:
 			#### A 1 A_WeaponBusy();
 			#### A 0 {
+				invoker.attachmentBusy = true;
 				A_StartSound("weapons/pocket", CHAN_WEAPON, CHANF_OVERLAP);
 				PlayerInfo pl = players[invoker.playernumber()];
 				BHDWeapon wep = BHDWeapon(pl.readyWeapon);
@@ -1603,10 +1604,14 @@ class BHDWeapon : HDWeapon {
 			#### A 1 Offset(1, 38);
 			#### A 1 Offset(0, 36);
 			#### A 0 {
+				invoker.attachmentBusy = false;
 				return ResolveState("Ready");
 			}
 
 		BarrelAttachmentRemove:
+			#### A 0 {
+				invoker.attachmentBusy = true;
+			}
 			#### A 1 A_WeaponBusy();
 			#### A 1 Offset(-1, 37);
 			#### A 1 Offset(-1, 38);
@@ -1636,10 +1641,14 @@ class BHDWeapon : HDWeapon {
 			#### A 1 Offset(-1, 38);
 			#### A 1 Offset(0, 36);
 			#### A 0 {
+			invoker.attachmentBusy = false;
 				return ResolveState("Ready");
 			}
 
 		ScopeAttachmentRemove:
+			#### A 0 {
+				invoker.attachmentBusy = true;
+			}
 			#### A 1 A_WeaponBusy();
 			#### A 1 Offset(-1, 37);
 			#### A 1 Offset(-1, 38);
@@ -1669,10 +1678,14 @@ class BHDWeapon : HDWeapon {
 			#### A 1 Offset(-1, 38);
 			#### A 1 Offset(0, 36);
 			#### A 0 {
+				invoker.attachmentBusy = false;
 				return ResolveState("Ready");
 			}
 
 		MiscAttachmentRemove:
+			#### A 0 {
+				invoker.attachmentBusy = true;
+			}
 			#### A 1 A_WeaponBusy();
 			#### A 1 Offset(-1, 37);
 			#### A 1 Offset(-1, 38);
@@ -1702,6 +1715,7 @@ class BHDWeapon : HDWeapon {
 			#### A 1 Offset(-1, 38);
 			#### A 1 Offset(0, 36);
 			#### A 0 {
+				invoker.attachmentBusy = false;
 				return ResolveState("Ready");
 			}
 		
@@ -1758,6 +1772,7 @@ class BHDWeapon : HDWeapon {
 		*/
 	}
 
+	bool attachmentBusy;
 	BaseAttachment lastRef;
 
 

@@ -174,6 +174,12 @@ class AttachmentMenu : GenericMenu {
 			return;
 		}
 
+		if (weapon.attachmentBusy) {
+			console.printf("Cannot open attachment menu at this time.");
+			close();
+			return;
+		}
+
 		let blackTex = TexMan.checkForTexture("blackdot", TexMan.Type_Sprite);
 		screen.drawTexture(blackTex, false, 160, 100, DTA_320x200, 1, DTA_CenterOffset, 1, DTA_DestWidth, 5000, DTA_DestHeight, 5000, DTA_Alpha, 0.3);
 		screen.DrawText(bigfnt, Font.CR_BLACK, 50, 10, "Attachment Manager", DTA_320x200, 1);

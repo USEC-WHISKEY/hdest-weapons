@@ -51,8 +51,6 @@ class AttachmentManager : EventHandler {
 					player.UseInventory(player.FindInventory("BSilencerRemover"));
 					player.GiveInventoryType("BSilencerRemover");
 				}
-
-
 			}
 		}
 

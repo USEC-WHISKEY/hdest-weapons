@@ -75,7 +75,14 @@ class B_M4 : BaseStandardRifle {
 		Spawn:
 			M4RP A 0 GetMagState();
 			Goto Super::Spawn;
-		
+
+		Firemode:
+			#### A 1 {
+				invoker.weaponStatus[I_AUTO] == 2 ? 0 : 2;
+				A_WeaponReady(WRF_NONE);
+				return ResolveState("Nope");
+			}
+
 		SpawnMag:
 			TNT1 A 0 {
 				if (invoker.scopeClass) {
@@ -544,6 +551,13 @@ class B_M4_M203 : BaseGLRifle {
 		Spawn:
 			M4PC A 0 GetMagState();
 			Goto Super::Spawn;
+
+		Firemode:
+			#### A 1 {
+				invoker.weaponStatus[I_AUTO] = (invoker.weaponStatus[I_AUTO] == 2 ? 0 : 2);
+				A_WeaponReady(WRF_NONE);
+				return ResolveState("Nope");
+			}
 		
 		SpawnMag:
 			TNT1 A 0 {

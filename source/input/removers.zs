@@ -9,6 +9,9 @@ class BSilencerRemover : Inventory {
 		PlayerInfo info = players[owner.playerNumber()];
 		if (info.readyWeapon && info.readyWeapon is "BHDWeapon") {
 			BHDWeapon weapon = BHDWeapon(info.readyWeapon);
+			if (weapon.attachmentBusy) {
+				return false;
+			}
 			if (weapon.getBarrelSerialID() > 0) {
 				info.mo.GiveInventory(weapon.barrelClass, 1);
 				owner.player.SetPSprite(PSP_WEAPON, info.readyWeapon.FindState("BarrelAttachmentRemove"));
@@ -36,6 +39,9 @@ class BScopeRemover : Inventory {
 		PlayerInfo info = players[owner.playerNumber()];
 		if (info.readyWeapon && info.readyWeapon is "BHDWeapon") {
 			BHDWeapon weapon = BHDWeapon(info.readyWeapon);
+			if (weapon.attachmentBusy) {
+				return false;
+			}
 			if (weapon.getScopeSerialID() > 0) {
 				info.mo.GiveInventory(weapon.scopeClass, 1);
 				owner.player.SetPSprite(PSP_WEAPON, info.readyWeapon.FindState("ScopeAttachmentRemove"));
@@ -63,6 +69,9 @@ class BMiscRemover : Inventory {
 		PlayerInfo info = players[owner.playerNumber()];
 		if (info.readyWeapon && info.readyWeapon is "BHDWeapon") {
 			BHDWeapon weapon = BHDWeapon(info.readyWeapon);
+			if (weapon.attachmentBusy) {
+				return false;
+			}
 			if (weapon.getMiscSerialID() > 0) {
 				info.mo.GiveInventory(weapon.miscClass, 1);
 				owner.player.SetPSprite(PSP_WEAPON, info.readyWeapon.FindState("MiscAttachmentRemove"));

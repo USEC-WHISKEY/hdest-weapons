@@ -121,6 +121,8 @@ class b_FauxtechOrigin : BaseShotgun {
 			FOSU A -1;
 			Goto HDWeapon::Spawn;
 
+		Firemode:
+			goto nope;
 
 		HighMiscBarrel:
 			FOSU W -1;

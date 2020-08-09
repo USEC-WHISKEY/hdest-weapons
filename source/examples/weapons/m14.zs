@@ -79,7 +79,12 @@ class b_m14 : basestandardrifle {
 			M14U A 0 GetMagState();
 			Goto Super::Spawn;
 			
-
+		Firemode:
+			#### A 1 {
+				invoker.weaponStatus[I_AUTO] == 1 ? 0 : 1;
+				A_WeaponReady(WRF_NONE);
+				return ResolveState("Nope");
+			}
 
 		SpawnMag:
 			TNT1 A 0 {
