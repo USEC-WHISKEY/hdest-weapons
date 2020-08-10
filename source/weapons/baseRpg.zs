@@ -128,7 +128,6 @@ class BaseRPG : BHDWeapon {
 				rkt.primed=false;
 				rkt.isrocket=true;
 				
-
 				//A_StartSound("weapons/rpg/fire",CHAN_AUTO);
 				//A_StartSound("weapons/rockboom",CHAN_AUTO);
 

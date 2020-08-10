@@ -370,3 +370,70 @@ class BRpgRocket : HDMagAmmo {
 			stop;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+class BMagazineBox : HDUPK {
+
+	default {
+		+shootable
+		+noblood
+		+nopain
+		+ghost
+		+lookallaround
+		+nofear
+		scale 0.6;
+		height 8;
+		radius 12;
+		health 100;
+		mass 120;
+		meleerange 42;
+		radiusdamagefactor 0.5;
+		obituary "%o has seen the true power of the level 1 warrior.";
+		tag "Bryan's Resource Box";
+	}
+
+	static const string classNames[] = {
+		"B556Mag",
+		"BM249Mag",
+		"B9mm_MP5K_MAG",
+		"BFauxDrum",
+		"b762_m14_mag",
+		"GlockMagazine"
+	};
+
+	states {
+		spawn:
+			BBOX C -1;
+			stop;
+		grab:
+		tap:
+			---- A 0 {
+				invoker.vel += (0, 0, 4);
+			}
+			---- A 10;
+			---- A 0 {
+				int rng_count = random(1, 5);
+				for (int i = 0; i < rng_count; i++) {
+					string clsname = classNames[random(0, 5)];
+					let mag = HDMagAmmo(Actor.Spawn(clsname, invoker.pos));
+					mag.vel += (random(-2, 2), random(-2, 2), random(4, 8));
+					if (b_spawn_no_ammo || mag is "BM249Mag" || mag is "BFauxDrum") {
+						mag.SyncAmount();
+						mag.mags[0] = 0;
+					}
+				}
+
+			}
+			stop;
+	}
+
+}

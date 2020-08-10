@@ -115,17 +115,33 @@ class PlayerEvents : EventHandler {
 				e.Replacement = "BFauxDrum";
 		}
 		else if (e.Replacee is "HDAmBox") {
-			if (rollcheck()) {
+			if (random(0, 100) > 40) {
 				if (b_spawn_raw_resources == 1) {
-					if (rollcheck()) {
+					int rngInner = random(0, 100);
+					if (rngInner > 75) {
 						e.Replacement = "BAmBox";
+					}
+					else if (rngInner > 50) {
+						e.Replacement = "BMagazineBox";
+					}
+					else if (rngInner > 25) {
+						e.Replacement = "BAttachmentBox";
 					}
 					else {
 						e.Replacement = "BResourceBox";
 					}
 				}
 				else {
-					e.Replacement = "BAmBox";
+					int rngOuter = random(0, 100);
+					if (rngOuter > 66) {
+						e.Replacement = "BAmBox";
+					}
+					else if (rngOuter > 33) {
+						e.Replacement = "BMagazineBox";
+					}
+					else {
+						e.Replacement = "BAttachmentBox";
+					}
 				}
 			}
 		}

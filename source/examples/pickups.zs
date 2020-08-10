@@ -555,3 +555,69 @@ class B_RPG_Empty : EmptySpawner {
 			stop;
 	}
 }
+
+
+
+
+class BAttachmentBox : HDUPK {
+
+	default {
+		+shootable
+		+noblood
+		+nopain
+		+ghost
+		+lookallaround
+		+nofear
+		scale 0.6;
+		height 8;
+		radius 12;
+		health 100;
+		mass 120;
+		meleerange 42;
+		radiusdamagefactor 0.5;
+		obituary "%o has seen the true power of the level 1 warrior.";
+		tag "Bryan's Resource Box";
+	}
+
+	static const string classNames[] = {
+		"B_M16_Silencer",
+		"B_M14_Silencer",
+		"GlockSilencer",
+		"FosSilencer",
+		"FosImprovedChoke",
+		"FosModifiedChoke",
+		"FosFullChoke",
+		"B_M16_Flashlight",
+		"B_M4_RearSight",
+		"B_M4_CarrySight",
+		"B_Faux_Sight",
+		"B_ACOG_Red",
+		"B_Sight_CRdot",
+		"B_Sight_Holo_Red",
+		"B_Reflex_Red",
+		"B_Scope_10x"
+	};
+
+	states {
+		spawn:
+			BBOX D -1;
+			stop;
+		grab:
+		tap:
+			---- A 0 {
+				invoker.vel += (0, 0, 4);
+			}
+			---- A 10;
+			---- A 0 {
+				int rng_count = random(1, 3);
+				for (int i = 0; i < rng_count; i++) {
+					string clsname = classNames[random(0, 15)];
+					let mag = Actor.Spawn(clsname, invoker.pos);
+					mag.vel += (random(-2, 2), random(-2, 2), random(4, 8));
+				}
+
+			}
+			stop;
+	}
+
+}

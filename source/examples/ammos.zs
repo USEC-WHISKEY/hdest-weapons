@@ -141,6 +141,7 @@ class BRPGRocketAmmo : BRoundAmmo {
 	default {
 		tag "RPG Rocket Ammo";
 		hdpickup.bulk ENC_556;
+		-hdpickup.fitsinbackpack
 	}
 	override string pickupmessage() {
 		return "Picked up an RPG rocket";
@@ -347,8 +348,6 @@ class BRocketPickup : HDUPK{
 		stop;
 	}
 }
-
-
 
 class BResourceBox : HDUPK {
 
