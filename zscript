@@ -38,6 +38,7 @@ version "4.4"
 #include "source/examples/misc/m249reloader.zs"
 #include "source/examples/misc/gunpowder.zs"
 #include "source/examples/misc/leadconverter.zs"
+#include "source/examples/misc/backpack.zs"
 
 #include "source/monsters/lvl1warrior.zs"
 #include "source/monsters/moperator.zs"

@@ -30,6 +30,11 @@ OptionValue "B_Mag_Options" {
 	1, "Empty"
 }
 
+OptionValue "B_Alt_Backpack" {
+	0, "Vanilla"
+	1, "Alternative"
+}
+
 AddOptionMenu "OptionsMenu" {
 	StaticText ""
 	Submenu "Bryan's Weapons Options", "B_Options"
@@ -37,54 +42,20 @@ AddOptionMenu "OptionsMenu" {
 
 OptionMenu "B_Options" {
 	title "Bryan's Weapons"
+	statictext "See README.md for option description."
 	option "Replace mode", "B_Replace_Type", "B_Replace_Types"
-	statictext "None:       Weapons will not spawn. Gear can only be   "
-	statictext "            obtained via backpacks and loadouts.       "
-	statictext "Map:        Weapons are replaced only at the start of  "
-	statictext "            the level.                                 "
-	statictext "Replace:    HDest weapons will be replaced if matching "
-	statictext "            weapon available. WARNING: Vanilla loadouts"
-	statictext "            will not function properly. See README for "
-	statictext "            incompatible equipment.                    "
-	statictext ""
-
 	option "HUD Sights", "b_althud_mode", "B_Althud_options"
-	statictext "Full:    Sights are drawn in full, taking up a good    "
-	statictext "         part the available screen space.              "
-	statictext "Minimal: Only the vital parts of sights are shown.     "
-	statictext ""
-
-	option "Weapon Jamming", "b_weapon_jamming", "B_Jam_Options"
-	statictext "Off:     Weapons won't jam.                            "
-	statictext "On:      Weapons when chambering can sometimes jam.    "
-	statictext "         Manually chambering increases the chance.     "
-	statictext ""
-
 	option "Attachment Spawn Mode", "b_attach_spawn_mode", "B_Attach_Spawn_Options"
-	statictext "None:    Weapons will not spawn with attachments,      "
-	statictext "         just their default sights.                    "
-	statictext "Random:  Weapons can spawn with random attachments.    "
-	statictext ""
+	option "Backpack Mode", "b_alt_backpack", "B_Alt_Backpack"
 
 	statictext ""
 	statictext "In development features - expect it to be broken"
 	statictext ""
 
 	option "Resource mode", "b_spawn_raw_resources", "B_Resource_Options"
-	statictext "Off:       Items to craft ammo will not spawn.         "
-	statictext "On:        Gun powder, lead, and brass will appear as  "
-	statictext "           resources that can be used to craft ammo    "
-	statictext "           and rockets.                                "
-
 	option "Weapon Mag mode", "b_spawn_empty_mags", "B_Mag_Options"
-	statictext "Filled:    Guns spawn with a full magazine.            "
-	statictext "Empty:     Guns spawn without a magazine.              "
-	statictext ""
-
 	option "Loose Mag mode", "b_spawn_no_ammo", "B_Mag_Options"
-	statictext "Filled:    Magazines spawn with full ammo.             "
-	statictext "Empty:     Magazines spawn without any ammo.           "
-	statictext ""
+	option "Weapon Jamming", "b_weapon_jamming", "B_Jam_Options"
 
 
 }

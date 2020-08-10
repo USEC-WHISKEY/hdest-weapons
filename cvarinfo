@@ -5,5 +5,6 @@ server int b_weapon_jamming = 0;
 server int b_spawn_raw_resources = 1;
 server int b_spawn_empty_mags = 0;
 server int b_spawn_no_ammo = 0;
+server int b_alt_backpack = 0;
 
 user int b_althud_mode = 2;

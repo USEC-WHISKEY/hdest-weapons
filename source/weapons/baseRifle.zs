@@ -18,7 +18,7 @@ class BaseAltRifle : BHDWeapon {
 			sb.DrawImage(basicWep.bMagazineSprite, (-46, -3), sb.DI_SCREEN_CENTER_BOTTOM, scale: (2, 2));
 			sb.DrawNum(hpl.CountInv(basicWep.bMagazineClass), -43, -8, sb.DI_SCREEN_CENTER_BOTTOM);
 		}
-		if(!(hdw.weaponstatus[I_FLAGS] & F_NO_FIRE_SELECT)) {
+		if (bShowFireMode) {
 			sb.drawwepcounter(hdw.weaponstatus[I_AUTO], -22, -10, "RBRSA3A7", "STFULAUT", "STBURAUT" );
 		}
 		int ammoBarAmt = clamp(basicWep.magazineGetAmmo() % 100, 0, basicWep.bMagazineCapacity);

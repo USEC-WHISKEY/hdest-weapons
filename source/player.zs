@@ -1,6 +1,8 @@
 
 class PlayerEvents : EventHandler {
 
+	Array<Loadout> backpackLoadouts;
+
 	override void PlayerEntered(PlayerEvent e) {
 		PlayerPawn pawn = players[e.PlayerNumber].mo;
 		if (pawn) {
@@ -48,6 +50,12 @@ class PlayerEvents : EventHandler {
 		}
 		else if (e.Replacee is "HEATAmmo") {
 			e.Replacement = "BRpgRocket";
+		}
+		// Backpack
+		else if (e.Replacee is "WildBackpack") {
+			if (B_Alt_Backpack) {
+				e.Replacement = "BryanWildBackpack";
+			}
 		}
 		// Pistol
 		else if (e.Replacee is "HDPistol" || e.Replacee is "HDAutoPistol") {
@@ -176,8 +184,101 @@ class PlayerEvents : EventHandler {
 
 	int ticks;
 
+	ItemData defineItem(string clsName, int quan, int ch) {
+		ItemData newItem = new("ItemData");
+		newItem.clsName = clsName;
+		newItem.quantity = quan;
+		newItem.chance = ch;
+		return newItem;
+	}
+
 	override void WorldLoaded(WorldEvent e) {
 		alreadyReplaced = true;
+
+		// UM. Initialize the loadouts for backpacks here?
+
+		let medkits = defineItem("PortableMedikit", 5, 35);
+		let stimpacks = defineItem("PortableStimpack", 10, 35);
+		let secondBlood = defineItem("SecondBlood", 2, 25);
+		let zerk = defineItem("PortableBerserkPack", 1, 5);
+
+		let awg = defineItem("GarrisonArmour", 2, 50);
+		let awb = defineItem("BattleArmour", 1, 20);
+
+		let doorbuster = defineItem("doorbuster", 1, 5);
+		let envsuit = defineItem("PortableRadsuit", 1, 45);
+		let lightamp = defineItem("PortableLiteAmp", 1, 45);
+		let ladder = defineItem("PortableLadder", 1, 35);
+
+		let tderp = defineItem("TDERPUsable", 1, 10);
+		let therp = defineItem("THERPUsable", 1, 10);
+
+		let battery = defineItem("HDBattery", 2, 35);
+		let bossClip = defineItem("HD7mClip", 5, 20);
+		let grenade = defineItem("HDFragGrenadeAmmo", 3, 45);
+		let mag556 = defineItem("B556Mag", 5, 55);
+		let mag762 = defineItem("b762_m14_mag", 3, 35);
+		let pouch556 = defineItem("BM249Mag", 1, 10);
+		let pouchreloader = defineItem("B_M249_Reloader", 1, 25);
+		let drumshell = defineItem("BFauxDrum", 2, 25);
+		let magmp5 = defineItem("B9mm_MP5K_MAG", 5, 45);
+		let magglock = defineItem("GlockMagazine", 7, 45);
+		let rktgrenade = defineItem("HDRocketAmmo", 3, 35);
+
+		let gunglock = defineItem("B_Glock", 2, 65);
+		let gunmp5 = defineItem("B_MP5", 1, 45);
+		let gunm4 = defineItem("B_M4", 1, 65);
+
+		Loadout medical = new("Loadout");
+		medical.items.push(medkits);
+		medical.items.push(stimpacks);
+		medical.items.push(secondBlood);
+		medical.items.push(zerk);
+
+		Loadout armorer = new("Loadout");
+		armorer.items.push(stimpacks);
+		armorer.items.push(awg);
+		armorer.items.push(awb);
+
+		Loadout grunt = new("Loadout");
+		grunt.items.push(awg);
+		grunt.items.push(stimpacks);
+		grunt.items.push(zerk);
+		grunt.items.push(mag556);
+		grunt.items.push(magglock);
+		grunt.items.push(magmp5);
+		grunt.items.push(gunglock);
+		grunt.items.push(gunmp5);
+		grunt.items.push(gunm4);
+
+		Loadout ammoer = new("Loadout");
+		ammoer.items.push(battery);
+		ammoer.items.push(bossClip);
+		ammoer.items.push(grenade);
+		ammoer.items.push(mag556);
+		ammoer.items.push(mag762);
+		ammoer.items.push(pouch556);
+		ammoer.items.push(pouchreloader);
+		ammoer.items.push(drumshell);
+		ammoer.items.push(magmp5);
+		ammoer.items.push(magglock);
+		ammoer.items.push(rktgrenade);
+
+		Loadout miscer = new("Loadout");
+		miscer.items.push(doorbuster);
+		miscer.items.push(envsuit);
+		miscer.items.push(lightamp);
+		miscer.items.push(ladder);
+		miscer.items.push(grenade);
+		miscer.items.push(battery);
+		miscer.items.push(therp);
+		miscer.items.push(tderp);
+
+		backpackLoadouts.push(medical);
+		backpackLoadouts.push(armorer);
+		backpackLoadouts.push(grunt);
+		backpackLoadouts.push(ammoer);
+		backpackLoadouts.push(miscer);
 
 		if (b_spawn_raw_resources != 1) {
 			return;

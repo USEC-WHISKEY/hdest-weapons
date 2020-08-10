@@ -26,7 +26,11 @@ class BHDWeapon : HDWeapon {
 		BHDWeapon.BRecoilXHigh 1.4;
 		BHDWeapon.BRecoilYLow  1.3;
 		BHDWeapon.BRecoilYHigh 2.6;
+		BHDWeapon.BShowFireMode false;
 	}
+
+	property BShowFireMode: bShowFireMode;
+	bool bShowFireMode;
 
 	property BRecoilXLow: BRecoilXLow;
 	property BRecoilXHigh: BRecoilXHigh;
@@ -477,7 +481,7 @@ class BHDWeapon : HDWeapon {
 			sb.DrawImage(basicWep.bMagazineSprite, (-46, -3), sb.DI_SCREEN_CENTER_BOTTOM, scale: (basicWep.BAmmoHudScale, basicWep.BAmmoHudScale));
 			sb.DrawNum(hpl.CountInv(basicWep.bMagazineClass), -43, -8, sb.DI_SCREEN_CENTER_BOTTOM);
 		}
-		if(!(hdw.weaponstatus[I_FLAGS] & F_NO_FIRE_SELECT)) {
+		if (bShowFireMode) {
 			sb.drawwepcounter(hdw.weaponstatus[I_AUTO], -22, -10, "RBRSA3A7", "STFULAUT", "STBURAUT" );
 		}
 		int ammoBarAmt = clamp(basicWep.magazineGetAmmo() % 999, 0, basicWep.bMagazineCapacity);

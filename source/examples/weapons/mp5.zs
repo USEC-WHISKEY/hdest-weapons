@@ -73,7 +73,8 @@ class B_MP5 : BHDWeapon {
 		BHDWeapon.BRecoilXLow -0.4;
 		BHDWeapon.BRecoilXHigh 0.4;
 		BHDWeapon.BRecoilYLow  0.8;
-		BHDWeapon.BRecoilYHigh 1.3;		
+		BHDWeapon.BRecoilYHigh 1.3;	
+		BHDWeapon.bShowFireMode true;	
 	}
 
 	states {
@@ -710,6 +711,7 @@ class B_MP5_M203 : BaseGLRifle {
 		BHDWeapon.BRecoilXHigh 0.4;
 		BHDWeapon.BRecoilYLow  0.8;
 		BHDWeapon.BRecoilYHigh 1.2;	
+		BHDWeapon.bShowFireMode true;	
 	}
 
 	bool boltIsBack;

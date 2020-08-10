@@ -69,6 +69,7 @@ class B_M4 : BaseStandardRifle {
 		BHDWeapon.BRecoilXHigh 1.2;
 		BHDWeapon.BRecoilYLow  1.3;
 		BHDWeapon.BRecoilYHigh 1.8;		
+		BHDWeapon.bShowFireMode true;
 	}
 
 	states {
@@ -544,7 +545,8 @@ class B_M4_M203 : BaseGLRifle {
 		BHDWeapon.BRecoilXLow -1.2;
 		BHDWeapon.BRecoilXHigh 1.2;
 		BHDWeapon.BRecoilYLow  1.3;
-		BHDWeapon.BRecoilYHigh 1.7;		
+		BHDWeapon.BRecoilYHigh 1.7;	
+		BHDWeapon.bShowFireMode true;	
 	}
 
 	states {

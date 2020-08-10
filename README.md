@@ -102,6 +102,28 @@ Also note that other mods that spawn or replace actors if using "Replace" mode m
 - None: Weapons when they spawn will not have any attachments other than default sights.
 - Random: Weapons will spawn with random attachments. 
 
+### Backpack Mode
+
+- Vanilla: Wild backpacks are vanilla style random contents
+- Alternative: Wild backpack contents are randomized differently
+
+## Experimental Options
+
+### Resource Mode
+
+- Off: Resources & crafting workbenches will not spawn
+- On: Resources will spawn randomly around the map. 2 crafting benches will appear per map.
+
+### Weapon Mag Mode
+
+- Off: Weapons will spawn, including ones dropped from enemies, without magazines and/or a chambered round. (Not completed).
+- On: (Default) Weapons will spawn with a full mag and chambered weapon.
+
+### Loose Mag mode
+
+- Off: Magazines will spawn empty. (Not completed)
+- On: (Default) Magazines will spawn full.
+
 ## Weapons
 
 ### Glock

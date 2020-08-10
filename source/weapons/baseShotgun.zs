@@ -16,7 +16,7 @@ class BaseShotgun : BaseStandardRifle {
 				chokeImage = "schoke4";
 			}
 		}
-		sb.DrawImage(chokeImage, (-26, -15), sb.DI_SCREEN_CENTER_BOTTOM, scale: (0.5, 0.5));
+		sb.DrawImage(chokeImage, (-26, -9), sb.DI_SCREEN_CENTER_BOTTOM, scale: (0.5, 0.5));
 	}
 
 	states {
