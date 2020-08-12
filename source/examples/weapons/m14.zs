@@ -29,7 +29,7 @@ class b_m14 : basestandardrifle {
 		BHDWeapon.BMagazineBulk      c_m14_mag_bulk;
 		BHDWeapon.BBulletBulk        c_762_round_bulk;
 		BHDWeapon.BMagazineCapacity  20;
-		BHDWeapon.BarrelLength       25;
+		BHDWeapon.BarrelLength       32.5;
 		BHDWeapon.BarrelWidth        1;
 		BHDWeapon.BarrelDepth        3;
 		BHDWeapon.BFlashSprite       "FLSHA0";

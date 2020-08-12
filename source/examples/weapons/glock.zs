@@ -31,7 +31,7 @@ class b_Glock : BasePistol {
 		BHDWeapon.BMagazineBulk      c_glock_mag_bulk;
 		BHDWeapon.BBulletBulk        1;
 		BHDWeapon.BMagazineCapacity  15;
-		BHDWeapon.BarrelLength       15;
+		BHDWeapon.BarrelLength       10;
 		BHDWeapon.BarrelWidth        1;
 		BHDWeapon.BarrelDepth        3;
 

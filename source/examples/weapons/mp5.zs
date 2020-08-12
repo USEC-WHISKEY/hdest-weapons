@@ -30,7 +30,7 @@ class B_MP5 : BHDWeapon {
 		BHDWeapon.BMagazineBulk      c_mp5_mag_bulk;
 		BHDWeapon.BBulletBulk        c_van_9mm_bulk;
 		BHDWeapon.BMagazineCapacity  30;
-		BHDWeapon.BarrelLength       25;
+		BHDWeapon.BarrelLength       18.75;
 		BHDWeapon.BarrelWidth        1;
 		BHDWeapon.BarrelDepth        3;
 
@@ -70,10 +70,10 @@ class B_MP5 : BHDWeapon {
 		BHDWeapon.bLayerRHand  104;
 		BHDWeapon.bLayerGunBack 106;
 
-		BHDWeapon.BRecoilXLow -0.4;
-		BHDWeapon.BRecoilXHigh 0.4;
-		BHDWeapon.BRecoilYLow  0.8;
-		BHDWeapon.BRecoilYHigh 1.3;	
+		BHDWeapon.BRecoilXLow -0.0;
+		BHDWeapon.BRecoilXHigh 0.1;
+		BHDWeapon.BRecoilYLow  0.25;
+		BHDWeapon.BRecoilYHigh 0.0;	
 		BHDWeapon.bShowFireMode true;	
 	}
 
