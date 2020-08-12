@@ -1213,17 +1213,22 @@ class BHDWeapon : HDWeapon {
 
 		Firemode:
 			#### A 1 {
+
 				if (invoker.weaponStatus[I_FLAGS] > F_NO_FIRE_SELECT) {
 					invoker.weaponStatus[I_AUTO] = 0;
 					return ResolveState("Nope");
 				}
 
-				if (invoker.weaponStatus[I_AUTO] >= 2) {
-					invoker.weaponStatus[I_AUTO] = 0;
+				if (invoker.weaponStatus[I_AUTO] == 0) {
+					invoker.WeaponStatus[I_AUTO] = 2;
 				}
-				else {
-					invoker.weaponStatus[I_AUTO]++;
+				else if (invoker.weaponStatus[I_AUTO] == 2) {
+					invoker.weaponStatus[I_AUTO] = 1;
 				}
+				else if (invoker.weaponStatus[I_AUTO] == 1) {
+					invoker.WeaponStatus[I_AUTO] = 0;
+				}
+
 				A_WeaponReady(WRF_NONE);
 				return ResolveState("Nope");
 			}
