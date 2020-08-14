@@ -9,7 +9,7 @@ episode maphub {
 
 map maphub "Bryan's Hub" {
 	music = ""
-	sky1 = "rsky1"
+	sky1 = "bsky2"
 	resetinventory
 	nointermission
 	noautosavehint

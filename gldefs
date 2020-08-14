@@ -10,3 +10,12 @@ brightmap texture "textures/btxtvframe2.png" {
 brightmap texture "textures/btxtvframe3.png" {
 	map "textures/btxtvbm.png"
 }
+
+skybox bsky2 {
+	02_FR
+	02_LF
+	02_BK
+	02_RT
+	02_UP
+	02_DN
+}
