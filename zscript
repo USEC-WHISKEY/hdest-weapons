@@ -46,6 +46,7 @@ version "4.4"
 #include "source/examples/robots2.zs"
 
 #include "source/monsters/ranger.zs"
+#include "source/monsters/wobbles.zs"
 
 class BryanOperator : HDSkin {
 	default {

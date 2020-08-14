@@ -185,6 +185,11 @@ class PlayerEvents : EventHandler {
 				e.Replacement = "Ranger";
 			}
 		}
+		else if (e.Replacee is "Babuin") {
+			if (random(0, 100) < 15) {
+				e.Replacement = "Wobbles";
+			}
+		}
 	}
 
 	int ticks;

@@ -56,3 +56,7 @@ random/tv "sounds/range/tvnoise.wav"
 
 crafting/motor "sounds/crafting/motor.wav"
 crafting/motor/ready "sounds/crafting/ready.wav"
+
+monsters/wobbles/alert "sounds/monsters/wobbles.wav"
+monsters/wobbles/bye "sounds/monsters/wobblesbye.wav"
+monsters/wobbles/dead "sounds/monsters/wobblesdead.wav"
