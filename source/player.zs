@@ -180,6 +180,11 @@ class PlayerEvents : EventHandler {
 		else if (e.Replacee is "BrokenHERP") {
 			e.Replacement = "BrokenTHERP";
 		}
+		else if (e.Replacee is "ZombieHideousTrooper") {
+			if (random(0, 100) < 10) {
+				e.Replacement = "Ranger";
+			}
+		}
 	}
 
 	int ticks;

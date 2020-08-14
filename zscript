@@ -45,6 +45,8 @@ version "4.4"
 #include "source/examples/robots.zs"
 #include "source/examples/robots2.zs"
 
+#include "source/monsters/ranger.zs"
+
 class BryanOperator : HDSkin {
 	default {
 		hdskin.mug "MOS";	
