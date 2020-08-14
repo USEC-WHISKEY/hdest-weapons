@@ -383,6 +383,7 @@ class BHDWeapon : HDWeapon {
 	override void InitializeWepStats (bool idfa) {
 		weaponStatus[I_MAG] = bMagazineCapacity - 1;
 		weaponStatus[I_FLAGS] |= F_CHAMBER;
+		console.printf("%s %i", getClassName(), getBarrelSerialID());
 		//setchamber();
 	}
 
@@ -859,11 +860,19 @@ class BHDWeapon : HDWeapon {
 			A_ClearOverlays(invoker.bLayerSight, invoker.bLayerSight);
 		}
 		
+		if (player.health > 0) {
+			GetAttachmentStateBarrel(mgr);
+		}
+		else {
+			A_ClearOverlays(invoker.bLayerBarrel, invoker.bLayerBarrel);
+		}
 
-		GetAttachmentStateBarrel(mgr);
-		// fuck why did I comment this out here
-		//GetAttachmentStateScope(mgr);
-		GetAttachmentStateMisc(mgr);
+		if (player.health > 0) {
+			GetAttachmentStateMisc(mgr);
+		}
+		else {
+			A_ClearOverlays(invoker.bLayerMisc, invoker.bLayerMisc);
+		}
 	}
 
 	action void GetMiscState() {

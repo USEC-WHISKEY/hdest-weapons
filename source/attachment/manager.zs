@@ -68,12 +68,12 @@ class AttachmentManager : EventHandler {
 			if (info.readyWeapon && info.readyWeapon is "BHDWeapon") {
 				BHDWeapon wep = BHDWeapon(info.readyWeapon);
 				//wep.scopeClass = null;
-				wep.setScopeSerialId(0);
-				wep.setBarrelSerialId(0);
-				wep.setMiscSerialId(0);
+				//wep.setScopeSerialId(0);
+				//wep.setBarrelSerialId(0);
+				//wep.setMiscSerialId(0);
 				//player.A_ClearOverlays(-1000, 1000);
 				//player.A_ClearOverlays(LAYER_BARREL, LAYER_BARREL);
-				//layer.A_ClearOverlays(LAYER_SCOPE, LAYER_SCOPE);
+				//player.A_ClearOverlays(LAYER_SCOPE, LAYER_SCOPE);
 				//player.A_ClearOverlays(LAYER_MISC, LAYER_MISC);
 			}
 		}
