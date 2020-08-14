@@ -341,7 +341,7 @@ class BGlockMagEmpty2 : GlockMagazine {
 
 class BRpgRocket : HDMagAmmo {
 	default{
-		-hdpickup.fitsinbackpack
+		+hdpickup.fitsinbackpack
 		hdmagammo.maxperunit 1;
 		hdmagammo.roundtype "HEATAmmo";
 		hdmagammo.roundbulk c_rpg_charge_bulk;
