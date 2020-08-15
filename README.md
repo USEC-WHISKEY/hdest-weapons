@@ -92,6 +92,21 @@ WARNING: Vanilla loadouts and certain vanilla weapons will not function properly
 
 Also note that other mods that spawn or replace actors if using "Replace" mode may continue to spawn even though they should be replaced. You'll be able to pick up these items and use them, but dropping them will trigger a replacement. 
 
+### AI Replace Mode
+
+There are 4 enemies available at the moment that can replace vanilla HD monsters.
+
+- None: Enemies will not spawn. 
+- Replace: Enemies will be replaced, including enemies spawning it.
+- Map: Enemies are only replaced at the start of the level. 
+
+You can adjust the chances of each enemy spawning. The enemies are:
+
+- Scout: MP5
+- Rifleman: M4
+- Ranger: M14
+- Shotgunner: Fauxtech Origin 12
+
 ### Sight Mode
 
 - Full: The entire back of the sight is shown. Uses the most screen space.
