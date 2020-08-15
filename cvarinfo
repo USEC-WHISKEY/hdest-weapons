@@ -1,4 +1,5 @@
-server int b_replace_type = 6;
+server int b_replace_type = 1;
+server int b_ai_replace_type = 1;
 server int b_attach_spawn_mode = 1;
 server int b_weapon_jamming = 0;
 
@@ -8,3 +9,8 @@ server int b_spawn_no_ammo = 0;
 server int b_alt_backpack = 0;
 
 user int b_althud_mode = 2;
+
+server int b_ai_scout_chance      = 30;
+server int b_ai_rifleman_chance   = 30;
+server int b_ai_shotgunner_chance = 10;
+server int b_ai_ranger_chance     = 10;

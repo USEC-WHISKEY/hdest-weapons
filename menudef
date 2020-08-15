@@ -5,6 +5,12 @@ OptionValue "B_Replace_Types" {
 	5, "Replace"
 }
 
+OptionValue "B_AI_Replace_Types" {
+	1, "None"
+	6, "Map"
+	5, "Replace"
+}
+
 OptionValue "B_Althud_Options" {
 	1, "Full"
 	2, "Minimal"
@@ -44,6 +50,11 @@ OptionMenu "B_Options" {
 	title "Bryan's Weapons"
 	statictext "See README.md for option description."
 	option "Replace mode", "B_Replace_Type", "B_Replace_Types"
+	option "AI Replace mode", "B_AI_Replace_Type", "B_AI_Replace_Types"
+	Slider "Scout Chance", "b_ai_scout_chance", 0, 100, 5
+	Slider "Rifleman Chance", "b_ai_rifleman_chance", 0, 100, 5
+	Slider "Shotgunner Chance", "b_ai_shotgunner_chance", 0, 100, 5
+	Slider "Ranger Chance", "b_ai_ranger_chance", 0, 100, 5
 	option "HUD Sights", "b_althud_mode", "B_Althud_options"
 	option "Attachment Spawn Mode", "b_attach_spawn_mode", "B_Attach_Spawn_Options"
 	option "Backpack Mode", "b_alt_backpack", "B_Alt_Backpack"
