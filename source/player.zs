@@ -184,10 +184,10 @@ class PlayerEvents : EventHandler {
 
 	void replaceAllAI(ReplaceEvent e) {
 		if (e.Replacee is "ZombieHideousTrooper") {
-			if (random(0, 100) < b_ai_rifleman_chance) {
+			if (random(0, 100) <= b_ai_rifleman_chance) {
 				e.Replacement = "BRifleman";
 			}
-			else if (random(0, 100) < b_ai_scout_chance) {
+			else if (random(0, 100) <= b_ai_scout_chance) {
 				e.Replacement = "BScout";
 			}
 		}

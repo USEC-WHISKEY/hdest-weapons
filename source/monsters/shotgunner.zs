@@ -17,6 +17,19 @@ class BShotgunner : ShotgunHumanoidBase {
 		HumanoidBase.hMagazineClass "BFauxDrum";
 		HumanoidBase.hSpentClass "HDSpentShell";
 		HumanoidBase.hFireSound "weapons/fauxtech/fire";
+		HumanoidBase.hSilentFireSound "weapons/fauxtech/silentfire";
+	}
+
+	override void initializeAttachments() {
+		// Random Silencer
+		if (!random(0, 2)) {
+			silenced = true;
+			silId = B_FOS_SILENCER_ID;
+			silClass = mgr.getBarrelClass(B_FOS_SILENCER_ID);
+		}
+
+		sightId = B_FAUX_SIGHT_ID;
+		sightClass = mgr.getScopeClass(B_FAUX_SIGHT_ID);
 	}
 	
 	states {

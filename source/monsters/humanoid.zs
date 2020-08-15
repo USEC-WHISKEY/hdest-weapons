@@ -21,12 +21,51 @@ class HumanoidBase : ZombieStormtrooper {
 	property hFireSound: hFireSound;
 	string hFireSound;
 
+	property hSilentFireSound : hSilentFireSound;
+	string hSilentFireSound;
+
 	default {
-		Translation 0;
+		//Translation "";
 	}
+
+	AttachmentManager mgr;
+
+	bool silenced;
+	bool scoped;
+
+	int silId;
+	Class<BaseBarrelAttachment> silClass;
+
+	int sightId;
+	Class<BaseSightAttachment> sightClass;
+
+	override void postbeginplay(){
+		HDMobMan.postbeginplay();
+		mgr = AttachmentManager(EventHandler.find("AttachmentManager"));
+		silenced = random(0, 2);
+		scoped = random(0, 2);
+		mag = hMaxMag;
+		initializeAttachments();
+		hdmobster.spawnmobster(self);
+	}
+
+	virtual void initializeAttachments() {}
 
 	override void deathdrop(){
 		HDWeapon wp = HDWeapon(Spawn(hWeaponClass, pos));
+		if (wp is "BHDWeapon") {
+			BHDWeapon wep = BHDWeapon(wp);
+			// Attach Silencer to weapon drop
+			if (silId && silClass) {
+				wep.setBarrelSerialId(silId);
+				wep.barrelClass = silClass;
+			}
+
+			if (sightId && sightClass) {
+				wep.setScopeSerialId(sightId);
+				wep.scopeClass = sightClass;
+			}
+		}
 		wp.bdropped = true;
 		wp.addz(40);
 		wp.vel = vel + (frandom(-2,2),frandom(-2,2),1);
@@ -157,7 +196,13 @@ class HumanoidBase : ZombieStormtrooper {
 			
 				pitch += frandom(0, spread) - frandom(0, spread);
 				angle += frandom(0, spread) - frandom(0, spread);
-				A_StartSound(invoker.hFireSound);
+				if (invoker.silenced && invoker.silClass) {
+					A_StartSound(invoker.hSilentFireSound);
+				}
+				else {
+					A_StartSound(invoker.hFireSound);
+				}
+
 				HDBulletActor.FireBullet(self, invoker.hBulletClass, speedfactor:1.0);
 				A_SpawnItemEx(invoker.hSpentClass,
 					cos(pitch) * 10,

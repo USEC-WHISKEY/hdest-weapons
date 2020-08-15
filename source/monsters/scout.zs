@@ -27,6 +27,17 @@ class BScout : HumanoidBase {
 		HumanoidBase.hMagazineClass "B9mm_MP5K_MAG";
 		HumanoidBase.hSpentClass "HDSpent9mm";
 		HumanoidBase.hFireSound "weapons/mp5/fire";
+		HumanoidBase.hSilentFireSound "weapons/mp5/silentfire";
+	}
+
+	override void initializeAttachments() {
+		if (!random(0, 2)) {
+			silenced = true;
+			silId = B_9MM_SILENCER_ID;
+			silClass = mgr.getBarrelClass(B_9MM_SILENCER_ID);
+
+		}
+		//A_SetTranslation("ScoutSilence");
 	}
 	
 	states {
