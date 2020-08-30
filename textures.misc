@@ -1,44 +1,93 @@
 
-sprite BBBGA0, 100, 66 {
-	XScale 8
-	YScale 8
-	Offset 50, 66
-	Patch "graphics/fullspr/blackpowder.png", 0, 0
+sprite AMBXA0, 40, 31 {
+	XScale 1.5
+	YScale 1.5
+	Offset 20, 31
+	Patch "graphics/newpickup/Ammo_Container.png", 0, 0
 }
 
-sprite BBBGB0, 100, 66 {
-	XScale 6
-	YScale 6
-	Offset 50, 66
-	Patch "graphics/fullspr/powderbag.png", 0, 0
+sprite RSBXA0, 45, 21 {
+	XScale 1
+	YScale 1
+	Offset 22, 21
+	Patch "graphics/newpickup/Resource_box.png", 0, 0
 }
 
-sprite BBBGC0, 100, 100 {
-	XScale 20
-	YScale 20
-	Offset 50, 100
-	Patch "graphics/fullspr/lead.png", 0, 0
+sprite CFBNA0, 44, 37 {
+	XScale 1.5
+	YScale 1.5
+	Offset 22, 37
+	Patch "graphics/newpickup/Rocket_Work_Bench.png", 0, 0
 }
 
-sprite BBBGD0, 100, 100 {
-	XScale 10
-	YScale 10
-	Offset 50, 100
-	Patch "graphics/fullspr/leads.png", 0, 0
+sprite CFBNB0, 33, 27 {
+	XScale 1.5
+	YScale 1.5
+	Offset 16, 27
+	Patch "graphics/newpickup/Case_Work_bench.png", 0, 0
 }
 
-sprite BBBGE0, 100, 100 {
-	XScale 10
-	YScale 10
-	Offset 50, 100
-	Patch "graphics/fullspr/bras.png", 0, 0
+sprite CFBNC0, 33, 27 {
+	XScale 1.5
+	YScale 1.5
+	Offset 16, 27
+	Patch "graphics/newpickup/Ball_Work_bench.png", 0, 0
 }
 
-sprite BBBGF0, 100, 100 {
-	XScale 10
-	YScale 10
-	Offset 50, 100
-	Patch "graphics/fullspr/brass.png", 0, 0
+sprite CFBND0, 41, 28 {
+	XScale 1.5
+	YScale 1.5
+	Offset 20, 28
+	Patch "graphics/newpickup/Assembly_Bench.png", 0, 0
+}
+
+sprite B56RA0, 44, 32 {
+	XScale 2
+	YScale 2
+	Offset 22, 32
+	Patch "graphics/newpickup/556_Pouch_Reloading_Device.png", 0, 0
+}
+
+sprite BBBGA0, 43, 30 {
+	XScale 4
+	YScale 4
+	Offset 21, 30
+	Patch "graphics/newpickup/Gunpowder_Loose.png", 0, 0
+}
+
+sprite BBBGB0, 43, 39 {
+	XScale 4
+	YScale 4
+	Offset 22, 39
+	Patch "graphics/newpickup/Gunpowder_Bag.png", 0, 0
+}
+
+sprite BBBGC0, 19, 19 {
+	XScale 4
+	YScale 4
+	Offset 10, 19
+	Patch "graphics/newpickup/Lead_Piece.png", 0, 0
+}
+
+sprite BBBGD0, 33, 28 {
+	XScale 4
+	YScale 4
+	Offset 17, 28
+	Patch "graphics/newpickup/Lead_Ore.png", 0, 0
+}
+
+sprite BBBGE0, 32, 22 {
+	XScale 4
+	YScale 4
+	Offset 16, 22
+	Patch "graphics/newpickup/Brass_sheet.png", 0, 0
+}
+
+sprite BBBGF0, 37, 31 {
+	XScale 4
+	YScale 4
+	Offset 18, 31
+	Patch "graphics/newpickup/Brass_Roll.png", 0, 0
 }
 
 

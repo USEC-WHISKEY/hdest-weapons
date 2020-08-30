@@ -14,7 +14,7 @@ class B_BallCrafter : HDWeapon {
 	override double gunMass() { return 0; }
 	override double weaponBulk() { return 20 * amount; }
 	override string,double getpickupsprite(){
-		return "BNCHA0",1.;
+		return "CFBNC0",1.;
 	}
 
 	int mode;
@@ -51,9 +51,9 @@ class B_BallCrafter : HDWeapon {
 
 	override string gethelptext(){
 		return
-		WEPHELP_FIRE.."  Assemble rounds\n"
-		..WEPHELP_UNLOAD.."+"..WEPHELP_USE.."  same"
-		;
+		WEPHELP_FIRE.."     Create ball\n"
+		..WEPHELP_RELOAD.."   (Hold) Place into inventory\n"
+		..WEPHELP_ALTFIRE.."  Switch ball type\n";
 	}
 
 	override bool AddSpareWeapon(actor newowner){
@@ -91,7 +91,12 @@ class B_BallCrafter : HDWeapon {
 				int brassCount = invoker.owner.CountInv("B_Brass");
 				if (leadCount >= leadNeeded && brassCount >= brassNeeded) {
 					A_StartSound("crafting/motor", CHAN_WEAPON, CHANF_OVERLAP);
-					invoker.owner.GiveInventory(ballClass, 1);
+					if (PressingReload()) {
+						invoker.owner.GiveInventory(ballClass, 1);
+					}
+					else {
+						A_SpawnItemEx(ballClass, 10, 0, height - 12, 0, 0, 0);
+					}
 					invoker.owner.TakeInventory("B_Lead", leadNeeded);
 					invoker.owner.TakeInventory("B_Brass", brassNeeded);
 					if (invoker.mode == 1) {
@@ -127,7 +132,7 @@ class B_BallCrafter : HDWeapon {
 			Goto Ready;
 
 		Spawn:
-			BNCH A -1;
+			CFBN C -1;
 			Stop;
 	}
 
@@ -150,7 +155,7 @@ class B_CaseCrafter : HDWeapon {
 	override double gunMass() { return 0; }
 	override double weaponBulk() { return 20 * amount; }
 	override string,double getpickupsprite(){
-		return "BNCHB0",1.;
+		return "CFBNB0",1.;
 	}
 
 	int mode;
@@ -178,9 +183,9 @@ class B_CaseCrafter : HDWeapon {
 
 	override string gethelptext(){
 		return
-		WEPHELP_FIRE.."  Assemble rounds\n"
-		..WEPHELP_UNLOAD.."+"..WEPHELP_USE.."  same"
-		;
+		WEPHELP_FIRE.."     Create case\n"
+		..WEPHELP_RELOAD.."   (Hold) Place into inventory\n"
+		..WEPHELP_ALTFIRE.."  Switch case type\n";
 	}
 
 	override bool AddSpareWeapon(actor newowner){
@@ -215,7 +220,13 @@ class B_CaseCrafter : HDWeapon {
 				int brassCount = invoker.owner.CountInv("B_Brass");
 				if (brassCount >= brassNeeded) {
 					A_StartSound("crafting/motor", CHAN_WEAPON, CHANF_OVERLAP);
-					invoker.owner.GiveInventory(caseClass, 1);
+					if (PressingReload()) {
+						invoker.owner.GiveInventory(caseClass, 1);
+					}
+					else {
+						A_SpawnItemEx(caseClass, 10, 0, height - 12, 0, 0, 0);
+					}
+
 					invoker.owner.TakeInventory("B_Brass", brassNeeded);
 					if (invoker.mode == 1) {
 						A_SetTics(10);
@@ -250,7 +261,7 @@ class B_CaseCrafter : HDWeapon {
 			Goto Ready;
 
 		Spawn:
-			BNCH B -1;
+			CFBN B -1;
 			Stop;
 	}
 
@@ -272,7 +283,7 @@ class B_BulletAssembler : HDWeapon {
 	override double gunMass() { return 0; }
 	override double weaponBulk() { return 20 * amount; }
 	override string,double getpickupsprite(){
-		return "BNCHC0",1.;
+		return "CFBND0",1.;
 	}
 
 	int mode;
@@ -322,9 +333,9 @@ class B_BulletAssembler : HDWeapon {
 
 	override string gethelptext(){
 		return
-		WEPHELP_FIRE.."  Assemble rounds\n"
-		..WEPHELP_UNLOAD.."+"..WEPHELP_USE.."  same"
-		;
+		WEPHELP_FIRE.."     Assemble round\n"
+		..WEPHELP_RELOAD.."   (Hold) Place into inventory\n"
+		..WEPHELP_ALTFIRE.."  Switch round type\n";
 	}
 
 	override bool AddSpareWeapon(actor newowner){
@@ -373,7 +384,12 @@ class B_BulletAssembler : HDWeapon {
 
 				if (caseCount >= 1 && ballCount >= 1 && powderCount >= powderRequired) {
 					A_StartSound("crafting/motor", CHAN_WEAPON, CHANF_OVERLAP);
-					invoker.owner.GiveInventory(bulletClass, 1);
+					if (PressingReload()) {
+						invoker.owner.GiveInventory(bulletClass, 1);
+					}
+					else {
+						A_SpawnItemEx(bulletClass, 10, 0, height - 12, 0, 0, 0);
+					}
 					invoker.owner.TakeInventory(caseClass, 1);
 					invoker.owner.TakeInventory(ballClass, 1);
 					invoker.owner.TakeInventory("B_GunPowder", powderRequired);
@@ -410,7 +426,7 @@ class B_BulletAssembler : HDWeapon {
 			Goto Ready;
 
 		Spawn:
-			BNCH C -1;
+			CFBN D -1;
 			Stop;
 	}
 
@@ -431,7 +447,7 @@ class B_RocketAssembler : HDWeapon {
 	override double gunMass() { return 0; }
 	override double weaponBulk() { return 20 * amount; }
 	override string,double getpickupsprite(){
-		return "BNCHD0",1.;
+		return "CFBNA0",1.;
 	}
 
 	int mode;
@@ -473,9 +489,9 @@ class B_RocketAssembler : HDWeapon {
 
 	override string gethelptext(){
 		return
-		WEPHELP_FIRE.."  Assemble rounds\n"
-		..WEPHELP_UNLOAD.."+"..WEPHELP_USE.."  same"
-		;
+		WEPHELP_FIRE.."     Assemble rocket\n"
+		..WEPHELP_RELOAD.."   (Hold) Place into inventory\n"
+		..WEPHELP_ALTFIRE.."  Switch rocket type\n";
 	}
 
 	override bool AddSpareWeapon(actor newowner){
@@ -523,7 +539,12 @@ class B_RocketAssembler : HDWeapon {
 				}
 			}
 			TNT1 A 20 {
-				invoker.owner.GiveInventory("BRpgRocket", 1);
+				if (PressingReload()) {
+					invoker.owner.GiveInventory("BRpgRocket", 1);
+				}
+				else {
+					A_SpawnItemEx("BRpgRocket", 10, 0, height - 12, 0, 0, 0);
+				}
 			}
 			TNT1 A 1 {
 				A_StartSound("crafting/motor/ready", CHAN_WEAPON, CHANF_OVERLAP);
@@ -550,7 +571,12 @@ class B_RocketAssembler : HDWeapon {
 				}
 			}
 			TNT1 A 5 {
-				invoker.owner.GiveInventory("HDRocketAmmo", 1);
+				if (PressingReload()) {
+					invoker.owner.GiveInventory("HDRocketAmmo", 1);
+				}
+				else {
+					A_SpawnItemEx("HDRocketAmmo", 10, 0, height - 12, 0, 0, 0);
+				}
 			}
 			TNT1 A 1 {
 				A_StartSound("crafting/motor/ready", CHAN_WEAPON, CHANF_OVERLAP);
@@ -583,7 +609,7 @@ class B_RocketAssembler : HDWeapon {
 			Goto Ready;
 
 		Spawn:
-			BNCH D -1;
+			CFBN A -1;
 			Stop;
 	}
 

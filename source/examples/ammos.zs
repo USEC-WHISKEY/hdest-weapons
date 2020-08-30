@@ -122,7 +122,7 @@ class B_556_Box : HDUPK {
 	}
 	states{
 	spawn:
-		5BOX A -1;
+		AB56 A -1;
 	}
 }
 
@@ -246,7 +246,7 @@ class B_762_Box : HDUPK {
 	}
 	states{
 	spawn:
-		7BBX A -1;
+		AB76 A -1;
 	}
 }
 
@@ -299,7 +299,7 @@ class BAmBox : HDUPK {
 
 	states {
 		spawn:
-			BBOX A -1;
+			AMBX A -1;
 			stop;
 		grab:
 		tap:
@@ -377,7 +377,7 @@ class BResourceBox : HDUPK {
 
 	states {
 		spawn:
-			BNCH E -1;
+			RSBX A -1;
 			stop;
 		grab:
 		tap:

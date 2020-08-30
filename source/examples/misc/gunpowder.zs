@@ -16,6 +16,9 @@ class B_GunPowder : BRoundAmmo {
 	override void GetItemsThatUseThis() {
 		itemsthatusethis.push("B_BulletAssembler");
 	}
+	override void SplitPickup(){
+		SplitPickupBoxableRound(1,90,"B_GunPowderBag","BBBGA0","BBBGB0");
+	}
 }
 
 class B_GunPowderBag : HDUPK {
@@ -90,6 +93,9 @@ class B_Lead : BRoundAmmo {
 	override void GetItemsThatUseThis() {
 		itemsthatusethis.push("B_BallCrafter");
 	}
+	override void SplitPickup(){
+		SplitPickupBoxableRound(1,50,"B_LeadRock","BBBGC0","BBBGD0");
+	}
 }
 
 class B_LeadRock : HDUPK {
@@ -124,6 +130,9 @@ class B_Brass : BRoundAmmo {
 	override void GetItemsThatUseThis() {
 		itemsthatusethis.push("B_BallCrafter");
 		itemsthatusethis.push("B_CaseCrafter");
+	}
+	override void SplitPickup(){
+		SplitPickupBoxableRound(1,50,"B_BrassSheets","BBBGE0","BBBGF0");
 	}
 }
 

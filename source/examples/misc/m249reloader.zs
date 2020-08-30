@@ -49,7 +49,7 @@ class B_M249_Reloader : AutoReloadingThingy{
 
 		double lph=(brass && fourm>=4) ? 1. : 0.6;
 
-		sb.drawimage("BRLAA0",(0,-64)+bob,
+		sb.drawimage("B56RA0",(0,-64)+bob,
 			sb.DI_SCREEN_CENTER_BOTTOM|sb.DI_ITEM_CENTER,
 			alpha:lph,scale:(2,2)
 		);
@@ -112,7 +112,7 @@ class B_M249_Reloader : AutoReloadingThingy{
 		TNT1 A 1 A_CheckItems(pressinguse());
 		goto ready;
 	spawn:
-		BRLA A -1 nodelay A_JumpIf(
+		B56R A -1 nodelay A_JumpIf(
 			invoker.makinground
 			&&invoker.brass>0
 			&&invoker.powders>=0,

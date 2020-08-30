@@ -1,4 +1,18 @@
 
+sprite AB56A0, 37, 13 {
+	XScale 1.5
+	YScale 1.5
+	Offset 18, 13
+	Patch "graphics/newpickup/556_Ammo_Box.png", 0, 0
+}
+
+sprite AB76A0, 36, 14 {
+	XScale 1.5
+	YScale 1.5
+	Offset 18, 13
+	Patch "graphics/newpickup/762_Ammo_Box.png", 0, 0
+}
+
 sprite BB76A1, 7, 7 {
 	XScale 8
 	YScale 8
