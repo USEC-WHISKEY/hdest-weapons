@@ -41,9 +41,15 @@ version "4.4"
 #include "source/examples/misc/backpack.zs"
 
 #include "source/monsters/lvl1warrior.zs"
-#include "source/monsters/moperator.zs"
 #include "source/examples/robots.zs"
 #include "source/examples/robots2.zs"
+
+#include "source/monsters/humanoid.zs"
+#include "source/monsters/ranger.zs"
+#include "source/monsters/rifleman.zs"
+#include "source/monsters/scout.zs"
+#include "source/monsters/shotgunner.zs"
+#include "source/monsters/wobbles.zs"
 
 class BryanOperator : HDSkin {
 	default {

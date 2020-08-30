@@ -182,6 +182,28 @@ class PlayerEvents : EventHandler {
 		}
 	}
 
+	void replaceAllAI(ReplaceEvent e) {
+		if (e.Replacee is "ZombieHideousTrooper") {
+			if (random(0, 100) <= b_ai_rifleman_chance) {
+				e.Replacement = "BRifleman";
+			}
+			else if (random(0, 100) <= b_ai_scout_chance) {
+				e.Replacement = "BScout";
+			}
+		}
+		else if (e.Replacee is "HideousShotgunGuy") {
+			if (random(0, 100) < b_ai_shotgunner_chance) {
+				e.Replacement = "BShotgunner";
+			}
+		}
+		else if (e.Replacee is "VulcanetteGuy") {
+			if (random(0, 100) < b_ai_ranger_chance) {
+				e.Replacement = "BRanger";
+			}
+		}
+		
+	}
+
 	int ticks;
 
 	ItemData defineItem(string clsName, int quan, int ch) {
@@ -404,11 +426,20 @@ class PlayerEvents : EventHandler {
 	}
 
 	override void CheckReplacement(ReplaceEvent e) {
+		// weapons & gear
 		if (B_Replace_Type == 5) {
 			replaceAll(e);
 		}
 		else if (B_Replace_Type == 6 && alreadyReplaced == false) {
 			replaceAll(e);
+		}
+
+		// AI options
+		if (B_AI_Replace_Type == 5) {
+			replaceAllAI(e);
+		}
+		else if (B_AI_Replace_Type == 6 && alreadyReplaced == false) {
+			replaceAllAI(e);
 		}
 	}
 
