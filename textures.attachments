@@ -1,31 +1,31 @@
-sprite SCPPA0, 93, 80 {
-	XScale 6
-	YScale 6
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/acog.png", 0, 0
+sprite SCPPA0, 46, 36 {
+	XScale 3
+	YScale 3
+	Offset 46, 36
+	Patch "graphics/newpickup/Attachment ACOG.png", 0, 0
 }
 
-sprite SCPPB0, 93, 80 {
-	XScale 6
-	YScale 6
+sprite SCPPB0, 45, 32 {
+	XScale 3
+	YScale 3
 	Offset 46, 30
-	Patch "sprites/accessory/fullsize/reddot.png", 0, 0
+	Patch "graphics/newpickup/Attachment Red Dot.png", 0, 0
 }
 
-sprite SCPPC0, 93, 80 {
-	XScale 6
-	YScale 6
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/holo.png", 0, 0
+sprite SCPPC0, 39, 36 {
+	XScale 3
+	YScale 3
+	Offset 39, 36
+	Patch "graphics/newpickup/Attachment Holo.png", 0, 0
 }
 
 
 
-sprite MISPA0, 93, 80 {
-	XScale 9
-	YScale 9
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/sideflashlight.png", 0, 0
+sprite MISPA0, 36, 29 { 
+	XScale 3
+	YScale 3
+	Offset 36, 29
+	Patch "graphics/newpickup/Attachment Flashlight.png", 0, 0
 }
 
 sprite M4CHA0, 101, 56 {
@@ -42,11 +42,11 @@ sprite M4RSA0, 55, 71 {
 	Patch "sprites/accessory/fullsize/m4rearsight.png", 0, 0
 }
 
-sprite NMMSA0, 93, 80 {
-	XScale 6
-	YScale 6
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/9mmsil.png", 0, 0
+sprite NMMSA0, 46, 36 {
+	XScale 3
+	YScale 3
+	Offset 23, 36
+	Patch "graphics/newpickup/Attachment Silencer 9mm.png", 0, 0
 }
 
 sprite FTRSA0, 93, 80 {
@@ -56,11 +56,11 @@ sprite FTRSA0, 93, 80 {
 	Patch "sprites/accessory/fullsize/fostechrear.png", 0, 0
 }
 
-sprite FFSLA0, 93, 80 {
-	XScale 6
-	YScale 6
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/556silencer.png", 0, 0
+sprite FFSLA0, 44, 33 {
+	XScale 3
+	YScale 3
+	Offset 22, 33
+	Patch "graphics/newpickup/Attachment Silencer 556.png", 0, 0
 }
 
 sprite FFFLA0, 93, 80 {
@@ -70,32 +70,32 @@ sprite FFFLA0, 93, 80 {
 	Patch "sprites/accessory/fullsize/556flash.png", 0, 0
 }
 
-sprite FFSLB0, 93, 80 {
-	XScale 6
-	YScale 6
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/762silencer.png", 0, 0
+sprite FFSLB0, 47, 35 {
+	XScale 3
+	YScale 3
+	Offset 23, 35
+	Patch "graphics/newpickup/Attachment Silencer 762.png", 0, 0
 }
 
-sprite UIOZA0, 93, 80 {
-	XScale 6
-	YScale 6
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/wtfgame.png", 0, 0
+sprite UIOZA0, 46, 32 {
+	XScale 3
+	YScale 3
+	Offset 46, 32
+	Patch "graphics/newpickup/Attachment Silencer Fostech.png", 0, 0
 }
 
-sprite ZUXKA0, 93, 80 {
-	XScale 6
-	YScale 6
+sprite ZUXKA0, 40, 34 {
+	XScale 3
+	YScale 3
 	Offset 46, 30
-	Patch "sprites/accessory/fullsize/rreflex.png", 0, 0
+	Patch "graphics/newpickup/Attachment Reflex.png", 0, 0
 }
 
-sprite ZXOIA0, 93, 80 {
-	XScale 6
-	YScale 6
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/magniscope.png", 0, 0
+sprite ZXOIA0, 45, 37 {
+	XScale 3
+	YScale 3
+	Offset 23, 37
+	Patch "graphics/newpickup/Attachment Scope.png", 0, 0
 }
 
 sprite CHKAA0, 93, 80 {

@@ -27,6 +27,7 @@ class BaseAcog : BaseScopeAttachment {
 		BaseScopeAttachment.ScopeImage "acog2sg";
 		BaseScopeAttachment.SightImage "acog1";
 		BaseAttachment.MountId "NATO_RAILS";
+		Scale 0.4;
 	}
 }
 
@@ -234,6 +235,7 @@ class B_Sight_CRdot : BaseFullDotSight {
 		Inventory.Icon "SCPPB0";
 		BaseSightAttachment.bbackAltImage "ardssg";
 		Inventory.PickupMessage "Picked up a red-dot full sight.";
+		Scale 0.4;
 	}
 
 	States {
@@ -258,6 +260,7 @@ class B_Sight_Holo_Red : BaseHoloSight {
 		BaseSightAttachment.BackOffX 0;
 		//BaseSightAttachment.BackOffY 47;
 		Inventory.PickupMessage "Picked up a red-dot round sight.";
+		Scale 0.4;
 	}
 
 	States {
@@ -283,6 +286,7 @@ class B_Reflex_Red : BaseCompactDotSight {
 		//BaseSightAttachment.bfrontAltImage "rflahd";
 		BaseSightAttachment.bbackAltImage "rflahd";
 		HDPickup.RefID "rfr";
+		Scale 0.4;
 	}
 	States {
 		Spawn:

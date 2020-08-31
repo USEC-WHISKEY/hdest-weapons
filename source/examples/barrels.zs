@@ -10,6 +10,7 @@ class B_M16_Silencer : BaseSilencerAttachment {
 		Tag "5.56m barrel silencer";
 		Inventory.Icon "FFSLA0";
 		Inventory.PickupMessage "Picked up 5.56mm silencer.";
+		Scale 0.4;
 	}
 
 	States {
@@ -35,6 +36,7 @@ class B_M14_Silencer : BaseSilencerAttachment {
 		Tag "7.62m barrel silencer";
 		Inventory.Icon "FFSLB0";
 		Inventory.PickupMessage "Picked up 7.62mm silencer.";
+		Scale 0.4;
 	}
 
 	States {
@@ -84,6 +86,7 @@ class GlockSilencer : BaseSilencerAttachment {
 		Tag "9mm silencer";
 		Inventory.Icon "NMMSA0";
 		Inventory.PickupMessage "Picked up 9mm silencer.";
+		Scale 0.4;
 	}
 
 	States {
@@ -109,6 +112,7 @@ class FosSilencer : BaseSilencerAttachment {
 		Tag "Fauxtech Origin 12 silencer";
 		Inventory.Icon "UIOZA0";
 		Inventory.PickupMessage "Picked up a Fauxtech Origin 12 silencer.";
+		Scale 0.4;
 	}
 
 	States {
