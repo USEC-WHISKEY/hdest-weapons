@@ -190,7 +190,7 @@ class B762x51Ammo : BRoundAmmo {
 class B762x51Brass : BRoundShell {
 	default {
 		tag "7.62x51mm brass";
-		HDPickup.RefId "B762x51Casing";
+		HDPickup.RefId "b7b";
 		HDPickup.Bulk c_762_spent_bulk;
 		Inventory.PickupMessage "Picked up some 7.62x51mm brass.";
 	}
