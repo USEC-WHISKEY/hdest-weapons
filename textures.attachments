@@ -19,8 +19,6 @@ sprite SCPPC0, 39, 36 {
 	Patch "graphics/newpickup/Attachment Holo.png", 0, 0
 }
 
-
-
 sprite MISPA0, 36, 29 { 
 	XScale 3
 	YScale 3
@@ -28,18 +26,18 @@ sprite MISPA0, 36, 29 {
 	Patch "graphics/newpickup/Attachment Flashlight.png", 0, 0
 }
 
-sprite M4CHA0, 101, 56 {
-	XScale 9
-	YScale 9
-	Offset 50, 56
-	Patch "sprites/accessory/fullsize/m4carryhandle.png", 0, 0
+sprite M4CHA0, 43, 24 {
+	XScale 3
+	YScale 3
+	Offset 21, 24
+	Patch "graphics/newpickup/Sight_Handle.png", 0, 0
 }
 
-sprite M4RSA0, 55, 71 {
-	XScale 9
-	YScale 9
-	Offset 55, 71
-	Patch "sprites/accessory/fullsize/m4rearsight.png", 0, 0
+sprite M4RSA0, 33, 40 {
+	XScale 3
+	YScale 3
+	Offset 17, 20
+	Patch "graphics/newpickup/Sight_M4.png", 0, 0
 }
 
 sprite NMMSA0, 46, 36 {
@@ -49,11 +47,11 @@ sprite NMMSA0, 46, 36 {
 	Patch "graphics/newpickup/Attachment Silencer 9mm.png", 0, 0
 }
 
-sprite FTRSA0, 93, 80 {
-	XScale 6
-	YScale 6
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/fostechrear.png", 0, 0
+sprite FTRSA0, 29, 40 {
+	XScale 3
+	YScale 3
+	Offset 14, 40
+	Patch "graphics/newpickup/Sight_Fostech.png", 0, 0
 }
 
 sprite FFSLA0, 44, 33 {
@@ -61,13 +59,6 @@ sprite FFSLA0, 44, 33 {
 	YScale 3
 	Offset 22, 33
 	Patch "graphics/newpickup/Attachment Silencer 556.png", 0, 0
-}
-
-sprite FFFLA0, 93, 80 {
-	XScale 6
-	YScale 6
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/556flash.png", 0, 0
 }
 
 sprite FFSLB0, 47, 35 {
@@ -98,23 +89,23 @@ sprite ZXOIA0, 45, 37 {
 	Patch "graphics/newpickup/Attachment Scope.png", 0, 0
 }
 
-sprite CHKAA0, 93, 80 {
-	XScale 12
-	YScale 12
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/brlchka.png", 0, 0
+sprite CHKAA0, 35, 28 {
+	XScale 3
+	YScale 3
+	Offset 17, 28
+	Patch "graphics/newpickup/Choke_Blue.png", 0, 0
 }
 
-sprite CHKAB0, 93, 80 {
-	XScale 12
-	YScale 12
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/brlchkb.png", 0, 0
+sprite CHKAB0, 17, 40 {
+	XScale 3
+	YScale 3
+	Offset 8, 40
+	Patch "graphics/newpickup/Choke_Yellow.png", 0, 0
 }
 
-sprite CHKAC0, 93, 80 {
-	XScale 12
-	YScale 12
-	Offset 46, 30
-	Patch "sprites/accessory/fullsize/brlchkc.png", 0, 0
+sprite CHKAC0, 40, 33 {
+	XScale 3
+	YScale 3
+	Offset 20, 33
+	Patch "graphics/newpickup/Choke_Red.png", 0, 0
 }

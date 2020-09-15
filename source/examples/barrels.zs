@@ -141,6 +141,7 @@ class FosImprovedChoke : BaseChokeAttachment {
 		Inventory.PickupMessage "Picked up a improved cylinder choke.";
 		BaseChokeAttachment.Clow -7;
 		BaseChokeAttachment.Chigh 3;
+		Scale 0.4;
 	}
 
 	States {
@@ -168,6 +169,7 @@ class FosModifiedChoke : BaseChokeAttachment {
 		Inventory.PickupMessage "Picked up a modified choke.";
 		BaseChokeAttachment.Clow -4;
 		BaseChokeAttachment.Chigh 2;
+		Scale 0.4;
 	}
 
 	States {
@@ -195,6 +197,7 @@ class FosFullChoke : BaseChokeAttachment {
 		Inventory.PickupMessage "Picked up a full choke.";
 		BaseChokeAttachment.Clow -2;
 		BaseChokeAttachment.Chigh 1;
+		Scale 0.4;
 	}
 
 	States {
