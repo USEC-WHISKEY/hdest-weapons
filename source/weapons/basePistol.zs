@@ -2,7 +2,7 @@
 class BasePistol : BaseStandardRifle {
 
 	action state GetMagStatePistol() {
-		if (invoker.magazineGetAmmo() > 0) {
+		if (invoker.chambered()) {
 			return ResolveState("SpawnMag");
 		}
 		return ResolveState("SpawnNoMag");
@@ -58,7 +58,29 @@ class BasePistol : BaseStandardRifle {
 		//sb.drawImage("calib", (0, 0), sb.DI_SCREEN_CENTER | sb.DI_ITEM_CENTER, alpha: 0.3);
 	}
 
+	action void B_SwapHandguns(){
+		let mwt=SpareWeapons(findinventory("SpareWeapons"));
+		if(!mwt){
+			//setweaponstate("whyareyousmiling");
+			return;
+		}
+		int pistindex=mwt.weapontype.find(invoker.getclassname());
+		if(pistindex==mwt.weapontype.size()){
+			//setweaponstate("whyareyousmiling");
+			return;
+		}
+		A_WeaponBusy();
 
+		array<string> wepstat;
+		string wepstat2="";
+		mwt.weaponstatus[pistindex].split(wepstat,",");
+		for(int i=0;i<wepstat.size();i++){
+			if(i)wepstat2=wepstat2..",";
+			wepstat2=wepstat2..invoker.weaponstatus[i];
+			invoker.weaponstatus[i]=wepstat[i].toint();
+		}
+		mwt.weaponstatus[pistindex]=wepstat2;
+	}
 
 
 	states {
@@ -227,6 +249,18 @@ class BasePistol : BaseStandardRifle {
 			#### A 0 {
 				return ResolveState("Chamber_Manual");
 			}
+
+		user1:
+		altreload:
+		swappistols:
+			---- A 0 B_SwapHandguns();
+			#### A 1 Offset(1, 40);
+			#### A 1 Offset(4, 60);
+			#### A 1 Offset(7, 80);
+			#### A 1 Offset(11, 100);
+			#### A 1 Offset(14, 120);		
+			TNT1 A 3;
+			goto nope;
 
 	}
 	
